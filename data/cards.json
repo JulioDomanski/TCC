@@ -1,31 +1,31 @@
 [
-    {
-        "id": 1,
-        "text": "Bandidos estão atacando as vilas fronteiriça!",
-        "left_choice": "Enviar tropas",
-        "right_choice": "Ignorar",
-        "image": "res://assets/Cards/carta1.png",
-        "left_effects": {
-            "military": -15,
-            "people": 10
-        },
-        "right_effects": {
-            "people": -20,
-            "economy": -10
-        }
-    },
-    {
-        "id": 2,
-        "text": "A colheita deste ano foi excepcional!",
-        "left_choice": "Distribuir comida",
-        "right_choice": "Armazenar",
-        "image": "res://assets/Cards/carta2.png",
-        "left_effects": {
-            "people": 20,
-            "economy": -10
-        },
-        "right_effects": {
-            "economy": 15
-        }
-    }
+	{
+		"id": 1,
+		"text": "Bandidos estão atacando as vilas fronteiriça!",
+		"left_choice": "Enviar tropas",
+		"right_choice": "Ignorar",
+		"image": "res://assets/Cards/carta1.png",
+		"left_effects": {
+			"military": -15,
+			"people": 10
+		},
+		"right_effects": {
+			"people": -20,
+			"economy": -10
+		}
+	},
+	{
+		"id": 2,
+		"text": "A colheita deste ano foi excepcional!",
+		"left_choice": "Distribuir comida",
+		"right_choice": "Armazenar",
+		"image": "res://assets/Cards/carta1.png",
+		"left_effects": {
+			"people": 20,
+			"economy": -10
+		},
+		"right_effects": {
+			"economy": 15
+		}
+	}
 ]

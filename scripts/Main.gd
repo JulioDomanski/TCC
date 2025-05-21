@@ -12,23 +12,25 @@ func _ready():
 	spawn_new_card()
 
 func load_cards_data():
-	var file = File.new()
-	if not file.file_exists("res://data/cards.json"):
+	var file = FileAccess.open("res://data/cards.json", FileAccess.READ)
+	if file == null:
 		push_error("Arquivo cards.json não encontrado!")
 		return
 	
-	file.open("res://data/cards.json", File.READ)
 	var json_data = file.get_as_text()
 	file.close()
 	
-	var json_result = JSON.parse(json_data)
-	if json_result.error != OK:
-		push_error("Erro ao analisar JSON: ")
+	var test_json_conv = JSON.new()
+	var error = test_json_conv.parse(json_data)
+	if error != OK:
+		push_error("Erro ao analisar JSON!")
 		return
 	
-	# Converte o array de cartas para um dicionário por ID
-	for card in json_result.result:
-		cards_data[card["id"]] = card
+	var result = test_json_conv.get_data()
+	for card in result:
+		if card.has("id"):
+			cards_data[card["id"]] = card
+
 
 func initialize_deck():
 	# Cria um deck com todos os IDs disponíveis
@@ -48,14 +50,14 @@ func spawn_new_card():
 	print("Carta atual - ID: ", card_id)
 	
 	# Cria a nova carta
-	current_card = CardScene.instance()
+	current_card = CardScene.instantiate()
 	$CardContainer.add_child(current_card)
 	
 	# Configura a carta com os dados do JSON
 	current_card.setup_card(cards_data[card_id])
 	
 	# Conecta o sinal para saber quando a carta foi descartada
-	current_card.connect("card_discarded", self, "_on_card_discarded")
+	current_card.connect("card_discarded", Callable(self, "_on_card_discarded"))
 	
 
 func _on_card_discarded(direction, card_data):

@@ -9,17 +9,17 @@ var initial_global_position = Vector2()
 const SWIPE_THRESHOLD = 200
 
 # Referências aos nós
-onready var texture_rect = $TextureRect
-onready var label_text = $Label
-onready var label_left = $LeftChoiceLabel
-onready var label_right = $RightChoiceLabel
+@onready var texture_rect = $TextureRect
+@onready var label_text = $Label
+@onready var label_left = $LeftChoiceLabel
+@onready var label_right = $RightChoiceLabel
 
 var card_data = {}
 
 func _ready():
 	
-	initial_position = rect_position
-	initial_global_position = rect_global_position
+	initial_position = position
+	initial_global_position = global_position
 	mouse_filter = Control.MOUSE_FILTER_STOP
 	label_left.modulate.a = 0
 	label_right.modulate.a = 0
@@ -41,31 +41,31 @@ func setup_card(data):
 		label_right.text = card_data["right_choice"]
 
 func _gui_input(event):
-	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
 			# Começar a arrastar
 			dragging = true
-			drag_offset = rect_global_position - event.global_position
+			drag_offset = global_position - event.global_position
 			# Pequena animação de "pegar" a carta
 			var tween = get_tree().create_tween()
-			tween.tween_property(self, "rect_scale", Vector2(1.05, 1.05), 0.1)
+			tween.tween_property(self, "scale", Vector2(1.05, 1.05), 0.1)
 		else:
 			# Soltar a carta
 			if dragging:
 				dragging = false
 				# Retorna ao tamanho normal
 				var tween = get_tree().create_tween()
-				tween.tween_property(self, "rect_scale", Vector2(1, 1), 0.1)
+				tween.tween_property(self, "scale", Vector2(1, 1), 0.1)
 				process_swipe()
 	
 	elif event is InputEventMouseMotion and dragging:
 		# Movimento suave apenas no eixo X
 		var new_pos = event.global_position + drag_offset
-		rect_global_position = Vector2(new_pos.x, initial_global_position.y)
+		global_position = Vector2(new_pos.x, initial_global_position.y)
 		update_choice_visibility()
 
 func process_swipe():
-	var delta_x = rect_global_position.x - initial_global_position.x
+	var delta_x = global_position.x - initial_global_position.x
 	
 	if delta_x > SWIPE_THRESHOLD:
 		discard_card("right")
@@ -79,17 +79,18 @@ func discard_card(direction):
 	var target_x = viewport_size.x if direction == "right" else -viewport_size.x
 	
 	var tween = get_tree().create_tween()
-	tween.tween_property(self, "rect_global_position:x", target_x, 0.3)\
-		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+	tween.set_trans(Tween.TRANS_SINE)
+	tween.set_ease(Tween.EASE_IN)
+	tween.tween_property(self, "global_position:x", target_x, 0.3)
 	tween.parallel().tween_property(self, "modulate:a", 0, 0.3)
-	tween.connect("finished", self, "_on_discard_complete", [direction])
+	tween.connect("finished", Callable(self, "_on_discard_complete").bind(direction))
 
 func _on_discard_complete(direction):
 	emit_signal("card_discarded", direction, card_data)
 	queue_free()
 	
 func update_choice_visibility():
-	var delta_x = rect_global_position.x - initial_global_position.x
+	var delta_x = global_position.x - initial_global_position.x
 	var viewport_width = get_viewport_rect().size.x
 	
 	# Se arrastando para esquerda
@@ -112,7 +113,8 @@ func update_choice_visibility():
 
 func return_to_center():
 	var tween = get_tree().create_tween()
-	tween.tween_property(self, "rect_global_position", initial_global_position, 0.3)\
-		.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	tween.set_trans(Tween.TRANS_BACK)
+	tween.set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "global_position", initial_global_position, 0.3)
 	tween.parallel().tween_property(label_left, "modulate:a", 0, 0.2)
 	tween.parallel().tween_property(label_right, "modulate:a", 0, 0.2)

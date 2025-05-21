@@ -1,58 +1,64 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://bh4vtm7m3sl6j"]
 
-[ext_resource path="res://scripts/Card.gd" type="Script" id=1]
+[ext_resource type="Script" uid="uid://bdmk216entx4f" path="res://scripts/Card.gd" id="1"]
 
-[sub_resource type="StreamTexture" id=1]
-flags = 4
-load_path = "res://.import/carta1.png-2468d190e2e9c6f526b97e5e6579c529.stex"
+[sub_resource type="CompressedTexture2D" id="1"]
 
 [node name="Card" type="Control"]
+layout_mode = 3
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -100.0
-margin_top = -50.0
-margin_right = 66.0
-margin_bottom = 32.0
-rect_scale = Vector2( 1.02448, 1 )
-script = ExtResource( 1 )
+offset_left = -100.0
+offset_top = -50.0
+offset_right = 66.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.02448, 1)
+script = ExtResource("1")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
 anchor_left = -0.31
-anchor_right = 1.095
-anchor_bottom = 1.151
-margin_left = 0.459999
-margin_top = -68.0
-margin_right = 29.23
-margin_bottom = 73.618
-texture = SubResource( 1 )
-expand = true
+anchor_right = 1.319
+anchor_bottom = 1.187
+offset_left = -20.6595
+offset_top = -68.0
+offset_right = 4.92653
+offset_bottom = 36.666
+texture = SubResource("1")
+expand_mode = 2
 stretch_mode = 1
 
 [node name="Label" type="Label" parent="."]
+layout_mode = 0
 anchor_left = -0.13
 anchor_top = -1.55
 anchor_right = 0.925
 anchor_bottom = -0.78
-margin_right = 96.0
-rect_scale = Vector2( 0.660077, 0.90415 )
-autowrap = true
+offset_right = 96.0
+scale = Vector2(0.660077, 0.90415)
 
 [node name="LeftChoiceLabel" type="Label" parent="."]
+layout_mode = 0
 anchor_left = -0.171
 anchor_top = -0.36
 anchor_right = 0.029
 anchor_bottom = -0.22
-margin_left = 0.036335
-margin_right = 0.036334
+offset_left = 0.036335
+offset_right = 0.036334
 
 [node name="RightChoiceLabel" type="Label" parent="."]
+layout_mode = 0
 anchor_left = 0.798
 anchor_top = -0.3
 anchor_right = 0.852
 anchor_bottom = -0.3
-margin_left = -12.2081
-margin_top = -11.0
-margin_right = 16.9919
-margin_bottom = 3.0
+offset_left = -12.2081
+offset_top = -11.0
+offset_right = 16.9919
+offset_bottom = 3.0
