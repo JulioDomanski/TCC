@@ -34,15 +34,6 @@ texture = SubResource("1")
 expand_mode = 2
 stretch_mode = 1
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-anchor_left = -0.13
-anchor_top = -1.55
-anchor_right = 0.925
-anchor_bottom = -0.78
-offset_right = 96.0
-scale = Vector2(0.660077, 0.90415)
-
 [node name="LeftChoiceLabel" type="Label" parent="."]
 layout_mode = 0
 anchor_left = -0.171
@@ -62,3 +53,13 @@ offset_left = -12.2081
 offset_top = -11.0
 offset_right = 16.9919
 offset_bottom = 3.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+anchor_left = -0.13
+anchor_top = -1.55
+anchor_right = 0.925
+anchor_bottom = -0.78
+offset_left = -1.71661e-05
+offset_right = 96.0
+scale = Vector2(0.660077, 0.90415)

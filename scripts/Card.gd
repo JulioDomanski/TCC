@@ -77,13 +77,15 @@ func process_swipe():
 func discard_card(direction):
 	var viewport_size = get_viewport_rect().size
 	var target_x = viewport_size.x if direction == "right" else -viewport_size.x
+	var target_y = global_position.y + 300  # desce 300 pixels
 	
 	var tween = get_tree().create_tween()
 	tween.set_trans(Tween.TRANS_SINE)
 	tween.set_ease(Tween.EASE_IN)
-	tween.tween_property(self, "global_position:x", target_x, 0.3)
+	tween.tween_property(self, "global_position", Vector2(target_x, target_y), 0.3)
 	tween.parallel().tween_property(self, "modulate:a", 0, 0.3)
 	tween.connect("finished", Callable(self, "_on_discard_complete").bind(direction))
+
 
 func _on_discard_complete(direction):
 	emit_signal("card_discarded", direction, card_data)
@@ -102,6 +104,7 @@ func update_choice_visibility():
 	# Se arrastando para direita
 	elif delta_x > 0:
 		var right_strength = clamp(delta_x/SWIPE_THRESHOLD, 0, 1)
+		print("arrastando para direita")
 		label_right.modulate.a = right_strength
 		label_left.modulate.a = 0
 	
