@@ -1,6 +1,6 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1747852439
-default_env.tres::Environment::8952826018721607875::1747835193::0::1::::<><><>0<>0<><>::
+::res://::1747951619
+default_env.tres::Environment::8952826018721607875::1747873445::0::1::::<><><>0<>0<><>::
 icon.png::CompressedTexture2D/CompressedTexture2D::4241338009583973430::1747830470::1747832687::1::::<><><>0<>0<>7db4ec2050e894fe0a410af00efa0a8c<>res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex::
 ::res://assets/::1747830470
 ::res://assets/backgrounds/::1747832691
@@ -12,9 +12,9 @@ carta2.png::CompressedTexture2D/CompressedTexture2D::1653815114168012795::174783
 ::res://assets/font/::1747830470
 ::res://data/::1747833081
 cards.json::JSON/JSON::-1::1747833081::0::1::::<><><>0<>0<><>::
-::res://scenes/::1747835193
-Card.tscn::PackedScene::2938919211256656803::1747835193::0::1::::<><><>0<>0<><>::uid://bdmk216entx4f::::res://scripts/Card.gd
-Main.tscn::PackedScene::9048386673493771924::1747835193::0::1::::<><><>0<>0<><>::uid://lc7tcfk1dkew::::res://scripts/Main.gd<>uid://unrvme56t2at::::res://assets/backgrounds/background.png
-::res://scripts/::1747834409
-Card.gd::GDScript/GDScript::2622416547714941411::1747833152::0::1::::<>Control<><>0<>0<><>::
-Main.gd::GDScript::778183022639146622::1747834409::0::1::::<>Control<><>0<>0<><>::
+::res://scenes/::1747873445
+Card.tscn::PackedScene::2938919211256656803::1747873445::0::1::::<><><>0<>0<><>::uid://bdmk216entx4f::::res://scripts/Card.gd
+Main.tscn::PackedScene::9048386673493771924::1747873445::0::1::::<><><>0<>0<><>::uid://lc7tcfk1dkew::::res://scripts/Main.gd<>uid://unrvme56t2at::::res://assets/backgrounds/background.png
+::res://scripts/::1747873445
+Card.gd::GDScript::2622416547714941411::1747873445::0::1::::<>Control<><>0<>0<><>::
+Main.gd::GDScript/GDScript::778183022639146622::1747834409::0::1::::<>Control<><>0<>0<><>::

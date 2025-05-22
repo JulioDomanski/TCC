@@ -26,13 +26,12 @@ anchors_preset = -1
 anchor_left = -0.31
 anchor_right = 1.319
 anchor_bottom = 1.187
-offset_left = -20.6595
+offset_left = -20.54
 offset_top = -68.0
-offset_right = 4.92653
-offset_bottom = 36.666
+offset_right = 19.046
+offset_bottom = 70.666
 texture = SubResource("1")
-expand_mode = 2
-stretch_mode = 1
+expand_mode = 1
 
 [node name="LeftChoiceLabel" type="Label" parent="."]
 layout_mode = 0

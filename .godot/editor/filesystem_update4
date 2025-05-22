@@ -1,4 +1,3 @@
 res://default_env.tres
-res://scenes/Main.tscn
-res://scripts/Card.gd
 res://scenes/Card.tscn
+res://scenes/Main.tscn
