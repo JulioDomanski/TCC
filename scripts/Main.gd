@@ -4,12 +4,18 @@ const CardScene = preload("res://scenes/Card.tscn")
 
 var deck = [] # Array com os IDs das cartas
 var current_card = null
-var cards_data = {} # Dicionário para armazenar todas as cartas
+var cards_data = {}
+var card_id = 0 # Dicionário para armazenar todas as cartas
 
 func _ready():
 	load_cards_data()
 	initialize_deck()
 	spawn_new_card()
+	$WrapperIndicadores/PontosMoral.text = "3"
+	$WrapperIndicadores/PontosRecursos.text ="5"
+	$WrapperIndicadores/PontosTempo.text = "5"
+	$WrapperIndicadores/PontosProgresso.text = "0"
+	$WrapperIndicadores/PontosConfianca.text="4"
 
 func load_cards_data():
 	var file = FileAccess.open("res://data/cards.json", FileAccess.READ)
@@ -46,7 +52,7 @@ func spawn_new_card():
 		current_card.queue_free()
 	
 	# Pega o ID da próxima carta
-	var card_id = deck.pop_front()
+	card_id = deck.pop_front()
 	print("Carta atual - ID: ", card_id)
 	
 	# Cria a nova carta
@@ -60,8 +66,27 @@ func spawn_new_card():
 	# Conecta o sinal para saber quando a carta foi descartada
 	current_card.connect("card_discarded", Callable(self, "_on_card_discarded"))
 	
-
+func set_points(node,direction,indicator):
+	var points = cards_data[card_id][direction+"_effects"][indicator]
+	node.text = str(node.text.to_int()+points)
+	if(direction==cards_data[card_id]["correct_answer"] && points !=0 ):
+		node.add_theme_color_override("font_color", Color(0, 1, 0))
+	if(direction!=cards_data[card_id]["correct_answer"] && points !=0 ):
+		node.add_theme_color_override("font_color", Color(1, 0, 0))
+	await get_tree().create_timer(0.5).timeout
+	node.add_theme_color_override("font_color", Color(1,1,1))
+		
 func _on_card_discarded(direction, card_data):
 	print("Carta descartada: ", direction)
 	# Aqui você pode processar os efeitos da carta se quiser
+	
+	print(cards_data[card_id][direction+"_effects"])	
+	set_points($WrapperIndicadores/PontosMoral,direction,"moral")
+	set_points($WrapperIndicadores/PontosRecursos,direction,"resources")
+	set_points($WrapperIndicadores/PontosProgresso,direction,"progress")
+	set_points($WrapperIndicadores/PontosTempo,direction,"time")
+	set_points($WrapperIndicadores/PontosConfianca,direction,"trust")
+	
+		
 	spawn_new_card() # Pede uma nova carta
+	

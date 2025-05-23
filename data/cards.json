@@ -6,12 +6,18 @@
 		"right_choice": "Ignorar",
 		"image": "res://assets/Cards/carta1.png",
 		"left_effects": {
-			"military": -15,
-			"people": 10
+			"moral": -15,
+			"resources": -10,
+			"time":0,
+			"trust":0,
+			"progress":0
 		},
 		"right_effects": {
-			"people": -20,
-			"economy": -10
+			"moral": 20,
+			"resources": 10,
+			"time":0,
+			"trust":0,
+			"progress":0
 		},
 		"correct_answer":"right"
 	},
@@ -22,11 +28,18 @@
 		"right_choice": "Armazenar",
 		"image": "res://assets/Cards/carta1.png",
 		"left_effects": {
-			"people": 20,
-			"economy": -10
+			"moral": 20,
+			"resources": -10,
+			"time":0,
+			"trust":0,
+			"progress":0
 		},
 		"right_effects": {
-			"economy": 15
+			"moral": -20,
+			"resources": -15,
+			"time":0,
+			"trust":0,
+			"progress":0
 		},
 		"correct_answer":"left"
 	}
