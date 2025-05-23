@@ -12,7 +12,8 @@
 		"right_effects": {
 			"people": -20,
 			"economy": -10
-		}
+		},
+		"correct_answer":"right"
 	},
 	{
 		"id": 2,
@@ -26,6 +27,7 @@
 		},
 		"right_effects": {
 			"economy": 15
-		}
+		},
+		"correct_answer":"left"
 	}
 ]

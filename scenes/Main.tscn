@@ -1,7 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://d16duve6lpp3y"]
+[gd_scene load_steps=8 format=3 uid="uid://d16duve6lpp3y"]
 
 [ext_resource type="Script" uid="uid://lc7tcfk1dkew" path="res://scripts/Main.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://unrvme56t2at" path="res://assets/backgrounds/background.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://cs45nupg5stxv" path="res://assets/Indicadores/BrainIcon.png" id="3_nxtc6"]
+[ext_resource type="Texture2D" uid="uid://6mb38bfhn0jt" path="res://assets/Indicadores/MoneyBagIcon.png" id="4_jlsqs"]
+[ext_resource type="Texture2D" uid="uid://sbqp7nr6nb1c" path="res://assets/Indicadores/TimeIcon.png" id="5_q8u5g"]
+[ext_resource type="Texture2D" uid="uid://cbn8v4ut5xvyi" path="res://assets/Indicadores/CastleIcon.png" id="6_lhr70"]
+[ext_resource type="Texture2D" uid="uid://cmm0vn0hunfk0" path="res://assets/Indicadores/CrownIcon.png" id="7_wp0k4"]
 
 [node name="main" type="Control"]
 layout_mode = 3
@@ -31,23 +36,185 @@ stretch_mode = 6
 
 [node name="CardContainer" type="Control" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_left = 0.298
+anchor_top = 0.151
+anchor_right = 0.66
+anchor_bottom = 0.823
+offset_left = 2.70398
+offset_top = -3.84801
+offset_right = -0.320007
+offset_bottom = -0.304016
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Dilema" type="Label" parent="CardContainer"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.369
-anchor_top = 0.152
-anchor_right = 0.587
-anchor_bottom = 0.188
-offset_left = -5.08801
-offset_top = 8.50399
-offset_right = -5.224
-offset_bottom = 8.17599
+anchor_left = 0.104
+anchor_top = 0.034
+anchor_right = 0.894
+anchor_bottom = 0.087
+offset_left = -0.0559998
+offset_top = 0.0739994
+offset_right = -0.116028
+offset_bottom = -0.193001
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="WrapperIndicadores" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.3
+anchor_top = 0.003
+anchor_right = 0.66
+anchor_bottom = 0.144
+offset_left = 0.399994
+offset_top = 0.056
+offset_right = -0.320007
+offset_bottom = -0.312004
+
+[node name="IndicadorMoral" type="TextureRect" parent="WrapperIndicadores"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.027
+anchor_top = 0.132
+anchor_right = 0.222
+anchor_bottom = 0.802
+offset_left = -2.178
+offset_top = 1.988
+offset_right = -1.908
+offset_bottom = 2.018
+texture = ExtResource("3_nxtc6")
+stretch_mode = 3
+
+[node name="IndicadorRecursos" type="TextureRect" parent="WrapperIndicadores"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.193
+anchor_top = 0.132
+anchor_right = 0.389
+anchor_bottom = 0.846
+offset_left = 2.098
+offset_top = 0.988
+offset_right = 1.95399
+offset_bottom = 1.014
+texture = ExtResource("4_jlsqs")
+stretch_mode = 3
+
+[node name="InidicadotTempo" type="TextureRect" parent="WrapperIndicadores"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.391
+anchor_top = 0.154
+anchor_right = 0.587
+anchor_bottom = 0.846
+offset_left = -1.87401
+offset_top = -1.014
+offset_right = -2.01801
+offset_bottom = 1.014
+texture = ExtResource("5_q8u5g")
+stretch_mode = 3
+
+[node name="IndicadorProgresso" type="TextureRect" parent="WrapperIndicadores"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.597
+anchor_top = 0.088
+anchor_right = 0.792
+anchor_bottom = 0.791
+offset_left = -2.158
+offset_top = 6.992
+offset_right = -1.88803
+offset_bottom = 7.019
+texture = ExtResource("6_lhr70")
+stretch_mode = 3
+
+[node name="IndicadorConfianca" type="TextureRect" parent="WrapperIndicadores"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.785
+anchor_top = 0.132
+anchor_right = 0.981
+anchor_bottom = 0.846
+offset_left = -2.99002
+offset_top = 4.988
+offset_right = -3.13403
+offset_bottom = 5.014
+texture = ExtResource("7_wp0k4")
+stretch_mode = 3
+
+[node name="PontosMoral" type="Label" parent="WrapperIndicadores"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.07
+anchor_top = 0.714
+anchor_right = 0.167
+anchor_bottom = 0.967
+offset_left = 0.0200005
+offset_top = 0.0259933
+offset_right = -0.138008
+offset_bottom = 0.00299072
+text = "0"
+horizontal_alignment = 1
+
+[node name="PontosConfianca" type="Label" parent="WrapperIndicadores"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.831
+anchor_top = 0.714
+anchor_right = 0.928
+anchor_bottom = 0.956
+offset_left = -1.03403
+offset_top = -1.97401
+offset_right = -1.19202
+offset_bottom = -0.996002
+text = "0"
+horizontal_alignment = 1
+
+[node name="PontosProgresso" type="Label" parent="WrapperIndicadores"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.643
+anchor_top = 0.714
+anchor_right = 0.739
+anchor_bottom = 0.956
+offset_left = -0.201996
+offset_top = -0.974007
+offset_right = 0.0539856
+offset_bottom = 0.0039978
+text = "0"
+horizontal_alignment = 1
+
+[node name="PontosTempo" type="Label" parent="WrapperIndicadores"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.437
+anchor_top = 0.714
+anchor_right = 0.534
+anchor_bottom = 0.956
+offset_left = 0.0820007
+offset_top = -0.974007
+offset_right = -0.0760193
+offset_bottom = 0.0039978
+text = "0"
+horizontal_alignment = 1
+
+[node name="PontosRecursos" type="Label" parent="WrapperIndicadores"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.251
+anchor_top = 0.703
+anchor_right = 0.348
+anchor_bottom = 0.956
+offset_left = 0.0859909
+offset_top = 0.0270004
+offset_right = -0.0720062
+offset_bottom = 0.0039978
+text = "0"
+horizontal_alignment = 1
+uppercase = true

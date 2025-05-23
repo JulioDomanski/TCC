@@ -4,3 +4,4 @@ res://scenes/Main.tscn
 res://scripts/Card.gd
 res://scripts/CardWrapper.gd
 res://scripts/Main.gd
+res://data/cards.json
