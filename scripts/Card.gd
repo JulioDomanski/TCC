@@ -10,7 +10,7 @@ const SWIPE_THRESHOLD = 200
 
 # Referências aos nós
 @onready var texture_rect = $TextureRect
-@onready var label_text = $Label
+
 @onready var label_left = $LeftChoiceLabel
 @onready var label_right = $RightChoiceLabel
 
@@ -34,7 +34,7 @@ func setup_card(data):
 			texture_rect.texture = image_texture
 	
 	# Configura os textos
-	label_text.text = card_data["text"]
+	
 	if card_data.has("left_choice"):
 		label_left.text = card_data["left_choice"]
 	if card_data.has("right_choice"):

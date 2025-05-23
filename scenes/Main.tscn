@@ -37,23 +37,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Card" type="Control" parent="CardContainer"]
-anchors_preset = 0
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-
-[node name="TextureRect" type="TextureRect" parent="CardContainer/Card"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Label" type="Label" parent="CardContainer/Card"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 14.0
+[node name="Dilema" type="Label" parent="CardContainer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.369
+anchor_top = 0.152
+anchor_right = 0.587
+anchor_bottom = 0.188
+offset_left = -5.08801
+offset_top = 8.50399
+offset_right = -5.224
+offset_bottom = 8.17599
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2

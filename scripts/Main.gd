@@ -55,6 +55,7 @@ func spawn_new_card():
 	
 	# Configura a carta com os dados do JSON
 	current_card.setup_card(cards_data[card_id])
+	$CardContainer/Dilema.text = cards_data[card_id]["text"]
 	
 	# Conecta o sinal para saber quando a carta foi descartada
 	current_card.connect("card_discarded", Callable(self, "_on_card_discarded"))

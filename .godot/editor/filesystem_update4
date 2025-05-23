@@ -1,3 +1,6 @@
 res://default_env.tres
 res://scenes/Card.tscn
 res://scenes/Main.tscn
+res://scripts/Card.gd
+res://scripts/CardWrapper.gd
+res://scripts/Main.gd
