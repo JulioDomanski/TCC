@@ -5,8 +5,9 @@ const CardScene = preload("res://scenes/Card.tscn")
 var deck = [] # Array com os IDs das cartas
 var current_card = null
 var cards_data = {}
+var feedback_data = {}
 var card_id = 0 # Dicionário para armazenar todas as cartas
-
+var showing_feedback = false
 func _ready():
 	load_cards_data()
 	initialize_deck()
@@ -75,8 +76,27 @@ func set_points(node,direction,indicator):
 		node.add_theme_color_override("font_color", Color(1, 0, 0))
 	await get_tree().create_timer(0.5).timeout
 	node.add_theme_color_override("font_color", Color(1,1,1))
+	
+func show_feedback_card(card_data,direction):
+	showing_feedback = true
+	
+	# Remove decision card
+	if current_card:
+		current_card.queue_free()
+	
+	# Create feedback card
+	current_card = CardScene.instantiate()
+	$CardContainer.add_child(current_card)
+	current_card.setup_card(cards_data[card_id], true,direction)
+	current_card.connect("card_discarded", Callable(self, "_on_card_discarded"))
 		
 func _on_card_discarded(direction, card_data):
+	if showing_feedback:
+		# Feedback was shown and swiped away, now show next card
+		showing_feedback = false
+		spawn_new_card()
+		return
+		
 	print("Carta descartada: ", direction)
 	# Aqui você pode processar os efeitos da carta se quiser
 	
@@ -88,5 +108,5 @@ func _on_card_discarded(direction, card_data):
 	set_points($WrapperIndicadores/PontosConfianca,direction,"trust")
 	
 		
-	spawn_new_card() # Pede uma nova carta
+	show_feedback_card(card_data,direction) # Pede uma nova carta
 	

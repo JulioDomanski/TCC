@@ -19,7 +19,11 @@
 			"trust":0,
 			"progress":0
 		},
-		"correct_answer":"right"
+		"correct_answer":"right",
+		"feedback":{
+			"right":"You're right",
+			"left":"Wrong"
+		}
 	},
 	{
 		"id": 2,
@@ -41,6 +45,10 @@
 			"trust":0,
 			"progress":0
 		},
-		"correct_answer":"left"
+		"correct_answer":"left",
+		"feedback":{
+			"right":"You're wrong",
+			"left":"You're right"
+		}
 	}
 ]

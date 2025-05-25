@@ -2,17 +2,21 @@ extends Control
 
 signal card_discarded(direction, card_data)
 
+
 var dragging = false
 var drag_offset = Vector2()
 var initial_position = Vector2()
 var initial_global_position = Vector2()
 const SWIPE_THRESHOLD = 200
 
+
 # Referências aos nós
 @onready var texture_rect = $TextureRect
-
+@onready var label_feedback = $LabelFeedback
 @onready var label_left = $LeftChoiceLabel
 @onready var label_right = $RightChoiceLabel
+@onready var feedback_background = $FeedbackBackground
+
 
 var card_data = {}
 
@@ -24,7 +28,7 @@ func _ready():
 	label_left.modulate.a = 0
 	label_right.modulate.a = 0
 
-func setup_card(data):
+func setup_card(data,is_feedback = false,direction="right"):
 	card_data = data
 	
 	# Carrega a imagem da carta
@@ -35,10 +39,25 @@ func setup_card(data):
 	
 	# Configura os textos
 	
-	if card_data.has("left_choice"):
-		label_left.text = card_data["left_choice"]
-	if card_data.has("right_choice"):
-		label_right.text = card_data["right_choice"]
+	if is_feedback:
+		label_feedback.text = card_data["feedback"][direction]
+		label_feedback.visible = true
+		feedback_background.visible = true
+		feedback_background.modulate.a = 0
+		feedback_background.scale = Vector2(0.8, 0.8)
+	
+		var tween = get_tree().create_tween()
+		tween.tween_property(label_feedback, "modulate:a", 1, 0.4)
+		tween.parallel().tween_property(label_feedback, "scale", Vector2(1, 1), 0.4).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+		tween.tween_property(feedback_background, "modulate:a", 1, 0.4)
+		tween.parallel().tween_property(feedback_background, "scale", Vector2(1, 1), 0.4).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	else:
+		label_left.text = data.get("left_choice", "")
+		label_right.text = data.get("right_choice", "")
+		label_feedback.visible = false
+		feedback_background.visible = false
+		label_left.visible = true
+		label_right.visible = true
 
 func _gui_input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
