@@ -1,7 +1,6 @@
 res://default_env.tres
-res://scenes/Card.tscn
-res://scripts/Card.gd
 res://scenes/Main.tscn
-res://scripts/Main.gd
-res://data/feedback.json
+res://scenes/Card.tscn
 res://data/cards.json
+res://scripts/Card.gd
+res://scripts/Main.gd

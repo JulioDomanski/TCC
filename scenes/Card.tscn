@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bh4vtm7m3sl6j"]
+[gd_scene load_steps=4 format=3 uid="uid://bh4vtm7m3sl6j"]
 
 [ext_resource type="Script" uid="uid://bdmk216entx4f" path="res://scripts/Card.gd" id="1"]
+[ext_resource type="AudioStream" uid="uid://dchiqdjn63jma" path="res://assets/sounds/flipcard-91468.wav" id="2_tgmmg"]
 
 [sub_resource type="CompressedTexture2D" id="1"]
 
@@ -81,3 +82,11 @@ offset_top = -0.0179977
 offset_right = -0.0400085
 offset_bottom = -4.0
 color = Color(1, 1, 1, 0.315)
+
+[node name="SwipeSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_tgmmg")
+volume_db = 20.0
+pitch_scale = 2.6
+mix_target = 1
+max_polyphony = 3
+playback_type = 1

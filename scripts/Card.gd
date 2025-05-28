@@ -16,6 +16,8 @@ const SWIPE_THRESHOLD = 200
 @onready var label_left = $LeftChoiceLabel
 @onready var label_right = $RightChoiceLabel
 @onready var feedback_background = $FeedbackBackground
+@onready var swipe_sound = $SwipeSound
+
 
 
 var card_data = {}
@@ -88,8 +90,10 @@ func process_swipe():
 	
 	if delta_x > SWIPE_THRESHOLD:
 		discard_card("right")
+		swipe_sound.play()
 	elif delta_x < -SWIPE_THRESHOLD:
 		discard_card("left")
+		swipe_sound.play()
 	else:
 		return_to_center()
 
