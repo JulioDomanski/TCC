@@ -85,8 +85,8 @@ color = Color(1, 1, 1, 0.315)
 
 [node name="SwipeSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_tgmmg")
-volume_db = 20.0
-pitch_scale = 2.6
+volume_db = 24.0
+pitch_scale = 4.0
 mix_target = 1
 max_polyphony = 3
 playback_type = 1
