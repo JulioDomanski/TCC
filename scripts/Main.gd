@@ -130,6 +130,7 @@ func is_game_over():
 	
 func game_over():
 	
+
 	# Step 1: Create full-screen black overlay
 	var black_overlay := ColorRect.new()
 	black_overlay.color = Color(0, 0, 0, 0)  # Fully transparent
@@ -152,32 +153,61 @@ func game_over():
 	for child in get_children():
 		if child != black_overlay:
 			child.queue_free()
-
+	
+	
 	await get_tree().process_frame  # Let Godot finish cleanup
-
+	'''
 	# Step 4: Add centered "GAME OVER" label
 	var label := Label.new()
 	label.text = "GAME OVER"
 	
+	var center = get_viewport().get_visible_rect().size / 2
+	print(center)
 
-	# Center the label using anchors and alignment
-	label.anchor_left = 0.5
-	label.anchor_top = 0.5
-	label.anchor_right = 0.5
-	label.anchor_bottom = 0.5
-	
+	# Set offsets to center it exactly (if size is known/fixed)
+	label.offset_left = 100
+	label.offset_top = 100
+	label.offset_right = 200
+	label.offset_bottom = 200 
 
-	label.offset_left = 0
-	label.offset_top = 0
-	label.offset_right = 0
-	label.offset_bottom = 0
-
+	# OR: leave offsets at 0 and enable center alignment
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 
+	# Customize appearance
 	label.add_theme_font_size_override("font_size", 64)
-	label.modulate = Color.WHITE
+	label.modulate = Color(0, 0, 0, 0)
 
+	# Fade in effect
+	var tween_label := create_tween()
+	tween_label.tween_property(label, "modulate", Color(1, 1, 1, 1), 1.0)
 	black_overlay.add_child(label)
+	'''
+	# In _ready or a function:
+	var center_container := CenterContainer.new()
+	center_container.anchor_left = 0
+	center_container.anchor_top = 0
+	center_container.anchor_right = 1
+	center_container.anchor_bottom = 1
+	center_container.offset_left = 0
+	center_container.offset_top = 0
+	center_container.offset_right = 0
+	center_container.offset_bottom = 0
+	add_child(center_container)
+
+	var label := Label.new()
+	label.text = "GAME OVER"
+	label.add_theme_font_size_override("font_size", 64)
+	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	# Customize appearance
+	label.add_theme_font_size_override("font_size", 64)
+	label.modulate = Color(0, 0, 0, 0)
+
+	# Fade in effect
+	var tween_label := create_tween()
+	tween_label.tween_property(label, "modulate", Color(1, 1, 1, 1), 1.0)
+
+	center_container.add_child(label)
 
 		
