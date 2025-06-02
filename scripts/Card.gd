@@ -66,7 +66,7 @@ func _gui_input(event):
 		if event.pressed:
 			# Começar a arrastar
 			dragging = true
-			drag_offset = global_position - event.global_position
+			drag_offset =get_global_position() - event.global_position
 			# Pequena animação de "pegar" a carta
 			var tween = get_tree().create_tween()
 			tween.tween_property(self, "scale", Vector2(1.05, 1.05), 0.1)

@@ -8,6 +8,7 @@ var cards_data = {}
 var feedback_data = {}
 var card_id = 0 # Dicionário para armazenar todas as cartas
 var showing_feedback = false
+var first_card = true
 func _ready():
 	load_cards_data()
 	initialize_deck()
@@ -17,6 +18,7 @@ func _ready():
 	$WrapperIndicadores/PontosTempo.text = "5"
 	$WrapperIndicadores/PontosProgresso.text = "0"
 	$WrapperIndicadores/PontosConfianca.text="4"
+	
 
 func load_cards_data():
 	var file = FileAccess.open("res://data/cards.json", FileAccess.READ)
@@ -77,7 +79,7 @@ func set_points(node,direction,indicator):
 	await get_tree().create_timer(0.5).timeout
 	node.add_theme_color_override("font_color", Color(1,1,1))
 	
-func show_feedback_card(card_data,direction):
+func show_feedback_card(card_data,direction) -> Signal:
 	showing_feedback = true
 	
 	# Remove decision card
@@ -89,16 +91,20 @@ func show_feedback_card(card_data,direction):
 	$CardContainer.add_child(current_card)
 	current_card.setup_card(cards_data[card_id], true,direction)
 	current_card.connect("card_discarded", Callable(self, "_on_card_discarded"))
+	return current_card.card_discarded  # Wait until card is swiped
 		
 func _on_card_discarded(direction, card_data):
+	
+	if is_game_over():
+		game_over()
+		return
+	
+	
 	if showing_feedback:
 		# Feedback was shown and swiped away, now show next card
 		showing_feedback = false
 		spawn_new_card()
 		return
-		
-	print("Carta descartada: ", direction)
-	# Aqui você pode processar os efeitos da carta se quiser
 	
 	print(cards_data[card_id][direction+"_effects"])	
 	set_points($WrapperIndicadores/PontosMoral,direction,"moral")
@@ -106,7 +112,72 @@ func _on_card_discarded(direction, card_data):
 	set_points($WrapperIndicadores/PontosProgresso,direction,"progress")
 	set_points($WrapperIndicadores/PontosTempo,direction,"time")
 	set_points($WrapperIndicadores/PontosConfianca,direction,"trust")
+		
+	print("Carta descartada: ", direction)
+	# Aqui você pode processar os efeitos da carta se quiser
+	
+	
 	
 		
-	show_feedback_card(card_data,direction) # Pede uma nova carta
+	await show_feedback_card(card_data,direction)# Pede uma nova carta
+	print(is_game_over())
+	first_card = false
 	
+func is_game_over():
+	if(first_card == false and ($WrapperIndicadores/PontosConfianca.text.to_int()<=0 or$WrapperIndicadores/PontosProgresso.text.to_int()<=0 or $WrapperIndicadores/PontosTempo.text.to_int()<=0 or $WrapperIndicadores/PontosRecursos.text.to_int()<=0 or $WrapperIndicadores/PontosMoral.text.to_int()<=0)):
+		return true;
+	return false;
+	
+func game_over():
+	
+	# Step 1: Create full-screen black overlay
+	var black_overlay := ColorRect.new()
+	black_overlay.color = Color(0, 0, 0, 0)  # Fully transparent
+	black_overlay.anchor_left = 0
+	black_overlay.anchor_top = 0
+	black_overlay.anchor_right = 1
+	black_overlay.anchor_bottom = 1
+	black_overlay.offset_left = 0
+	black_overlay.offset_top = 0
+	black_overlay.offset_right = 0
+	black_overlay.offset_bottom = 0
+	add_child(black_overlay)
+
+	# Step 2: Tween fade to black
+	var tween := create_tween()
+	tween.tween_property(black_overlay, "color", Color(0, 0, 0, 1), 1.0)
+	await tween.finished
+
+	# Step 3: Remove all children except the overlay
+	for child in get_children():
+		if child != black_overlay:
+			child.queue_free()
+
+	await get_tree().process_frame  # Let Godot finish cleanup
+
+	# Step 4: Add centered "GAME OVER" label
+	var label := Label.new()
+	label.text = "GAME OVER"
+	
+
+	# Center the label using anchors and alignment
+	label.anchor_left = 0.5
+	label.anchor_top = 0.5
+	label.anchor_right = 0.5
+	label.anchor_bottom = 0.5
+	
+
+	label.offset_left = 0
+	label.offset_top = 0
+	label.offset_right = 0
+	label.offset_bottom = 0
+
+	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+
+	label.add_theme_font_size_override("font_size", 64)
+	label.modulate = Color.WHITE
+
+	black_overlay.add_child(label)
+
+		
