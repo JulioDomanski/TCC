@@ -17,10 +17,21 @@ const SWIPE_THRESHOLD = 200
 @onready var label_right = $TextureRect/RightChoiceLabel
 @onready var feedback_background = $TextureRect/FeedbackBackground
 @onready var swipe_sound = $SwipeSound
+@onready var viewport = get_viewport_rect()
 
 
 
 var card_data = {}
+
+
+	
+	
+func _notification(what: int) -> void:
+	if(viewport != get_viewport_rect()):
+		viewport = get_viewport_rect()
+		initial_position = position
+		initial_global_position = global_position
+		
 
 func _ready():
 	
@@ -29,6 +40,8 @@ func _ready():
 	mouse_filter = Control.MOUSE_FILTER_STOP
 	label_left.modulate.a = 0
 	label_right.modulate.a = 0
+	
+	
 
 func setup_card(data,is_feedback = false,direction="right"):
 	card_data = data
@@ -87,6 +100,7 @@ func _gui_input(event):
 	
 	elif event is InputEventMouseMotion and dragging:
 		# Movimento suave apenas no eixo X
+		
 		var new_pos = event.global_position + drag_offset
 		global_position = Vector2(new_pos.x, initial_global_position.y)
 		update_choice_visibility()
