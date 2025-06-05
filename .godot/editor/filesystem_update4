@@ -2,3 +2,4 @@ res://default_env.tres
 res://scenes/Main.tscn
 res://scenes/Card.tscn
 res://scripts/Main.gd
+res://scripts/Card.gd

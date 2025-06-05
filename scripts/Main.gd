@@ -9,11 +9,13 @@ var feedback_data = {}
 var card_id = 0 # Dicionário para armazenar todas as cartas
 var showing_feedback = false
 var first_card = true
-@onready var pontosMoral = $MiddleControl/WrapperIndicadores/PontosMoral
-@onready var pontosTempo = $MiddleControl/WrapperIndicadores/PontosTempo
-@onready var pontosRecursos = $MiddleControl/WrapperIndicadores/PontosRecursos
-@onready var pontosProgresso = $MiddleControl/WrapperIndicadores/PontosProgresso
-@onready var pontosConfianca = $MiddleControl/WrapperIndicadores/PontosConfianca
+
+@onready var backIndicadores = $MiddleControl/WrapperIndicadores/BackIndicadores
+@onready var pontosMoral = $MiddleControl/WrapperIndicadores/BackIndicadores/PontosMoral
+@onready var pontosTempo = $MiddleControl/WrapperIndicadores/BackIndicadores/PontosTempo
+@onready var pontosRecursos = $MiddleControl/WrapperIndicadores/BackIndicadores/PontosRecursos
+@onready var pontosProgresso = $MiddleControl/WrapperIndicadores/BackIndicadores/PontosProgresso
+@onready var pontosConfianca = $MiddleControl/WrapperIndicadores/BackIndicadores/PontosConfianca
 @onready var cardContainer = $MiddleControl/CardContainer
 @onready var dilema = $MiddleControl/CardContainer/Dilema
 
@@ -26,6 +28,8 @@ func _ready():
 	pontosTempo.text = "5"
 	pontosProgresso.text = "0"
 	pontosConfianca.text="4"
+	
+	
 	
 
 func load_cards_data():
@@ -82,10 +86,10 @@ func set_points(node,direction,indicator):
 	var points = cards_data[card_id][direction+"_effects"][indicator]
 	node.text = str(node.text.to_int()+points)
 	if(direction==cards_data[card_id]["correct_answer"] && points !=0 ):
-		node.add_theme_color_override("font_color", Color(0, 1, 0))
+		node.add_theme_color_override("font_color", Color.GREEN)
 	if(direction!=cards_data[card_id]["correct_answer"] && points !=0 ):
-		node.add_theme_color_override("font_color", Color(1, 0, 0))
-	await get_tree().create_timer(0.5).timeout
+		node.add_theme_color_override("font_color", Color.RED)
+	await get_tree().create_timer(2).timeout
 	node.add_theme_color_override("font_color", Color(1,1,1))
 	
 func show_feedback_card(card_data,direction) -> Signal:

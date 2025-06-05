@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cmm0vn0hunfk0" path="res://assets/Indicadores/CrownIcon.png" id="7_wp0k4"]
 
 [node name="main" type="Control"]
+z_index = -3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,6 +17,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1")
+metadata/_edit_horizontal_guides_ = [-12.0]
 
 [node name="UI" type="Control" parent="."]
 anchors_preset = 0
@@ -40,164 +42,197 @@ anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
+offset_left = -242.0
+offset_right = 239.0
+offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="WrapperIndicadores" type="Control" parent="MiddleControl"]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -188.331
-offset_right = 188.331
-offset_bottom = 111.0
+anchor_left = -0.681
+anchor_right = 1.698
+anchor_bottom = 0.156
+offset_left = -4.39597
+offset_right = 0.188965
+offset_bottom = -0.0880051
 grow_horizontal = 2
 
-[node name="IndicadorMoral" type="TextureRect" parent="MiddleControl/WrapperIndicadores"]
+[node name="BackIndicadores" type="ColorRect" parent="MiddleControl/WrapperIndicadores"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 64.0
+offset_right = -52.884
+offset_bottom = 100.0
+grow_horizontal = 2
+color = Color(0.498039, 0.313726, 0.160784, 1)
+
+[node name="IndicadorMoral" type="TextureRect" parent="MiddleControl/WrapperIndicadores/BackIndicadores"]
 modulate = Color(0, 0, 0, 1)
+z_index = 2
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.027
 anchor_top = 0.132
 anchor_right = 0.222
 anchor_bottom = 0.802
-offset_left = -2.178
-offset_top = 1.988
-offset_right = -1.908
-offset_bottom = 2.018
+offset_left = -3.50899
+offset_top = -4.012
+offset_right = 4.04192
+offset_bottom = -3.982
 texture = ExtResource("3_nxtc6")
 stretch_mode = 3
 
-[node name="IndicadorRecursos" type="TextureRect" parent="MiddleControl/WrapperIndicadores"]
+[node name="IndicadorRecursos" type="TextureRect" parent="MiddleControl/WrapperIndicadores/BackIndicadores"]
 modulate = Color(0, 0, 0, 1)
+z_index = 2
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.193
 anchor_top = 0.132
 anchor_right = 0.389
 anchor_bottom = 0.846
-offset_left = 2.098
-offset_top = 0.988
-offset_right = 1.95399
-offset_bottom = 1.014
+offset_left = 0.767006
+offset_top = -5.012
+offset_right = 0.623001
+offset_bottom = -4.986
 texture = ExtResource("4_jlsqs")
 stretch_mode = 3
 
-[node name="InidicadotTempo" type="TextureRect" parent="MiddleControl/WrapperIndicadores"]
+[node name="InidicadotTempo" type="TextureRect" parent="MiddleControl/WrapperIndicadores/BackIndicadores"]
 modulate = Color(0, 0, 0, 1)
+z_index = 2
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.391
 anchor_top = 0.154
 anchor_right = 0.587
 anchor_bottom = 0.846
-offset_left = -1.87401
-offset_top = -1.014
-offset_right = -2.01801
-offset_bottom = 1.014
+offset_left = -3.20502
+offset_top = -7.014
+offset_right = -3.34901
+offset_bottom = -4.986
 texture = ExtResource("5_q8u5g")
 stretch_mode = 3
 
-[node name="IndicadorProgresso" type="TextureRect" parent="MiddleControl/WrapperIndicadores"]
+[node name="IndicadorProgresso" type="TextureRect" parent="MiddleControl/WrapperIndicadores/BackIndicadores"]
 modulate = Color(0, 0, 0, 1)
+z_index = 2
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.597
 anchor_top = 0.088
 anchor_right = 0.792
 anchor_bottom = 0.791
-offset_left = -2.158
-offset_top = 6.992
-offset_right = -1.88803
-offset_bottom = 7.019
+offset_left = -3.48903
+offset_top = 0.992001
+offset_right = 1.06189
+offset_bottom = 1.019
 texture = ExtResource("6_lhr70")
 stretch_mode = 3
 
-[node name="IndicadorConfianca" type="TextureRect" parent="MiddleControl/WrapperIndicadores"]
+[node name="IndicadorConfianca" type="TextureRect" parent="MiddleControl/WrapperIndicadores/BackIndicadores"]
 modulate = Color(0, 0, 0, 1)
+z_index = 2
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.785
 anchor_top = 0.132
 anchor_right = 0.981
 anchor_bottom = 0.846
-offset_left = -2.99002
-offset_top = 4.988
-offset_right = -3.13403
-offset_bottom = 5.014
+offset_left = -4.32101
+offset_top = -1.012
+offset_right = -4.46503
+offset_bottom = -0.986
 texture = ExtResource("7_wp0k4")
 stretch_mode = 3
 
-[node name="PontosMoral" type="Label" parent="MiddleControl/WrapperIndicadores"]
+[node name="PontosMoral" type="Label" parent="MiddleControl/WrapperIndicadores/BackIndicadores"]
+z_index = 2
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.07
+anchor_left = 0.0758139
 anchor_top = 0.714
-anchor_right = 0.167
-anchor_bottom = 0.967
-offset_left = 0.0200005
-offset_top = 0.0259933
-offset_right = -0.138008
-offset_bottom = 0.00299072
+anchor_right = 0.172814
+anchor_bottom = 0.99483
+offset_left = -1.31098
+offset_top = -5.97401
+offset_right = -1.46899
+offset_bottom = -5.05701
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "0"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="PontosConfianca" type="Label" parent="MiddleControl/WrapperIndicadores"]
+[node name="PontosConfianca" type="Label" parent="MiddleControl/WrapperIndicadores/BackIndicadores"]
+z_index = 2
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.831
+anchor_left = 0.833907
 anchor_top = 0.714
-anchor_right = 0.928
-anchor_bottom = 0.956
-offset_left = -1.03403
-offset_top = -1.97401
-offset_right = -1.19202
-offset_bottom = -0.996002
+anchor_right = 0.930907
+anchor_bottom = 0.98262
+offset_left = -2.36499
+offset_top = -7.97401
+offset_right = -2.52298
+offset_bottom = -5.83601
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "0"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="PontosProgresso" type="Label" parent="MiddleControl/WrapperIndicadores"]
+[node name="PontosProgresso" type="Label" parent="MiddleControl/WrapperIndicadores/BackIndicadores"]
+z_index = 2
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.643
+anchor_left = 0.646876
 anchor_top = 0.714
-anchor_right = 0.739
-anchor_bottom = 0.956
-offset_left = -0.201996
-offset_top = -0.974007
-offset_right = 0.0539856
-offset_bottom = 0.0039978
+anchor_right = 0.742876
+anchor_bottom = 0.98262
+offset_left = -1.53302
+offset_top = -6.97401
+offset_right = -1.27704
+offset_bottom = -4.83601
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "0"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="PontosTempo" type="Label" parent="MiddleControl/WrapperIndicadores"]
+[node name="PontosTempo" type="Label" parent="MiddleControl/WrapperIndicadores/BackIndicadores"]
+z_index = 2
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.437
+anchor_left = 0.437969
 anchor_top = 0.714
-anchor_right = 0.534
-anchor_bottom = 0.956
-offset_left = 0.0820007
-offset_top = -0.974007
-offset_right = -0.0760193
-offset_bottom = 0.0039978
+anchor_right = 0.534969
+anchor_bottom = 0.98262
+offset_left = -1.24899
+offset_top = -6.97401
+offset_right = -1.40701
+offset_bottom = -4.83601
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "0"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="PontosRecursos" type="Label" parent="MiddleControl/WrapperIndicadores"]
+[node name="PontosRecursos" type="Label" parent="MiddleControl/WrapperIndicadores/BackIndicadores"]
+z_index = 2
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.251
+anchor_left = 0.244
 anchor_top = 0.703
-anchor_right = 0.348
-anchor_bottom = 0.956
-offset_left = 0.0859909
-offset_top = 0.0270004
-offset_right = -0.0720062
-offset_bottom = 0.0039978
+anchor_right = 0.341
+anchor_bottom = 0.933
+offset_left = 0.978973
+offset_top = -5.973
+offset_right = 0.820953
+offset_bottom = 0.0270004
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "0"
 horizontal_alignment = 1
 uppercase = true
+metadata/_edit_use_anchors_ = true
 
 [node name="CardContainer" type="Control" parent="MiddleControl"]
 layout_mode = 1
@@ -205,19 +240,25 @@ anchor_left = 0.5
 anchor_top = 0.145
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_top = 0.0399933
+offset_left = -193.0
+offset_top = 50.04
+offset_right = 186.0
+offset_bottom = -122.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Dilema" type="Label" parent="MiddleControl/CardContainer"]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -171.5
-offset_right = 171.5
-offset_bottom = 29.0
+anchors_preset = -1
+anchor_left = -1.015
+anchor_top = -0.0767754
+anchor_right = 2.058
+anchor_bottom = 0.074
+offset_left = 77.6851
+offset_right = -69.9821
+offset_bottom = 0.0483494
 grow_horizontal = 2
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 metadata/_edit_use_anchors_ = true

@@ -20,8 +20,10 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.02448, 1)
 script = ExtResource("1")
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
+z_index = 2
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.382
@@ -32,56 +34,71 @@ offset_left = -0.0348015
 offset_top = 0.0220032
 offset_right = 8.59717
 offset_bottom = -3.01801
+grow_horizontal = 2
+grow_vertical = 2
 texture = SubResource("1")
 expand_mode = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="LeftChoiceLabel" type="Label" parent="."]
-layout_mode = 0
-anchor_left = -0.171
-anchor_top = -0.36
-anchor_right = 0.029
-anchor_bottom = -0.22
-offset_left = 0.036335
-offset_right = 0.036334
+[node name="FeedbackBackground" type="ColorRect" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0.315)
 
-[node name="RightChoiceLabel" type="Label" parent="."]
-layout_mode = 0
-anchor_left = 0.798
-anchor_top = -0.3
-anchor_right = 0.852
-anchor_bottom = -0.3
-offset_left = -12.2081
-offset_top = -11.0
-offset_right = 16.9919
-offset_bottom = 3.0
-
-[node name="LabelFeedback" type="Label" parent="."]
+[node name="LabelFeedback" type="Label" parent="TextureRect/FeedbackBackground"]
 z_index = 1
 layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.176
-anchor_top = -0.915
-anchor_right = 0.917
-anchor_bottom = -0.106
-offset_left = -0.0671387
-offset_top = -5.97
-offset_right = 93.4948
-offset_bottom = 7.692
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(0.660077, 0.90415)
+theme_override_font_sizes/font_size = 20
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
-[node name="FeedbackBackground" type="ColorRect" parent="."]
+[node name="LeftChoiceLabel" type="Label" parent="TextureRect"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.12
-anchor_top = -0.951
-anchor_right = 1.44
-offset_left = -0.0799999
-offset_top = -0.0179977
-offset_right = -0.0400085
-offset_bottom = -4.0
-color = Color(1, 1, 1, 0.315)
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="RightChoiceLabel" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="SwipeSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_tgmmg")

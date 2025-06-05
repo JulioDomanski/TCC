@@ -12,10 +12,10 @@ const SWIPE_THRESHOLD = 200
 
 # Referências aos nós
 @onready var texture_rect = $TextureRect
-@onready var label_feedback = $LabelFeedback
-@onready var label_left = $LeftChoiceLabel
-@onready var label_right = $RightChoiceLabel
-@onready var feedback_background = $FeedbackBackground
+@onready var label_feedback = $TextureRect/FeedbackBackground/LabelFeedback
+@onready var label_left = $TextureRect/LeftChoiceLabel
+@onready var label_right = $TextureRect/RightChoiceLabel
+@onready var feedback_background = $TextureRect/FeedbackBackground
 @onready var swipe_sound = $SwipeSound
 
 
@@ -38,12 +38,18 @@ func setup_card(data,is_feedback = false,direction="right"):
 		var image_texture = load(card_data["image"])
 		if image_texture:
 			texture_rect.texture = image_texture
+			
 	
 	# Configura os textos
 	
 	if is_feedback:
 		label_feedback.text = card_data["feedback"][direction]
 		label_feedback.visible = true
+	
+		if(card_data["correct_answer"] == direction):
+			label_feedback.add_theme_color_override("font_color", Color.DARK_GREEN)
+		else:
+			label_feedback.add_theme_color_override("font_color", Color.RED)
 		feedback_background.visible = true
 		feedback_background.modulate.a = 0
 		feedback_background.scale = Vector2(0.8, 0.8)
