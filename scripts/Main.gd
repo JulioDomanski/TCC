@@ -9,15 +9,23 @@ var feedback_data = {}
 var card_id = 0 # Dicionário para armazenar todas as cartas
 var showing_feedback = false
 var first_card = true
+@onready var pontosMoral = $MiddleControl/WrapperIndicadores/PontosMoral
+@onready var pontosTempo = $MiddleControl/WrapperIndicadores/PontosTempo
+@onready var pontosRecursos = $MiddleControl/WrapperIndicadores/PontosRecursos
+@onready var pontosProgresso = $MiddleControl/WrapperIndicadores/PontosProgresso
+@onready var pontosConfianca = $MiddleControl/WrapperIndicadores/PontosConfianca
+@onready var cardContainer = $MiddleControl/CardContainer
+@onready var dilema = $MiddleControl/CardContainer/Dilema
+
 func _ready():
 	load_cards_data()
 	initialize_deck()
 	spawn_new_card()
-	$WrapperIndicadores/PontosMoral.text = "3"
-	$WrapperIndicadores/PontosRecursos.text ="5"
-	$WrapperIndicadores/PontosTempo.text = "5"
-	$WrapperIndicadores/PontosProgresso.text = "0"
-	$WrapperIndicadores/PontosConfianca.text="4"
+	pontosMoral.text = "3"
+	pontosRecursos.text ="5"
+	pontosTempo.text = "5"
+	pontosProgresso.text = "0"
+	pontosConfianca.text="4"
 	
 
 func load_cards_data():
@@ -60,11 +68,12 @@ func spawn_new_card():
 	
 	# Cria a nova carta
 	current_card = CardScene.instantiate()
-	$CardContainer.add_child(current_card)
+	cardContainer.add_child(current_card)
+	
 	
 	# Configura a carta com os dados do JSON
 	current_card.setup_card(cards_data[card_id])
-	$CardContainer/Dilema.text = cards_data[card_id]["text"]
+	dilema.text = cards_data[card_id]["text"]
 	
 	# Conecta o sinal para saber quando a carta foi descartada
 	current_card.connect("card_discarded", Callable(self, "_on_card_discarded"))
@@ -88,7 +97,7 @@ func show_feedback_card(card_data,direction) -> Signal:
 	
 	# Create feedback card
 	current_card = CardScene.instantiate()
-	$CardContainer.add_child(current_card)
+	cardContainer.add_child(current_card)
 	current_card.setup_card(cards_data[card_id], true,direction)
 	current_card.connect("card_discarded", Callable(self, "_on_card_discarded"))
 	return current_card.card_discarded  # Wait until card is swiped
@@ -107,11 +116,11 @@ func _on_card_discarded(direction, card_data):
 		return
 	
 	print(cards_data[card_id][direction+"_effects"])	
-	set_points($WrapperIndicadores/PontosMoral,direction,"moral")
-	set_points($WrapperIndicadores/PontosRecursos,direction,"resources")
-	set_points($WrapperIndicadores/PontosProgresso,direction,"progress")
-	set_points($WrapperIndicadores/PontosTempo,direction,"time")
-	set_points($WrapperIndicadores/PontosConfianca,direction,"trust")
+	set_points(pontosMoral,direction,"moral")
+	set_points(pontosRecursos,direction,"resources")
+	set_points(pontosProgresso,direction,"progress")
+	set_points(pontosTempo,direction,"time")
+	set_points(pontosConfianca,direction,"trust")
 		
 	print("Carta descartada: ", direction)
 	# Aqui você pode processar os efeitos da carta se quiser
@@ -124,7 +133,7 @@ func _on_card_discarded(direction, card_data):
 	first_card = false
 	
 func is_game_over():
-	if(first_card == false and ($WrapperIndicadores/PontosConfianca.text.to_int()<=0 or$WrapperIndicadores/PontosProgresso.text.to_int()<=0 or $WrapperIndicadores/PontosTempo.text.to_int()<=0 or $WrapperIndicadores/PontosRecursos.text.to_int()<=0 or $WrapperIndicadores/PontosMoral.text.to_int()<=0)):
+	if(first_card == false and (pontosConfianca.text.to_int()<=0 or pontosProgresso.text.to_int()<=0 or pontosTempo.text.to_int()<=0 or pontosRecursos.text.to_int()<=0 or pontosMoral.text.to_int()<=0)):
 		return true;
 	return false;
 	

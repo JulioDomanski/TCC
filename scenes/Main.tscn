@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://d16duve6lpp3y"]
 
 [ext_resource type="Script" uid="uid://lc7tcfk1dkew" path="res://scripts/Main.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://unrvme56t2at" path="res://assets/backgrounds/background.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://c04vitrawgjjd" path="res://assets/backgrounds/BackGround 2.png" id="2_nxtc6"]
 [ext_resource type="Texture2D" uid="uid://cs45nupg5stxv" path="res://assets/Indicadores/BrainIcon.png" id="3_nxtc6"]
 [ext_resource type="Texture2D" uid="uid://6mb38bfhn0jt" path="res://assets/Indicadores/MoneyBagIcon.png" id="4_jlsqs"]
 [ext_resource type="Texture2D" uid="uid://sbqp7nr6nb1c" path="res://assets/Indicadores/TimeIcon.png" id="5_q8u5g"]
@@ -30,50 +30,30 @@ anchor_bottom = 1.0
 offset_right = 5.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2")
+texture = ExtResource("2_nxtc6")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="CardContainer" type="Control" parent="."]
+[node name="MiddleControl" type="Control" parent="."]
 layout_mode = 1
-anchor_left = 0.298
-anchor_top = 0.151
-anchor_right = 0.66
-anchor_bottom = 0.823
-offset_left = 2.70398
-offset_top = -3.84801
-offset_right = -0.320007
-offset_bottom = -0.304016
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Dilema" type="Label" parent="CardContainer"]
+[node name="WrapperIndicadores" type="Control" parent="MiddleControl"]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.104
-anchor_top = 0.034
-anchor_right = 0.894
-anchor_bottom = 0.087
-offset_left = -0.0559998
-offset_top = 0.0739994
-offset_right = -0.116028
-offset_bottom = -0.193001
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -188.331
+offset_right = 188.331
+offset_bottom = 111.0
+grow_horizontal = 2
 
-[node name="WrapperIndicadores" type="Control" parent="."]
-layout_mode = 1
-anchor_left = 0.3
-anchor_top = 0.003
-anchor_right = 0.66
-anchor_bottom = 0.144
-offset_left = 0.399994
-offset_top = 0.056
-offset_right = -0.320007
-offset_bottom = -0.312004
-
-[node name="IndicadorMoral" type="TextureRect" parent="WrapperIndicadores"]
+[node name="IndicadorMoral" type="TextureRect" parent="MiddleControl/WrapperIndicadores"]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
@@ -88,7 +68,7 @@ offset_bottom = 2.018
 texture = ExtResource("3_nxtc6")
 stretch_mode = 3
 
-[node name="IndicadorRecursos" type="TextureRect" parent="WrapperIndicadores"]
+[node name="IndicadorRecursos" type="TextureRect" parent="MiddleControl/WrapperIndicadores"]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
@@ -103,7 +83,7 @@ offset_bottom = 1.014
 texture = ExtResource("4_jlsqs")
 stretch_mode = 3
 
-[node name="InidicadotTempo" type="TextureRect" parent="WrapperIndicadores"]
+[node name="InidicadotTempo" type="TextureRect" parent="MiddleControl/WrapperIndicadores"]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
@@ -118,7 +98,7 @@ offset_bottom = 1.014
 texture = ExtResource("5_q8u5g")
 stretch_mode = 3
 
-[node name="IndicadorProgresso" type="TextureRect" parent="WrapperIndicadores"]
+[node name="IndicadorProgresso" type="TextureRect" parent="MiddleControl/WrapperIndicadores"]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
@@ -133,7 +113,7 @@ offset_bottom = 7.019
 texture = ExtResource("6_lhr70")
 stretch_mode = 3
 
-[node name="IndicadorConfianca" type="TextureRect" parent="WrapperIndicadores"]
+[node name="IndicadorConfianca" type="TextureRect" parent="MiddleControl/WrapperIndicadores"]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
@@ -148,7 +128,7 @@ offset_bottom = 5.014
 texture = ExtResource("7_wp0k4")
 stretch_mode = 3
 
-[node name="PontosMoral" type="Label" parent="WrapperIndicadores"]
+[node name="PontosMoral" type="Label" parent="MiddleControl/WrapperIndicadores"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.07
@@ -162,7 +142,7 @@ offset_bottom = 0.00299072
 text = "0"
 horizontal_alignment = 1
 
-[node name="PontosConfianca" type="Label" parent="WrapperIndicadores"]
+[node name="PontosConfianca" type="Label" parent="MiddleControl/WrapperIndicadores"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.831
@@ -176,7 +156,7 @@ offset_bottom = -0.996002
 text = "0"
 horizontal_alignment = 1
 
-[node name="PontosProgresso" type="Label" parent="WrapperIndicadores"]
+[node name="PontosProgresso" type="Label" parent="MiddleControl/WrapperIndicadores"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.643
@@ -190,7 +170,7 @@ offset_bottom = 0.0039978
 text = "0"
 horizontal_alignment = 1
 
-[node name="PontosTempo" type="Label" parent="WrapperIndicadores"]
+[node name="PontosTempo" type="Label" parent="MiddleControl/WrapperIndicadores"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.437
@@ -204,7 +184,7 @@ offset_bottom = 0.0039978
 text = "0"
 horizontal_alignment = 1
 
-[node name="PontosRecursos" type="Label" parent="WrapperIndicadores"]
+[node name="PontosRecursos" type="Label" parent="MiddleControl/WrapperIndicadores"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.251
@@ -218,3 +198,26 @@ offset_bottom = 0.0039978
 text = "0"
 horizontal_alignment = 1
 uppercase = true
+
+[node name="CardContainer" type="Control" parent="MiddleControl"]
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.145
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = 0.0399933
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dilema" type="Label" parent="MiddleControl/CardContainer"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -171.5
+offset_right = 171.5
+offset_bottom = 29.0
+grow_horizontal = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
