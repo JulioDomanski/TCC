@@ -21,6 +21,7 @@ const SWIPE_THRESHOLD = 200
 
 
 
+
 var card_data = {}
 
 
@@ -42,13 +43,24 @@ func _ready():
 	label_right.modulate.a = 0
 	
 	
-
+func check_card(card_data) -> String:
+	if(card_data["image"] == "Sir Cedric"):
+		return "res://assets/Cards/SirCedric.png"
+	if(card_data["image"] == "Lady Elara"):
+		return "res://assets/Cards/LadyElara.png"
+	if(card_data["image"] == "Anoes"):
+		return "res://assets/Cards/Anoes.png"
+	
+	return ""	
+	
+	
 func setup_card(data,is_feedback = false,direction="right"):
 	card_data = data
 	
 	# Carrega a imagem da carta
 	if card_data.has("image"):
-		var image_texture = load(card_data["image"])
+		
+		var image_texture = load(check_card(card_data))
 		if image_texture:
 			texture_rect.texture = image_texture
 			
