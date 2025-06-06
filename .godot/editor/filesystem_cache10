@@ -4,10 +4,11 @@ default_env.tres::Environment::8952826018721607875::1749245125::0::1::::<><><>0<
 export_presets.cfg::TextFile/TextFile::-1::1748817849::0::1::::<><><>0<>0<><>::
 icon.png::CompressedTexture2D/CompressedTexture2D::4241338009583973430::1747830470::1747832687::1::::<><><>0<>0<>7db4ec2050e894fe0a410af00efa0a8c<>res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex::
 ::res://assets/::1749130320
-::res://assets/backgrounds/::1749149593
+::res://assets/backgrounds/::1749245431
 BackGround 2.png::CompressedTexture2D/CompressedTexture2D::6588719780639053865::1749149593::1749149593::1::::<><><>0<>0<>3f7a3eb44bf591e9ac56bf363b02fd6d<>res://.godot/imported/BackGround 2.png-b10b8fe8ade86216030a5f7ab88fabd5.ctex::
+BackGround 3 .png::CompressedTexture2D::1267281337491750257::1749245352::1749245467::1::::<><><>0<>0<>9b523dff94bcf7163a9e768cb17d2610<>res://.godot/imported/BackGround 3 .png-ceed7c2e3111eb22b2868288abaedbca.ctex::
 background.png::CompressedTexture2D/CompressedTexture2D::1431684111977144007::1747830470::1747832691::1::::<><><>0<>0<>bc6b83637f38e3bbcceacc004ae746e0<>res://.godot/imported/background.png-5df4ef741238e6b81563560dbc198308.ctex::
-::res://assets/Cards/::1749245178
+::res://assets/Cards/::1749245180
 Anoes.png::CompressedTexture2D::2549103487064898593::1749244129::1749244133::1::::<><><>0<>0<>de5b800e96ebb07d57ec5a0e993da606<>res://.godot/imported/Anoes.png-1ff97f8c3461091e92f38a45a6ec6930.ctex::
 carta1 (2).png::CompressedTexture2D/CompressedTexture2D::3820562919929455376::1747830765::1747832687::0::::<><><>0<>0<>b3ac5f769037d6023ce017ceba9c5039<>::
 carta1.png::CompressedTexture2D/CompressedTexture2D::3369653937996737762::1747830470::1747832687::1::::<><><>0<>0<>7885f90eda2ee249559f590faccdc573<>res://.godot/imported/carta1.png-2468d190e2e9c6f526b97e5e6579c529.ctex::

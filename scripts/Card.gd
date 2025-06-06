@@ -50,7 +50,8 @@ func check_card(card_data) -> String:
 		return "res://assets/Cards/LadyElara.png"
 	if(card_data["image"] == "Anoes"):
 		return "res://assets/Cards/Anoes.png"
-	
+	if(card_data["image"] == "Rainha Stakeholdina"):
+		return "res://assets/Cards/RainhaStake.png"
 	return ""	
 	
 	
