@@ -1,6 +1,9 @@
 extends Control
 
-
+var texture_rect: TextureRect
+var label: Label
+var button: Button
+var vbox : VBoxContainer
 
 
 func _ready() : 
@@ -28,33 +31,6 @@ func _ready() :
 	
 	
 	await get_tree().process_frame  # Let Godot finish cleanup
-	'''
-	# Step 4: Add centered "GAME OVER" label
-	var label := Label.new()
-	label.text = "GAME OVER"
-	
-	var center = get_viewport().get_visible_rect().size / 2
-	print(center)
-
-	# Set offsets to center it exactly (if size is known/fixed)
-	label.offset_left = 100
-	label.offset_top = 100
-	label.offset_right = 200
-	label.offset_bottom = 200 
-
-	# OR: leave offsets at 0 and enable center alignment
-	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-
-	# Customize appearance
-	label.add_theme_font_size_override("font_size", 64)
-	label.modulate = Color(0, 0, 0, 0)
-
-	# Fade in effect
-	var tween_label := create_tween()
-	tween_label.tween_property(label, "modulate", Color(1, 1, 1, 1), 1.0)
-	black_overlay.add_child(label)
-	'''
 	# In _ready or a function:
 	var center_container := CenterContainer.new()
 	center_container.anchor_left = 0
@@ -93,7 +69,7 @@ func _ready() :
 	black_overlay.queue_free()
 
 	# Step 7: Create and fade in TextureRect
-	var texture_rect := TextureRect.new()
+	texture_rect = TextureRect.new()
 	texture_rect.texture = preload("res://assets/backgroundIntro/PrimeiraFoto.png")  # Replace with your image path
 	texture_rect.set_anchors_preset(Control.PRESET_FULL_RECT)
 	texture_rect.expand_mode = TextureRect.EXPAND_FIT_WIDTH
@@ -105,13 +81,13 @@ func _ready() :
 	var texture_fade := create_tween()
 	texture_fade.tween_property(texture_rect, "modulate", Color(1, 1, 1, 1), 1.5)
 	
-	var vbox := VBoxContainer.new()
+	vbox = VBoxContainer.new()
 	vbox.set_anchors_preset(Control.PRESET_FULL_RECT)
 	vbox.alignment = BoxContainer.ALIGNMENT_CENTER
 	add_child(vbox)
 
 	label = Label.new()
-	label.text = "This is a very long sentence that should wrap correctly to fit the screen."
+	
 
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	label.autowrap_mode = TextServer.AUTOWRAP_WORD
@@ -121,15 +97,47 @@ func _ready() :
 	vbox.add_child(label)
 
 	center_container.add_child(label)
-	typewriter_text(label ,"Reinava a ordem sob o Rei Ganttus, mestre das previsões e dos planos imutáveis.
+	await typewriter_text(label ,"Reinava a ordem sob o Rei Ganttus, mestre das previsões e dos planos imutáveis.
 Mas os ventos mudaram... e o Caos Escopial, avatar da imprevisibilidade, fez ruir aquilo que se acreditava eterno")
 	
+	
+	# === Button in Bottom-Right ===
+	button = Button.new()
+	button.text = "Continuar"
+	button.custom_minimum_size = Vector2(180, 50)
+	button.add_theme_font_size_override("font_size", 22)
+	button.modulate = Color(1, 1, 1, 0)  # Start fully transparent
+	add_child(button)
+
+	# === Anchor to Bottom-Right ===
+	button.anchor_left = 1
+	button.anchor_top = 1
+	button.anchor_right = 1
+	button.anchor_bottom = 1
+
+	button.offset_right = -30
+	button.offset_bottom = -30
+	button.offset_left = -210  # 180 width + 30 margin
+	button.offset_top = -80    # 50 height + 30 margin
+
+	# === Fade-in Tween (modulate.a)
+	var tween_button := create_tween()
+	tween_button.tween_property(button, "modulate", Color(1, 1, 1, 1), 1.0)
+
+
+	# Connect signal
+	button.pressed.connect(_on_continue_pressed)
 	
 func typewriter_text(label: Label, full_text: String, delay: float = 0.05) -> void:
 	label.text = ""  # Start empty
 	for i in full_text.length():
 		label.text += full_text[i]
 		await get_tree().create_timer(delay).timeout
+
+func _on_continue_pressed():
+	print("Button pressed! Moving to next scene...")
+	# Example: get_tree().change_scene_to_file("res://next_scene.tscn")
+
 		
 
 	
