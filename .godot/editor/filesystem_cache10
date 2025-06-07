@@ -1,9 +1,12 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1749268479
-default_env.tres::Environment::8952826018721607875::1749245476::0::1::::<><><>0<>0<><>::
+::res://::1749269038
+default_env.tres::Environment::8952826018721607875::1749269038::0::1::::<><><>0<>0<><>::
 export_presets.cfg::TextFile/TextFile::-1::1748817849::0::1::::<><><>0<>0<><>::
 icon.png::CompressedTexture2D/CompressedTexture2D::4241338009583973430::1747830470::1747832687::1::::<><><>0<>0<>7db4ec2050e894fe0a410af00efa0a8c<>res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex::
-::res://assets/::1749130320
+::res://assets/::1749269118
+::res://assets/backgroundIntro/::1749269191
+PrimeiraFoto.png::CompressedTexture2D::4829744729234597637::1749248855::1749269194::1::::<><><>0<>0<>7d62013dd05531ca43765e6af543291b<>res://.godot/imported/PrimeiraFoto.png-b48d5cdaa5a5e849a14fe9e66bb4a109.ctex::
+SegundaFoto.png::CompressedTexture2D::7189520057269894146::1749249014::1749269194::1::::<><><>0<>0<>4cdabab0cc9088be23f795ce6db9f4d9<>res://.godot/imported/SegundaFoto.png-fa5c07bf248bc501a3c62d753dcfbc43.ctex::
 ::res://assets/backgrounds/::1749245744
 BackGround 2.png::CompressedTexture2D/CompressedTexture2D::6588719780639053865::1749149593::1749149593::1::::<><><>0<>0<>3f7a3eb44bf591e9ac56bf363b02fd6d<>res://.godot/imported/BackGround 2.png-b10b8fe8ade86216030a5f7ab88fabd5.ctex::
 BackGround 3 .png::CompressedTexture2D/CompressedTexture2D::1267281337491750257::1749245744::1749245744::1::::<><><>0<>0<>9b523dff94bcf7163a9e768cb17d2610<>res://.godot/imported/BackGround 3 .png-ceed7c2e3111eb22b2868288abaedbca.ctex::
@@ -27,9 +30,10 @@ TimeIcon.png::CompressedTexture2D/CompressedTexture2D::1266463523675483186::1748
 flipcard-91468.wav::AudioStreamWAV/AudioStreamWAV::7314604863384884844::1748561202::1748561218::1::::<><><>0<>0<>9c3dbbbb5afba4cc1c81d8926decd86d<>res://.godot/imported/flipcard-91468.wav-5637c90e7f6a88a34c701edbebfa9c49.sample::
 ::res://data/::1749245744
 cards.json::JSON::-1::1749245744::0::1::::<><><>0<>0<><>::
-::res://scenes/::1749245744
-Card.tscn::PackedScene::2938919211256656803::1749245476::0::1::::<><><>0<>0<><>::uid://bdmk216entx4f::::res://scripts/Card.gd<>uid://dchiqdjn63jma::::res://assets/sounds/flipcard-91468.wav
-Main.tscn::PackedScene::9048386673493771924::1749245744::0::1::::<><><>0<>0<><>::uid://lc7tcfk1dkew::::res://scripts/Main.gd<>uid://sb465440yow4::::res://assets/backgrounds/BackGround 3 .png<>uid://cs45nupg5stxv::::res://assets/Indicadores/BrainIcon.png<>uid://6mb38bfhn0jt::::res://assets/Indicadores/MoneyBagIcon.png<>uid://sbqp7nr6nb1c::::res://assets/Indicadores/TimeIcon.png<>uid://cbn8v4ut5xvyi::::res://assets/Indicadores/CastleIcon.png<>uid://cmm0vn0hunfk0::::res://assets/Indicadores/CrownIcon.png
-::res://scripts/::1749245744
+::res://scenes/::1749269038
+Card.tscn::PackedScene::2938919211256656803::1749268828::0::1::::<><><>0<>0<><>::uid://bdmk216entx4f::::res://scripts/Card.gd<>uid://dchiqdjn63jma::::res://assets/sounds/flipcard-91468.wav
+Main.tscn::PackedScene::9048386673493771924::1749268972::0::1::::<><><>0<>0<><>::uid://lc7tcfk1dkew::::res://scripts/Main.gd<>uid://sb465440yow4::::res://assets/backgrounds/BackGround 3 .png<>uid://cs45nupg5stxv::::res://assets/Indicadores/BrainIcon.png<>uid://6mb38bfhn0jt::::res://assets/Indicadores/MoneyBagIcon.png<>uid://sbqp7nr6nb1c::::res://assets/Indicadores/TimeIcon.png<>uid://cbn8v4ut5xvyi::::res://assets/Indicadores/CastleIcon.png<>uid://cmm0vn0hunfk0::::res://assets/Indicadores/CrownIcon.png
+Intro.tscn::PackedScene::4863899524717276037::1749269038::0::1::::<><><>0<>0<><>::
+::res://scripts/::1749268972
 Card.gd::GDScript::2622416547714941411::1749245744::0::1::::<>Control<><>0<>0<><>::
-Main.gd::GDScript/GDScript::778183022639146622::1749149593::0::1::::<>Control<><>0<>0<><>::
+Main.gd::GDScript::778183022639146622::1749268972::0::1::::<>Control<><>0<>0<><>::

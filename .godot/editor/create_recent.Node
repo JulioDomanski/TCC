@@ -1,6 +1,6 @@
+Label
 ColorRect
+TextureRect
 Control
 AudioStreamPlayer
 AudioStreamPlayer2D
-Label
-TextureRect
