@@ -18,6 +18,7 @@ var first_card = true
 @onready var pontosConfianca = $MiddleControl/WrapperIndicadores/BackIndicadores/PontosConfianca
 @onready var cardContainer = $MiddleControl/CardContainer
 @onready var dilema = $MiddleControl/CardContainer/Dilema
+@onready var ui = $"UI"
 
 func _ready():
 	load_cards_data()
@@ -30,6 +31,8 @@ func _ready():
 	pontosConfianca.text="4"
 	
 	
+	
+
 	
 
 func load_cards_data():
@@ -60,8 +63,8 @@ func initialize_deck():
 func spawn_new_card():
 	# Verifica se tem cartas no deck
 	if deck.size() == 0:
-		initialize_deck() # Recarrega se acabou
-	
+		dilema.text = "Parabens voce reconstruiu o castelo" # Recarrega se acabou
+		return 
 	# Remove a carta atual se existir
 	if current_card:
 		current_card.queue_free()
@@ -137,8 +140,8 @@ func _on_card_discarded(direction, card_data):
 	first_card = false
 	
 func is_game_over():
-	if(first_card == false and (pontosConfianca.text.to_int()<=0 or pontosProgresso.text.to_int()<=0 or pontosTempo.text.to_int()<=0 or pontosRecursos.text.to_int()<=0 or pontosMoral.text.to_int()<=0)):
-		return true;
+#	if(first_card == false and (pontosConfianca.text.to_int()<=0 or pontosProgresso.text.to_int()<=0 or pontosTempo.text.to_int()<=0 or pontosRecursos.text.to_int()<=0 or pontosMoral.text.to_int()<=0)):
+	#	return true;
 	return false;
 	
 func game_over():
