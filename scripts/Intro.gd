@@ -7,7 +7,9 @@ extends Control
 @onready var personagem_texture : TextureRect
 @onready var personagem_label : Label
 @onready var personagem_nome : Label
+@onready var center : CenterContainer
 
+var mostrar_capitulo = false
 var personagem_index = 0
 var scene_counter := 1
 var personagens = [
@@ -160,121 +162,143 @@ func typewriter_text(label: Label, full_text: String, delay: float = 0.05) -> vo
 		await get_tree().create_timer(delay).timeout
 
 func mostrar_personagem(index: int):
-	if index >= personagens.size():
-		print("Todos os personagens foram mostrados.")
-		return
-
-	var dados = personagens[index]
-	personagem_texture.texture = load(dados["imagem"])
-	personagem_label.text = dados["descricao"]
-	personagem_nome.text = dados["nome"]
-
-	# Fade in
-	var fade_in = create_tween()
 	
-	fade_in.tween_property(personagem_texture, "modulate", Color(1, 1, 1, 1), 1.0)
-	fade_in.tween_property(personagem_nome, "modulate", Color(1, 1, 1, 1), 1.0)
-	fade_in.tween_property(personagem_label, "modulate", Color(1, 1, 1, 1), 1.0)
+	if(mostrar_capitulo != true):
+		var dados = personagens[index]
+		personagem_texture.texture = load(dados["imagem"])
+		personagem_label.text = dados["descricao"]
+		personagem_nome.text = dados["nome"]
+
+		# Fade in
+		var fade_in = create_tween()
+		
+		fade_in.tween_property(personagem_texture, "modulate", Color(1, 1, 1, 1), 1.0)
+		fade_in.tween_property(personagem_nome, "modulate", Color(1, 1, 1, 1), 1.0)
+		fade_in.tween_property(personagem_label, "modulate", Color(1, 1, 1, 1), 1.0)
+		await fade_in.finished
+		var fade_in_button = create_tween()
+		fade_in_button.tween_property(button, "modulate", Color(1, 1, 1, 1), 1.0)
+		
+		personagem_index+=1
 	
-	personagem_index+=1
+		if personagem_index >= personagens.size():
+			mostrar_capitulo = true
+			return
 	
 	
 
 func _on_continue_pressed():
-	if(scene_counter == 1):
-		# Fade out current image and label
-		var fade_out := create_tween()
-		fade_out.tween_property(texture_rect, "modulate", Color(1, 1, 1, 0), 1.0)
-		fade_out.tween_property(label, "modulate", Color(1, 1, 1, 0), 1.0)
-		fade_out.tween_property(button, "modulate", Color(1, 1, 1, 0), 0.5)
-		await fade_out.finished
+	if(mostrar_capitulo != true):
+		if(scene_counter == 1):
+			# Fade out current image and label
+			var fade_out := create_tween()
+			fade_out.tween_property(texture_rect, "modulate", Color(1, 1, 1, 0), 1.0)
+			fade_out.tween_property(label, "modulate", Color(1, 1, 1, 0), 1.0)
+			fade_out.tween_property(button, "modulate", Color(1, 1, 1, 0), 0.5)
+			await fade_out.finished
 
-		# Swap texture and label text
-		texture_rect.texture = preload("res://assets/backgroundIntro/SegundaFoto.png")
-		label.text = ""
-		label.modulate = Color(1, 1, 1, 1)
+			# Swap texture and label text
+			texture_rect.texture = preload("res://assets/backgroundIntro/SegundaFoto.png")
+			label.text = ""
+			label.modulate = Color(1, 1, 1, 1)
 
-		# Fade in image again
-		var fade_in := create_tween()
-		fade_in.tween_property(texture_rect, "modulate", Color(1, 1, 1, 1), 1.0)
-		await fade_in.finished
+			# Fade in image again
+			var fade_in := create_tween()
+			fade_in.tween_property(texture_rect, "modulate", Color(1, 1, 1, 1), 1.0)
+			await fade_in.finished
 
-		# Type new text
-		await typewriter_text(label, "Com o trono vago e o reino desolado, recai sobre ti, jovem herdeiro, a missão de reconstrução.
-	Mas não com correntes... com ciclos. Não com decretos... com colaboração.
-	Bem-vindo ao desafio da nova liderança.
-	Agora, conheça os bravos heróis que caminharão ao teu lado nessa jornada.")
+			# Type new text
+			await typewriter_text(label, "Com o trono vago e o reino desolado, recai sobre ti, jovem herdeiro, a missão de reconstrução.
+		Mas não com correntes... com ciclos. Não com decretos... com colaboração.
+		Bem-vindo ao desafio da nova liderança.
+		Agora, conheça os bravos heróis que caminharão ao teu lado nessa jornada.")
 
-		# Fade in button again
-		var fade_in_btn := create_tween()
-		fade_in_btn.tween_property(button, "modulate", Color(1, 1, 1, 1), 1.0)
-		scene_counter +=1
-		return
+			# Fade in button again
+			var fade_in_btn := create_tween()
+			fade_in_btn.tween_property(button, "modulate", Color(1, 1, 1, 1), 1.0)
+			
 
-		# You can continue this flow by changing textures/text again in more button presses
+			# You can continue this flow by changing textures/text again in more button presses
+			
+		if(scene_counter == 2):
+			var fade_out := create_tween()
+			fade_out.tween_property(label, "modulate", Color(1, 1, 1, 0), 1.0)
+			fade_out.tween_property(button, "modulate", Color(1, 1, 1, 0), 0.5)
+			await fade_out.finished
+			label.queue_free()
+			vbox.queue_free()
+			# CenterContainer to center everything
+			var center := CenterContainer.new()
+			center.set_anchors_preset(Control.PRESET_FULL_RECT)
+			center.mouse_filter = Control.MOUSE_FILTER_IGNORE
+			add_child(center)
+
+			# VBoxContainer to stack image + label vertically
+			var character_box := VBoxContainer.new()
+			character_box.alignment = BoxContainer.ALIGNMENT_CENTER
+			character_box.set_anchors_preset(Control.PRESET_CENTER)
+			center.add_child(character_box)
+			
+			personagem_nome = Label.new()
+			personagem_nome.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+			personagem_nome.vertical_alignment = VERTICAL_ALIGNMENT_TOP
+			personagem_nome.add_theme_font_size_override("font_size", 35)
+			personagem_nome.modulate = Color(1, 1, 1, 0)
+			character_box.add_child(personagem_nome)
+			# TextureRect for character image
+			personagem_texture = TextureRect.new()
+			personagem_texture.expand_mode = TextureRect.EXPAND_FIT_WIDTH
+			personagem_texture.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+			personagem_texture.custom_minimum_size = Vector2(400, 400)
+			personagem_texture.modulate = Color(1, 1, 1, 0)
+			personagem_texture.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+			character_box.add_child(personagem_texture)
+			
+
+			# Label for description
+			personagem_label = Label.new()
+			personagem_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+			personagem_label.vertical_alignment = VERTICAL_ALIGNMENT_BOTTOM
+			personagem_label.autowrap_mode = TextServer.AUTOWRAP_WORD
+			personagem_label.add_theme_font_size_override("font_size", 26)
+			personagem_label.modulate = Color(1, 1, 1, 0)
+			personagem_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+			character_box.add_child(personagem_label)
+
+
+			await mostrar_personagem(personagem_index)
+			
+			var fade_in_btn := create_tween()
+			fade_in_btn.tween_property(button, "modulate", Color(1, 1, 1, 1), 1.0)
+			
+			
+			
+			
+		if(scene_counter >= 3):
+			
+			
+			var fade_out := create_tween()
+			fade_out.tween_property(personagem_texture, "modulate", Color(1, 1, 1, 0), 1.0)
+			fade_out.tween_property(personagem_nome, "modulate", Color(1, 1, 1, 0), 0.5)
+			fade_out.tween_property(personagem_label, "modulate", Color(1, 1, 1, 0), 0.5)
+			fade_out.tween_property(button, "modulate", Color(1, 1, 1, 0), 0.5)
+			await fade_out.finished
+			mostrar_personagem(personagem_index)
+		scene_counter += 1
+	else:
+		var fade_out_personagem = create_tween()
+		fade_out_personagem.tween_property(button, "modulate", Color(1, 1, 1, 0), 0.5)
+		fade_out_personagem.tween_property(personagem_texture, "modulate", Color(1, 1, 1, 0), 1.0)
+		fade_out_personagem.tween_property(personagem_nome, "modulate", Color(1, 1, 1, 0), 0.5)
+		fade_out_personagem.tween_property(personagem_label, "modulate", Color(1, 1, 1, 0), 0.5)
+		await fade_out_personagem.finished
+		personagem_texture.queue_free()
+		personagem_label.queue_free()
 		
-	if(scene_counter == 2):
-		var fade_out := create_tween()
-		fade_out.tween_property(label, "modulate", Color(1, 1, 1, 0), 1.0)
-		fade_out.tween_property(button, "modulate", Color(1, 1, 1, 0), 0.5)
-		await fade_out.finished
-		label.queue_free()
-		vbox.queue_free()
-		# CenterContainer to center everything
-		var center := CenterContainer.new()
-		center.set_anchors_preset(Control.PRESET_FULL_RECT)
-		center.mouse_filter = Control.MOUSE_FILTER_IGNORE
-		add_child(center)
-
-		# VBoxContainer to stack image + label vertically
-		var character_box := VBoxContainer.new()
-		character_box.alignment = BoxContainer.ALIGNMENT_CENTER
-		character_box.set_anchors_preset(Control.PRESET_CENTER)
-		center.add_child(character_box)
-		
-		personagem_nome = Label.new()
-		personagem_nome.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-		personagem_nome.vertical_alignment = VERTICAL_ALIGNMENT_TOP
-		personagem_nome.add_theme_font_size_override("font_size", 35)
-		personagem_nome.modulate = Color(1, 1, 1, 0)
-		character_box.add_child(personagem_nome)
-		# TextureRect for character image
-		personagem_texture = TextureRect.new()
-		personagem_texture.expand_mode = TextureRect.EXPAND_FIT_WIDTH
-		personagem_texture.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-		personagem_texture.custom_minimum_size = Vector2(400, 400)
-		personagem_texture.modulate = Color(1, 1, 1, 0)
-		personagem_texture.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-		character_box.add_child(personagem_texture)
+		var fade_in_capitulo = create_tween()
+		personagem_nome.text = "Capitulo 1:"
+		fade_in_capitulo.tween_property(personagem_nome, "modulate", Color(1, 1, 1, 1), 1.0)
 		
 
-		# Label for description
-		personagem_label = Label.new()
-		personagem_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-		personagem_label.vertical_alignment = VERTICAL_ALIGNMENT_BOTTOM
-		personagem_label.autowrap_mode = TextServer.AUTOWRAP_WORD
-		personagem_label.add_theme_font_size_override("font_size", 26)
-		personagem_label.modulate = Color(1, 1, 1, 0)
-		personagem_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-		character_box.add_child(personagem_label)
-
-
-		await mostrar_personagem(personagem_index)
-		
-		var fade_in_btn := create_tween()
-		fade_in_btn.tween_property(button, "modulate", Color(1, 1, 1, 1), 1.0)
-		
-		
-		
-		
-	if(scene_counter >= 3):
-		var fade_out := create_tween()
-		fade_out.tween_property(personagem_texture, "modulate", Color(1, 1, 1, 0), 1.0)
-		fade_out.tween_property(personagem_nome, "modulate", Color(1, 1, 1, 0), 0.5)
-		fade_out.tween_property(personagem_label, "modulate", Color(1, 1, 1, 0), 0.5)
-		await fade_out.finished
-		mostrar_personagem(personagem_index)
-	scene_counter += 1
-		
-
+	
 	
