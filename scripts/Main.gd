@@ -24,11 +24,11 @@ func _ready():
 	load_cards_data()
 	initialize_deck()
 	spawn_new_card()
-	pontosMoral.text = "3"
-	pontosRecursos.text ="5"
-	pontosTempo.text = "5"
-	pontosProgresso.text = "0"
-	pontosConfianca.text="4"
+	pontosMoral.text = "20"
+	pontosRecursos.text ="20"
+	pontosTempo.text = "20"
+	pontosProgresso.text = "20"
+	pontosConfianca.text="20"
 	
 	
 	
@@ -140,8 +140,8 @@ func _on_card_discarded(direction, card_data):
 	first_card = false
 	
 func is_game_over():
-#	if(first_card == false and (pontosConfianca.text.to_int()<=0 or pontosProgresso.text.to_int()<=0 or pontosTempo.text.to_int()<=0 or pontosRecursos.text.to_int()<=0 or pontosMoral.text.to_int()<=0)):
-	#	return true;
+	if(first_card == false and (pontosConfianca.text.to_int()<=0 or pontosProgresso.text.to_int()<=0 or pontosTempo.text.to_int()<=0 or pontosRecursos.text.to_int()<=0 or pontosMoral.text.to_int()<=0)):
+		return true;
 	return false;
 	
 func game_over():

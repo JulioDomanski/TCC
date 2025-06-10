@@ -1,142 +1,142 @@
 [
   {
 	"id": 1,
-	"text": "Sire, os Anões estão desorganizados! Cada um segue planos diferentes e não se comunicam. A obra da muralha está um caos!",
-	"left_choice": "Reúna-os diariamente para alinhamento e inspeção.",
-	"right_choice": "Deixe-os trabalhar como quiserem, sem interferir.",
+	"text": "Majestade, o povo aguarda um plano detalhado de reconstrução com cada passo nos próximos anos. Como devemos proceder?",
+	"left_choice": "Adote ciclos curtos e entregas frequentes. Vamos nos adaptar conforme avançamos.",
+	"right_choice": "Crie um plano completo e rígido. Precisamos prever tudo desde o início.",
 	"image": "Sir Cedric",
 	"left_effects": { "moral": 10, "resources": -2, "time": 5, "trust": 10, "progress": 10 },
-	"right_effects": { "moral": -10, "resources": 0, "time": -10, "trust": -15, "progress": -5 },
+	"right_effects": { "moral": -20, "resources": -2, "time": -15, "trust": -20, "progress": -15 },
 	"correct_answer": "left",
 	"feedback": {
-	  "left": "Muito bem, Sire! Reuniões diárias promovem transparência, evitam retrabalho e fortalecem o time. (Sir Cedric)",
-	  "right": "Sem comunicação, o caos reina. Um time desalinhado jamais construirá um reino ágil. (Sir Cedric)"
+	  "left": "Flexibilidade é essencial, majestade. Em tempos de incerteza, adaptabilidade é mais valiosa que previsões. (Sir Cedric)",
+	  "right": "Planos imutáveis são frágeis diante do caos. O reino precisa de ritmo, não rigidez. (Sir Cedric)"
 	}
   },
   {
 	"id": 2,
-	"text": "Alguns nobres sugerem que vossa majestade centralize todas as decisões. Dizem que 'a corte atrasa tudo'.",
-	"left_choice": "Confiemos no time. Decisões devem ser compartilhadas.",
-	"right_choice": "Assumirei o controle! Tudo passará por mim.",
-	"image": "Lady Elara",
-	"left_effects": { "moral": 15, "resources": 0, "time": 5, "trust": 15, "progress": 10 },
-	"right_effects": { "moral": -15, "resources": 0, "time": -5, "trust": -20, "progress": -10 },
+	"text": "Sir Cedric sugere que, antes de cada ciclo de trabalho, a equipe se reúna para planejar em conjunto. Concorda?",
+	"left_choice": "Sim, todos devem entender os objetivos e colaborar nas decisões.",
+	"right_choice": "Não, só os líderes precisam saber. Os demais devem apenas executar.",
+	"image": "Sir Cedric",
+	"left_effects": { "moral": 10, "resources": 0, "time": 5, "trust": 10, "progress": 10 },
+	"right_effects": { "moral": -20, "resources": 0, "time": -10, "trust": -20, "progress": -10 },
 	"correct_answer": "left",
 	"feedback": {
-	  "left": "Sábia escolha, meu Rei. Equipes auto-organizadas são mais comprometidas e eficazes. (Lady Elara)",
-	  "right": "Centralizar o poder desmotiva a equipe. O Scrum valoriza a colaboração e o empoderamento. (Lady Elara)"
+	  "left": "Excelente, Sire! Planejamentos colaborativos aumentam engajamento e reduzem erros. (Sir Cedric)",
+	  "right": "Ordens cegas não constroem equipes fortes. Liderança exige escuta e alinhamento. (Sir Cedric)"
 	}
   },
   {
 	"id": 3,
-	"text": "Os construtores não entendem os objetivos reais da obra. Cada um pensa uma coisa. Isso afeta o moral.",
-	"left_choice": "Divulguem a visão do castelo para todos.",
-	"right_choice": "Eles não precisam saber dos planos, só obedecer.",
-	"image": "Sir Cedric",
-	"left_effects": { "moral": 10, "resources": -2, "time": 0, "trust": 10, "progress": 5 },
-	"right_effects": { "moral": -10, "resources": 0, "time": 0, "trust": -15, "progress": -5 },
+	"text": "Os trabalhadores estão desmotivados. Dizem não entender por que cada tarefa muda tanto.",
+	"left_choice": "Explique que estamos aprendendo e ajustando conforme o reino evolui.",
+	"right_choice": "Ignore. Eles devem apenas cumprir ordens.",
+	"image": "Lady Elara",
+	"left_effects": { "moral": 15, "resources": 0, "time": 2, "trust": 10, "progress": 5 },
+	"right_effects": { "moral": -25, "resources": 0, "time": -10, "trust": -15, "progress": -10 },
 	"correct_answer": "left",
 	"feedback": {
-	  "left": "Clareza nos objetivos gera alinhamento. Transparência é vital, Sire! (Sir Cedric)",
-	  "right": "Sem saber a direção, até o melhor construtor se perde. (Lady Elara)"
+	  "left": "Transparência constrói confiança. Adaptar-se não é fraqueza, é inteligência. (Lady Elara)",
+	  "right": "Trabalhar no escuro mina a motivação. O povo precisa de propósito, não apenas tarefas. (Lady Elara)"
 	}
   },
   {
 	"id": 4,
-	"text": "Um dos Anões apontou erros na fundação, mas foi ignorado pelos veteranos.",
-	"left_choice": "Incentive todos a falarem, mesmo os novatos.",
-	"right_choice": "Veteranos sempre sabem mais. Ignore o alerta.",
+	"text": "A Guilda dos Anões quer começar logo a reconstrução, mesmo sem todos os requisitos definidos.",
+	"left_choice": "Apoie. Podemos iniciar com o que temos e ajustar conforme avançamos.",
+	"right_choice": "Espere tudo estar claro. Não devemos correr riscos.",
 	"image": "Anoes",
-	"left_effects": { "moral": 10, "resources": -2, "time": -2, "trust": 10, "progress": 5 },
-	"right_effects": { "moral": -10, "resources": -5, "time": -5, "trust": -10, "progress": -10 },
+	"left_effects": { "moral": 10, "resources": 0, "time": 5, "trust": 10, "progress": 10 },
+	"right_effects": { "moral": -15, "resources": 0, "time": -10, "trust": -15, "progress": -10 },
 	"correct_answer": "left",
 	"feedback": {
-	  "left": "Respeitar todas as vozes gera um ambiente seguro e adaptável, Sire. (Lady Elara)",
-	  "right": "Ignorar quem alerta problemas compromete todo o castelo. (Sir Cedric)"
+	  "left": "Trabalhar com entregas incrementais nos permite avançar com segurança. (Guilda dos Anões)",
+	  "right": "Esperar demais pode paralisar o progresso e desmotivar os construtores. (Guilda dos Anões)"
 	}
   },
   {
 	"id": 5,
-	"text": "A muralha tremeu durante uma ventania. Alguns sugerem revisar a estrutura antes de continuar.",
-	"left_choice": "Vamos inspecionar antes de seguir!",
-	"right_choice": "Isso é perda de tempo. Continuem a construção.",
-	"image": "Sir Cedric",
-	"left_effects": { "moral": 5, "resources": -5, "time": -5, "trust": 10, "progress": 5 },
-	"right_effects": { "moral": -10, "resources": 0, "time": -10, "trust": -10, "progress": -5 },
+	"text": "A Rainha Stakeholdina exige uma previsão exata de quando o castelo estará pronto.",
+	"left_choice": "Explique que faremos entregas por ciclos curtos e ajustaremos conforme aprendermos.",
+	"right_choice": "Dê uma data exata, mesmo sem certeza. Isso a deixará mais calma.",
+	"image": "Rainha Stakeholdina",
+	"left_effects": { "moral": 5, "resources": 0, "time": 5, "trust": 10, "progress": 5 },
+	"right_effects": { "moral": -15, "resources": 0, "time": -15, "trust": -20, "progress": -10 },
 	"correct_answer": "left",
 	"feedback": {
-	  "left": "A inspeção evita catástrofes maiores e fortalece a entrega contínua. (Sir Cedric)",
-	  "right": "Avançar sem refletir sobre falhas é dar força ao Caos Escopial. (Lady Elara)"
+	  "left": "Promessas realistas baseadas em ciclos geram mais confiança a longo prazo. (Rainha Stakeholdina)",
+	  "right": "Prometer o impossível só trará decepções e desconfiança. (Rainha Stakeholdina)"
 	}
   },
   {
 	"id": 6,
-	"text": "Lady Elara propõe uma reunião semanal para mostrar o progresso do castelo aos nobres.",
-	"left_choice": "Sim! Transparência fortalece o reino.",
-	"right_choice": "Melhor manter os detalhes entre nós.",
-	"image": "Lady Elara",
-	"left_effects": { "moral": 5, "resources": -2, "time": -2, "trust": 15, "progress": 5 },
-	"right_effects": { "moral": -5, "resources": 0, "time": 0, "trust": -10, "progress": -5 },
+	"text": "Sir Cedric propõe que façamos uma breve retrospectiva ao final desta primeira fase.",
+	"left_choice": "Apoie a ideia. Refletir sobre o que funcionou ou não pode ajudar muito.",
+	"right_choice": "Não. Isso é perda de tempo. Precisamos continuar produzindo.",
+	"image": "Sir Cedric",
+	"left_effects": { "moral": 10, "resources": 0, "time": -2, "trust": 10, "progress": 5 },
+	"right_effects": { "moral": -15, "resources": 0, "time": 5, "trust": -15, "progress": -10 },
 	"correct_answer": "left",
 	"feedback": {
-	  "left": "Mostrar entregas fortalece a confiança dos stakeholders e dá direção ao time. (Lady Elara)",
-	  "right": "Ocultar o progresso só alimenta a desconfiança e o desengajamento. (Sir Cedric)"
+	  "left": "Aprender com a experiência fortalece as próximas decisões. (Sir Cedric)",
+	  "right": "Ignorar lições nos condena a repetir erros. (Sir Cedric)"
 	}
   },
   {
 	"id": 7,
-	"text": "Um dos escudeiros cometeu um erro ao cortar as pedras. Está com medo de ser punido.",
-	"left_choice": "Acolha-o. Errar faz parte do aprendizado.",
-	"right_choice": "Puni-lo é necessário. Precisamos de disciplina.",
-	"image": "Sir Cedric",
-	"left_effects": { "moral": 10, "resources": -2, "time": -2, "trust": 10, "progress": 5 },
-	"right_effects": { "moral": -15, "resources": 0, "time": -5, "trust": -10, "progress": -5 },
+	"text": "Lady Elara quer priorizar a reconstrução do portão, pois é o que mais preocupa o povo.",
+	"left_choice": "Apoie a decisão. Entregar valor para o povo é prioridade.",
+	"right_choice": "Negue. Seguiremos o plano original, sem mudanças.",
+	"image": "Lady Elara",
+	"left_effects": { "moral": 10, "resources": -2, "time": -2, "trust": 10, "progress": 10 },
+	"right_effects": { "moral": -15, "resources": 0, "time": 0, "trust": -15, "progress": -10 },
 	"correct_answer": "left",
 	"feedback": {
-	  "left": "Ambientes que acolhem o erro promovem coragem e aprendizado constante. (Sir Cedric)",
-	  "right": "O medo paralisa a inovação. Ninguém cresce sob repressão, Sire. (Lady Elara)"
+	  "left": "Priorizar com base no valor entregue é essencial para reconstruir com impacto. (Lady Elara)",
+	  "right": "Insistir em planos engessados afasta o time das necessidades reais. (Lady Elara)"
 	}
   },
   {
 	"id": 8,
-	"text": "Alguns querem trabalhar dia e noite para entregar rápido. Mas outros alertam sobre o cansaço.",
-	"left_choice": "Compromisso não é sacrifício. Devem descansar.",
-	"right_choice": "Ordens são ordens. Trabalhem sem parar!",
-	"image": "Lady Elara",
-	"left_effects": { "moral": 15, "resources": -2, "time": 0, "trust": 10, "progress": 5 },
-	"right_effects": { "moral": -20, "resources": 0, "time": -5, "trust": -15, "progress": -10 },
+	"text": "A Guilda dos Anões sugere que definam suas próprias tarefas ao invés de receber ordens diretas.",
+	"left_choice": "Apoie a auto-organização. Eles sabem como trabalhar melhor.",
+	"right_choice": "Negue. Um líder deve dar todas as ordens.",
+	"image": "Anoes",
+	"left_effects": { "moral": 10, "resources": 0, "time": 5, "trust": 10, "progress": 10 },
+	"right_effects": { "moral": -15, "resources": 0, "time": -10, "trust": -15, "progress": -10 },
 	"correct_answer": "left",
 	"feedback": {
-	  "left": "Um time saudável entrega com consistência. Comprometimento vem do equilíbrio. (Lady Elara)",
-	  "right": "Desgaste compromete qualidade e destrói o moral. O Caos Escopial adora times exaustos. (Sir Cedric)"
+	  "left": "Equipes auto-organizadas são mais ágeis e comprometidas com o sucesso. (Guilda dos Anões)",
+	  "right": "Centralizar tudo sobrecarrega a liderança e desmotiva a equipe. (Guilda dos Anões)"
 	}
   },
   {
 	"id": 9,
-	"text": "A equipe parece desmotivada. Muitos não entendem o impacto de suas tarefas no todo.",
-	"left_choice": "Mostre a eles o valor do que entregam.",
-	"right_choice": "Eles só precisam seguir ordens.",
-	"image": "Lady Elara",
+	"text": "A Rainha Stakeholdina enviou uma lista de exigências longas e detalhadas. Como devemos lidar?",
+	"left_choice": "Alinhe expectativas com ela e mostre como vamos priorizar valor aos poucos.",
+	"right_choice": "Aceite tudo sem discutir. É melhor evitar conflito.",
+	"image": "Rainha Stakeholdina",
 	"left_effects": { "moral": 10, "resources": 0, "time": 5, "trust": 10, "progress": 5 },
-	"right_effects": { "moral": -10, "resources": 0, "time": -5, "trust": -10, "progress": -5 },
+	"right_effects": { "moral": -20, "resources": 0, "time": -10, "trust": -20, "progress": -10 },
 	"correct_answer": "left",
 	"feedback": {
-	  "left": "Ver propósito no trabalho motiva mais que qualquer ouro, Sire. (Lady Elara)",
-	  "right": "Trabalhar sem entender o porquê transforma guerreiros em peões desmotivados. (Sir Cedric)"
+	  "left": "Alinhamento com stakeholders é essencial para evitar desperdícios. (Rainha Stakeholdina)",
+	  "right": "Aceitar tudo sem planejamento gera caos e sobrecarga. (Rainha Stakeholdina)"
 	}
   },
   {
 	"id": 10,
-	"text": "Alguns membros querem experimentar uma nova forma de esculpir as pedras. Dizem que pode melhorar.",
-	"left_choice": "Deixe que testem. Adaptar é preciso.",
-	"right_choice": "Sigam os métodos antigos. É mais seguro.",
-	"image": "Anoes",
-	"left_effects": { "moral": 10, "resources": -5, "time": 5, "trust": 10, "progress": 10 },
-	"right_effects": { "moral": -5, "resources": 0, "time": -2, "trust": -5, "progress": -5 },
+	"text": "Sir Cedric questiona se devemos manter documentação mínima durante a reconstrução.",
+	"left_choice": "Sim, apenas o necessário para que todos entendam e colaborem.",
+	"right_choice": "Não. Devemos documentar tudo em detalhes extensos.",
+	"image": "Sir Cedric",
+	"left_effects": { "moral": 10, "resources": 0, "time": 5, "trust": 10, "progress": 5 },
+	"right_effects": { "moral": -20, "resources": -5, "time": -15, "trust": -10, "progress": -10 },
 	"correct_answer": "left",
 	"feedback": {
-	  "left": "A adaptação é um dos pilares do Scrum. É assim que evoluímos. (Sir Cedric)",
-	  "right": "Recusar mudanças por medo só fortalece o atraso e a rigidez. (Lady Elara)"
+	  "left": "Documentação leve e útil favorece a comunicação sem atrasar entregas. (Sir Cedric)",
+	  "right": "Excesso de burocracia retarda o progresso e desvia o foco. (Sir Cedric)"
 	}
   }
 ]
