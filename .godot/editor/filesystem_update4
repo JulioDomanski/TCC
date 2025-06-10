@@ -3,5 +3,3 @@ res://scenes/Main.tscn
 res://scenes/Card.tscn
 res://scenes/Intro.tscn
 res://scripts/Intro.gd
-res://data/cards.json
-res://scripts/Main.gd
