@@ -2,13 +2,14 @@ extends Control
 
 const CardScene = preload("res://scenes/Card.tscn")
 
-var deck = [] # Array com os IDs das cartas
+var deck = [] 
 var current_card = null
 var cards_data = {}
 var feedback_data = {}
-var card_id = 0 # Dicionário para armazenar todas as cartas
+var card_id = 0
 var showing_feedback = false
 var first_card = true
+@onready var vbox_label_tutorial : VBoxContainer
 
 @onready var backIndicadores = $MiddleControl/WrapperIndicadores/BackIndicadores
 @onready var pontosMoral = $MiddleControl/WrapperIndicadores/BackIndicadores/PontosMoral
@@ -19,8 +20,51 @@ var first_card = true
 @onready var cardContainer = $MiddleControl/CardContainer
 @onready var dilema = $MiddleControl/CardContainer/Dilema
 @onready var ui = $"UI"
+@onready var viewport = get_viewport_rect()
+
+
+var tutorial_passos = [
+	{
+		"target_node_path": "MiddleControl/WrapperIndicadores/BackIndicadores/IndicadorMoral",
+		"mensagem": "Esse é o indicador do Moral dos Anoes. Tome decisões estratégicas para mantê-lo alto!"
+	},
+	{
+		"target_node_path": "MiddleControl/WrapperIndicadores/BackIndicadores/IndicadorRecursos",
+		"mensagem": "Aqui está o Tesouro do reino. Evite a falência!"
+	},
+	{
+		"target_node_path": "MiddleControl/WrapperIndicadores/BackIndicadores/InidicadotTempo",
+		"mensagem": "Este é o tempo. Suas ações consomem ciclos — pense com sabedoria!"
+	},
+	{
+		"target_node_path": "MiddleControl/WrapperIndicadores/BackIndicadores/IndicadorProgresso",
+		"mensagem": "Porgresso do Castelo ."
+	},
+	{
+		"target_node_path": "MiddleControl/WrapperIndicadores/BackIndicadores/IndicadorConfianca",
+		"mensagem": "Sua popularidade com o povo. Não os deixe na mão!"
+	},
+	{
+		"target_node_path": "MiddleControl/CardContainer/Dilema",
+		"mensagem": "Esse e o Dilema que te sera apresentado."
+	},
+	{
+		"target_node_path": "Card",
+		"mensagem": "Essa e a carta. Voce pode arrastar na direita , e na esquerda . Cada lado tem uma decisao diferente , cuidado , essas decisoes tem impacto nos indicadores."
+	}
+]
+var tutorial_index = 0
+var highlight_rect : ColorRect
+var tutorial_label = null
+
+
 
 func _ready():
+	var fade_rect := ColorRect.new()
+	fade_rect.color = Color(0, 0, 0, 1)
+	fade_rect.set_anchors_preset(Control.PRESET_FULL_RECT)
+	fade_rect.z_index = 5
+	add_child(fade_rect)
 	load_cards_data()
 	initialize_deck()
 	spawn_new_card()
@@ -29,6 +73,13 @@ func _ready():
 	pontosTempo.text = "20"
 	pontosProgresso.text = "20"
 	pontosConfianca.text="20"
+	var fade_tween := create_tween()
+	fade_tween.tween_property(fade_rect, "color", Color(0, 0, 0, 0), 1.5)
+	await fade_tween.finished
+	fade_rect.queue_free()
+	mostrar_tutorial_passo()
+	
+	
 	
 	
 	
@@ -57,32 +108,32 @@ func load_cards_data():
 
 
 func initialize_deck():
-	# Cria um deck com todos os IDs disponíveis
+	
 	deck = cards_data.keys()
 
 func spawn_new_card():
-	# Verifica se tem cartas no deck
+	
 	if deck.size() == 0:
-		dilema.text = "Parabens voce reconstruiu o castelo" # Recarrega se acabou
+		dilema.text = "Parabens voce reconstruiu o castelo" 
 		return 
-	# Remove a carta atual se existir
+	
 	if current_card:
 		current_card.queue_free()
 	
-	# Pega o ID da próxima carta
+	
 	card_id = deck.pop_front()
 	print("Carta atual - ID: ", card_id)
 	
-	# Cria a nova carta
+	
 	current_card = CardScene.instantiate()
 	cardContainer.add_child(current_card)
 	
 	
-	# Configura a carta com os dados do JSON
+	
 	current_card.setup_card(cards_data[card_id])
 	dilema.text = cards_data[card_id]["text"]
 	
-	# Conecta o sinal para saber quando a carta foi descartada
+	
 	current_card.connect("card_discarded", Callable(self, "_on_card_discarded"))
 	
 func set_points(node,direction,indicator):
@@ -98,16 +149,16 @@ func set_points(node,direction,indicator):
 func show_feedback_card(card_data,direction) -> Signal:
 	showing_feedback = true
 	
-	# Remove decision card
+	
 	if current_card:
 		current_card.queue_free()
 	
-	# Create feedback card
+	
 	current_card = CardScene.instantiate()
 	cardContainer.add_child(current_card)
 	current_card.setup_card(cards_data[card_id], true,direction)
 	current_card.connect("card_discarded", Callable(self, "_on_card_discarded"))
-	return current_card.card_discarded  # Wait until card is swiped
+	return current_card.card_discarded  
 		
 func _on_card_discarded(direction, card_data):
 	
@@ -117,7 +168,7 @@ func _on_card_discarded(direction, card_data):
 	
 	
 	if showing_feedback:
-		# Feedback was shown and swiped away, now show next card
+		
 		showing_feedback = false
 		spawn_new_card()
 		return
@@ -130,12 +181,12 @@ func _on_card_discarded(direction, card_data):
 	set_points(pontosConfianca,direction,"trust")
 		
 	print("Carta descartada: ", direction)
-	# Aqui você pode processar os efeitos da carta se quiser
+	
 	
 	
 	
 		
-	await show_feedback_card(card_data,direction)# Pede uma nova carta
+	await show_feedback_card(card_data,direction)
 	print(is_game_over())
 	first_card = false
 	
@@ -147,9 +198,9 @@ func is_game_over():
 func game_over():
 	
 
-	# Step 1: Create full-screen black overlay
+	
 	var black_overlay := ColorRect.new()
-	black_overlay.color = Color(0, 0, 0, 0)  # Fully transparent
+	black_overlay.color = Color(0, 0, 0, 0)  
 	black_overlay.anchor_left = 0
 	black_overlay.anchor_top = 0
 	black_overlay.anchor_right = 1
@@ -160,46 +211,19 @@ func game_over():
 	black_overlay.offset_bottom = 0
 	add_child(black_overlay)
 
-	# Step 2: Tween fade to black
+	
 	var tween := create_tween()
 	tween.tween_property(black_overlay, "color", Color(0, 0, 0, 1), 1.0)
 	await tween.finished
 
-	# Step 3: Remove all children except the overlay
+	
 	for child in get_children():
 		if child != black_overlay:
 			child.queue_free()
 	
 	
-	await get_tree().process_frame  # Let Godot finish cleanup
-	'''
-	# Step 4: Add centered "GAME OVER" label
-	var label := Label.new()
-	label.text = "GAME OVER"
+	await get_tree().process_frame  
 	
-	var center = get_viewport().get_visible_rect().size / 2
-	print(center)
-
-	# Set offsets to center it exactly (if size is known/fixed)
-	label.offset_left = 100
-	label.offset_top = 100
-	label.offset_right = 200
-	label.offset_bottom = 200 
-
-	# OR: leave offsets at 0 and enable center alignment
-	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-
-	# Customize appearance
-	label.add_theme_font_size_override("font_size", 64)
-	label.modulate = Color(0, 0, 0, 0)
-
-	# Fade in effect
-	var tween_label := create_tween()
-	tween_label.tween_property(label, "modulate", Color(1, 1, 1, 1), 1.0)
-	black_overlay.add_child(label)
-	'''
-	# In _ready or a function:
 	var center_container := CenterContainer.new()
 	center_container.anchor_left = 0
 	center_container.anchor_top = 0
@@ -216,14 +240,70 @@ func game_over():
 	label.add_theme_font_size_override("font_size", 64)
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	# Customize appearance
+	
 	label.add_theme_font_size_override("font_size", 64)
 	label.modulate = Color(0, 0, 0, 0)
 
-	# Fade in effect
+	
 	var tween_label := create_tween()
 	tween_label.tween_property(label, "modulate", Color(1, 1, 1, 1), 1.0)
 
 	center_container.add_child(label)
 
+
+func mostrar_tutorial_passo():
+	
+	if tutorial_index >= tutorial_passos.size():
 		
+		highlight_rect.queue_free()
+		tutorial_label.queue_free()
+		return
+
+	var passo = tutorial_passos[tutorial_index]
+	var target_node
+	if(passo["target_node_path"] == "Card"):
+		target_node = current_card.get_child(0,false)
+		
+	
+	else:
+		target_node = get_node(passo["target_node_path"])
+	
+
+	
+	if highlight_rect:
+		highlight_rect.queue_free()
+	highlight_rect = ColorRect.new()
+	highlight_rect.color = Color(0.3, 0.3, 0.3, 0.5)  
+	highlight_rect.anchor_left = target_node.anchor_left
+	highlight_rect.anchor_top = target_node.anchor_top
+	highlight_rect.anchor_bottom =target_node.anchor_bottom
+	highlight_rect.anchor_right = target_node.anchor_right
+	highlight_rect.offset_left = target_node.offset_left
+	highlight_rect.offset_top = target_node.offset_top
+	highlight_rect.offset_right = target_node.offset_right
+	highlight_rect.offset_bottom = target_node.offset_bottom
+	highlight_rect.z_index = 10
+	target_node.get_parent().add_child(highlight_rect)
+	
+	
+	
+	if tutorial_label:
+		tutorial_label.queue_free()
+	tutorial_label = Label.new()
+	tutorial_label.text = passo["mensagem"]
+	tutorial_label.set_position(Vector2(100, 500))  
+	tutorial_label.add_theme_font_size_override("font_size", 20)
+	tutorial_label.set("custom_colors/font_color", Color(1, 1, 1))
+	add_child(tutorial_label)
+
+func _input(event):
+	if event is InputEventMouseButton and event.pressed and tutorial_index<=6:
+		tutorial_index += 1
+		mostrar_tutorial_passo()
+		print(tutorial_index)
+	
+		
+	
+		
+	
+	
