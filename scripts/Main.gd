@@ -25,34 +25,47 @@ var first_card = true
 
 var tutorial_passos = [
 	{
+		"mensagem": "Bem-vindo, jovem herdeiro! Chegou a hora de conhecer os pilares do seu reinado. Clique para continuar."
+	},
+	{
+		"mensagem": "Vamos te mostrar agora os indicadores e mecânicas essenciais. Preste atenção!"
+	},
+	{
 		"target_node_path": "MiddleControl/WrapperIndicadores/BackIndicadores/IndicadorMoral",
-		"mensagem": "Esse é o indicador do Moral dos Anoes. Tome decisões estratégicas para mantê-lo alto!"
+		"mensagem": "Este é o indicador de Moral dos anões. Tome decisões estratégicas para mantê-lo alto!"
 	},
 	{
 		"target_node_path": "MiddleControl/WrapperIndicadores/BackIndicadores/IndicadorRecursos",
-		"mensagem": "Aqui está o Tesouro do reino. Evite a falência!"
+		"mensagem": "Aqui está o Tesouro do reino. Cuidado para não levar o reino à falência!"
 	},
 	{
 		"target_node_path": "MiddleControl/WrapperIndicadores/BackIndicadores/InidicadotTempo",
-		"mensagem": "Este é o tempo. Suas ações consomem ciclos — pense com sabedoria!"
+		"mensagem": "Este é o indicador de Tempo. Suas ações consomem ciclos — pense com sabedoria!"
 	},
 	{
 		"target_node_path": "MiddleControl/WrapperIndicadores/BackIndicadores/IndicadorProgresso",
-		"mensagem": "Porgresso do Castelo ."
+		"mensagem": "Este é o Progresso do castelo. Construa o reino tijolo por tijolo!"
 	},
 	{
 		"target_node_path": "MiddleControl/WrapperIndicadores/BackIndicadores/IndicadorConfianca",
-		"mensagem": "Sua popularidade com o povo. Não os deixe na mão!"
+		"mensagem": "Este é o indicador de Confiança do povo. Sua popularidade é essencial!"
 	},
 	{
 		"target_node_path": "MiddleControl/CardContainer/Dilema",
-		"mensagem": "Esse e o Dilema que te sera apresentado."
+		"mensagem": "Aqui é onde os dilemas são apresentados. Cada decisão molda o futuro do reino."
 	},
 	{
 		"target_node_path": "Card",
-		"mensagem": "Essa e a carta. Voce pode arrastar na direita , e na esquerda . Cada lado tem uma decisao diferente , cuidado , essas decisoes tem impacto nos indicadores."
+		"mensagem": "Esta é a carta de decisão. Arraste para a direita ou esquerda para escolher — cada lado representa um caminho com consequências!"
+	},
+	{
+		"mensagem": "Se qualquer indicador chegar a zero, o reinado entra em colapso... Game Over!"
+	},
+	{
+		"mensagem": "Você está pronto! Boa sorte, e que sua liderança traga prosperidade ao reino!"
 	}
 ]
+
 var tutorial_index = 0
 var highlight_rect : ColorRect
 var tutorial_label = null
@@ -254,50 +267,95 @@ func game_over():
 func mostrar_tutorial_passo():
 	
 	if tutorial_index >= tutorial_passos.size():
-		
-		highlight_rect.queue_free()
+		var fade_out_tween = create_tween()
+		fade_out_tween.tween_property(tutorial_label, "modulate:a", 0.0, 0.5)
+		await fade_out_tween.finished
 		tutorial_label.queue_free()
 		return
 
 	var passo = tutorial_passos[tutorial_index]
 	var target_node
-	if(passo["target_node_path"] == "Card"):
-		target_node = current_card.get_child(0,false)
+	
+	
+	var tween_tutorial_fade_out = create_tween()
+
+	if highlight_rect:
+		tween_tutorial_fade_out.tween_property(highlight_rect, "modulate:a", 0.0, 1.0)
+		await tween_tutorial_fade_out.finished
+		highlight_rect.queue_free()
+
+	if passo.has("target_node_path") and passo["target_node_path"] != null:
+		if(passo["target_node_path"] == "Card"):
+			target_node = current_card.get_child(0,false)
 		
 	
-	else:
-		target_node = get_node(passo["target_node_path"])
-	
+		else:
+			target_node = get_node(passo["target_node_path"])
+		highlight_rect = ColorRect.new()
+		highlight_rect.color = Color(0.3, 0.3, 0.3, 0.5)  
+		highlight_rect.modulate = Color(1, 1, 1, 0)       
+		highlight_rect.anchor_left = target_node.anchor_left
+		highlight_rect.anchor_top = target_node.anchor_top
+		if(passo["target_node_path"].contains("BackIndicadores")):
+			highlight_rect.anchor_bottom = target_node.anchor_bottom+0.1
+			highlight_rect.offset_bottom = target_node.offset_bottom+0.1
+		else:
+			highlight_rect.anchor_bottom = target_node.anchor_bottom
+			highlight_rect.offset_bottom = target_node.offset_bottom
+		highlight_rect.anchor_right = target_node.anchor_right
+		highlight_rect.offset_left = target_node.offset_left
+		highlight_rect.offset_top = target_node.offset_top
+		highlight_rect.offset_right = target_node.offset_right
+		
+		highlight_rect.z_index = 10
+
+		target_node.get_parent().add_child(highlight_rect)
 
 	
-	if highlight_rect:
-		highlight_rect.queue_free()
-	highlight_rect = ColorRect.new()
-	highlight_rect.color = Color(0.3, 0.3, 0.3, 0.5)  
-	highlight_rect.anchor_left = target_node.anchor_left
-	highlight_rect.anchor_top = target_node.anchor_top
-	highlight_rect.anchor_bottom =target_node.anchor_bottom
-	highlight_rect.anchor_right = target_node.anchor_right
-	highlight_rect.offset_left = target_node.offset_left
-	highlight_rect.offset_top = target_node.offset_top
-	highlight_rect.offset_right = target_node.offset_right
-	highlight_rect.offset_bottom = target_node.offset_bottom
-	highlight_rect.z_index = 10
-	target_node.get_parent().add_child(highlight_rect)
+		var tween_highlight_rect = create_tween()
+		tween_highlight_rect.tween_property(highlight_rect, "modulate:a", 1.0, 0.5)
+		await tween_highlight_rect.finished
+	
+	
 	
 	
 	
 	if tutorial_label:
+		var fade_out_tween = create_tween()
+		fade_out_tween.tween_property(tutorial_label, "modulate:a", 0.0, 0.5)
+		await fade_out_tween.finished
 		tutorial_label.queue_free()
+
+	
 	tutorial_label = Label.new()
 	tutorial_label.text = passo["mensagem"]
-	tutorial_label.set_position(Vector2(100, 500))  
+
+	
+	tutorial_label.anchor_left = 0.1
+	tutorial_label.anchor_right = 0.9
+	tutorial_label.anchor_top = 0.9
+	tutorial_label.anchor_bottom = 1.0
+	tutorial_label.offset_left = 0
+	tutorial_label.offset_right = 0
+	tutorial_label.offset_top = -40
+	tutorial_label.offset_bottom = -10
+
+	
 	tutorial_label.add_theme_font_size_override("font_size", 20)
 	tutorial_label.set("custom_colors/font_color", Color(1, 1, 1))
+	tutorial_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	tutorial_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+
+	
+	tutorial_label.modulate = Color(1, 1, 1, 0)
 	add_child(tutorial_label)
 
+	var fade_in_tween = create_tween()
+	fade_in_tween.tween_property(tutorial_label, "modulate:a", 1.0, 0.5)
+	await fade_in_tween.finished
+
 func _input(event):
-	if event is InputEventMouseButton and event.pressed and tutorial_index<=6:
+	if event is InputEventMouseButton and event.pressed and tutorial_index<=tutorial_passos.size()-1:
 		tutorial_index += 1
 		mostrar_tutorial_passo()
 		print(tutorial_index)
