@@ -71,7 +71,6 @@ var highlight_rect : ColorRect
 var tutorial_label = null
 
 
-
 func _ready():
 	var fade_rect := ColorRect.new()
 	fade_rect.color = Color(0, 0, 0, 1)
@@ -145,6 +144,7 @@ func spawn_new_card():
 	
 	current_card.setup_card(cards_data[card_id])
 	dilema.text = cards_data[card_id]["text"]
+	dilema.add_theme_font_size_override("font_size", 21)
 	
 	
 	current_card.connect("card_discarded", Callable(self, "_on_card_discarded"))
@@ -168,6 +168,7 @@ func show_feedback_card(card_data,direction) -> Signal:
 	
 	
 	current_card = CardScene.instantiate()
+	
 	cardContainer.add_child(current_card)
 	current_card.setup_card(cards_data[card_id], true,direction)
 	current_card.connect("card_discarded", Callable(self, "_on_card_discarded"))
@@ -341,7 +342,7 @@ func mostrar_tutorial_passo():
 	tutorial_label.offset_bottom = -10
 
 	
-	tutorial_label.add_theme_font_size_override("font_size", 20)
+	tutorial_label.add_theme_font_size_override("font_size", 22)
 	tutorial_label.set("custom_colors/font_color", Color(1, 1, 1))
 	tutorial_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	tutorial_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER

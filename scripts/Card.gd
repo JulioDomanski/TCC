@@ -69,17 +69,17 @@ func setup_card(data,is_feedback = false,direction="right"):
 	# Configura os textos
 	
 	if is_feedback:
-		label_feedback.text = card_data["feedback"][direction]
+		label_feedback.text = "Feedback:\n"+card_data["feedback"][direction]
 		label_feedback.visible = true
 	
 		if(card_data["correct_answer"] == direction):
-			label_feedback.add_theme_color_override("font_color", Color.DARK_GREEN)
+			label_feedback.add_theme_color_override("font_color", Color.GREEN)
 		else:
 			label_feedback.add_theme_color_override("font_color", Color.RED)
 		feedback_background.visible = true
 		feedback_background.modulate.a = 0
 		feedback_background.scale = Vector2(0.8, 0.8)
-	
+		feedback_background.color = Color(0.1, 0.1, 0.1, 0.85)
 		var tween = get_tree().create_tween()
 		tween.tween_property(label_feedback, "modulate:a", 1, 0.4)
 		tween.parallel().tween_property(label_feedback, "scale", Vector2(1, 1), 0.4).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
