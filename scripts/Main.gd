@@ -9,6 +9,8 @@ var feedback_data = {}
 var card_id = 0
 var showing_feedback = false
 var first_card = true
+var is_tutorial_busy := false
+
 @onready var vbox_label_tutorial : VBoxContainer
 
 @onready var backIndicadores = $MiddleControl/WrapperIndicadores/BackIndicadores
@@ -69,8 +71,8 @@ var tutorial_passos = [
 var tutorial_index = 0
 var highlight_rect : ColorRect
 var tutorial_label = null
-
-
+var tutorial_ongoing = true
+var blocker: ColorRect = null
 func _ready():
 	var fade_rect := ColorRect.new()
 	fade_rect.color = Color(0, 0, 0, 1)
@@ -265,8 +267,11 @@ func game_over():
 	center_container.add_child(label)
 
 
-func mostrar_tutorial_passo():
-	
+func mostrar_tutorial_passo() -> void:
+	if is_tutorial_busy:
+		tutorial_index -=1
+		return
+	is_tutorial_busy = true
 	if tutorial_index >= tutorial_passos.size():
 		var fade_out_tween = create_tween()
 		fade_out_tween.tween_property(tutorial_label, "modulate:a", 0.0, 0.5)
@@ -281,9 +286,10 @@ func mostrar_tutorial_passo():
 	var tween_tutorial_fade_out = create_tween()
 
 	if highlight_rect:
-		tween_tutorial_fade_out.tween_property(highlight_rect, "modulate:a", 0.0, 1.0)
+		tween_tutorial_fade_out.tween_property(highlight_rect, "modulate:a", 0.0, 0.5)
 		await tween_tutorial_fade_out.finished
-		highlight_rect.queue_free()
+		if(is_instance_valid(highlight_rect)):
+			highlight_rect.queue_free()
 
 	if passo.has("target_node_path") and passo["target_node_path"] != null:
 		if(passo["target_node_path"] == "Card"):
@@ -325,7 +331,8 @@ func mostrar_tutorial_passo():
 		var fade_out_tween = create_tween()
 		fade_out_tween.tween_property(tutorial_label, "modulate:a", 0.0, 0.5)
 		await fade_out_tween.finished
-		tutorial_label.queue_free()
+		if(is_instance_valid(tutorial_label)):
+			tutorial_label.queue_free()
 
 	
 	tutorial_label = Label.new()
@@ -354,12 +361,37 @@ func mostrar_tutorial_passo():
 	var fade_in_tween = create_tween()
 	fade_in_tween.tween_property(tutorial_label, "modulate:a", 1.0, 0.5)
 	await fade_in_tween.finished
-
+	is_tutorial_busy = false
+	
 func _input(event):
+	var card = cardContainer.get_child(1,false).get_child(0,true)
+	
 	if event is InputEventMouseButton and event.pressed and tutorial_index<=tutorial_passos.size()-1:
+		if(tutorial_index == 0):
+			blocker = ColorRect.new()
+			blocker.color = Color(0, 0, 0, 0)  
+			blocker.mouse_filter = MOUSE_FILTER_STOP
+			blocker.size = card.size
+			blocker.anchor_bottom = card.anchor_bottom
+			blocker.anchor_left = card.anchor_left
+			blocker.anchor_right = card.anchor_right
+			blocker.anchor_top = card.anchor_top
+			blocker.offset_bottom = card.offset_bottom
+			blocker.offset_left= card.offset_left
+			blocker.offset_right = card.offset_right
+			blocker.offset_top= card.offset_top
+			add_child(blocker)
+			
+			
 		tutorial_index += 1
-		mostrar_tutorial_passo()
+		await mostrar_tutorial_passo()
 		print(tutorial_index)
+		
+	
+	if(tutorial_index == 11):
+		blocker.mouse_filter =MOUSE_FILTER_IGNORE
+		blocker.queue_free()
+		tutorial_index+=1
 	
 		
 	
