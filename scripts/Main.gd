@@ -178,9 +178,7 @@ func show_feedback_card(card_data,direction) -> Signal:
 		
 func _on_card_discarded(direction, card_data):
 	
-	if is_game_over():
-		game_over()
-		return
+	
 	
 	
 	if showing_feedback:
@@ -204,6 +202,9 @@ func _on_card_discarded(direction, card_data):
 		
 	await show_feedback_card(card_data,direction)
 	print(is_game_over())
+	if is_game_over():
+		game_over()
+		return
 	first_card = false
 	
 func is_game_over():
@@ -364,10 +365,11 @@ func mostrar_tutorial_passo() -> void:
 	is_tutorial_busy = false
 	
 func _input(event):
-	var card = cardContainer.get_child(1,false).get_child(0,true)
+	
 	
 	if event is InputEventMouseButton and event.pressed and tutorial_index<=tutorial_passos.size()-1:
 		if(tutorial_index == 0):
+			var card = cardContainer.get_child(1,false).get_child(0,true)
 			blocker = ColorRect.new()
 			blocker.color = Color(0, 0, 0, 0)  
 			blocker.mouse_filter = MOUSE_FILTER_STOP
