@@ -16,15 +16,15 @@
   {
 	"id": 2,
 	"text": "Sir Cedric sugere que, antes de cada ciclo de trabalho, a equipe se reúna para planejar em conjunto. Concorda?",
-	"left_choice": "Sim, todos devem entender os objetivos e colaborar nas decisões.",
-	"right_choice": "Não, só os líderes precisam saber. Os demais devem apenas executar.",
+	"left_choice": "Não, só os líderes precisam saber. Os demais devem apenas executar.",
+	"right_choice": "Sim, todos devem entender os objetivos e colaborar nas decisões.",
 	"image": "Sir Cedric",
-	"left_effects": { "moral": 10, "resources": 0, "time": 5, "trust": 10, "progress": 10 },
-	"right_effects": { "moral": -20, "resources": 0, "time": -10, "trust": -20, "progress": -10 },
-	"correct_answer": "left",
+	"left_effects": { "moral": -20, "resources": 0, "time": -10, "trust": -20, "progress": -10 },
+	"right_effects": { "moral": 10, "resources": 0, "time": 5, "trust": 10, "progress": 10 },
+	"correct_answer": "right",
 	"feedback": {
-	  "left": "Excelente, Sire! Planejamentos colaborativos aumentam engajamento e reduzem erros. (Sir Cedric)",
-	  "right": "Ordens cegas não constroem equipes fortes. Liderança exige escuta e alinhamento. (Sir Cedric)"
+	  "left": "Ordens cegas não constroem equipes fortes. Liderança exige escuta e alinhamento. (Sir Cedric)",
+	  "right": "Excelente, Sire! Planejamentos colaborativos aumentam engajamento e reduzem erros. (Sir Cedric)"
 	}
   },
   {
@@ -44,29 +44,29 @@
   {
 	"id": 4,
 	"text": "A Guilda dos Anões quer começar logo a reconstrução, mesmo sem todos os requisitos definidos.",
-	"left_choice": "Apoie. Podemos iniciar com o que temos e ajustar conforme avançamos.",
-	"right_choice": "Espere tudo estar claro. Não devemos correr riscos.",
+	"left_choice": "Espere tudo estar claro. Não devemos correr riscos.",
+	"right_choice": "Apoie. Podemos iniciar com o que temos e ajustar conforme avançamos.",
 	"image": "Anoes",
-	"left_effects": { "moral": 10, "resources": 0, "time": 5, "trust": 10, "progress": 10 },
-	"right_effects": { "moral": -15, "resources": 0, "time": -10, "trust": -15, "progress": -10 },
-	"correct_answer": "left",
+	"left_effects": { "moral": -15, "resources": 0, "time": -10, "trust": -15, "progress": -10 },
+	"right_effects": { "moral": 10, "resources": 0, "time": 5, "trust": 10, "progress": 10 },
+	"correct_answer": "right",
 	"feedback": {
-	  "left": "Trabalhar com entregas incrementais nos permite avançar com segurança. (Guilda dos Anões)",
-	  "right": "Esperar demais pode paralisar o progresso e desmotivar os construtores. (Guilda dos Anões)"
+	  "left": "Esperar demais pode paralisar o progresso e desmotivar os construtores. (Guilda dos Anões)",
+	  "right": "Trabalhar com entregas incrementais nos permite avançar com segurança. (Guilda dos Anões)"
 	}
   },
   {
 	"id": 5,
 	"text": "A Rainha Stakeholdina exige uma previsão exata de quando o castelo estará pronto.",
-	"left_choice": "Explique que faremos entregas por ciclos curtos e ajustaremos conforme aprendermos.",
-	"right_choice": "Dê uma data exata, mesmo sem certeza. Isso a deixará mais calma.",
+	"left_choice": "Dê uma data exata, mesmo sem certeza. Isso a deixará mais calma.",
+	"right_choice": "Explique que faremos entregas por ciclos curtos e ajustaremos conforme aprendermos.",
 	"image": "Rainha Stakeholdina",
-	"left_effects": { "moral": 5, "resources": 0, "time": 5, "trust": 10, "progress": 5 },
-	"right_effects": { "moral": -15, "resources": 0, "time": -15, "trust": -20, "progress": -10 },
-	"correct_answer": "left",
+	"left_effects": { "moral": -15, "resources": 0, "time": -15, "trust": -20, "progress": -10 },
+	"right_effects": { "moral": 5, "resources": 0, "time": 5, "trust": 10, "progress": 5 },
+	"correct_answer": "right",
 	"feedback": {
-	  "left": "Promessas realistas baseadas em ciclos geram mais confiança a longo prazo. (Rainha Stakeholdina)",
-	  "right": "Prometer o impossível só trará decepções e desconfiança. (Rainha Stakeholdina)"
+	  "left": "Prometer o impossível só trará decepções e desconfiança. (Rainha Stakeholdina)",
+	  "right": "Promessas realistas baseadas em ciclos geram mais confiança a longo prazo. (Rainha Stakeholdina)"
 	}
   },
   {
@@ -86,15 +86,15 @@
   {
 	"id": 7,
 	"text": "Lady Elara quer priorizar a reconstrução do portão, pois é o que mais preocupa o povo.",
-	"left_choice": "Apoie a decisão. Entregar valor para o povo é prioridade.",
-	"right_choice": "Negue. Seguiremos o plano original, sem mudanças.",
+	"left_choice": "Negue. Seguiremos o plano original, sem mudanças.",
+	"right_choice": "Apoie a decisão. Entregar valor para o povo é prioridade.",
 	"image": "Lady Elara",
-	"left_effects": { "moral": 10, "resources": -2, "time": -2, "trust": 10, "progress": 10 },
-	"right_effects": { "moral": -15, "resources": 0, "time": 0, "trust": -15, "progress": -10 },
-	"correct_answer": "left",
+	"left_effects": { "moral": -15, "resources": 0, "time": 0, "trust": -15, "progress": -10 },
+	"right_effects": { "moral": 10, "resources": -2, "time": -2, "trust": 10, "progress": 10 },
+	"correct_answer": "right",
 	"feedback": {
-	  "left": "Priorizar com base no valor entregue é essencial para reconstruir com impacto. (Lady Elara)",
-	  "right": "Insistir em planos engessados afasta o time das necessidades reais. (Lady Elara)"
+	  "left": "Insistir em planos engessados afasta o time das necessidades reais. (Lady Elara)",
+	  "right": "Priorizar com base no valor entregue é essencial para reconstruir com impacto. (Lady Elara)"
 	}
   },
   {
@@ -128,15 +128,15 @@
   {
 	"id": 10,
 	"text": "Sir Cedric questiona se devemos manter documentação mínima durante a reconstrução.",
-	"left_choice": "Sim, apenas o necessário para que todos entendam e colaborem.",
-	"right_choice": "Não. Devemos documentar tudo em detalhes extensos.",
+	"left_choice": "Não. Devemos documentar tudo em detalhes extensos.",
+	"right_choice": "Sim, apenas o necessário para que todos entendam e colaborem.",
 	"image": "Sir Cedric",
-	"left_effects": { "moral": 10, "resources": 0, "time": 5, "trust": 10, "progress": 5 },
-	"right_effects": { "moral": -20, "resources": -5, "time": -15, "trust": -10, "progress": -10 },
-	"correct_answer": "left",
+	"left_effects": { "moral": -20, "resources": -5, "time": -15, "trust": -10, "progress": -10 },
+	"right_effects": { "moral": 10, "resources": 0, "time": 5, "trust": 10, "progress": 5 },
+	"correct_answer": "right",
 	"feedback": {
-	  "left": "Documentação leve e útil favorece a comunicação sem atrasar entregas. (Sir Cedric)",
-	  "right": "Excesso de burocracia retarda o progresso e desvia o foco. (Sir Cedric)"
+	  "left": "Excesso de burocracia retarda o progresso e desvia o foco. (Sir Cedric)",
+	  "right": "Documentação leve e útil favorece a comunicação sem atrasar entregas. (Sir Cedric)"
 	}
   }
 ]

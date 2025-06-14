@@ -3,3 +3,4 @@ res://scenes/Main.tscn
 res://scenes/Card.tscn
 res://scenes/Intro.tscn
 res://scenes/summaryCap.tscn
+res://data/cards.json
