@@ -11,6 +11,8 @@ var card_id = 0
 var showing_feedback = false
 var first_card = true
 var is_tutorial_busy := false
+var chapter_one_correct_answers = 0
+var chapter_one_total_questions = 0
 
 @onready var vbox_label_tutorial : VBoxContainer
 
@@ -179,15 +181,16 @@ func show_feedback_card(card_data,direction) -> Signal:
 	return current_card.card_discarded  
 		
 func _on_card_discarded(direction, card_data):
-	
-	
-	
-	
 	if showing_feedback:
-		
 		showing_feedback = false
 		spawn_new_card()
 		return
+	chapter_one_total_questions += 1
+	if direction == cards_data[card_id]["correct_answer"]:
+		chapter_one_correct_answers += 1
+		print("Resposta CORRETA!")
+	else:
+		print("Resposta incorreta.")
 	
 	print(cards_data[card_id][direction+"_effects"])	
 	set_points(pontosMoral,direction,"moral")
@@ -195,12 +198,7 @@ func _on_card_discarded(direction, card_data):
 	set_points(pontosProgresso,direction,"progress")
 	set_points(pontosTempo,direction,"time")
 	set_points(pontosConfianca,direction,"trust")
-		
 	print("Carta descartada: ", direction)
-	
-	
-	
-	
 		
 	await show_feedback_card(card_data,direction)
 	print(is_game_over())
@@ -211,17 +209,18 @@ func _on_card_discarded(direction, card_data):
 	
 	
 func show_summary():
+	var percentage = 0
+	if chapter_one_total_questions > 0:
+		percentage = int(round(float(chapter_one_correct_answers) / chapter_one_total_questions * 100))
+		
+	var base_summary_text = """📜 Fim do Capítulo 1 📜\n\nParabéns, Majestade! Você usou a sabedoria para transformar o caos em ordem, provando o poder da **Agilidade**.\n\n**Neste capítulo, você aprendeu a:**\n\n- **Adaptar-se** com ciclos curtos, em vez de seguir planos cegamente.\n\n- **Confiar** em sua equipe para se auto-organizar e colaborar.\n\n- **Priorizar** o que gera mais valor para o reino e seus súditos.\n\n- **Refletir** após cada fase para melhorar continuamente.\n\nPrepare-se! O próximo capítulo exigirá ainda mais de sua liderança Ágil."""
+	
+	var percentage_text = "\n\nSua performance neste capítulo:\nVocê acertou %d%% das decisões!" % percentage
+
+	var final_text = base_summary_text + percentage_text
+	
 	var summary_instance = SummaryScene.instantiate()
-	summary_instance.texto_summary = """
-	📜 Fim do Capítulo 1 📜
-
-	Você aprendeu:
-	- A importância de tomar decisões equilibradas.
-	- Que cada escolha afeta os recursos, moral e progresso.
-	- Que o tempo e a confiança são recursos tão importantes quanto ouro.
-
-	Prepare-se para os desafios do próximo capítulo!
-	"""
+	summary_instance.texto_summary = final_text
 	add_child(summary_instance)
 	summary_instance.popup_centered()
 
