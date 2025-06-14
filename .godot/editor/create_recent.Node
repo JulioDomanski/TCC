@@ -1,8 +1,12 @@
-VBoxContainer
 Button
-Label
-ColorRect
+RichTextLabel
 TextureRect
+VBoxContainer
+MarginContainer
+PopupPanel
+ColorRect
+Panel
+Label
 Control
 AudioStreamPlayer
 AudioStreamPlayer2D

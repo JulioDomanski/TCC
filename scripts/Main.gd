@@ -2,6 +2,7 @@ extends Control
 
 const CardScene = preload("res://scenes/Card.tscn")
 
+var SummaryScene = preload("res://scenes/SummaryCap.tscn")
 var deck = [] 
 var current_card = null
 var cards_data = {}
@@ -129,6 +130,7 @@ func spawn_new_card():
 	
 	if deck.size() == 0:
 		dilema.text = "Parabens voce reconstruiu o castelo" 
+		show_summary()
 		return 
 	
 	if current_card:
@@ -207,6 +209,22 @@ func _on_card_discarded(direction, card_data):
 		return
 	first_card = false
 	
+	
+func show_summary():
+	var summary_instance = SummaryScene.instantiate()
+	summary_instance.texto_summary = """
+	📜 Fim do Capítulo 1 📜
+
+	Você aprendeu:
+	- A importância de tomar decisões equilibradas.
+	- Que cada escolha afeta os recursos, moral e progresso.
+	- Que o tempo e a confiança são recursos tão importantes quanto ouro.
+
+	Prepare-se para os desafios do próximo capítulo!
+	"""
+	add_child(summary_instance)
+	summary_instance.popup_centered()
+
 func is_game_over():
 	if(first_card == false and (pontosConfianca.text.to_int()<=0 or pontosProgresso.text.to_int()<=0 or pontosTempo.text.to_int()<=0 or pontosRecursos.text.to_int()<=0 or pontosMoral.text.to_int()<=0)):
 		return true;
