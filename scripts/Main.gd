@@ -54,7 +54,7 @@ var tutorial_passos = [
 	},
 	{
 		"target_node_path": "MiddleControl/WrapperIndicadores/BackIndicadores/IndicadorConfianca",
-		"mensagem": "Este é o indicador de Confiança do povo. Sua popularidade é essencial!"
+		"mensagem": "Este é o indicador da confiança da Rainha Stakeholdina. Conquistar sua aprovação é vital para manter a estabilidade do reino!"
 	},
 	{
 		"target_node_path": "MiddleControl/CardContainer/Dilema",
