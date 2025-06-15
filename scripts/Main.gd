@@ -90,10 +90,15 @@ func _ready():
 	pontosTempo.text = "20"
 	pontosProgresso.text = "20"
 	pontosConfianca.text="20"
+	$GameMusic.volume_db = -80
+	$GameMusic.play()
+	var tween = create_tween()
+	tween.tween_property($GameMusic, "volume_db", 0, 0.5)
 	var fade_tween := create_tween()
 	fade_tween.tween_property(fade_rect, "color", Color(0, 0, 0, 0), 1.5)
 	await fade_tween.finished
 	fade_rect.queue_free()
+	
 	mostrar_tutorial_passo()
 	
 	
@@ -131,7 +136,7 @@ func initialize_deck():
 func spawn_new_card():
 	
 	if deck.size() == 0:
-		dilema.text = "Parabens voce reconstruiu o castelo" 
+		dilema.text = "Parabens voce passou para o Capitulo 2" 
 		show_summary()
 		return 
 	
@@ -231,7 +236,7 @@ func is_game_over():
 	
 func game_over():
 	
-
+	
 	
 	var black_overlay := ColorRect.new()
 	black_overlay.color = Color(0, 0, 0, 0)  
@@ -254,6 +259,11 @@ func game_over():
 	for child in get_children():
 		if child != black_overlay:
 			child.queue_free()
+			
+	var game_over_sound = AudioStreamPlayer2D.new()
+	game_over_sound.stream = load("res://assets/sounds/negative_beeps-6008.mp3")
+	add_child(game_over_sound)
+	game_over_sound.play()
 	
 	
 	await get_tree().process_frame  
@@ -283,7 +293,8 @@ func game_over():
 	tween_label.tween_property(label, "modulate", Color(1, 1, 1, 1), 1.0)
 
 	center_container.add_child(label)
-
+	await get_tree().create_timer(5.0).timeout
+	get_tree().reload_current_scene()
 
 func mostrar_tutorial_passo() -> void:
 	if is_tutorial_busy:

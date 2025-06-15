@@ -4,3 +4,4 @@ res://scenes/Card.tscn
 res://scenes/Intro.tscn
 res://scenes/summaryCap.tscn
 res://scripts/Intro.gd
+res://scripts/Main.gd
