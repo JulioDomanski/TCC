@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cbkdykatrx1sr"]
+[gd_scene load_steps=3 format=3 uid="uid://cbkdykatrx1sr"]
 
 [ext_resource type="Script" uid="uid://cbq0h88wowd06" path="res://scripts/Intro.gd" id="1_45dpb"]
+[ext_resource type="AudioStream" uid="uid://ck1dnox3ls0cv" path="res://assets/sounds/medieval-opener-270568.mp3" id="2_hc7eg"]
 
 [node name="Intro" type="Control"]
 layout_mode = 3
@@ -43,3 +44,7 @@ offset_bottom = 10.0
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="IntroMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_hc7eg")
+autoplay = true

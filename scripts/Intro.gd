@@ -55,7 +55,7 @@ func _ready() :
 
 	
 	for child in get_children():
-		if child != black_overlay:
+		if child != black_overlay and child != $IntroMusic:
 			child.queue_free()
 	
 	
@@ -340,8 +340,14 @@ func _on_continue_pressed():
 		
 		var tween = create_tween()
 		tween.tween_property(fade_rect, "color", Color(0, 0, 0, 1), 1.0)  
-		await tween.finished
+		var tween_audio = create_tween()
+		tween_audio.tween_property($IntroMusic, "volume_db", -80, 2.0)
 		
+		
+		
+		await tween.finished
+		await tween_audio.finished
+		$IntroMusic.stop()
 		get_tree().change_scene_to_file("res://scenes/Main.tscn")
 		
 
