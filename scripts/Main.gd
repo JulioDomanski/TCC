@@ -13,7 +13,8 @@ var first_card = true
 var is_tutorial_busy := false
 var chapter_one_correct_answers = 0
 var chapter_one_total_questions = 0
-
+var button_skip : Button
+var skipped_tutorial = false
 @onready var vbox_label_tutorial : VBoxContainer
 
 @onready var backIndicadores = $MiddleControl/WrapperIndicadores/BackIndicadores
@@ -395,36 +396,75 @@ func mostrar_tutorial_passo() -> void:
 func _input(event):
 	
 	
-	if event is InputEventMouseButton and event.pressed and tutorial_index<=tutorial_passos.size()-1:
-		if(tutorial_index == 0):
-			var card = cardContainer.get_child(1,false).get_child(0,true)
-			blocker = ColorRect.new()
-			blocker.color = Color(0, 0, 0, 0)  
-			blocker.mouse_filter = MOUSE_FILTER_STOP
-			blocker.size = card.size
-			blocker.anchor_bottom = card.anchor_bottom
-			blocker.anchor_left = card.anchor_left
-			blocker.anchor_right = card.anchor_right
-			blocker.anchor_top = card.anchor_top
-			blocker.offset_bottom = card.offset_bottom
-			blocker.offset_left= card.offset_left
-			blocker.offset_right = card.offset_right
-			blocker.offset_top= card.offset_top
-			add_child(blocker)
-			
-			
-		tutorial_index += 1
-		await mostrar_tutorial_passo()
-		print(tutorial_index)
-		
-	
-	if(tutorial_index == 11):
-		blocker.mouse_filter =MOUSE_FILTER_IGNORE
+	if event is InputEventMouseButton and event.pressed:
+		# Se clicou no botão de pular, não faz mais nada aqui
+		if button_skip and button_skip.get_global_rect().has_point(event.position):
+			return
+
+		if tutorial_index <= tutorial_passos.size() - 1:
+			if tutorial_index == 0:
+				var card = cardContainer.get_child(1, false).get_child(0, true)
+				blocker = ColorRect.new()
+				blocker.color = Color(0, 0, 0, 0)
+				blocker.mouse_filter = MOUSE_FILTER_STOP
+				blocker.size = card.size
+				blocker.anchor_bottom = card.anchor_bottom
+				blocker.anchor_left = card.anchor_left
+				blocker.anchor_right = card.anchor_right
+				blocker.anchor_top = card.anchor_top
+				blocker.offset_bottom = card.offset_bottom
+				blocker.offset_left = card.offset_left
+				blocker.offset_right = card.offset_right
+				blocker.offset_top = card.offset_top
+				add_child(blocker)
+
+				button_skip = Button.new()
+				button_skip.text = "Pular Tutorial"
+				button_skip.custom_minimum_size = Vector2(150, 50)
+				button_skip.add_theme_font_size_override("font_size", 22)
+				button_skip.modulate = Color(1, 1, 1, 1)
+				button_skip.z_index = 3
+				add_child(button_skip)
+
+				button_skip.anchor_left = 1
+				button_skip.anchor_top = 1
+				button_skip.anchor_right = 1
+				button_skip.anchor_bottom = 1
+				button_skip.offset_right = -30
+				button_skip.offset_bottom = -30
+				button_skip.offset_left = -210
+				button_skip.offset_top = -50
+				button_skip.pressed.connect(pular_tutorial)
+
+			if skipped_tutorial:
+				return
+
+			tutorial_index += 1
+			await mostrar_tutorial_passo()
+			print(tutorial_index)
+
+	if tutorial_index == 11:
+		blocker.mouse_filter = MOUSE_FILTER_IGNORE
 		blocker.queue_free()
-		tutorial_index+=1
+		tutorial_index += 1
 	
 		
 	
 		
-	
-	
+func pular_tutorial():
+	skipped_tutorial = true
+	if highlight_rect and is_instance_valid(highlight_rect):
+		highlight_rect.queue_free()
+
+	if tutorial_label and is_instance_valid(tutorial_label):
+		tutorial_label.text = ""
+		tutorial_label.queue_free()
+
+	if blocker and is_instance_valid(blocker):
+		blocker.queue_free()
+
+	if button_skip and is_instance_valid(button_skip):
+		button_skip.queue_free()
+
+	is_tutorial_busy = false
+	tutorial_index = tutorial_passos.size() + 1  

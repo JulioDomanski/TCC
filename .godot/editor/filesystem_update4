@@ -1,7 +1,6 @@
 res://default_env.tres
 res://scenes/Main.tscn
-res://scenes/Card.tscn
+res://scripts/Main.gd
 res://scenes/Intro.tscn
 res://scenes/summaryCap.tscn
-res://scripts/Intro.gd
-res://scripts/Main.gd
+res://scenes/Card.tscn

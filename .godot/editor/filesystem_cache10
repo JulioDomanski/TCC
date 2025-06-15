@@ -1,7 +1,7 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1750015853
-default_env.tres::Environment::8952826018721607875::1750015853::0::1::::<><><>0<>0<><>::
-export_presets.cfg::TextFile::-1::1749913542::0::1::::<><><>0<>0<><>::
+::res://::1750024338
+default_env.tres::Environment::8952826018721607875::1750017532::0::1::::<><><>0<>0<><>::
+export_presets.cfg::TextFile/TextFile::-1::1749913542::0::1::::<><><>0<>0<><>::
 icon.png::CompressedTexture2D/CompressedTexture2D::4241338009583973430::1747830470::1747832687::1::::<><><>0<>0<>7db4ec2050e894fe0a410af00efa0a8c<>res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex::
 ::res://assets/::1749421184
 ::res://assets/backgroundIntro/::1749421503
@@ -34,20 +34,20 @@ Anoes.png::CompressedTexture2D/CompressedTexture2D::136995777731779188::17494211
 Lady Elara.png::CompressedTexture2D/CompressedTexture2D::9212135145168983651::1749421184::1749421503::1::::<><><>0<>0<>bf4100b9e166a4ef2521ea3ddd03cd56<>res://.godot/imported/Lady Elara.png-6316a7435ec86f7bbbbf67df99b8020d.ctex::
 Rainha Stakeholdina.png::CompressedTexture2D/CompressedTexture2D::57365696964527292::1749421184::1749421503::1::::<><><>0<>0<>4257789ced4ac8684e5ac1b938f24459<>res://.godot/imported/Rainha Stakeholdina.png-99f9432bc678681e0203c17eb93f9005.ctex::
 Sir Cedric.png::CompressedTexture2D/CompressedTexture2D::5555758589654478250::1749421184::1749421503::1::::<><><>0<>0<>53b4428d31fed12b48c7cbecd405aa6c<>res://.godot/imported/Sir Cedric.png-826e3856327f7d18fdd71cc4071dd297.ctex::
-::res://assets/sounds/::1750016102
+::res://assets/sounds/::1750016107
 flipcard-91468.wav::AudioStreamWAV/AudioStreamWAV::7314604863384884844::1748561202::1748561218::1::::<><><>0<>0<>9c3dbbbb5afba4cc1c81d8926decd86d<>res://.godot/imported/flipcard-91468.wav-5637c90e7f6a88a34c701edbebfa9c49.sample::
-medieval-backgroun-jogo.mp3::AudioStreamMP3::3456202457223775504::1750015230::1750015275::1::::<><><>0<>0<>b4c246f6044e08c4eba34cc6177544a5<>res://.godot/imported/medieval-backgroun-jogo.mp3-df87d3543d34541e239c93953ac694a6.mp3str::
-medieval-opener-270568.mp3::AudioStreamMP3::5528609763816174781::1750013053::1750013340::1::::<><><>0<>0<>f1b6ff606f71771c2ecb385f320664c7<>res://.godot/imported/medieval-opener-270568.mp3-80f5b6923786ae705193d1f29afc8c11.mp3str::
-negative_beeps-6008.mp3::AudioStreamMP3::2623834734878959797::1750016037::1750016107::1::::<><><>0<>0<>dd097a447f871580a4e3e600fa03399a<>res://.godot/imported/negative_beeps-6008.mp3-52d40a48b97b8ef61508f5069a809559.mp3str::
+medieval-backgroun-jogo.mp3::AudioStreamMP3/AudioStreamMP3::3456202457223775504::1750015230::1750015275::1::::<><><>0<>0<>b4c246f6044e08c4eba34cc6177544a5<>res://.godot/imported/medieval-backgroun-jogo.mp3-df87d3543d34541e239c93953ac694a6.mp3str::
+medieval-opener-270568.mp3::AudioStreamMP3/AudioStreamMP3::5528609763816174781::1750013053::1750013340::1::::<><><>0<>0<>f1b6ff606f71771c2ecb385f320664c7<>res://.godot/imported/medieval-opener-270568.mp3-80f5b6923786ae705193d1f29afc8c11.mp3str::
+negative_beeps-6008.mp3::AudioStreamMP3/AudioStreamMP3::2623834734878959797::1750016037::1750016107::1::::<><><>0<>0<>dd097a447f871580a4e3e600fa03399a<>res://.godot/imported/negative_beeps-6008.mp3-52d40a48b97b8ef61508f5069a809559.mp3str::
 ::res://data/::1750011960
-cards.json::JSON::-1::1750011960::0::1::::<><><>0<>0<><>::
-::res://scenes/::1750015853
-Card.tscn::PackedScene::2938919211256656803::1750015853::0::1::::<><><>0<>0<><>::uid://bdmk216entx4f::::res://scripts/Card.gd<>uid://dchiqdjn63jma::::res://assets/sounds/flipcard-91468.wav
-Intro.tscn::PackedScene::4863899524717276037::1750015852::0::1::::<><><>0<>0<><>::uid://cbq0h88wowd06::::res://scripts/Intro.gd<>uid://ck1dnox3ls0cv::::res://assets/sounds/medieval-opener-270568.mp3
-Main.tscn::PackedScene::9048386673493771924::1750015852::0::1::::<><><>0<>0<><>::uid://lc7tcfk1dkew::::res://scripts/Main.gd<>uid://sb465440yow4::::res://assets/backgrounds/BackGround 3 .png<>uid://cs45nupg5stxv::::res://assets/Indicadores/BrainIcon.png<>uid://6mb38bfhn0jt::::res://assets/Indicadores/MoneyBagIcon.png<>uid://sbqp7nr6nb1c::::res://assets/Indicadores/TimeIcon.png<>uid://cbn8v4ut5xvyi::::res://assets/Indicadores/CastleIcon.png<>uid://cmm0vn0hunfk0::::res://assets/Indicadores/CrownIcon.png<>uid://bpihfc3ptrf8c::::res://assets/sounds/medieval-backgroun-jogo.mp3
-summaryCap.tscn::PackedScene::9008026928244618997::1750015853::0::1::::<><><>0<>0<><>::uid://b6w7mufimhxen::::res://scripts/Summary.gd
-::res://scripts/::1750015749
-Card.gd::GDScript::2622416547714941411::1749664696::0::1::::<>Control<><>0<>0<><>::
+cards.json::JSON/JSON::-1::1750011960::0::1::::<><><>0<>0<><>::
+::res://scenes/::1750017532
+Card.tscn::PackedScene::2938919211256656803::1750017532::0::1::::<><><>0<>0<><>::uid://bdmk216entx4f::::res://scripts/Card.gd<>uid://dchiqdjn63jma::::res://assets/sounds/flipcard-91468.wav
+Intro.tscn::PackedScene::4863899524717276037::1750017532::0::1::::<><><>0<>0<><>::uid://cbq0h88wowd06::::res://scripts/Intro.gd<>uid://ck1dnox3ls0cv::::res://assets/sounds/medieval-opener-270568.mp3
+Main.tscn::PackedScene::9048386673493771924::1750017532::0::1::::<><><>0<>0<><>::uid://lc7tcfk1dkew::::res://scripts/Main.gd<>uid://sb465440yow4::::res://assets/backgrounds/BackGround 3 .png<>uid://cs45nupg5stxv::::res://assets/Indicadores/BrainIcon.png<>uid://6mb38bfhn0jt::::res://assets/Indicadores/MoneyBagIcon.png<>uid://sbqp7nr6nb1c::::res://assets/Indicadores/TimeIcon.png<>uid://cbn8v4ut5xvyi::::res://assets/Indicadores/CastleIcon.png<>uid://cmm0vn0hunfk0::::res://assets/Indicadores/CrownIcon.png<>uid://bpihfc3ptrf8c::::res://assets/sounds/medieval-backgroun-jogo.mp3
+summaryCap.tscn::PackedScene::9008026928244618997::1750017532::0::1::::<><><>0<>0<><>::uid://b6w7mufimhxen::::res://scripts/Summary.gd
+::res://scripts/::1750017289
+Card.gd::GDScript/GDScript::2622416547714941411::1749664696::0::1::::<>Control<><>0<>0<><>::
 Intro.gd::GDScript::4877592465733944333::1750014914::0::1::::<>Control<><>0<>0<><>::
-Main.gd::GDScript::778183022639146622::1750015749::0::1::::<>Control<><>0<>0<><>::
-Summary.gd::GDScript::4609656578927651881::1750011960::0::1::::<>PopupPanel<><>0<>0<><>::
+Main.gd::GDScript::778183022639146622::1750017289::0::1::::<>Control<><>0<>0<><>::
+Summary.gd::GDScript/GDScript::4609656578927651881::1750011960::0::1::::<>PopupPanel<><>0<>0<><>::
