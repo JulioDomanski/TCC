@@ -446,8 +446,10 @@ func _input(event):
 	if tutorial_index == 11:
 		blocker.mouse_filter = MOUSE_FILTER_IGNORE
 		blocker.queue_free()
+		if button_skip and is_instance_valid(button_skip):
+			button_skip.queue_free()
 		tutorial_index += 1
-	
+		
 		
 	
 		
@@ -468,3 +470,4 @@ func pular_tutorial():
 
 	is_tutorial_busy = false
 	tutorial_index = tutorial_passos.size() + 1  
+	print(tutorial_passos.size() + 1)

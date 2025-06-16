@@ -10,7 +10,7 @@ var initial_global_position = Vector2()
 const SWIPE_THRESHOLD = 200
 
 
-# Referências aos nós
+
 @onready var texture_rect = $TextureRect
 @onready var label_feedback = $TextureRect/FeedbackBackground/LabelFeedback
 @onready var label_left = $TextureRect/LeftChoiceLabel
@@ -58,7 +58,7 @@ func check_card(card_data) -> String:
 func setup_card(data,is_feedback = false,direction="right"):
 	card_data = data
 	
-	# Carrega a imagem da carta
+	
 	if card_data.has("image"):
 		
 		var image_texture = load(check_card(card_data))
@@ -66,7 +66,7 @@ func setup_card(data,is_feedback = false,direction="right"):
 			texture_rect.texture = image_texture
 			
 	
-	# Configura os textos
+	
 	
 	if is_feedback:
 		label_feedback.text = "Feedback:\n"+card_data["feedback"][direction]
@@ -96,23 +96,23 @@ func setup_card(data,is_feedback = false,direction="right"):
 func _gui_input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
-			# Começar a arrastar
+			
 			dragging = true
 			drag_offset =get_global_position() - event.global_position
-			# Pequena animação de "pegar" a carta
+			
 			var tween = get_tree().create_tween()
 			tween.tween_property(self, "scale", Vector2(1.05, 1.05), 0.1)
 		else:
-			# Soltar a carta
+			
 			if dragging:
 				dragging = false
-				# Retorna ao tamanho normal
+				
 				var tween = get_tree().create_tween()
 				tween.tween_property(self, "scale", Vector2(1, 1), 0.1)
 				process_swipe()
 	
 	elif event is InputEventMouseMotion and dragging:
-		# Movimento suave apenas no eixo X
+		
 		
 		var new_pos = event.global_position + drag_offset
 		global_position = Vector2(new_pos.x, initial_global_position.y)
@@ -133,7 +133,7 @@ func process_swipe():
 func discard_card(direction):
 	var viewport_size = get_viewport_rect().size
 	var target_x = viewport_size.x if direction == "right" else -viewport_size.x
-	var target_y = global_position.y + 300  # desce 300 pixels
+	var target_y = global_position.y + 300  
 	
 	var tween = get_tree().create_tween()
 	tween.set_trans(Tween.TRANS_SINE)
@@ -151,20 +151,20 @@ func update_choice_visibility():
 	var delta_x = global_position.x - initial_global_position.x
 	var viewport_width = get_viewport_rect().size.x
 	
-	# Se arrastando para esquerda
+	
 	if delta_x < 0:
 		var left_strength = clamp(abs(delta_x)/SWIPE_THRESHOLD, 0, 1)
 		label_left.modulate.a = left_strength
 		label_right.modulate.a = 0
 	
-	# Se arrastando para direita
+	
 	elif delta_x > 0:
 		var right_strength = clamp(delta_x/SWIPE_THRESHOLD, 0, 1)
 		print("arrastando para direita")
 		label_right.modulate.a = right_strength
 		label_left.modulate.a = 0
 	
-	# Se no centro
+	
 	else:
 		label_left.modulate.a = 0
 		label_right.modulate.a = 0
