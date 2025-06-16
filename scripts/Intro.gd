@@ -24,7 +24,7 @@ var personagens = [
 		"descricao": "Estrategista da corte, visionária e defensora da entrega contínua de valor."
 	},
 	{
-		"nome": "Guilda dos Anoes",
+		"nome": "Guilda dos Anões",
 		"imagem": "res://assets/personagemIntro/Anoes.png",
 		"descricao": "Trabalhadores do reino, fortes, mas desorganizados sem liderança."
 	},

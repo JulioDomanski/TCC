@@ -9,8 +9,8 @@
 	"right_effects": { "moral": -20, "resources": -2, "time": -15, "trust": -20, "progress": -15 },
 	"correct_answer": "left",
 	"feedback": {
-	  "left": "Flexibilidade é essencial, majestade. Em tempos de incerteza, adaptabilidade é mais valiosa que previsões. (Sir Cedric)",
-	  "right": "Planos imutáveis são frágeis diante do caos. O reino precisa de ritmo, não rigidez. (Sir Cedric)"
+	  "left": "Flexibilidade é essencial, majestade. Em tempos de incerteza, adaptabilidade é mais valiosa que previsões.",
+	  "right": "Planos imutáveis são frágeis diante do caos. O reino precisa de ritmo, não rigidez."
 	}
   },
   {
@@ -23,8 +23,8 @@
 	"right_effects": { "moral": 10, "resources": 0, "time": 5, "trust": 10, "progress": 10 },
 	"correct_answer": "right",
 	"feedback": {
-	  "left": "Ordens cegas não constroem equipes fortes. Liderança exige escuta e alinhamento. (Sir Cedric)",
-	  "right": "Excelente, Sire! Planejamentos colaborativos aumentam engajamento e reduzem erros. (Sir Cedric)"
+	  "left": "Ordens cegas não constroem equipes fortes. Liderança exige escuta e alinhamento.",
+	  "right": "Excelente, Sire! Planejamentos colaborativos aumentam engajamento e reduzem erros."
 	}
   },
   {
@@ -37,8 +37,8 @@
 	"right_effects": { "moral": -25, "resources": 0, "time": -10, "trust": -15, "progress": -10 },
 	"correct_answer": "left",
 	"feedback": {
-	  "left": "Transparência constrói confiança. Adaptar-se não é fraqueza, é inteligência. (Lady Elara)",
-	  "right": "Trabalhar no escuro mina a motivação. O povo precisa de propósito, não apenas tarefas. (Lady Elara)"
+	  "left": "Transparência constrói confiança. Adaptar-se não é fraqueza, é inteligência.",
+	  "right": "Trabalhar no escuro mina a motivação. O povo precisa de propósito, não apenas tarefas."
 	}
   },
   {
@@ -51,8 +51,8 @@
 	"right_effects": { "moral": 10, "resources": 0, "time": 5, "trust": 10, "progress": 10 },
 	"correct_answer": "right",
 	"feedback": {
-	  "left": "Esperar demais pode paralisar o progresso e desmotivar os construtores. (Guilda dos Anões)",
-	  "right": "Trabalhar com entregas incrementais nos permite avançar com segurança. (Guilda dos Anões)"
+	  "left": "Esperar demais pode paralisar o progresso e desmotivar os construtores.",
+	  "right": "Trabalhar com entregas incrementais nos permite avançar com segurança."
 	}
   },
   {
@@ -65,8 +65,8 @@
 	"right_effects": { "moral": 5, "resources": 0, "time": 5, "trust": 10, "progress": 5 },
 	"correct_answer": "right",
 	"feedback": {
-	  "left": "Prometer o impossível só trará decepções e desconfiança. (Rainha Stakeholdina)",
-	  "right": "Promessas realistas baseadas em ciclos geram mais confiança a longo prazo. (Rainha Stakeholdina)"
+	  "left": "Prometer o impossível só trará decepções e desconfiança.",
+	  "right": "Promessas realistas baseadas em ciclos geram mais confiança a longo prazo."
 	}
   },
   {
@@ -79,8 +79,8 @@
 	"right_effects": { "moral": -15, "resources": 0, "time": 5, "trust": -15, "progress": -10 },
 	"correct_answer": "left",
 	"feedback": {
-	  "left": "Aprender com a experiência fortalece as próximas decisões. (Sir Cedric)",
-	  "right": "Ignorar lições nos condena a repetir erros. (Sir Cedric)"
+	  "left": "Aprender com a experiência fortalece as próximas decisões.",
+	  "right": "Ignorar lições nos condena a repetir erros."
 	}
   },
   {
@@ -93,8 +93,8 @@
 	"right_effects": { "moral": 10, "resources": -2, "time": -2, "trust": 10, "progress": 10 },
 	"correct_answer": "right",
 	"feedback": {
-	  "left": "Insistir em planos engessados afasta o time das necessidades reais. (Lady Elara)",
-	  "right": "Priorizar com base no valor entregue é essencial para reconstruir com impacto. (Lady Elara)"
+	  "left": "Insistir em planos engessados afasta o time das necessidades reais.",
+	  "right": "Priorizar com base no valor entregue é essencial para reconstruir com impacto."
 	}
   },
   {
@@ -107,8 +107,8 @@
 	"right_effects": { "moral": -15, "resources": 0, "time": -10, "trust": -15, "progress": -10 },
 	"correct_answer": "left",
 	"feedback": {
-	  "left": "Equipes auto-organizadas são mais ágeis e comprometidas com o sucesso. (Guilda dos Anões)",
-	  "right": "Centralizar tudo sobrecarrega a liderança e desmotiva a equipe. (Guilda dos Anões)"
+	  "left": "Equipes auto-organizadas são mais ágeis e comprometidas com o sucesso.",
+	  "right": "Centralizar tudo sobrecarrega a liderança e desmotiva a equipe."
 	}
   },
   {
@@ -121,8 +121,8 @@
 	"right_effects": { "moral": -20, "resources": 0, "time": -10, "trust": -20, "progress": -10 },
 	"correct_answer": "left",
 	"feedback": {
-	  "left": "Alinhamento com stakeholders é essencial para evitar desperdícios. (Rainha Stakeholdina)",
-	  "right": "Aceitar tudo sem planejamento gera caos e sobrecarga. (Rainha Stakeholdina)"
+	  "left": "Alinhamento com stakeholders é essencial para evitar desperdícios.",
+	  "right": "Aceitar tudo sem planejamento gera caos e sobrecarga."
 	}
   },
   {
@@ -135,8 +135,8 @@
 	"right_effects": { "moral": 10, "resources": 0, "time": 5, "trust": 10, "progress": 5 },
 	"correct_answer": "right",
 	"feedback": {
-	  "left": "Excesso de burocracia retarda o progresso e desvia o foco. (Sir Cedric)",
-	  "right": "Documentação leve e útil favorece a comunicação sem atrasar entregas. (Sir Cedric)"
+	  "left": "Excesso de burocracia retarda o progresso e desvia o foco.",
+	  "right": "Documentação leve e útil favorece a comunicação sem atrasar entregas."
 	}
   }
 ]
