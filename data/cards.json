@@ -1,4 +1,5 @@
-[
+{
+"capitulo_1": [
   {
 	"id": 1,
 	"text": "Majestade, o povo aguarda um plano detalhado de reconstrução com cada passo nos próximos anos. Como devemos proceder?",
@@ -139,4 +140,148 @@
 	  "right": "Documentação leve e útil favorece a comunicação sem atrasar entregas."
 	}
   }
+],
+"capitulo_2" : 
+	[
+  {
+	"id": 11,
+	"text": "A Guilda dos Anões pergunta: 'Majestade, devemos tentar reconstruir todo o salão de uma vez ou entregar partes utilizáveis pouco a pouco?'",
+	"left_choice": "Reconstruir tudo de uma vez. Assim ficará perfeito quando pronto.",
+	"right_choice": "Entregar por partes. O povo já poderá usar o que for ficando pronto.",
+	"image": "Anoes",
+	"left_effects": { "moral": -10, "resources": -15, "time": -20, "trust": -10, "progress": -15 },
+	"right_effects": { "moral": 15, "resources": -5, "time": 5, "trust": 10, "progress": 15 },
+	"correct_answer": "right",
+	"feedback": {
+	  "left": "Tentar entregar tudo no fim gera demora e insatisfação. (Guilda dos Anões)",
+	  "right": "Entregas parciais dão valor imediato e permitem ajustes. (Guilda dos Anões)"
+	}
+  },
+  {
+	"id": 12,
+	"text": "Lady Elara sugere que cada ciclo de reconstrução tenha um objetivo claro. Como responder?",
+	"left_choice": "Não é necessário. Vamos apenas trabalhar sem definir metas.",
+	"right_choice": "Definir objetivos claros em cada ciclo. Isso guia o esforço da equipe.",
+	"image": "Lady Elara",
+	"left_effects": { "moral": -15, "resources": 0, "time": -10, "trust": -15, "progress": -10 },
+	"right_effects": { "moral": 10, "resources": 0, "time": 5, "trust": 15, "progress": 10 },
+	"correct_answer": "right",
+	"feedback": {
+	  "left": "Sem metas, o esforço se dispersa e a motivação cai. (Lady Elara)",
+	  "right": "Ciclos com objetivos claros orientam o time e aumentam valor. (Lady Elara)"
+	}
+  },
+  {
+	"id": 13,
+	"text": "Sir Cedric alerta que o ciclo está se estendendo demais. Devemos encerrá-lo logo ou esperar mais?",
+	"left_choice": "Encerrar o ciclo agora e revisar o que foi feito.",
+	"right_choice": "Deixar o ciclo aberto até terminar tudo.",
+	"image": "Sir Cedric",
+	"left_effects": { "moral": 5, "resources": 0, "time": 5, "trust": 10, "progress": 5 },
+	"right_effects": { "moral": -15, "resources": 0, "time": -15, "trust": -10, "progress": -10 },
+	"correct_answer": "left",
+	"feedback": {
+	  "left": "Encerrar ciclos no tempo certo mantém ritmo e aprendizado constante. (Sir Cedric)",
+	  "right": "Ciclos intermináveis atrasam entregas e desgastam a equipe. (Sir Cedric)"
+	}
+  },
+  {
+	"id": 14,
+	"text": "O povo pede a reconstrução da cozinha do castelo primeiro, pois sentem falta de banquetes.",
+	"left_choice": "Atender a prioridade do povo, mesmo que não seja a mais grandiosa.",
+	"right_choice": "Seguir o plano original e reconstruir a biblioteca primeiro.",
+	"image": "Rainha Stakeholdina",
+	"left_effects": { "moral": 15, "resources": -5, "time": 0, "trust": 15, "progress": 10 },
+	"right_effects": { "moral": -10, "resources": 0, "time": -5, "trust": -15, "progress": -10 },
+	"correct_answer": "left",
+	"feedback": {
+	  "left": "Priorizar valor imediato aumenta confiança e satisfação. (Rainha Stakeholdina)",
+	  "right": "Planos rígidos podem ignorar necessidades reais. (Rainha Stakeholdina)"
+	}
+  },
+  {
+	"id": 15,
+	"text": "Sir Cedric sugere revisarmos o trabalho entregue ao fim de cada ciclo. Como proceder?",
+	"left_choice": "Sim, revisar nos permitirá aprender e melhorar.",
+	"right_choice": "Não, é perda de tempo. Vamos apenas continuar.",
+	"image": "Sir Cedric",
+	"left_effects": { "moral": 10, "resources": 0, "time": -2, "trust": 10, "progress": 5 },
+	"right_effects": { "moral": -10, "resources": 0, "time": 2, "trust": -15, "progress": -10 },
+	"correct_answer": "left",
+	"feedback": {
+	  "left": "Revisar aumenta aprendizado e qualidade para os próximos ciclos. (Sir Cedric)",
+	  "right": "Ignorar aprendizados nos faz repetir erros. (Sir Cedric)"
+	}
+  },
+  {
+	"id": 16,
+	"text": "A Guilda dos Anões quer construir rápido sem mostrar o progresso até o final. O que decide?",
+	"left_choice": "Permitir. Surpresas são boas no fim.",
+	"right_choice": "Não. Mostrar progresso parcial ajuda a ajustar expectativas.",
+	"image": "Anoes",
+	"left_effects": { "moral": -10, "resources": 0, "time": -10, "trust": -15, "progress": -10 },
+	"right_effects": { "moral": 10, "resources": 0, "time": 5, "trust": 15, "progress": 10 },
+	"correct_answer": "right",
+	"feedback": {
+	  "left": "Esconder progresso aumenta riscos e frustrações. (Guilda dos Anões)",
+	  "right": "Transparência em cada ciclo gera confiança e valor. (Guilda dos Anões)"
+	}
+  },
+  {
+	"id": 17,
+	"text": "Lady Elara sugere ajustar as prioridades após ouvir o povo. O que fazer?",
+	"left_choice": "Manter o plano inicial sem mudanças.",
+	"right_choice": "Adaptar prioridades com base no feedback recebido.",
+	"image": "Lady Elara",
+	"left_effects": { "moral": -10, "resources": 0, "time": -5, "trust": -10, "progress": -10 },
+	"right_effects": { "moral": 10, "resources": 0, "time": 5, "trust": 15, "progress": 10 },
+	"correct_answer": "right",
+	"feedback": {
+	  "left": "Insistir no plano pode ignorar necessidades reais. (Lady Elara)",
+	  "right": "Adaptação garante que entregas tragam valor ao povo. (Lady Elara)"
+	}
+  },
+  {
+	"id": 18,
+	"text": "A Rainha Stakeholdina pede para adicionar um novo salão durante o ciclo em andamento.",
+	"left_choice": "Aceitar a nova demanda imediatamente.",
+	"right_choice": "Registrar a ideia e considerar no próximo ciclo.",
+	"image": "Rainha Stakeholdina",
+	"left_effects": { "moral": -10, "resources": -5, "time": -10, "trust": -10, "progress": -10 },
+	"right_effects": { "moral": 10, "resources": 0, "time": 5, "trust": 10, "progress": 5 },
+	"correct_answer": "right",
+	"feedback": {
+	  "left": "Incluir demandas no meio do ciclo gera caos e atrasos. (Rainha Stakeholdina)",
+	  "right": "Guardar demandas para o próximo ciclo mantém ritmo e organização. (Rainha Stakeholdina)"
+	}
+  },
+  {
+	"id": 19,
+	"text": "Sir Cedric pergunta se devemos manter ciclos sempre do mesmo tamanho.",
+	"left_choice": "Sim, manter o mesmo ritmo ajuda na previsibilidade.",
+	"right_choice": "Não, podemos variar conforme a necessidade.",
+	"image": "Sir Cedric",
+	"left_effects": { "moral": 10, "resources": 0, "time": 5, "trust": 10, "progress": 10 },
+	"right_effects": { "moral": -5, "resources": 0, "time": -5, "trust": -10, "progress": -5 },
+	"correct_answer": "left",
+	"feedback": {
+	  "left": "Ciclos de mesmo tamanho aumentam previsibilidade e disciplina. (Sir Cedric)",
+	  "right": "Variações excessivas tornam difícil medir progresso. (Sir Cedric)"
+	}
+  },
+  {
+	"id": 20,
+	"text": "A Guilda dos Anões pede liberdade para dividir as tarefas dentro do ciclo. O que decide?",
+	"left_choice": "Permitir. Eles sabem como organizar o trabalho.",
+	"right_choice": "Negar. Todas as tarefas devem ser impostas pela coroa.",
+	"image": "Anoes",
+	"left_effects": { "moral": 15, "resources": 0, "time": 5, "trust": 15, "progress": 10 },
+	"right_effects": { "moral": -15, "resources": 0, "time": -10, "trust": -15, "progress": -10 },
+	"correct_answer": "left",
+	"feedback": {
+	  "left": "Auto-organização dentro do ciclo aumenta eficiência e engajamento. (Guilda dos Anões)",
+	  "right": "Controle excessivo sufoca a criatividade e o ritmo. (Guilda dos Anões)"
+	}
+  }	
 ]
+}
