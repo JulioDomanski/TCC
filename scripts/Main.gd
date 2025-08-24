@@ -195,7 +195,7 @@ func show_summary():
 func _on_summary_closed():
 	current_chapter += 1
 	if current_chapter <= total_chapters:
-		start_chapter(current_chapter)
+		cena_transicao(current_chapter)
 	else:
 		dilema.text = "🏆 Parabéns! Você concluiu a jornada da reconstrução do reino."
 
@@ -409,3 +409,14 @@ func pular_tutorial():
 	is_tutorial_busy = false
 	tutorial_index = tutorial_passos.size() + 1  
 	print(tutorial_passos.size() + 1)
+
+func cena_transicao(chapter: int):
+	var path = "res://scenes/transicao%d.tscn" % chapter
+	var transicao_scene = load(path).instantiate()
+	add_child(transicao_scene)
+	
+	# conecta para iniciar o capítulo quando a cena terminar
+	transicao_scene.connect("transition_finished", Callable(self, "_on_transition_finished").bind(chapter))
+
+func _on_transition_finished(chapter: int):
+	start_chapter(chapter)

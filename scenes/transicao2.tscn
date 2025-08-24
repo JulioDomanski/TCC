@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cknt2irn8wqix"]
+
+[sub_resource type="GDScript" id="GDScript_hua8q"]
+script/source = "
+"
+
+[node name="Transicao2" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = SubResource("GDScript_hua8q")

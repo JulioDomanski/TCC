@@ -1,3 +1,4 @@
+Control
 AudioStreamPlayer2D
 AudioListener2D
 Button
@@ -9,5 +10,4 @@ PopupPanel
 ColorRect
 Panel
 Label
-Control
 AudioStreamPlayer
