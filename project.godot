@@ -15,6 +15,10 @@ run/main_scene="uid://cbkdykatrx1sr"
 config/features=PackedStringArray("4.4")
 config/icon="res://icon.png"
 
+[autoload]
+
+FadeLayer="*res://scripts/FadeLayer.gd"
+
 [display]
 
 window/size/resizable=false
