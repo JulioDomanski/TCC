@@ -1,10 +1,14 @@
 [gd_scene load_steps=2 format=3 uid="uid://cknt2irn8wqix"]
 
-[sub_resource type="GDScript" id="GDScript_hua8q"]
-script/source = "
-"
+[ext_resource type="Script" uid="uid://cwgec8y0wvtvw" path="res://scripts/transicao_2.gd" id="1_qq0bt"]
 
 [node name="Transicao2" type="Control"]
+z_index = 10
 layout_mode = 3
-anchors_preset = 0
-script = SubResource("GDScript_hua8q")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_qq0bt")

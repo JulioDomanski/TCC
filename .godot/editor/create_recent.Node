@@ -1,13 +1,13 @@
+Button
+Label
+VBoxContainer
 Control
 AudioStreamPlayer2D
 AudioListener2D
-Button
 RichTextLabel
 TextureRect
-VBoxContainer
 MarginContainer
 PopupPanel
 ColorRect
 Panel
-Label
 AudioStreamPlayer

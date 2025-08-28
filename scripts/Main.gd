@@ -35,6 +35,8 @@ var skipped_tutorial = false
 @onready var dilema = $MiddleControl/CardContainer/Dilema
 @onready var ui = $"UI"
 @onready var viewport = get_viewport_rect()
+@onready var rect_fade := ColorRect.new()
+
 
 # tutorial
 var tutorial_passos = [
@@ -411,12 +413,29 @@ func pular_tutorial():
 	print(tutorial_passos.size() + 1)
 
 func cena_transicao(chapter: int):
+	rect_fade.color = Color.BLACK
+	rect_fade.modulate.a = 0
+	rect_fade.set_anchors_preset(Control.PRESET_FULL_RECT)
+	rect_fade.z_index = 10
+	add_child(rect_fade)
+	var tween = create_tween()
+	tween.tween_property(rect_fade, "modulate:a", 1.0, 1.0)
+	await tween.finished
+	
 	var path = "res://scenes/transicao%d.tscn" % chapter
 	var transicao_scene = load(path).instantiate()
 	add_child(transicao_scene)
 	
-	# conecta para iniciar o capítulo quando a cena terminar
-	transicao_scene.connect("transition_finished", Callable(self, "_on_transition_finished").bind(chapter))
+	transicao_scene.connect(
+		"transition_finished",
+		Callable(self, "_on_transition_finished").bind(chapter)
+	)
+	
 
 func _on_transition_finished(chapter: int):
 	start_chapter(chapter)
+	var tween = create_tween()
+	tween.tween_property(rect_fade, "modulate:a", 0, 1.0)
+	await tween.finished
+	rect_fade.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	
