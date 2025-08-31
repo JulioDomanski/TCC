@@ -10,10 +10,11 @@ var card_id = 0
 var showing_feedback = false
 var first_card = true
 var is_tutorial_busy := false
+var rect_fade: ColorRect
 
 # ✅ controle de capítulos
 var current_chapter = 1
-var total_chapters = 2  # mude se tiver mais capítulos
+var total_chapters = 3  # mude se tiver mais capítulos
 
 # estatísticas do capítulo
 var chapter_correct_answers = 0
@@ -35,7 +36,6 @@ var skipped_tutorial = false
 @onready var dilema = $MiddleControl/CardContainer/Dilema
 @onready var ui = $"UI"
 @onready var viewport = get_viewport_rect()
-@onready var rect_fade := ColorRect.new()
 
 
 # tutorial
@@ -76,6 +76,16 @@ func _ready():
 	fade_tween.tween_property(fade_rect, "color", Color(0, 0, 0, 0), 1.5)
 	await fade_tween.finished
 	fade_rect.queue_free()
+
+	# --- ADICIONE ESTE CÓDIGO PARA INICIALIZAR O rect_fade ---
+	rect_fade = ColorRect.new()
+	rect_fade.color = Color.BLACK
+	rect_fade.set_anchors_preset(Control.PRESET_FULL_RECT)
+	rect_fade.z_index = 50
+	rect_fade.modulate.a = 0.0  # Começa transparente
+	rect_fade.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	add_child(rect_fade)
+	# --------------------------------------------------------
 
 	if current_chapter == 1:
 		mostrar_tutorial_passo()
@@ -139,15 +149,20 @@ func spawn_new_card():
 	dilema.add_theme_font_size_override("font_size", 21)
 	current_card.connect("card_discarded", Callable(self, "_on_card_discarded"))
 	
-func set_points(node,direction,indicator):
+func set_points(node, direction, indicator):
 	var points = cards_data[card_id][direction+"_effects"][indicator]
-	node.text = str(node.text.to_int()+points)
-	if(direction==cards_data[card_id]["correct_answer"] && points !=0 ):
+	node.text = str(node.text.to_int() + points)
+	
+	if direction == cards_data[card_id]["correct_answer"] && points != 0:
 		node.add_theme_color_override("font_color", Color.GREEN)
-	if(direction!=cards_data[card_id]["correct_answer"] && points !=0 ):
+	if direction != cards_data[card_id]["correct_answer"] && points != 0:
 		node.add_theme_color_override("font_color", Color.RED)
+	
 	await get_tree().create_timer(2).timeout
-	node.add_theme_color_override("font_color", Color(1,1,1))
+	
+	# ✅ VERIFICAR se o nó ainda existe antes de modificar
+	if is_instance_valid(node):
+		node.add_theme_color_override("font_color", Color(1, 1, 1))
 
 func show_feedback_card(card_data,direction) -> Signal:
 	showing_feedback = true
@@ -413,29 +428,55 @@ func pular_tutorial():
 	print(tutorial_passos.size() + 1)
 
 func cena_transicao(chapter: int):
-	rect_fade.color = Color.BLACK
-	rect_fade.modulate.a = 0
-	rect_fade.set_anchors_preset(Control.PRESET_FULL_RECT)
-	rect_fade.z_index = 10
-	add_child(rect_fade)
-	var tween = create_tween()
-	tween.tween_property(rect_fade, "modulate:a", 1.0, 1.0)
-	await tween.finished
+	var instant_fade = ColorRect.new()
+	instant_fade.color = Color.BLACK
+	instant_fade.modulate.a = 1.0 
+	instant_fade.set_anchors_preset(Control.PRESET_FULL_RECT)
+	instant_fade.z_index = 60 
+	add_child(instant_fade)
+	
+	await get_tree().process_frame
+	await get_tree().process_frame
 	
 	var path = "res://scenes/transicao%d.tscn" % chapter
 	var transicao_scene = load(path).instantiate()
+	transicao_scene.z_index = 45
 	add_child(transicao_scene)
 	
+	# Remover o instant_fade com fade
+	var fade_out_tween = create_tween()
+	fade_out_tween.tween_property(instant_fade, "modulate:a", 0.0, 0.3)
+	await fade_out_tween.finished
+	instant_fade.queue_free()
+	
+	# Conectar o sinal
 	transicao_scene.connect(
 		"transition_finished",
-		Callable(self, "_on_transition_finished").bind(chapter)
+		Callable(self, "_on_transition_finished").bind(chapter, transicao_scene)
 	)
-	
 
-func _on_transition_finished(chapter: int):
-	start_chapter(chapter)
-	var tween = create_tween()
-	tween.tween_property(rect_fade, "modulate:a", 0, 1.0)
-	await tween.finished
-	rect_fade.mouse_filter = Control.MOUSE_FILTER_IGNORE
+func _on_transition_finished(chapter: int, transicao_scene):
+	var instant_fade = ColorRect.new()
+	instant_fade.color = Color.BLACK
+	instant_fade.modulate.a = 1.0  
+	instant_fade.set_anchors_preset(Control.PRESET_FULL_RECT)
+	instant_fade.z_index = 60 
+	add_child(instant_fade)
 	
+	# Múltiplas pausas para garantir renderização
+	await get_tree().process_frame
+	await get_tree().process_frame
+	await get_tree().process_frame
+	
+	if is_instance_valid(transicao_scene):
+		transicao_scene.queue_free()
+	
+	start_chapter(chapter)
+	
+	await get_tree().process_frame
+	await get_tree().process_frame
+	
+	var fade_in_tween = create_tween()
+	fade_in_tween.tween_property(instant_fade, "modulate:a", 0.0, 0.8)
+	await fade_in_tween.finished
+	instant_fade.queue_free()
