@@ -283,5 +283,147 @@
 	  "right": "Controle excessivo sufoca a criatividade e o ritmo. (Guilda dos Anões)"
 	}
   }	
+],
+"capitulo_3": [
+  {
+	"id": 21,
+	"text": "Lady Elara apresenta as prioridades para a reconstrução do mercado. Porém, a Rainha Stakeholdina exige que os jardins do castelo sejam feitos primeiro para um festival.",
+	"left_choice": "Apoie Lady Elara. O valor para o reino, definido por ela, deve guiar o trabalho.",
+	"right_choice": "Atenda à Rainha. A imagem da coroa é mais importante agora.",
+	"image": "Lady Elara",
+	"left_effects": { "moral": 10, "resources": -2, "time": 0, "trust": 15, "progress": 10 },
+	"right_effects": { "moral": -15, "resources": -5, "time": -5, "trust": -20, "progress": -15 },
+	"correct_answer": "left",
+	"feedback": {
+	  "left": "A autoridade de quem prioriza o trabalho deve ser respeitada para manter o foco no que gera mais valor.",
+	  "right": "Ignorar a priorização de valor gera desperdício e desconfiança na equipe."
+	}
+  },
+  {
+	"id": 22,
+	"text": "A ponte para a pedreira ruiu, bloqueando o acesso dos anões aos materiais. Sir Cedric pede autoridade para reorganizar as equipes e resolver o problema imediatamente.",
+	"left_choice": "Não. Mande-os esperar. Não podemos desviar do plano principal.",
+	"right_choice": "Conceda a autoridade. A remoção de impedimentos é a prioridade dele.",
+	"image": "Sir Cedric",
+	"left_effects": { "moral": -20, "resources": 0, "time": -15, "trust": -15, "progress": -20 },
+	"right_effects": { "moral": 15, "resources": -3, "time": -2, "trust": 10, "progress": 10 },
+	"correct_answer": "right",
+	"feedback": {
+	  "left": "Um impedimento ignorado paralisa o progresso. A agilidade depende de resolver bloqueios rapidamente.",
+	  "right": "Excelente, Sire! Facilitar a remoção de barreiras é a chave para manter o fluxo de trabalho."
+	}
+  },
+  {
+	"id": 23,
+	"text": "A Guilda dos Anões propõe usar uma nova técnica de cantaria para a muralha, que é mais rápida. Os arquitetos reais protestam, preferindo o método tradicional.",
+	"left_choice": "Confie na Guilda. Eles são os especialistas na construção e sabem como executar o trabalho.",
+	"right_choice": "Imponha o método tradicional. Não devemos arriscar a qualidade.",
+	"image": "Anoes",
+	"left_effects": { "moral": 15, "resources": 0, "time": 10, "trust": 15, "progress": 10 },
+	"right_effects": { "moral": -15, "resources": 0, "time": -10, "trust": -10, "progress": -5 },
+	"correct_answer": "left",
+	"feedback": {
+	  "left": "Confiar na expertise técnica da equipe gera inovação e eficiência.",
+	  "right": "Microgerenciar o 'como' desmotiva a equipe e impede melhorias."
+	}
+  },
+  {
+	"id": 24,
+	"text": "A Rainha Stakeholdina foi diretamente aos anões e ordenou a construção de uma estátua dela, ignorando a lista de prioridades de Lady Elara.",
+	"left_choice": "Permita a construção. Uma ordem real não pode ser negada.",
+	"right_choice": "Reafirme que todas as solicitações devem passar por Lady Elara para serem priorizadas.",
+	"image": "Rainha Stakeholdina",
+	"left_effects": { "moral": -10, "resources": -10, "time": -10, "trust": -15, "progress": -15 },
+	"right_effects": { "moral": 5, "resources": 0, "time": 0, "trust": 10, "progress": 5 },
+	"correct_answer": "right",
+	"feedback": {
+	  "left": "Pedidos diretos à equipe criam caos e desviam o foco do que é realmente importante.",
+	  "right": "Manter uma única fonte de prioridades protege a equipe e garante que o trabalho de maior valor seja feito."
+	}
+  },
+  {
+	"id": 25,
+	"text": "Durante o planejamento, a Rainha pressiona os anões a prometerem o dobro de trabalho. Eles parecem hesitantes.",
+	"left_choice": "Defenda os anões. Eles devem se comprometer apenas com o que acreditam ser possível.",
+	"right_choice": "Apoie a Rainha. Precisamos acelerar a todo custo.",
+	"image": "Anoes",
+	"left_effects": { "moral": 15, "resources": 0, "time": 0, "trust": 20, "progress": 5 },
+	"right_effects": { "moral": -20, "resources": 0, "time": -10, "trust": -15, "progress": -15 },
+	"correct_answer": "left",
+	"feedback": {
+	  "left": "Um ritmo sustentável é mais valioso que promessas irrealistas. Proteger a equipe gera confiança.",
+	  "right": "Pressionar a equipe leva à exaustão, baixa qualidade e quebra de confiança."
+	}
+  },
+  {
+	"id": 26,
+	"text": "Você teve uma ideia brilhante para um novo aqueduto. O que fazer?",
+	"left_choice": "Ordene que a Guilda dos Anões comece a trabalhar nisso imediatamente.",
+	"right_choice": "Apresente a ideia a Lady Elara para que ela avalie o valor e a prioridade.",
+	"image": "Lady Elara",
+	"left_effects": { "moral": -10, "resources": -5, "time": -5, "trust": -15, "progress": -10 },
+	"right_effects": { "moral": 10, "resources": 0, "time": 0, "trust": 10, "progress": 5 },
+	"correct_answer": "right",
+	"feedback": {
+	  "left": "Até as melhores ideias, quando impostas, podem atrapalhar o fluxo de valor.",
+	  "right": "Respeitar o processo de priorização garante que até as ideias do rei sirvam ao bem maior do reino."
+	}
+  },
+  {
+	"id": 27,
+	"text": "Sir Cedric interrompe uma longa discussão no planejamento, dizendo que o foco foi perdido. Alguns nobres ficam ofendidos.",
+	"left_choice": "Apoie Sir Cedric. Manter o foco da reunião é o papel dele.",
+	"right_choice": "Mande-o se calar. Todas as opiniões devem ser ouvidas, não importa o tempo.",
+	"image": "Sir Cedric",
+	"left_effects": { "moral": 5, "resources": 0, "time": 10, "trust": 10, "progress": 5 },
+	"right_effects": { "moral": -10, "resources": 0, "time": -15, "trust": -10, "progress": -5 },
+	"correct_answer": "left",
+	"feedback": {
+	  "left": "Garantir que as cerimônias sejam produtivas é essencial. O tempo da equipe é valioso.",
+	  "right": "Reuniões sem foco desperdiçam tempo e energia, atrasando o progresso do reino."
+	}
+  },
+  {
+	"id": 28,
+	"text": "Ao fim do ciclo, a Guilda dos Anões apresenta a nova ala do hospital. A Rainha reclama que a decoração não é luxuosa.",
+	"left_choice": "Ordene que refaçam o trabalho com mais luxo.",
+	"right_choice": "Lembre a todos que o objetivo era uma ala funcional, e a decoração será anotada para o futuro.",
+	"image": "Rainha Stakeholdina",
+	"left_effects": { "moral": -15, "resources": -10, "time": -10, "trust": -15, "progress": -10 },
+	"right_effects": { "moral": 10, "resources": 0, "time": 5, "trust": 10, "progress": 10 },
+	"correct_answer": "right",
+	"feedback": {
+	  "left": "Mudar o escopo após a entrega gera retrabalho e desconfiança. O objetivo acordado deve ser o foco.",
+	  "right": "A revisão serve para inspecionar o que foi feito contra o objetivo, e novas ideias viram novos itens de trabalho."
+	}
+  },
+  {
+	"id": 29,
+	"text": "Na retrospectiva, um nobre aponta para um anão e exige punição por um erro que causou um pequeno atraso.",
+	"left_choice": "Puna o anão. Erros devem ter consequências.",
+	"right_choice": "Apoie Sir Cedric, que defende que o objetivo é aprender com o processo, não culpar indivíduos.",
+	"image": "Sir Cedric",
+	"left_effects": { "moral": -25, "resources": 0, "time": 0, "trust": -20, "progress": -10 },
+	"right_effects": { "moral": 20, "resources": 0, "time": 0, "trust": 15, "progress": 5 },
+	"correct_answer": "right",
+	"feedback": {
+	  "left": "Uma cultura de culpa esconde problemas. Ninguém arriscará ou será honesto se tiver medo de punição.",
+	  "right": "Um ambiente seguro, onde falhas são vistas como oportunidades de melhoria, fortalece toda a equipe."
+	}
+  },
+  {
+	"id": 30,
+	"text": "Os anões terminaram a torre de vigia, mas os sentinelas reclamam que não há escadas. Os anões dizem que 'construir a torre' não incluía escadas.",
+	"left_choice": "Ordene ao Conselho que defina claramente o que 'pronto' significa para todas as tarefas futuras.",
+	"right_choice": "Mande os anões adicionarem as escadas e siga em frente sem discutir.",
+	"image": "Anoes",
+	"left_effects": { "moral": 10, "resources": -2, "time": -2, "trust": 10, "progress": 15 },
+	"right_effects": { "moral": -5, "resources": -2, "time": -5, "trust": -10, "progress": -5 },
+	"correct_answer": "left",
+	"feedback": {
+	  "left": "Uma 'Definição de Pronto' clara e compartilhada por todos evita mal-entendidos e garante que o trabalho entregue seja realmente utilizável.",
+	  "right": "Ignorar a causa do problema apenas garante que ele se repetirá, gerando mais atrasos e frustração."
+	}
+  }
 ]
 }

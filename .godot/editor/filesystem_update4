@@ -1,10 +1,10 @@
 res://default_env.tres
-res://scenes/Main.tscn
-res://scenes/Intro.tscn
-res://scenes/summaryCap.tscn
-res://scenes/Card.tscn
 res://scenes/transicao2.tscn
-res://scripts/FadeLayer.gd
+res://scenes/Main.tscn
+res://data/cards.json
+res://scenes/transicao3.tscn
+res://scenes/transicao_3.gd
 res://scripts/Main.gd
+res://scripts/transicao_3.gd
 res://scripts/transicao_2.gd
-res://scripts/Intro.gd
+res://scripts/Summary.gd
