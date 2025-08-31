@@ -227,6 +227,20 @@
 	  "right": "Transparência em cada ciclo gera confiança e valor. (Guilda dos Anões)"
 	}
   },
+{
+  "id": 16.5,
+  "text": "⚠️ Caos Escopial! Um incêndio inesperado começou na ala leste do castelo. Precisamos agir rápido!",
+  "left_choice": "Tentar apagar o incêndio sozinho, sem planejar.",
+  "right_choice": "Organizar rapidamente a equipe e agir coordenadamente.",
+  "image": "CaosEscopial",
+  "left_effects": { "moral": -50, "resources": -20, "time": -30, "trust": -50, "progress": -50 },
+  "right_effects": { "moral": 0, "resources": -10, "time": -5, "trust": 0, "progress": 0 },
+  "correct_answer": "right",
+  "feedback": {
+	"left": "O caos domina! Falta de planejamento e pressa resultam em desastre. 🏰 Game Over!",
+	"right": "Excelente! Ação coordenada salva a situação. O reino sobrevive ao caos."
+  }
+},
   {
 	"id": 17,
 	"text": "Lady Elara sugere ajustar as prioridades após ouvir o povo. O que fazer?",
