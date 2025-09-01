@@ -1,7 +1,9 @@
+AnimationPlayer
+Control
+VBoxContainer
+PanelContainer
 Button
 Label
-VBoxContainer
-Control
 AudioStreamPlayer2D
 AudioListener2D
 RichTextLabel
@@ -10,4 +12,3 @@ MarginContainer
 PopupPanel
 ColorRect
 Panel
-AudioStreamPlayer

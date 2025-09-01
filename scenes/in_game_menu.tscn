@@ -1,0 +1,111 @@
+[gd_scene load_steps=13 format=3 uid="uid://ceir2h0grxacs"]
+
+[ext_resource type="Script" uid="uid://1use0x1idqkh" path="res://scripts/in_game_menu.gd" id="1_qkhwq"]
+[ext_resource type="Texture2D" uid="uid://ck62if840dck2" path="res://assets/backgrounds/background-menu.png" id="2_q5csu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0rq4b"]
+
+[sub_resource type="Theme" id="Theme_0cve7"]
+default_font_size = 30
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_efgmv"]
+texture = ExtResource("2_q5csu")
+expand_margin_left = 110.0
+expand_margin_top = 120.0
+expand_margin_right = 110.0
+expand_margin_bottom = 120.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r4chg"]
+bg_color = Color(0, 0, 0, 0.501961)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_diwu4"]
+bg_color = Color(0, 0, 0, 0.647059)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0rq4b"]
+bg_color = Color(0, 0, 0, 0.282353)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vaaqd"]
+bg_color = Color(0, 0, 0, 0.647059)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_efgmv"]
+bg_color = Color(0, 0, 0, 0.282353)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_igyd0"]
+bg_color = Color(0, 0, 0, 0.647059)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q5csu"]
+bg_color = Color(0, 0, 0, 0.282353)
+border_blend = true
+
+[node name="in_game_menu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_qkhwq")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+light_mask = 5
+z_index = 1
+z_as_relative = false
+material = SubResource("ShaderMaterial_0rq4b")
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -100.0
+offset_right = 125.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_0cve7")
+theme_override_styles/panel = SubResource("StyleBoxTexture_efgmv")
+
+[node name="Label" type="Label" parent="PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 0)
+theme_override_colors/font_shadow_color = Color(0.695503, 0.695503, 0.695503, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_r4chg")
+text = "Menu"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Button - Resumir" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_styles/hover = SubResource("StyleBoxFlat_diwu4")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0rq4b")
+text = "Resumir
+"
+
+[node name="Button - Opções" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_styles/hover = SubResource("StyleBoxFlat_vaaqd")
+theme_override_styles/normal = SubResource("StyleBoxFlat_efgmv")
+text = "Opções"
+
+[node name="Button - Sair" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.559523, 1.27546e-06, 3.36915e-07, 1)
+theme_override_styles/hover = SubResource("StyleBoxFlat_igyd0")
+theme_override_styles/normal = SubResource("StyleBoxFlat_q5csu")
+text = "Sair do Jogo"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Button - Resumir" to="." method="_on_button_resumir_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Button - Opções" to="." method="_on_button_opcoes_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Button - Sair" to="." method="_on_button_sair_pressed"]

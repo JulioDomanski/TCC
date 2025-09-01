@@ -350,7 +350,9 @@ func mostrar_tutorial_passo() -> void:
 	
 func _input(event):
 	
-	
+	if get_tree().paused:
+		return
+		
 	if event is InputEventMouseButton and event.pressed:
 		# Se clicou no botão de pular, não faz mais nada aqui
 		if button_skip and button_skip.get_global_rect().has_point(event.position):
