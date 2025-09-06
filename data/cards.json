@@ -228,17 +228,17 @@
 	}
   },
 {
-  "id": 16.5,
-  "text": "⚠️ Caos Escopial! Um incêndio inesperado começou na ala leste do castelo. Precisamos agir rápido!",
-  "left_choice": "Tentar apagar o incêndio sozinho, sem planejar.",
-  "right_choice": "Organizar rapidamente a equipe e agir coordenadamente.",
-  "image": "CaosEscopial",
-  "left_effects": { "moral": -50, "resources": -20, "time": -30, "trust": -50, "progress": -50 },
-  "right_effects": { "moral": 0, "resources": -10, "time": -5, "trust": 0, "progress": 0 },
+   "id": 16.5,
+  "text": "⚠️ O monstro Caos Escopial surge na ala leste, causando destruição contínua! Devemos enfrentá-lo de uma vez ou agir em ciclos de defesa coordenados?",
+  "left_choice": "Atacar o monstro de frente em uma única investida.",
+  "right_choice": "Organizar ataques em ciclos curtos, avaliando e ajustando a cada rodada.",
+  "image": "Caos Escopial",
+  "left_effects": { "moral": -40, "resources": -25, "time": -30, "trust": -40, "progress": -30 },
+  "right_effects": { "moral": 10, "resources": -10, "time": 0, "trust": 15, "progress": 15 },
   "correct_answer": "right",
   "feedback": {
-	"left": "O caos domina! Falta de planejamento e pressa resultam em desastre. 🏰 Game Over!",
-	"right": "Excelente! Ação coordenada salva a situação. O reino sobrevive ao caos."
+	"left": "O ataque direto falha! O Caos Escopial se adapta, e o reino sofre grandes perdas. (Caos Escopial)",
+	"right": "Com ciclos curtos e ajustes constantes, vocês controlam o monstro e protegem o castelo. (Caos Escopial)"
   }
 },
   {

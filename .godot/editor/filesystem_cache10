@@ -1,7 +1,7 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1756857964
-default_env.tres::Environment::8952826018721607875::1756857964::0::1::::<><><>0<>0<><>::
-export_presets.cfg::TextFile::-1::1749913542::0::1::::<><><>0<>0<><>::
+::res://::1757200454
+default_env.tres::Environment::8952826018721607875::1756863500::0::1::::<><><>0<>0<><>::
+export_presets.cfg::TextFile/TextFile::-1::1749913542::0::1::::<><><>0<>0<><>::
 icon.png::CompressedTexture2D/CompressedTexture2D::4241338009583973430::1747830470::1747832687::1::::<><><>0<>0<>7db4ec2050e894fe0a410af00efa0a8c<>res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex::
 ::res://assets/::1749421184
 ::res://assets/backgroundIntro/::1756672661
@@ -16,9 +16,9 @@ background-menu.png::CompressedTexture2D/CompressedTexture2D::554037947424476543
 background.png::CompressedTexture2D/CompressedTexture2D::1431684111977144007::1747830470::1747832691::1::::<><><>0<>0<>bc6b83637f38e3bbcceacc004ae746e0<>res://.godot/imported/background.png-5df4ef741238e6b81563560dbc198308.ctex::
 menu-itens-background.png::CompressedTexture2D/CompressedTexture2D::9188434433610110549::1756856120::1756856120::1::::<><><>0<>0<>417fbe89040ec2775512b85655d4eaf7<>res://.godot/imported/menu-itens-background.png-27e7ca4d43d98825b8742aae7523d2b6.ctex::
 summaryBackground.png::CompressedTexture2D/CompressedTexture2D::3367605025826046356::1749908497::1749908497::1::::<><><>0<>0<>01708f28219095c6126b8de4cde88ba1<>res://.godot/imported/summaryBackground.png-40d1a698b48c03402dbcb4992aa577ab.ctex::
-::res://assets/Cards/::1756858368
+::res://assets/Cards/::1756858372
 Anoes.png::CompressedTexture2D/CompressedTexture2D::2549103487064898593::1749245744::1749245744::1::::<><><>0<>0<>de5b800e96ebb07d57ec5a0e993da606<>res://.godot/imported/Anoes.png-1ff97f8c3461091e92f38a45a6ec6930.ctex::
-Caos Escopial.PNG::CompressedTexture2D::550657699526463117::1756858368::1756858372::1::::<><><>0<>0<>7e45ea380c78df2f31973857c0d0b20f<>res://.godot/imported/Caos Escopial.PNG-b93f626ce45101249d7656f25c7477a7.ctex::
+Caos Escopial.PNG::CompressedTexture2D/CompressedTexture2D::550657699526463117::1756858368::1756858372::1::::<><><>0<>0<>7e45ea380c78df2f31973857c0d0b20f<>res://.godot/imported/Caos Escopial.PNG-b93f626ce45101249d7656f25c7477a7.ctex::
 carta1 (2).png::CompressedTexture2D/CompressedTexture2D::3820562919929455376::1747830765::1747832687::0::::<><><>0<>0<>b3ac5f769037d6023ce017ceba9c5039<>::
 carta1.png::CompressedTexture2D/CompressedTexture2D::3369653937996737762::1747830470::1747832687::1::::<><><>0<>0<>7885f90eda2ee249559f590faccdc573<>res://.godot/imported/carta1.png-2468d190e2e9c6f526b97e5e6579c529.ctex::
 carta2.png::CompressedTexture2D/CompressedTexture2D::1653815114168012795::1747830470::1747832687::0::::<><><>0<>0<>3f008a2528d6e08a1b30af2b54282e9e<>::
@@ -44,21 +44,21 @@ flipcard-91468.wav::AudioStreamWAV/AudioStreamWAV::7314604863384884844::17485612
 medieval-backgroun-jogo.mp3::AudioStreamMP3/AudioStreamMP3::3456202457223775504::1750015230::1750015275::1::::<><><>0<>0<>b4c246f6044e08c4eba34cc6177544a5<>res://.godot/imported/medieval-backgroun-jogo.mp3-df87d3543d34541e239c93953ac694a6.mp3str::
 medieval-opener-270568.mp3::AudioStreamMP3/AudioStreamMP3::5528609763816174781::1750013053::1750013340::1::::<><><>0<>0<>f1b6ff606f71771c2ecb385f320664c7<>res://.godot/imported/medieval-opener-270568.mp3-80f5b6923786ae705193d1f29afc8c11.mp3str::
 negative_beeps-6008.mp3::AudioStreamMP3/AudioStreamMP3::2623834734878959797::1750016037::1750016107::1::::<><><>0<>0<>dd097a447f871580a4e3e600fa03399a<>res://.godot/imported/negative_beeps-6008.mp3-52d40a48b97b8ef61508f5069a809559.mp3str::
-::res://data/::1756857963
-cards.json::JSON::-1::1756857963::0::1::::<><><>0<>0<><>::
-::res://scenes/::1756857964
-Card.tscn::PackedScene::2938919211256656803::1756857964::0::1::::<><><>0<>0<><>::uid://bdmk216entx4f::::res://scripts/Card.gd<>uid://dchiqdjn63jma::::res://assets/sounds/flipcard-91468.wav
-Intro.tscn::PackedScene::4863899524717276037::1756857964::0::1::::<><><>0<>0<><>::uid://cbq0h88wowd06::::res://scripts/Intro.gd<>uid://ck1dnox3ls0cv::::res://assets/sounds/medieval-opener-270568.mp3
-in_game_menu.tscn::PackedScene::5071192575863067678::1756857963::0::1::::<><><>0<>0<><>::uid://1use0x1idqkh::::res://scripts/in_game_menu.gd<>uid://ck62if840dck2::::res://assets/backgrounds/background-menu.png
-Main.tscn::PackedScene::9048386673493771924::1756857963::0::1::::<><><>0<>0<><>::uid://lc7tcfk1dkew::::res://scripts/Main.gd<>uid://sb465440yow4::::res://assets/backgrounds/BackGround 3 .png<>uid://cs45nupg5stxv::::res://assets/Indicadores/BrainIcon.png<>uid://6mb38bfhn0jt::::res://assets/Indicadores/MoneyBagIcon.png<>uid://sbqp7nr6nb1c::::res://assets/Indicadores/TimeIcon.png<>uid://cbn8v4ut5xvyi::::res://assets/Indicadores/CastleIcon.png<>uid://cmm0vn0hunfk0::::res://assets/Indicadores/CrownIcon.png<>uid://bpihfc3ptrf8c::::res://assets/sounds/medieval-backgroun-jogo.mp3<>uid://ceir2h0grxacs::::res://scenes/in_game_menu.tscn
-summaryCap.tscn::PackedScene::9008026928244618997::1756597686::0::1::::<><><>0<>0<><>::uid://b6w7mufimhxen::::res://scripts/Summary.gd
-transicao2.tscn::PackedScene::5502769000951417351::1756671935::0::1::::<><><>0<>0<><>::uid://cwgec8y0wvtvw::::res://scripts/transicao_2.gd
-transicao3.tscn::PackedScene::2050710437182434765::1756672660::0::1::::<><><>0<>0<><>::uid://c5lw4glrsurvt::::res://scripts/transicao_3.gd
-::res://scripts/::1756857881
+::res://data/::1756863698
+cards.json::JSON::-1::1756863698::0::1::::<><><>0<>0<><>::
+::res://scenes/::1756863500
+Card.tscn::PackedScene::2938919211256656803::1756863500::0::1::::<><><>0<>0<><>::uid://bdmk216entx4f::::res://scripts/Card.gd<>uid://dchiqdjn63jma::::res://assets/sounds/flipcard-91468.wav
+Intro.tscn::PackedScene::4863899524717276037::1756863500::0::1::::<><><>0<>0<><>::uid://cbq0h88wowd06::::res://scripts/Intro.gd<>uid://ck1dnox3ls0cv::::res://assets/sounds/medieval-opener-270568.mp3
+in_game_menu.tscn::PackedScene::5071192575863067678::1756863499::0::1::::<><><>0<>0<><>::uid://1use0x1idqkh::::res://scripts/in_game_menu.gd<>uid://ck62if840dck2::::res://assets/backgrounds/background-menu.png
+Main.tscn::PackedScene::9048386673493771924::1756863500::0::1::::<><><>0<>0<><>::uid://lc7tcfk1dkew::::res://scripts/Main.gd<>uid://sb465440yow4::::res://assets/backgrounds/BackGround 3 .png<>uid://cs45nupg5stxv::::res://assets/Indicadores/BrainIcon.png<>uid://6mb38bfhn0jt::::res://assets/Indicadores/MoneyBagIcon.png<>uid://sbqp7nr6nb1c::::res://assets/Indicadores/TimeIcon.png<>uid://cbn8v4ut5xvyi::::res://assets/Indicadores/CastleIcon.png<>uid://cmm0vn0hunfk0::::res://assets/Indicadores/CrownIcon.png<>uid://bpihfc3ptrf8c::::res://assets/sounds/medieval-backgroun-jogo.mp3<>uid://ceir2h0grxacs::::res://scenes/in_game_menu.tscn
+summaryCap.tscn::PackedScene/PackedScene::9008026928244618997::1756597686::0::1::::<><><>0<>0<><>::uid://b6w7mufimhxen::::res://scripts/Summary.gd
+transicao2.tscn::PackedScene/PackedScene::5502769000951417351::1756671935::0::1::::<><><>0<>0<><>::uid://cwgec8y0wvtvw::::res://scripts/transicao_2.gd
+transicao3.tscn::PackedScene/PackedScene::2050710437182434765::1756672660::0::1::::<><><>0<>0<><>::uid://c5lw4glrsurvt::::res://scripts/transicao_3.gd
+::res://scripts/::1756863499
 Card.gd::GDScript::2622416547714941411::1756857338::0::1::::<>Control<><>0<>0<><>::
-Intro.gd::GDScript::4877592465733944333::1756247397::0::1::::<>Control<><>0<>0<><>::
-in_game_menu.gd::GDScript::1867298888521857075::1756856120::0::1::::<>Control<><>0<>0<><>::
-Main.gd::GDScript::778183022639146622::1756857881::0::1::::<>Control<><>0<>0<><>::
-Summary.gd::GDScript::4609656578927651881::1750011960::0::1::::<>PopupPanel<><>0<>0<><>::
-transicao_2.gd::GDScript::6329630405018142676::1756672624::0::1::::<>Control<><>0<>0<><>::
-transicao_3.gd::GDScript::6902602726616147521::1756672624::0::1::::<>Control<><>0<>0<><>::
+Intro.gd::GDScript/GDScript::4877592465733944333::1756247397::0::1::::<>Control<><>0<>0<><>::
+in_game_menu.gd::GDScript/GDScript::1867298888521857075::1756856120::0::1::::<>Control<><>0<>0<><>::
+Main.gd::GDScript::778183022639146622::1756863499::0::1::::<>Control<><>0<>0<><>::
+Summary.gd::GDScript/GDScript::4609656578927651881::1750011960::0::1::::<>PopupPanel<><>0<>0<><>::
+transicao_2.gd::GDScript/GDScript::6329630405018142676::1756672624::0::1::::<>Control<><>0<>0<><>::
+transicao_3.gd::GDScript/GDScript::6902602726616147521::1756672624::0::1::::<>Control<><>0<>0<><>::
