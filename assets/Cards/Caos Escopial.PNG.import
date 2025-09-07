@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://sb465440yow4"
-path="res://.godot/imported/BackGround 3 .png-ceed7c2e3111eb22b2868288abaedbca.ctex"
+uid="uid://h30itfcngg8t"
+path="res://.godot/imported/Caos Escopial.PNG-b93f626ce45101249d7656f25c7477a7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/backgrounds/BackGround 3 .png"
-dest_files=["res://.godot/imported/BackGround 3 .png-ceed7c2e3111eb22b2868288abaedbca.ctex"]
+source_file="res://assets/Cards/Caos Escopial.PNG"
+dest_files=["res://.godot/imported/Caos Escopial.PNG-b93f626ce45101249d7656f25c7477a7.ctex"]
 
 [params]
 

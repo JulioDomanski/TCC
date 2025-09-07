@@ -84,6 +84,7 @@ func _on_continue_pressed():
 
 	var vbox_capitulo = VBoxContainer.new()
 	vbox_capitulo.alignment = BoxContainer.ALIGNMENT_CENTER
+	vbox_capitulo.modulate.a = 0.0
 	center_container.add_child(vbox_capitulo)
 
 	var capitulo_label = Label.new()
@@ -94,7 +95,7 @@ func _on_continue_pressed():
 	vbox_capitulo.add_child(capitulo_label)
 
 	var conceitos_label = Label.new()
-	conceitos_label.text = "Conceitos: Entregas Iterativas com Foco em Valor,\nSprints and Entregas Contínuas, Feedback Imediato e Priorização"
+	conceitos_label.text = "Conceitos: Sprints , Entregas Iterativas com Foco em Valor"
 	conceitos_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	conceitos_label.autowrap_mode = TextServer.AUTOWRAP_WORD
 	conceitos_label.add_theme_font_size_override("font_size", 24)
@@ -102,8 +103,8 @@ func _on_continue_pressed():
 	vbox_capitulo.add_child(conceitos_label)
 
 	var fade_in_capitulo = create_tween()
-	fade_in_capitulo.tween_property(capitulo_label, "modulate:a", 1.0, 1.0)
-	fade_in_capitulo.tween_property(conceitos_label, "modulate:a", 1.0, 1.0)
+	fade_in_capitulo.tween_property(vbox_capitulo, "modulate:a", 1.0, 1.0)
+	
 
 	await get_tree().create_timer(4.0).timeout
 	

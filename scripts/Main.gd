@@ -58,6 +58,12 @@ var tutorial_label = null
 var tutorial_ongoing = true
 var blocker: ColorRect = null
 
+# Timer
+var decision_time := 20   # segundos por carta
+var time_left := 0
+@onready var timer_label := Label.new()
+var timer_node : Timer
+
 func _ready():
 	# fade in
 	var fade_rect := ColorRect.new()
@@ -89,10 +95,15 @@ func _ready():
 
 	if current_chapter == 1:
 		mostrar_tutorial_passo()
+		
+	
+	
 
 # 🚀 Inicia capítulo
 func start_chapter(chapter: int):
 	print("Iniciando capítulo ", chapter)
+	if(current_chapter!=1):
+		change_bg_chapter()
 	load_cards_data(chapter)
 	initialize_deck()
 	reset_indicators()
@@ -135,19 +146,42 @@ func reset_indicators():
 
 func spawn_new_card():
 	if deck.size() == 0:
+		if(is_game_over()):
+			return
 		show_summary()
 		return 
 	
 	if current_card:
+		if(cards_data[card_id]["image"] == "Caos Escopial"):
+			dilema.add_theme_color_override("font_color", Color(1,1,1))
 		current_card.queue_free()
 	
 	card_id = deck.pop_front()
 	current_card = CardScene.instantiate()
 	cardContainer.add_child(current_card)
 	current_card.setup_card(cards_data[card_id])
+	if(cards_data[card_id]["image"] == "Caos Escopial" and not showing_feedback):
+		dilema.add_theme_color_override("font_color", Color(1, 0, 0))
+		var chaos_timer_label = Label.new()
+		chaos_timer_label.text = str(decision_time)
+		chaos_timer_label.add_theme_font_size_override("font_size", 28)
+		chaos_timer_label.set("custom_colors/font_color", Color(1, 0, 0))
+		chaos_timer_label.set_anchors_preset(Control.PRESET_CENTER_BOTTOM)
+		chaos_timer_label.z_index =20
+		current_card.add_child(chaos_timer_label)
+
+		var chaos_timer = Timer.new()
+		chaos_timer.wait_time = 1.0
+		chaos_timer.one_shot = false
+		chaos_timer.connect("timeout", Callable(self, "_on_chaos_timer_tick").bind(chaos_timer_label, chaos_timer))
+		current_card.add_child(chaos_timer)
+		chaos_timer.start()
+		
+		
 	dilema.text = cards_data[card_id]["text"]
 	dilema.add_theme_font_size_override("font_size", 21)
 	current_card.connect("card_discarded", Callable(self, "_on_card_discarded"))
+	
 	
 func set_points(node, direction, indicator):
 	var points = cards_data[card_id][direction+"_effects"][indicator]
@@ -225,19 +259,18 @@ func game_over():
 	var black_overlay := ColorRect.new()
 	black_overlay.color = Color(0, 0, 0, 0)  
 	black_overlay.set_anchors_preset(Control.PRESET_FULL_RECT)
+	black_overlay.z_index =50
 	add_child(black_overlay)
 	var tween := create_tween()
 	tween.tween_property(black_overlay, "color", Color(0, 0, 0, 1), 1.0)
 	await tween.finished
-	for child in get_children():
-		if child != black_overlay:
-			child.queue_free()
 	var game_over_sound = AudioStreamPlayer2D.new()
 	game_over_sound.stream = load("res://assets/sounds/negative_beeps-6008.mp3")
 	add_child(game_over_sound)
 	game_over_sound.play()
 	var center_container := CenterContainer.new()
 	center_container.set_anchors_preset(Control.PRESET_FULL_RECT)
+	center_container.z_index = 51
 	add_child(center_container)
 	var label := Label.new()
 	label.text = "GAME OVER"
@@ -245,11 +278,21 @@ func game_over():
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	label.modulate = Color(0, 0, 0, 0)
+	label.z_index = 51
 	var tween_label := create_tween()
 	tween_label.tween_property(label, "modulate", Color(1, 1, 1, 1), 1.0)
 	center_container.add_child(label)
-	await get_tree().create_timer(5.0).timeout
-	get_tree().reload_current_scene()
+	await get_tree().create_timer(6).timeout
+	var tween_out := create_tween()
+	tween_out.tween_property(black_overlay, "color", Color(0, 0, 0, 0), 1.0)
+	tween_out.tween_property(label, "modulate", Color(0, 0, 0, 0), 1.0)
+	start_chapter(current_chapter)
+	await tween_out.finished
+	black_overlay.queue_free()
+	center_container.queue_free()
+	game_over_sound.queue_free()
+	
+	
 
 
 func mostrar_tutorial_passo() -> void:
@@ -482,3 +525,27 @@ func _on_transition_finished(chapter: int, transicao_scene):
 	fade_in_tween.tween_property(instant_fade, "modulate:a", 0.0, 0.8)
 	await fade_in_tween.finished
 	instant_fade.queue_free()
+
+func start_decision_timer():
+	time_left = decision_time
+	timer_label.text = str(time_left)
+	timer_node.start()
+
+func _on_chaos_timer_tick(timer_label: Label, timer_node: Timer):
+	var time_left = timer_label.text.to_int() - 1
+	if(time_left ==5):
+		timer_label.add_theme_color_override("font_color", Color(1,0,0))
+	timer_label.text = str(time_left)
+	if time_left <= 0:
+		timer_node.stop()
+		_on_time_expired()  # Game Over
+
+func _on_time_expired():
+	# Decide penalidade automática
+	print("⏰ Tempo esgotado!")
+	game_over()
+
+#funcao para mudar o fundo por capitulo
+func change_bg_chapter():
+	var path = "res://assets/backgrounds/Bg Cap %d.png" % current_chapter
+	$UI/Background.texture = load(path)

@@ -52,7 +52,10 @@ func check_card(card_data) -> String:
 		return "res://assets/Cards/Anoes.png"
 	if(card_data["image"] == "Rainha Stakeholdina"):
 		return "res://assets/Cards/RainhaStake.png"
+	if(card_data["image"] == "Caos Escopial"):
+		return "res://assets/Cards/Caos Escopial.PNG"
 	return ""	
+	
 	
 	
 func setup_card(data,is_feedback = false,direction="right"):
