@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://d16duve6lpp3y"]
+[gd_scene load_steps=11 format=3 uid="uid://d16duve6lpp3y"]
 
 [ext_resource type="Script" uid="uid://lc7tcfk1dkew" path="res://scripts/Main.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://sb465440yow4" path="res://assets/backgrounds/Bg Cap 1.png" id="2_nxtc6"]
+[ext_resource type="Texture2D" uid="uid://b6y7ufcmi62p0" path="res://assets/Indicadores/Bg Indicadores.png" id="3_lhr70"]
 [ext_resource type="Texture2D" uid="uid://cs45nupg5stxv" path="res://assets/Indicadores/BrainIcon.png" id="3_nxtc6"]
 [ext_resource type="Texture2D" uid="uid://6mb38bfhn0jt" path="res://assets/Indicadores/MoneyBagIcon.png" id="4_jlsqs"]
 [ext_resource type="Texture2D" uid="uid://sbqp7nr6nb1c" path="res://assets/Indicadores/TimeIcon.png" id="5_q8u5g"]
@@ -60,15 +61,16 @@ offset_right = 0.188965
 offset_bottom = -0.0880051
 grow_horizontal = 2
 
-[node name="BackIndicadores" type="ColorRect" parent="MiddleControl/WrapperIndicadores"]
+[node name="BackIndicadores" type="TextureRect" parent="MiddleControl/WrapperIndicadores"]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = 64.0
-offset_right = -52.884
+offset_left = 123.0
+offset_right = -114.884
 offset_bottom = 100.0
 grow_horizontal = 2
-color = Color(0.498039, 0.313726, 0.160784, 1)
+texture = ExtResource("3_lhr70")
+expand_mode = 1
 
 [node name="IndicadorMoral" type="TextureRect" parent="MiddleControl/WrapperIndicadores/BackIndicadores"]
 modulate = Color(0, 0, 0, 1)
@@ -154,10 +156,10 @@ stretch_mode = 3
 z_index = 2
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.075841
-anchor_top = 0.69974
-anchor_right = 0.172841
-anchor_bottom = 0.98057
+anchor_left = 0.07681
+anchor_top = 0.73974
+anchor_right = 0.17381
+anchor_bottom = 1.02057
 offset_left = -1.31098
 offset_top = -5.97401
 offset_right = -1.46899
@@ -172,9 +174,9 @@ z_index = 2
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.833907
-anchor_top = 0.714
+anchor_top = 0.774
 anchor_right = 0.930907
-anchor_bottom = 0.98262
+anchor_bottom = 1.04262
 offset_left = -2.36499
 offset_top = -7.97401
 offset_right = -2.52298
@@ -189,9 +191,9 @@ z_index = 2
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.646876
-anchor_top = 0.714
+anchor_top = 0.784
 anchor_right = 0.742876
-anchor_bottom = 0.98262
+anchor_bottom = 1.05262
 offset_left = -1.53302
 offset_top = -6.97401
 offset_right = -1.27704
@@ -206,9 +208,9 @@ z_index = 2
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.437969
-anchor_top = 0.714
+anchor_top = 0.764
 anchor_right = 0.534969
-anchor_bottom = 0.98262
+anchor_bottom = 1.03262
 offset_left = -1.24899
 offset_top = -6.97401
 offset_right = -1.40701
@@ -222,10 +224,10 @@ metadata/_edit_use_anchors_ = true
 z_index = 2
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.244
-anchor_top = 0.703
-anchor_right = 0.341
-anchor_bottom = 0.933
+anchor_left = 0.243031
+anchor_top = 0.753
+anchor_right = 0.340031
+anchor_bottom = 0.983
 offset_left = 0.978973
 offset_top = -5.973
 offset_right = 0.820953
