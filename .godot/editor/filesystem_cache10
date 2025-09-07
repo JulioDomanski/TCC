@@ -1,6 +1,6 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1757286550
-default_env.tres::Environment::8952826018721607875::1757286550::0::1::::<><><>0<>0<><>::
+::res://::1757288100
+default_env.tres::Environment::8952826018721607875::1757288100::0::1::::<><><>0<>0<><>::
 export_presets.cfg::TextFile/TextFile::-1::1749913542::0::1::::<><><>0<>0<><>::
 icon.png::CompressedTexture2D/CompressedTexture2D::4241338009583973430::1747830470::1747832687::1::::<><><>0<>0<>7db4ec2050e894fe0a410af00efa0a8c<>res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex::
 ::res://assets/::1749421184
@@ -30,13 +30,17 @@ SirCedric.png::CompressedTexture2D/CompressedTexture2D::9017343998433284309::174
 ::res://assets/font/::1749908497
 PixelatedEleganceRegular-ovyAA.ttf::FontFile/FontFile::2222237308876550996::1749908497::1749908497::1::::<><><>0<>0<>12a17d31d9002c392748537f144a0931<>res://.godot/imported/PixelatedEleganceRegular-ovyAA.ttf-84dd9be4d887a255c9e08db223423ee0.fontdata::
 PixeloidSans-mLxMm.ttf::FontFile/FontFile::1361254547155354142::1749908497::1749908497::1::::<><><>0<>0<>65511648cec38e91035fd379833f5616<>res://.godot/imported/PixeloidSans-mLxMm.ttf-41a9df4b19e022971eec3d066efe5a93.fontdata::
-::res://assets/Indicadores/::1757286707
-Bg Indicadores.jpg::CompressedTexture2D::1707007318789409403::1757286428::1757286432::1::::<><><>0<>0<>d7c006dbdbf38e102750f9f60de30fb0<>res://.godot/imported/Bg Indicadores.jpg-7ed262ddfc3ea8af59b19f2dfb664d44.ctex::
+::res://assets/Indicadores/::1757288753
 Bg Indicadores.png::CompressedTexture2D::4613798828479689851::1757286707::1757286711::1::::<><><>0<>0<>186cf3c03993cde48ce1e7be1f9b2db1<>res://.godot/imported/Bg Indicadores.png-941f1cca110553757461026d36b7c188.ctex::
+Brain.PNG::CompressedTexture2D::8471148153074317440::1757287957::1757287968::1::::<><><>0<>0<>8549346a14e565770d7f5aa08b2d83b8<>res://.godot/imported/Brain.PNG-593564eaeb9cf3f46f8856b4ebb0a4ea.ctex::
 BrainIcon.png::CompressedTexture2D/CompressedTexture2D::6097953306794778079::1748028274::1748028594::1::::<><><>0<>0<>7563fc98642866c795936c75449322cc<>res://.godot/imported/BrainIcon.png-136aa9d9df44b96e8612cbb6e8890117.ctex::
+Castle.PNG::CompressedTexture2D::450143971292526156::1757288604::1757288607::1::::<><><>0<>0<>9e078c647e81a464e5f8d1586dbc5a35<>res://.godot/imported/Castle.PNG-82952de72e4a3be7eab8cc186c781661.ctex::
 CastleIcon.png::CompressedTexture2D/CompressedTexture2D::4871909839237842436::1748028574::1748028677::1::::<><><>0<>0<>6a090fce1e1c3ba859c6bad2e2c6cc59<>res://.godot/imported/CastleIcon.png-0e06e796bd06e644f5a12457326fafaf.ctex::
+Crown.PNG::CompressedTexture2D::1174426455746517700::1757288753::1757288755::1::::<><><>0<>0<>217a2685bf1f9a4047deb97d3c15da5a<>res://.godot/imported/Crown.PNG-dd99de5adba9041916aaa60cee823b94.ctex::
 CrownIcon.png::CompressedTexture2D/CompressedTexture2D::5641436172351426505::1748028578::1748028677::1::::<><><>0<>0<>f6955ba1cc2cfb3a5d6fc8d154a3283a<>res://.godot/imported/CrownIcon.png-9a4055f764eb0006a0eb256bfea68ff5.ctex::
+MoneyBag.PNG::CompressedTexture2D::3228891796814850494::1757288168::1757288173::1::::<><><>0<>0<>e50fdae9626b6cdd9817c6c5e3962550<>res://.godot/imported/MoneyBag.PNG-670a2c9a3f08f6d89d7cd13ffc8d2182.ctex::
 MoneyBagIcon.png::CompressedTexture2D/CompressedTexture2D::2200739140102255585::1748028565::1748028677::1::::<><><>0<>0<>322b55888a7b113fda35d95b062000b5<>res://.godot/imported/MoneyBagIcon.png-afbe2bf0ad203b3179c20f58b56d6efd.ctex::
+Time.PNG::CompressedTexture2D::8052547620223185535::1757288414::1757288418::1::::<><><>0<>0<>d5c1cfcb599027711551e501f7c7a5ee<>res://.godot/imported/Time.PNG-30b1b936f711cf7ec580f907c8931fee.ctex::
 TimeIcon.png::CompressedTexture2D/CompressedTexture2D::1266463523675483186::1748028570::1748028677::1::::<><><>0<>0<>8d3337b8c67eafd5f1ceddebd3512047<>res://.godot/imported/TimeIcon.png-d174db0c787c98934dda6f3fe9772a9c.ctex::
 ::res://assets/personagemIntro/::1749421503
 Anoes.png::CompressedTexture2D/CompressedTexture2D::136995777731779188::1749421184::1749421503::1::::<><><>0<>0<>26f814d9786c62a9ea1fa5718c1145d0<>res://.godot/imported/Anoes.png-f43fbb3c663dd6c26a0bb63e49239c62.ctex::
@@ -50,11 +54,11 @@ medieval-opener-270568.mp3::AudioStreamMP3/AudioStreamMP3::5528609763816174781::
 negative_beeps-6008.mp3::AudioStreamMP3/AudioStreamMP3::2623834734878959797::1750016037::1750016107::1::::<><><>0<>0<>dd097a447f871580a4e3e600fa03399a<>res://.godot/imported/negative_beeps-6008.mp3-52d40a48b97b8ef61508f5069a809559.mp3str::
 ::res://data/::1757285005
 cards.json::JSON::-1::1757285005::0::1::::<><><>0<>0<><>::
-::res://scenes/::1757286550
-Card.tscn::PackedScene::2938919211256656803::1757286550::0::1::::<><><>0<>0<><>::uid://bdmk216entx4f::::res://scripts/Card.gd<>uid://dchiqdjn63jma::::res://assets/sounds/flipcard-91468.wav
-Intro.tscn::PackedScene::4863899524717276037::1757286549::0::1::::<><><>0<>0<><>::uid://cbq0h88wowd06::::res://scripts/Intro.gd<>uid://ck1dnox3ls0cv::::res://assets/sounds/medieval-opener-270568.mp3
-in_game_menu.tscn::PackedScene::5071192575863067678::1757286549::0::1::::<><><>0<>0<><>::uid://1use0x1idqkh::::res://scripts/in_game_menu.gd<>uid://ck62if840dck2::::res://assets/backgrounds/background-menu.png
-Main.tscn::PackedScene::9048386673493771924::1757286549::0::1::::<><><>0<>0<><>::uid://lc7tcfk1dkew::::res://scripts/Main.gd<>uid://sb465440yow4::::res://assets/backgrounds/Bg Cap 1.png<>uid://yk5fqjt7qib0::::res://assets/Indicadores/Bg Indicadores.jpg<>uid://cs45nupg5stxv::::res://assets/Indicadores/BrainIcon.png<>uid://6mb38bfhn0jt::::res://assets/Indicadores/MoneyBagIcon.png<>uid://sbqp7nr6nb1c::::res://assets/Indicadores/TimeIcon.png<>uid://cbn8v4ut5xvyi::::res://assets/Indicadores/CastleIcon.png<>uid://cmm0vn0hunfk0::::res://assets/Indicadores/CrownIcon.png<>uid://bpihfc3ptrf8c::::res://assets/sounds/medieval-backgroun-jogo.mp3<>uid://ceir2h0grxacs::::res://scenes/in_game_menu.tscn
+::res://scenes/::1757288100
+Card.tscn::PackedScene::2938919211256656803::1757288100::0::1::::<><><>0<>0<><>::uid://bdmk216entx4f::::res://scripts/Card.gd<>uid://dchiqdjn63jma::::res://assets/sounds/flipcard-91468.wav
+Intro.tscn::PackedScene::4863899524717276037::1757288100::0::1::::<><><>0<>0<><>::uid://cbq0h88wowd06::::res://scripts/Intro.gd<>uid://ck1dnox3ls0cv::::res://assets/sounds/medieval-opener-270568.mp3
+in_game_menu.tscn::PackedScene::5071192575863067678::1757288099::0::1::::<><><>0<>0<><>::uid://1use0x1idqkh::::res://scripts/in_game_menu.gd<>uid://ck62if840dck2::::res://assets/backgrounds/background-menu.png
+Main.tscn::PackedScene::9048386673493771924::1757288100::0::1::::<><><>0<>0<><>::uid://lc7tcfk1dkew::::res://scripts/Main.gd<>uid://sb465440yow4::::res://assets/backgrounds/Bg Cap 1.png<>uid://b6y7ufcmi62p0::::res://assets/Indicadores/Bg Indicadores.png<>uid://6mb38bfhn0jt::::res://assets/Indicadores/MoneyBagIcon.png<>uid://dsxqtpy3avvlo::::res://assets/Indicadores/Brain.PNG<>uid://sbqp7nr6nb1c::::res://assets/Indicadores/TimeIcon.png<>uid://cbn8v4ut5xvyi::::res://assets/Indicadores/CastleIcon.png<>uid://cmm0vn0hunfk0::::res://assets/Indicadores/CrownIcon.png<>uid://bpihfc3ptrf8c::::res://assets/sounds/medieval-backgroun-jogo.mp3<>uid://ceir2h0grxacs::::res://scenes/in_game_menu.tscn
 summaryCap.tscn::PackedScene/PackedScene::9008026928244618997::1756597686::0::1::::<><><>0<>0<><>::uid://b6w7mufimhxen::::res://scripts/Summary.gd
 transicao2.tscn::PackedScene/PackedScene::5502769000951417351::1756671935::0::1::::<><><>0<>0<><>::uid://cwgec8y0wvtvw::::res://scripts/transicao_2.gd
 transicao3.tscn::PackedScene/PackedScene::2050710437182434765::1756672660::0::1::::<><><>0<>0<><>::uid://c5lw4glrsurvt::::res://scripts/transicao_3.gd

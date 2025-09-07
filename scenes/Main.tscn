@@ -3,12 +3,12 @@
 [ext_resource type="Script" uid="uid://lc7tcfk1dkew" path="res://scripts/Main.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://sb465440yow4" path="res://assets/backgrounds/Bg Cap 1.png" id="2_nxtc6"]
 [ext_resource type="Texture2D" uid="uid://b6y7ufcmi62p0" path="res://assets/Indicadores/Bg Indicadores.png" id="3_lhr70"]
-[ext_resource type="Texture2D" uid="uid://cs45nupg5stxv" path="res://assets/Indicadores/BrainIcon.png" id="3_nxtc6"]
-[ext_resource type="Texture2D" uid="uid://6mb38bfhn0jt" path="res://assets/Indicadores/MoneyBagIcon.png" id="4_jlsqs"]
-[ext_resource type="Texture2D" uid="uid://sbqp7nr6nb1c" path="res://assets/Indicadores/TimeIcon.png" id="5_q8u5g"]
-[ext_resource type="Texture2D" uid="uid://cbn8v4ut5xvyi" path="res://assets/Indicadores/CastleIcon.png" id="6_lhr70"]
-[ext_resource type="Texture2D" uid="uid://cmm0vn0hunfk0" path="res://assets/Indicadores/CrownIcon.png" id="7_wp0k4"]
+[ext_resource type="Texture2D" uid="uid://dsxqtpy3avvlo" path="res://assets/Indicadores/Brain.PNG" id="4_lhr70"]
+[ext_resource type="Texture2D" uid="uid://bmadm13cf1a0m" path="res://assets/Indicadores/MoneyBag.PNG" id="5_lhr70"]
+[ext_resource type="Texture2D" uid="uid://dmyyju6xne58v" path="res://assets/Indicadores/Time.PNG" id="6_wp0k4"]
+[ext_resource type="Texture2D" uid="uid://gob2nda56tv5" path="res://assets/Indicadores/Castle.PNG" id="7_bjd11"]
 [ext_resource type="AudioStream" uid="uid://bpihfc3ptrf8c" path="res://assets/sounds/medieval-backgroun-jogo.mp3" id="8_jlsqs"]
+[ext_resource type="Texture2D" uid="uid://qy5vq0v3hqqm" path="res://assets/Indicadores/Crown.PNG" id="8_qmy6f"]
 [ext_resource type="PackedScene" uid="uid://ceir2h0grxacs" path="res://scenes/in_game_menu.tscn" id="9_q8u5g"]
 
 [node name="main" type="Control"]
@@ -56,9 +56,9 @@ layout_mode = 1
 anchor_left = -0.681
 anchor_right = 1.698
 anchor_bottom = 0.156
-offset_left = -4.39597
-offset_right = 0.188965
-offset_bottom = -0.0880051
+offset_left = -4.439
+offset_right = 0.262024
+offset_bottom = 2.692
 grow_horizontal = 2
 
 [node name="BackIndicadores" type="TextureRect" parent="MiddleControl/WrapperIndicadores"]
@@ -66,78 +66,76 @@ layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 offset_left = 123.0
-offset_right = -114.884
-offset_bottom = 100.0
+offset_right = -115.0
+offset_bottom = 111.0
 grow_horizontal = 2
 texture = ExtResource("3_lhr70")
 expand_mode = 1
 
 [node name="IndicadorMoral" type="TextureRect" parent="MiddleControl/WrapperIndicadores/BackIndicadores"]
-modulate = Color(0, 0, 0, 1)
 z_index = 2
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.027
-anchor_top = 0.132
-anchor_right = 0.222
-anchor_bottom = 0.802
-offset_left = -3.50899
-offset_top = -4.012
-offset_right = 4.04192
-offset_bottom = -3.982
-texture = ExtResource("3_nxtc6")
-stretch_mode = 3
+anchor_left = 0.0146092
+anchor_top = -0.018
+anchor_right = 0.226391
+anchor_bottom = 0.81
+offset_left = -0.309002
+offset_top = -7.2
+offset_right = -0.242004
+texture = ExtResource("4_lhr70")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
 
 [node name="IndicadorRecursos" type="TextureRect" parent="MiddleControl/WrapperIndicadores/BackIndicadores"]
-modulate = Color(0, 0, 0, 1)
 z_index = 2
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.193
-anchor_top = 0.132
-anchor_right = 0.389
-anchor_bottom = 0.846
-offset_left = 0.767006
-offset_top = -5.012
-offset_right = 0.623001
-offset_bottom = -4.986
-texture = ExtResource("4_jlsqs")
-stretch_mode = 3
+anchor_left = 0.209024
+anchor_top = 0.01
+anchor_right = 0.395633
+anchor_bottom = 0.79
+offset_left = -0.421036
+offset_right = 0.577972
+texture = ExtResource("5_lhr70")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
 
 [node name="InidicadotTempo" type="TextureRect" parent="MiddleControl/WrapperIndicadores/BackIndicadores"]
-modulate = Color(0, 0, 0, 1)
 z_index = 2
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.391
-anchor_top = 0.154
-anchor_right = 0.587
-anchor_bottom = 0.846
-offset_left = -3.20502
-offset_top = -7.014
-offset_right = -3.34901
-offset_bottom = -4.986
-texture = ExtResource("5_q8u5g")
-stretch_mode = 3
+anchor_left = 0.404708
+anchor_top = 0.05
+anchor_right = 0.577657
+anchor_bottom = 0.77
+offset_left = 0.310974
+offset_right = -0.245056
+texture = ExtResource("6_wp0k4")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
 
 [node name="IndicadorProgresso" type="TextureRect" parent="MiddleControl/WrapperIndicadores/BackIndicadores"]
-modulate = Color(0, 0, 0, 1)
 z_index = 2
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.597
-anchor_top = 0.088
-anchor_right = 0.792
-anchor_bottom = 0.791
-offset_left = -3.48903
-offset_top = 0.992001
-offset_right = 1.06189
-offset_bottom = 1.019
-texture = ExtResource("6_lhr70")
-stretch_mode = 3
+anchor_left = 0.599047
+anchor_top = 0.05
+anchor_right = 0.787047
+anchor_bottom = 0.76
+offset_left = -1.73206
+offset_top = 1.0
+offset_right = -2.00006
+offset_bottom = 1.0
+texture = ExtResource("7_bjd11")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
 
 [node name="IndicadorConfianca" type="TextureRect" parent="MiddleControl/WrapperIndicadores/BackIndicadores"]
-modulate = Color(0, 0, 0, 1)
 z_index = 2
 layout_mode = 1
 anchors_preset = -1
@@ -145,21 +143,22 @@ anchor_left = 0.785
 anchor_top = 0.132
 anchor_right = 0.981
 anchor_bottom = 0.846
-offset_left = -4.32101
-offset_top = -1.012
-offset_right = -4.46503
-offset_bottom = -0.986
-texture = ExtResource("7_wp0k4")
-stretch_mode = 3
+offset_left = -4.13501
+offset_top = -9.2
+offset_right = -12.691
+offset_bottom = -4.6
+texture = ExtResource("8_qmy6f")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="PontosMoral" type="Label" parent="MiddleControl/WrapperIndicadores/BackIndicadores"]
 z_index = 2
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.07681
-anchor_top = 0.73974
-anchor_right = 0.17381
-anchor_bottom = 1.02057
+anchor_left = 0.0757123
+anchor_top = 0.80974
+anchor_right = 0.172712
+anchor_bottom = 1.09057
 offset_left = -1.31098
 offset_top = -5.97401
 offset_right = -1.46899
@@ -173,10 +172,10 @@ metadata/_edit_use_anchors_ = true
 z_index = 2
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.833907
-anchor_top = 0.774
-anchor_right = 0.930907
-anchor_bottom = 1.04262
+anchor_left = 0.831712
+anchor_top = 0.824
+anchor_right = 0.928712
+anchor_bottom = 1.09262
 offset_left = -2.36499
 offset_top = -7.97401
 offset_right = -2.52298
@@ -191,9 +190,9 @@ z_index = 2
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.646876
-anchor_top = 0.784
+anchor_top = 0.814
 anchor_right = 0.742876
-anchor_bottom = 1.05262
+anchor_bottom = 1.08262
 offset_left = -1.53302
 offset_top = -6.97401
 offset_right = -1.27704
@@ -207,10 +206,10 @@ metadata/_edit_use_anchors_ = true
 z_index = 2
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.437969
-anchor_top = 0.764
-anchor_right = 0.534969
-anchor_bottom = 1.03262
+anchor_left = 0.445653
+anchor_top = 0.814
+anchor_right = 0.542653
+anchor_bottom = 1.08262
 offset_left = -1.24899
 offset_top = -6.97401
 offset_right = -1.40701
@@ -224,10 +223,10 @@ metadata/_edit_use_anchors_ = true
 z_index = 2
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.243031
-anchor_top = 0.753
-anchor_right = 0.340031
-anchor_bottom = 0.983
+anchor_left = 0.256203
+anchor_top = 0.803
+anchor_right = 0.353203
+anchor_bottom = 1.033
 offset_left = 0.978973
 offset_top = -5.973
 offset_right = 0.820953
