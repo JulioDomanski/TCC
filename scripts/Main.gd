@@ -59,7 +59,7 @@ var tutorial_ongoing = true
 var blocker: ColorRect = null
 
 # Timer
-var decision_time := 10   # segundos por carta
+var decision_time := 20   # segundos por carta
 var time_left := 0
 @onready var timer_label := Label.new()
 var timer_node : Timer
@@ -102,6 +102,8 @@ func _ready():
 # 🚀 Inicia capítulo
 func start_chapter(chapter: int):
 	print("Iniciando capítulo ", chapter)
+	if(current_chapter!=1):
+		change_bg_chapter()
 	load_cards_data(chapter)
 	initialize_deck()
 	reset_indicators()
@@ -144,6 +146,8 @@ func reset_indicators():
 
 func spawn_new_card():
 	if deck.size() == 0:
+		if(is_game_over()):
+			return
 		show_summary()
 		return 
 	
@@ -157,7 +161,7 @@ func spawn_new_card():
 	cardContainer.add_child(current_card)
 	current_card.setup_card(cards_data[card_id])
 	if(cards_data[card_id]["image"] == "Caos Escopial" and not showing_feedback):
-		dilema.add_theme_color_override("font_color", Color(1,0,0))
+		dilema.add_theme_color_override("font_color", Color(1, 0, 0))
 		var chaos_timer_label = Label.new()
 		chaos_timer_label.text = str(decision_time)
 		chaos_timer_label.add_theme_font_size_override("font_size", 28)
@@ -260,9 +264,6 @@ func game_over():
 	var tween := create_tween()
 	tween.tween_property(black_overlay, "color", Color(0, 0, 0, 1), 1.0)
 	await tween.finished
-	for child in get_children():
-		if child != black_overlay:
-			child.queue_free()
 	var game_over_sound = AudioStreamPlayer2D.new()
 	game_over_sound.stream = load("res://assets/sounds/negative_beeps-6008.mp3")
 	add_child(game_over_sound)
@@ -281,8 +282,17 @@ func game_over():
 	var tween_label := create_tween()
 	tween_label.tween_property(label, "modulate", Color(1, 1, 1, 1), 1.0)
 	center_container.add_child(label)
-	await get_tree().create_timer(5.0).timeout
-	get_tree().reload_current_scene()
+	await get_tree().create_timer(6).timeout
+	var tween_out := create_tween()
+	tween_out.tween_property(black_overlay, "color", Color(0, 0, 0, 0), 1.0)
+	tween_out.tween_property(label, "modulate", Color(0, 0, 0, 0), 1.0)
+	start_chapter(current_chapter)
+	await tween_out.finished
+	black_overlay.queue_free()
+	center_container.queue_free()
+	game_over_sound.queue_free()
+	
+	
 
 
 func mostrar_tutorial_passo() -> void:
@@ -534,3 +544,8 @@ func _on_time_expired():
 	# Decide penalidade automática
 	print("⏰ Tempo esgotado!")
 	game_over()
+
+#funcao para mudar o fundo por capitulo
+func change_bg_chapter():
+	var path = "res://assets/backgrounds/Bg Cap %d.png" % current_chapter
+	$UI/Background.texture = load(path)
