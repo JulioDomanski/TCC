@@ -189,8 +189,13 @@ func set_points(node, direction, indicator):
 	
 	if direction == cards_data[card_id]["correct_answer"] && points != 0:
 		node.add_theme_color_override("font_color", Color.GREEN)
+		glow_indicators(indicator  , true)
+		
 	if direction != cards_data[card_id]["correct_answer"] && points != 0:
 		node.add_theme_color_override("font_color", Color.RED)
+		glow_indicators(indicator , false)
+	
+	
 	
 	await get_tree().create_timer(2).timeout
 	
@@ -549,3 +554,41 @@ func _on_time_expired():
 func change_bg_chapter():
 	var path = "res://assets/backgrounds/Bg Cap %d.png" % current_chapter
 	$UI/Background.texture = load(path)
+
+
+func pulse_glow(icon: Node , correct : bool):
+	var tween = get_tree().create_tween()
+	for i in range(2):
+		# Fade
+		if(correct):
+			tween.tween_property(icon, "modulate", Color(0, 1, 0, 0.6), 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+		else:
+			tween.tween_property(icon, "modulate", Color(1,0 , 0, 0.6), 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+		tween.tween_property(icon, "modulate", Color(1, 1, 1, 1), 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+		
+		# Scale
+		tween.tween_property(icon, "scale", Vector2(1 , 0.5), 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+		tween.tween_property(icon, "scale", Vector2(1, 1), 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+
+func glow_indicators(indicator : String , correct : bool):
+	if(indicator == 'moral'):
+			pulse_glow($MiddleControl/WrapperIndicadores/BackIndicadores/IndicadorMoral , correct)
+	elif(indicator == 'resources'):
+			pulse_glow($MiddleControl/WrapperIndicadores/BackIndicadores/IndicadorRecursos , correct)
+	elif (indicator == 'progress'):
+			pulse_glow($MiddleControl/WrapperIndicadores/BackIndicadores/IndicadorProgresso , correct)
+	elif (indicator == "time"):
+			pulse_glow($MiddleControl/WrapperIndicadores/BackIndicadores/InidicadotTempo , correct)
+	elif(indicator == "trust"):
+			pulse_glow($MiddleControl/WrapperIndicadores/BackIndicadores/IndicadorConfianca , correct)
+
+
+func highlight_icon(icon: TextureRect, correct: bool):
+	var tween = get_tree().create_tween()
+	if correct:
+		tween.tween_property(icon, "modulate", Color(0, 1, 0), 0.3)  # green
+	else:
+		tween.tween_property(icon, "modulate", Color(1, 0, 0), 0.3)  # red
+	
+	# fade back to normal after 1s
+	tween.tween_property(icon, "modulate", Color(1, 1, 1), 0.8)
