@@ -163,7 +163,7 @@ func spawn_new_card():
 	cardContainer.add_child(current_card)
 	current_card.setup_card(cards_data[card_id])
 	if(cards_data[card_id]["image"] == "Caos Escopial" and not showing_feedback):
-		dilema.add_theme_color_override("font_color", Color(1, 0, 0))
+		dilema.add_theme_color_override("font_color", Color(1, 1, 1))
 		if not caos_tutorial_shown:
 			caos_tutorial_shown = true
 			await tutorial_caos_escopial()
@@ -173,7 +173,7 @@ func spawn_new_card():
 		chaos_timer_label.set("custom_colors/font_color", Color(1, 0, 0))
 		chaos_timer_label.set_anchors_preset(Control.PRESET_CENTER_BOTTOM)
 		chaos_timer_label.z_index =20
-		current_card.add_child(chaos_timer_label)
+		cardContainer.add_child(chaos_timer_label)
 
 		var chaos_timer = Timer.new()
 		chaos_timer.wait_time = 1.0
@@ -614,11 +614,12 @@ func tutorial_caos_escopial():
 	tutorial_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	tutorial_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	tutorial_label.z_index = 100
+	tutorial_label.modulate.a = 0.0
 	add_child(tutorial_label)
-
+	
 	# Fade in/out effect
 	var tween = create_tween()
-	tween.tween_property(tutorial_label, "modulate:a", 1.0, 0.5)
+	tween.tween_property(tutorial_label, "modulate:a", 1.0, 1.0)
 	tween.tween_interval(6) # stays visible
 	tween.tween_property(tutorial_label, "modulate:a", 0.0, 0.5)
 
