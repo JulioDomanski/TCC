@@ -12,6 +12,8 @@ var first_card = true
 var is_tutorial_busy := false
 var rect_fade: ColorRect
 
+var caos_tutorial_shown := false
+
 # ✅ controle de capítulos
 var current_chapter = 1
 var total_chapters = 3  # mude se tiver mais capítulos
@@ -161,14 +163,17 @@ func spawn_new_card():
 	cardContainer.add_child(current_card)
 	current_card.setup_card(cards_data[card_id])
 	if(cards_data[card_id]["image"] == "Caos Escopial" and not showing_feedback):
-		dilema.add_theme_color_override("font_color", Color(1, 0, 0))
+		dilema.add_theme_color_override("font_color", Color(1, 1, 1))
+		if not caos_tutorial_shown:
+			caos_tutorial_shown = true
+			await tutorial_caos_escopial()
 		var chaos_timer_label = Label.new()
 		chaos_timer_label.text = str(decision_time)
 		chaos_timer_label.add_theme_font_size_override("font_size", 28)
 		chaos_timer_label.set("custom_colors/font_color", Color(1, 0, 0))
 		chaos_timer_label.set_anchors_preset(Control.PRESET_CENTER_BOTTOM)
 		chaos_timer_label.z_index =20
-		current_card.add_child(chaos_timer_label)
+		cardContainer.add_child(chaos_timer_label)
 
 		var chaos_timer = Timer.new()
 		chaos_timer.wait_time = 1.0
@@ -592,3 +597,32 @@ func highlight_icon(icon: TextureRect, correct: bool):
 	
 	# fade back to normal after 1s
 	tween.tween_property(icon, "modulate", Color(1, 1, 1), 0.8)
+
+func tutorial_caos_escopial():
+	var tutorial_label = Label.new()
+	tutorial_label.text = "⚡Um Caos Escopial surgiu! ⚡\n\nVocê tem pouco tempo para decidir!\nArraste rapidamente para escolher sua resposta.\nSe não agir antes do fim do tempo, será Game Over!"
+	tutorial_label.anchor_left = 0.1
+	tutorial_label.anchor_right = 0.9
+	tutorial_label.anchor_top = 0.9
+	tutorial_label.anchor_bottom = 1.0
+	tutorial_label.offset_left = 0
+	tutorial_label.offset_right = 0
+	tutorial_label.offset_top = -80
+	tutorial_label.offset_bottom = -20
+	tutorial_label.add_theme_font_size_override("font_size", 22)
+	tutorial_label.set("custom_colors/font_color", Color(1, 0.3, 0.3))
+	tutorial_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	tutorial_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	tutorial_label.z_index = 100
+	tutorial_label.modulate.a = 0.0
+	add_child(tutorial_label)
+	
+	# Fade in/out effect
+	var tween = create_tween()
+	tween.tween_property(tutorial_label, "modulate:a", 1.0, 1.0)
+	tween.tween_interval(6) # stays visible
+	tween.tween_property(tutorial_label, "modulate:a", 0.0, 0.5)
+
+	await tween.finished
+	if is_instance_valid(tutorial_label):
+		tutorial_label.queue_free()
