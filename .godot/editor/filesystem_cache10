@@ -1,6 +1,6 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1757536308
-default_env.tres::Environment::8952826018721607875::1757466476::0::1::::<><><>0<>0<><>::
+::res://::1757641356
+default_env.tres::Environment::8952826018721607875::1757538307::0::1::::<><><>0<>0<><>::
 export_presets.cfg::TextFile/TextFile::-1::1749913542::0::1::::<><><>0<>0<><>::
 icon.png::CompressedTexture2D/CompressedTexture2D::4241338009583973430::1747830470::1747832687::1::::<><><>0<>0<>7db4ec2050e894fe0a410af00efa0a8c<>res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex::
 ::res://assets/::1749421184
@@ -52,21 +52,21 @@ flipcard-91468.wav::AudioStreamWAV/AudioStreamWAV::7314604863384884844::17485612
 medieval-backgroun-jogo.mp3::AudioStreamMP3/AudioStreamMP3::3456202457223775504::1750015230::1750015275::1::::<><><>0<>0<>b4c246f6044e08c4eba34cc6177544a5<>res://.godot/imported/medieval-backgroun-jogo.mp3-df87d3543d34541e239c93953ac694a6.mp3str::
 medieval-opener-270568.mp3::AudioStreamMP3/AudioStreamMP3::5528609763816174781::1750013053::1750013340::1::::<><><>0<>0<>f1b6ff606f71771c2ecb385f320664c7<>res://.godot/imported/medieval-opener-270568.mp3-80f5b6923786ae705193d1f29afc8c11.mp3str::
 negative_beeps-6008.mp3::AudioStreamMP3/AudioStreamMP3::2623834734878959797::1750016037::1750016107::1::::<><><>0<>0<>dd097a447f871580a4e3e600fa03399a<>res://.godot/imported/negative_beeps-6008.mp3-52d40a48b97b8ef61508f5069a809559.mp3str::
-::res://data/::1757466650
-cards.json::JSON::-1::1757466650::0::1::::<><><>0<>0<><>::
-::res://scenes/::1757466476
-Card.tscn::PackedScene::2938919211256656803::1757466476::0::1::::<><><>0<>0<><>::uid://bdmk216entx4f::::res://scripts/Card.gd<>uid://dchiqdjn63jma::::res://assets/sounds/flipcard-91468.wav
-Intro.tscn::PackedScene::4863899524717276037::1757466476::0::1::::<><><>0<>0<><>::uid://cbq0h88wowd06::::res://scripts/Intro.gd<>uid://ck1dnox3ls0cv::::res://assets/sounds/medieval-opener-270568.mp3
-in_game_menu.tscn::PackedScene::5071192575863067678::1757466476::0::1::::<><><>0<>0<><>::uid://1use0x1idqkh::::res://scripts/in_game_menu.gd<>uid://ck62if840dck2::::res://assets/backgrounds/background-menu.png
-Main.tscn::PackedScene::9048386673493771924::1757466476::0::1::::<><><>0<>0<><>::uid://lc7tcfk1dkew::::res://scripts/Main.gd<>uid://sb465440yow4::::res://assets/backgrounds/Bg Cap 1.png<>uid://b6y7ufcmi62p0::::res://assets/Indicadores/Bg Indicadores.png<>uid://dsxqtpy3avvlo::::res://assets/Indicadores/Brain.PNG<>uid://bmadm13cf1a0m::::res://assets/Indicadores/MoneyBag.PNG<>uid://dmyyju6xne58v::::res://assets/Indicadores/Time.PNG<>uid://gob2nda56tv5::::res://assets/Indicadores/Castle.PNG<>uid://bpihfc3ptrf8c::::res://assets/sounds/medieval-backgroun-jogo.mp3<>uid://qy5vq0v3hqqm::::res://assets/Indicadores/Crown.PNG<>uid://ceir2h0grxacs::::res://scenes/in_game_menu.tscn
+::res://data/::1757538433
+cards.json::JSON::-1::1757538433::0::1::::<><><>0<>0<><>::
+::res://scenes/::1757538307
+Card.tscn::PackedScene::2938919211256656803::1757538307::0::1::::<><><>0<>0<><>::uid://bdmk216entx4f::::res://scripts/Card.gd<>uid://dchiqdjn63jma::::res://assets/sounds/flipcard-91468.wav
+Intro.tscn::PackedScene::4863899524717276037::1757538307::0::1::::<><><>0<>0<><>::uid://cbq0h88wowd06::::res://scripts/Intro.gd<>uid://ck1dnox3ls0cv::::res://assets/sounds/medieval-opener-270568.mp3
+in_game_menu.tscn::PackedScene::5071192575863067678::1757538307::0::1::::<><><>0<>0<><>::uid://1use0x1idqkh::::res://scripts/in_game_menu.gd<>uid://ck62if840dck2::::res://assets/backgrounds/background-menu.png
+Main.tscn::PackedScene::9048386673493771924::1757538307::0::1::::<><><>0<>0<><>::uid://lc7tcfk1dkew::::res://scripts/Main.gd<>uid://sb465440yow4::::res://assets/backgrounds/Bg Cap 1.png<>uid://b6y7ufcmi62p0::::res://assets/Indicadores/Bg Indicadores.png<>uid://dsxqtpy3avvlo::::res://assets/Indicadores/Brain.PNG<>uid://bmadm13cf1a0m::::res://assets/Indicadores/MoneyBag.PNG<>uid://dmyyju6xne58v::::res://assets/Indicadores/Time.PNG<>uid://gob2nda56tv5::::res://assets/Indicadores/Castle.PNG<>uid://bpihfc3ptrf8c::::res://assets/sounds/medieval-backgroun-jogo.mp3<>uid://qy5vq0v3hqqm::::res://assets/Indicadores/Crown.PNG<>uid://ceir2h0grxacs::::res://scenes/in_game_menu.tscn
 summaryCap.tscn::PackedScene/PackedScene::9008026928244618997::1756597686::0::1::::<><><>0<>0<><>::uid://b6w7mufimhxen::::res://scripts/Summary.gd
 transicao2.tscn::PackedScene/PackedScene::5502769000951417351::1756671935::0::1::::<><><>0<>0<><>::uid://cwgec8y0wvtvw::::res://scripts/transicao_2.gd
 transicao3.tscn::PackedScene/PackedScene::2050710437182434765::1756672660::0::1::::<><><>0<>0<><>::uid://c5lw4glrsurvt::::res://scripts/transicao_3.gd
-::res://scripts/::1757466476
+::res://scripts/::1757641270
 Card.gd::GDScript/GDScript::2622416547714941411::1757285005::0::1::::<>Control<><>0<>0<><>::
 Intro.gd::GDScript/GDScript::4877592465733944333::1756247397::0::1::::<>Control<><>0<>0<><>::
 in_game_menu.gd::GDScript/GDScript::1867298888521857075::1756856120::0::1::::<>Control<><>0<>0<><>::
-Main.gd::GDScript::778183022639146622::1757466476::0::1::::<>Control<><>0<>0<><>::
+Main.gd::GDScript::778183022639146622::1757641270::0::1::::<>Control<><>0<>0<><>::
 Summary.gd::GDScript/GDScript::4609656578927651881::1750011960::0::1::::<>PopupPanel<><>0<>0<><>::
 transicao_2.gd::GDScript/GDScript::6329630405018142676::1757285005::0::1::::<>Control<><>0<>0<><>::
 transicao_3.gd::GDScript/GDScript::6902602726616147521::1757285005::0::1::::<>Control<><>0<>0<><>::
