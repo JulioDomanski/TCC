@@ -1,8 +1,8 @@
 res://default_env.tres
-res://scenes/in_game_menu.tscn
 res://scenes/Main.tscn
 res://scenes/Intro.tscn
-res://scenes/Card.tscn
-res://data/cards.json
+res://scenes/transicao2.tscn
+res://scenes/summaryCap.tscn
+res://scripts/Summary.gd
 res://scripts/Main.gd
-res://scripts/Card.gd
+res://data/cards.json

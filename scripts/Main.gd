@@ -57,6 +57,33 @@ var tutorial_passos = [
 	{"mensagem": "Se qualquer indicador chegar a zero, o reinado entra em colapso... Game Over!"},
 	{"mensagem": "Você está pronto! Boa sorte, e que sua liderança traga prosperidade ao reino!"}
 ]
+
+# Array com os textos finais e temáticos para o sumário de cada capítulo.
+var chapter_summary_bodies = [
+	"", # Placeholder para o índice 0
+	
+	# Capítulo 1: Fundamentos da Agilidade
+	"Neste capítulo, você aprendeu sobre:\n\n" +
+	"- Adaptação sobre Planos Rígidos\n" +
+	"- Colaboração e Transparência\n" +
+	"- Foco em Entregas de Valor\n" +
+	"- Melhoria Contínua",
+	
+	# Capítulo 2: O Ritmo dos Sprints
+	"Neste capítulo, você aprendeu sobre:\n\n" +
+	"- O Poder dos Sprints (Ciclos Curtos)\n" +
+	"- Foco no Objetivo de Cada Ciclo\n" +
+	"- Entregas Incrementais e Revisão\n" +
+	"- A Importância de Proteger o Foco",
+	
+	# Capítulo 3: Os Papéis do Time Scrum
+	"Neste capítulo, você aprendeu sobre:\n\n" +
+	"- Priorização de Valor (Product Owner)\n" +
+	"- Facilitação e Proteção (Scrum Master)\n" +
+	"- Auto-organização e Execução (Time)\n" +
+	"- A Força dos Papéis Bem Definidos"
+]
+
 var tutorial_index = 0
 var highlight_rect : ColorRect
 var tutorial_label = null
@@ -162,8 +189,6 @@ func spawn_new_card():
 			dilema.add_theme_color_override("font_color", Color(1,1,1))
 		current_card.queue_free()
 
-	
-
 	card_id = deck.pop_front()
 	current_card = CardScene.instantiate()
 	cardContainer.add_child(current_card)
@@ -196,6 +221,7 @@ func spawn_new_card():
 	# Normal card setup
 	dilema.text = cards_data[card_id]["text"]
 	dilema.add_theme_font_size_override("font_size", 21)
+	dilema.show()
 	current_card.connect("card_discarded", Callable(self, "_on_card_discarded"))
 
 	
@@ -252,20 +278,32 @@ func _on_card_discarded(direction, card_data):
 		return
 	first_card = false
 
-# ✅ Mostra resumo e chama próximo capítulo
 func show_summary():
+	dilema.hide()
 	var percentage = 0
 	if chapter_total_questions > 0:
 		percentage = int(round(float(chapter_correct_answers) / chapter_total_questions * 100))
 		
-	var base_summary_text = "📜 Fim do Capítulo %d 📜\n\nVocê avançou na jornada da Agilidade." % current_chapter
-	var percentage_text = "\n\nSua performance neste capítulo:\nVocê acertou %d%% das decisões!" % percentage
-	var final_text = base_summary_text + percentage_text
+	var title_text = "Fim do Capítulo %d" % current_chapter
+	
+	# --- CÓDIGO ALTERADO AQUI ---
+	# Pega o texto do corpo do array usando o capítulo atual como índice
+	var body_text = "" # Inicia a variável vazia
+	if current_chapter < chapter_summary_bodies.size():
+		body_text = chapter_summary_bodies[current_chapter]
+	else:
+		body_text = "Você avançou na jornada da Agilidade." # Texto de segurança
+	# --- FIM DA ALTERAÇÃO ---
+
+	var result_text = "Sua performance: %d%% de acerto!" % percentage
 	
 	var summary_instance = SummaryScene.instantiate()
-	summary_instance.texto_summary = final_text
 	add_child(summary_instance)
-	summary_instance.popup_centered()
+	
+	summary_instance.set_summary_texts(title_text, body_text, result_text)
+	
+	summary_instance.popup_centered() 
+	
 	summary_instance.connect("popup_hide", Callable(self, "_on_summary_closed"))
 
 func _on_summary_closed():
