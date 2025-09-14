@@ -1,14 +1,14 @@
+Control
+Label
+CenterContainer
 Button
 VBoxContainer
 HBoxContainer
 HSlider
-Label
 TextureRect
 AnimationPlayer
-Control
 PanelContainer
 AudioStreamPlayer2D
 AudioListener2D
 RichTextLabel
 MarginContainer
-PopupPanel
