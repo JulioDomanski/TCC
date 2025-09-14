@@ -7,7 +7,7 @@ var drag_offset = Vector2()
 var initial_position = Vector2()
 var initial_global_position = Vector2()
 const SWIPE_THRESHOLD = 200
-
+var is_feedback_card = false
 @onready var texture_rect = $TextureRect
 @onready var label_feedback = $TextureRect/FeedbackBackground/LabelFeedback
 @onready var label_left = $TextureRect/LeftChoiceLabel
@@ -46,6 +46,7 @@ func check_card(card_data) -> String:
 
 func setup_card(data, is_feedback = false, direction = "right"):
 	card_data = data
+	is_feedback_card = is_feedback
 	visible = false
 	await get_tree().process_frame
 	initial_position = position
@@ -113,7 +114,15 @@ func _gui_input(event):
 		var new_pos = event.global_position + drag_offset
 		global_position = Vector2(new_pos.x, initial_global_position.y)
 		update_choice_visibility()
-
+		
+		if not is_feedback_card:
+			# Escurece proporcional ao quanto está arrastando
+			var delta_x = abs(global_position.x - initial_global_position.x)
+			var strength = clamp(delta_x / SWIPE_THRESHOLD, 0, 1)
+			var darkness = clamp(strength * 3, 0, 3) 
+			feedback_background.visible = true
+			feedback_background.modulate = Color(0, 0, 0, darkness)
+			
 func process_swipe():
 	var delta_x = global_position.x - initial_global_position.x
 
@@ -165,3 +174,5 @@ func return_to_center():
 	tween.tween_property(self, "global_position", initial_global_position, 0.3)
 	tween.parallel().tween_property(label_left, "modulate:a", 0, 0.2)
 	tween.parallel().tween_property(label_right, "modulate:a", 0, 0.2)
+	if not is_feedback_card:
+		tween.parallel().tween_property(feedback_background, "modulate", Color(1,1,1,0), 0.2)
