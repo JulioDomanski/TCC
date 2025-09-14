@@ -327,6 +327,9 @@ func game_over():
 	var tween := create_tween()
 	tween.tween_property(black_overlay, "color", Color(0, 0, 0, 1), 1.0)
 	await tween.finished
+	if chaos_timer_label:
+		chaos_timer_label.queue_free()
+		chaos_timer_label = null
 	var game_over_sound = AudioStreamPlayer2D.new()
 	game_over_sound.stream = load("res://assets/sounds/negative_beeps-6008.mp3")
 	add_child(game_over_sound)
