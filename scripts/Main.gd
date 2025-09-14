@@ -26,6 +26,9 @@ var chapter_total_questions = 0
 var button_skip : Button
 var skipped_tutorial = false
 @onready var vbox_label_tutorial : VBoxContainer
+# timer chaos_escopial
+var chaos_timer_label: Label = null
+
 
 # indicadores
 @onready var backIndicadores = $MiddleControl/WrapperIndicadores/BackIndicadores
@@ -148,44 +151,53 @@ func reset_indicators():
 
 func spawn_new_card():
 	if deck.size() == 0:
-		if(is_game_over()):
+		if is_game_over():
 			return
 		show_summary()
 		return 
 	
+	# Remove previous card
 	if current_card:
-		if(cards_data[card_id]["image"] == "Caos Escopial"):
+		if cards_data[card_id]["image"] == "Caos Escopial":
 			dilema.add_theme_color_override("font_color", Color(1,1,1))
 		current_card.queue_free()
+
 	
+
 	card_id = deck.pop_front()
 	current_card = CardScene.instantiate()
 	cardContainer.add_child(current_card)
 	current_card.setup_card(cards_data[card_id])
-	if(cards_data[card_id]["image"] == "Caos Escopial" and not showing_feedback):
+
+	# Special case: Caos Escopial
+	if cards_data[card_id]["image"] == "Caos Escopial" and not showing_feedback:
 		dilema.add_theme_color_override("font_color", Color(1, 1, 1))
 		if not caos_tutorial_shown:
 			caos_tutorial_shown = true
 			await tutorial_caos_escopial()
-		var chaos_timer_label = Label.new()
+
+		# Create chaos timer label
+		chaos_timer_label = Label.new()
 		chaos_timer_label.text = str(decision_time)
 		chaos_timer_label.add_theme_font_size_override("font_size", 28)
 		chaos_timer_label.set("custom_colors/font_color", Color(1, 0, 0))
 		chaos_timer_label.set_anchors_preset(Control.PRESET_CENTER_BOTTOM)
-		chaos_timer_label.z_index =20
+		chaos_timer_label.z_index = 20
 		cardContainer.add_child(chaos_timer_label)
 
+		# Create timer
 		var chaos_timer = Timer.new()
 		chaos_timer.wait_time = 1.0
 		chaos_timer.one_shot = false
 		chaos_timer.connect("timeout", Callable(self, "_on_chaos_timer_tick").bind(chaos_timer_label, chaos_timer))
 		current_card.add_child(chaos_timer)
 		chaos_timer.start()
-		
-		
+	
+	# Normal card setup
 	dilema.text = cards_data[card_id]["text"]
 	dilema.add_theme_font_size_override("font_size", 21)
 	current_card.connect("card_discarded", Callable(self, "_on_card_discarded"))
+
 	
 	
 func set_points(node, direction, indicator):
@@ -231,6 +243,9 @@ func _on_card_discarded(direction, card_data):
 	set_points(pontosProgresso,direction,"progress")
 	set_points(pontosTempo,direction,"time")
 	set_points(pontosConfianca,direction,"trust")
+	if chaos_timer_label:
+		chaos_timer_label.queue_free()
+		chaos_timer_label = null
 	await show_feedback_card(card_data,direction)
 	if is_game_over():
 		game_over()
@@ -337,7 +352,7 @@ func mostrar_tutorial_passo() -> void:
 		else:
 			target_node = get_node(passo["target_node_path"])
 		highlight_rect = ColorRect.new()
-		highlight_rect.color = Color(0.3, 0.3, 0.3, 0.5)  
+		highlight_rect.color = Color(1, 1, 0, 0.4)  
 		highlight_rect.modulate = Color(1, 1, 1, 0)       
 		highlight_rect.anchor_left = target_node.anchor_left
 		highlight_rect.anchor_top = target_node.anchor_top
