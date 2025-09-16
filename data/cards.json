@@ -6,7 +6,7 @@
 	"left_choice": "Adote ciclos curtos e entregas frequentes. Vamos nos adaptar conforme avançamos.",
 	"right_choice": "Crie um plano completo e rígido. Precisamos prever tudo desde o início.",
 	"image": "Sir Cedric",
-	"left_effects": { "moral": 10, "resources": -2, "time": 5, "trust": 10, "progress": 10 },
+	"left_effects": { "moral": 10, "resources": 0, "time": 5, "trust": 10, "progress": 10 },
 	"right_effects": { "moral": -20, "resources": -2, "time": -15, "trust": -20, "progress": -15 },
 	"correct_answer": "left",
 	"feedback": {
@@ -76,7 +76,7 @@
 	"left_choice": "Apoie a ideia. Refletir sobre o que funcionou ou não pode ajudar muito.",
 	"right_choice": "Não. Isso é perda de tempo. Precisamos continuar produzindo.",
 	"image": "Sir Cedric",
-	"left_effects": { "moral": 10, "resources": 0, "time": -2, "trust": 10, "progress": 5 },
+	"left_effects": { "moral": 10, "resources": 0, "time": 0, "trust": 10, "progress": 5 },
 	"right_effects": { "moral": -15, "resources": 0, "time": 5, "trust": -15, "progress": -10 },
 	"correct_answer": "left",
 	"feedback": {
@@ -91,7 +91,7 @@
 	"right_choice": "Apoie a decisão. Entregar valor para o povo é prioridade.",
 	"image": "Lady Elara",
 	"left_effects": { "moral": -15, "resources": 0, "time": 0, "trust": -15, "progress": -10 },
-	"right_effects": { "moral": 10, "resources": -2, "time": -2, "trust": 10, "progress": 10 },
+	"right_effects": { "moral": 10, "resources": 0, "time": 0, "trust": 10, "progress": 10 },
 	"correct_answer": "right",
 	"feedback": {
 	  "left": "Insistir em planos engessados afasta o time das necessidades reais.",
@@ -150,7 +150,7 @@
 	"right_choice": "Entregar por partes. O povo já poderá usar o que for ficando pronto.",
 	"image": "Anoes",
 	"left_effects": { "moral": -10, "resources": -15, "time": -20, "trust": -10, "progress": -15 },
-	"right_effects": { "moral": 15, "resources": -5, "time": 5, "trust": 10, "progress": 15 },
+	"right_effects": { "moral": 15, "resources": 0, "time": 5, "trust": 10, "progress": 15 },
 	"correct_answer": "right",
 	"feedback": {
 	  "left": "Tentar entregar tudo no fim gera demora e insatisfação.",
@@ -191,7 +191,7 @@
 	"left_choice": "Atender a prioridade do povo, mesmo que não seja a mais grandiosa.",
 	"right_choice": "Seguir o plano original e reconstruir a biblioteca primeiro.",
 	"image": "Rainha Stakeholdina",
-	"left_effects": { "moral": 15, "resources": -5, "time": 0, "trust": 15, "progress": 10 },
+	"left_effects": { "moral": 15, "resources": 0, "time": 0, "trust": 15, "progress": 10 },
 	"right_effects": { "moral": -10, "resources": 0, "time": -5, "trust": -15, "progress": -10 },
 	"correct_answer": "left",
 	"feedback": {
@@ -205,7 +205,7 @@
 	"left_choice": "Sim, revisar nos permitirá aprender e melhorar.",
 	"right_choice": "Não, é perda de tempo. Vamos apenas continuar.",
 	"image": "Sir Cedric",
-	"left_effects": { "moral": 10, "resources": 0, "time": -2, "trust": 10, "progress": 5 },
+	"left_effects": { "moral": 10, "resources": 0, "time": 0, "trust": 10, "progress": 5 },
 	"right_effects": { "moral": -10, "resources": 0, "time": 2, "trust": -15, "progress": -10 },
 	"correct_answer": "left",
 	"feedback": {
@@ -234,7 +234,7 @@
   "right_choice": "Organizar ataques em ciclos curtos, avaliando e ajustando a cada rodada.",
   "image": "Caos Escopial",
   "left_effects": { "moral": -100, "resources": -100, "time": -1000, "trust": -100, "progress": -100 },
-  "right_effects": { "moral": 10, "resources": -10, "time": 0, "trust": 15, "progress": 15 },
+  "right_effects": { "moral": 10, "resources": 0, "time": 0, "trust": 15, "progress": 15 },
   "correct_answer": "right",
   "feedback": {
 	"left": "O ataque direto falha! O Caos Escopial se adapta, e o reino sofre grandes perdas.",
@@ -305,7 +305,7 @@
 	"left_choice": "Apoie Lady Elara. O valor para o reino, definido por ela, deve guiar o trabalho.",
 	"right_choice": "Atenda à Rainha. A imagem da coroa é mais importante agora.",
 	"image": "Lady Elara",
-	"left_effects": { "moral": 10, "resources": -2, "time": 0, "trust": 15, "progress": 10 },
+	"left_effects": { "moral": 10, "resources": 0, "time": 0, "trust": 15, "progress": 10 },
 	"right_effects": { "moral": -15, "resources": -5, "time": -5, "trust": -20, "progress": -15 },
 	"correct_answer": "left",
 	"feedback": {
@@ -320,7 +320,7 @@
 	"right_choice": "Conceda a autoridade. A remoção de impedimentos é a prioridade dele.",
 	"image": "Sir Cedric",
 	"left_effects": { "moral": -20, "resources": 0, "time": -15, "trust": -15, "progress": -20 },
-	"right_effects": { "moral": 15, "resources": -3, "time": -2, "trust": 10, "progress": 10 },
+	"right_effects": { "moral": 15, "resources": 0, "time": 0, "trust": 10, "progress": 10 },
 	"correct_answer": "right",
 	"feedback": {
 	  "left": "Um impedimento ignorado paralisa o progresso. A agilidade depende de resolver bloqueios rapidamente.",
@@ -431,7 +431,7 @@
 	"left_choice": "Ordene ao Conselho que defina claramente o que 'pronto' significa para todas as tarefas futuras.",
 	"right_choice": "Mande os anões adicionarem as escadas e siga em frente sem discutir.",
 	"image": "Anoes",
-	"left_effects": { "moral": 10, "resources": -2, "time": -2, "trust": 10, "progress": 15 },
+	"left_effects": { "moral": 10, "resources": 0, "time": 0, "trust": 10, "progress": 15 },
 	"right_effects": { "moral": -5, "resources": -2, "time": -5, "trust": -10, "progress": -5 },
 	"correct_answer": "left",
 	"feedback": {
@@ -446,7 +446,7 @@
 	"right_choice": "Restaure a ordem: Sir Cedric protege o foco, Lady Elara decide prioridades e os Anões executam o trabalho.",
 	"image": "Caos Escopial",
 	"left_effects": { "moral": -100, "resources": -100, "time": -100, "trust": -100, "progress": -100 },
-	"right_effects": { "moral": 15, "resources": -5, "time": 5, "trust": 20, "progress": 15 },
+	"right_effects": { "moral": 15, "resources": 0, "time": 5, "trust": 20, "progress": 15 },
 	"correct_answer": "right",
 	"feedback": {
 	  "left": "O Caos Escopial se alimenta quando os papéis do time são confundidos. O resultado é desordem, perda de confiança e atraso no trabalho.",
