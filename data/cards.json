@@ -233,7 +233,7 @@
   "left_choice": "Atacar o monstro de frente em uma única investida.",
   "right_choice": "Organizar ataques em ciclos curtos, avaliando e ajustando a cada rodada.",
   "image": "Caos Escopial",
-  "left_effects": { "moral": -40, "resources": -25, "time": -30, "trust": -40, "progress": -30 },
+  "left_effects": { "moral": -100, "resources": -100, "time": -1000, "trust": -100, "progress": -100 },
   "right_effects": { "moral": 10, "resources": -10, "time": 0, "trust": 15, "progress": 15 },
   "correct_answer": "right",
   "feedback": {
@@ -290,7 +290,7 @@
 	"right_choice": "Negar. Todas as tarefas devem ser impostas pela coroa.",
 	"image": "Anoes",
 	"left_effects": { "moral": 15, "resources": 0, "time": 5, "trust": 15, "progress": 10 },
-	"right_effects": { "moral": -100, "resources": -100, "time": -100, "trust": -100, "progress": -100 },
+	"right_effects": { "moral": -15, "resources": 0, "time": -10, "trust": -15, "progress": -10 },
 	"correct_answer": "left",
 	"feedback": {
 	  "left": "Auto-organização dentro do ciclo aumenta eficiência e engajamento.",
