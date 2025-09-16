@@ -290,7 +290,7 @@
 	"right_choice": "Negar. Todas as tarefas devem ser impostas pela coroa.",
 	"image": "Anoes",
 	"left_effects": { "moral": 15, "resources": 0, "time": 5, "trust": 15, "progress": 10 },
-	"right_effects": { "moral": -15, "resources": 0, "time": -10, "trust": -15, "progress": -10 },
+	"right_effects": { "moral": -100, "resources": -100, "time": -100, "trust": -100, "progress": -100 },
 	"correct_answer": "left",
 	"feedback": {
 	  "left": "Auto-organização dentro do ciclo aumenta eficiência e engajamento.",
@@ -445,7 +445,7 @@
 	"left_choice": "Deixe que cada um aja como quiser diante do caos.",
 	"right_choice": "Restaure a ordem: Sir Cedric protege o foco, Lady Elara decide prioridades e os Anões executam o trabalho.",
 	"image": "Caos Escopial",
-	"left_effects": { "moral": -25, "resources": -15, "time": -20, "trust": -25, "progress": -25 },
+	"left_effects": { "moral": -100, "resources": -100, "time": -100, "trust": -100, "progress": -100 },
 	"right_effects": { "moral": 15, "resources": -5, "time": 5, "trust": 20, "progress": 15 },
 	"correct_answer": "right",
 	"feedback": {
