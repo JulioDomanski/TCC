@@ -259,6 +259,9 @@ func show_feedback_card(card_data,direction) -> Signal:
 func _on_card_discarded(direction, card_data):
 	if showing_feedback:
 		showing_feedback = false
+		if is_game_over():
+			game_over()
+			return
 		spawn_new_card()
 		return
 	chapter_total_questions += 1
@@ -273,9 +276,6 @@ func _on_card_discarded(direction, card_data):
 		chaos_timer_label.queue_free()
 		chaos_timer_label = null
 	await show_feedback_card(card_data,direction)
-	if is_game_over():
-		game_over()
-		return
 	first_card = false
 
 func show_summary():
