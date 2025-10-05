@@ -50,7 +50,11 @@ func _ready() :
 
 	
 	var tween := create_tween()
+	
+	
 	tween.tween_property(black_overlay, "color", Color(0, 0, 0, 1), 1.0)
+	
+	tween.tween_callback(Callable(self, "_play_intro_sfx"))
 	await tween.finished
 
 	
@@ -353,3 +357,5 @@ func _on_continue_pressed():
 
 	
 	
+func _play_intro_sfx():
+	$IntroMusic.play()

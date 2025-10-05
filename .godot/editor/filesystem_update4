@@ -3,7 +3,8 @@ res://scenes/Main.tscn
 res://scenes/Intro.tscn
 res://scenes/transicao2.tscn
 res://scenes/summaryCap.tscn
-res://scripts/Main.gd
 res://scenes/in_game_menu.tscn
-res://data/cards.json
-res://scripts/in_game_menu.gd
+res://scenes/MenuInicial.tscn
+res://scripts/menu_inicial.gd
+res://scripts/Main.gd
+res://scripts/Intro.gd
