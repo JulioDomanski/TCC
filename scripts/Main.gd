@@ -29,6 +29,12 @@ var skipped_tutorial = false
 # timer chaos_escopial
 var chaos_timer_label: Label = null
 
+var moral_save =0;
+var recursos_save =0; 
+var tempo_save =0; 
+var progresso_save =0; 
+var confianca_save =0; 
+
 
 # indicadores
 @onready var backIndicadores = $MiddleControl/WrapperIndicadores/BackIndicadores
@@ -103,6 +109,8 @@ func _ready():
 	fade_rect.set_anchors_preset(Control.PRESET_FULL_RECT)
 	fade_rect.z_index = 5
 	add_child(fade_rect)
+	load_game()
+	
 
 	start_chapter(current_chapter)
 
@@ -116,13 +124,14 @@ func _ready():
 	fade_rect.queue_free()
 
 	# --- ADICIONE ESTE CÓDIGO PARA INICIALIZAR O rect_fade ---
-	rect_fade = ColorRect.new()
-	rect_fade.color = Color.BLACK
-	rect_fade.set_anchors_preset(Control.PRESET_FULL_RECT)
-	rect_fade.z_index = 50
-	rect_fade.modulate.a = 0.0  # Começa transparente
-	rect_fade.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	add_child(rect_fade)
+	if(current_chapter ==1):
+		rect_fade = ColorRect.new()
+		rect_fade.color = Color.BLACK
+		rect_fade.set_anchors_preset(Control.PRESET_FULL_RECT)
+		rect_fade.z_index = 50
+		rect_fade.modulate.a = 0.0  # Começa transparente
+		rect_fade.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		add_child(rect_fade)
 	# --------------------------------------------------------
 
 	if current_chapter == 1:
@@ -164,14 +173,22 @@ func load_cards_data(chapter: int):
 		push_error("Capítulo %d não encontrado no JSON!" % chapter)
 
 func initialize_deck():
-	deck = cards_data.keys()
+	var keys = cards_data.keys()
+	# para fins de testes : deck = keys.slice(0, 3)
+	deck = keys 
+	
 
 func reset_indicators():
 	pontosMoral.text = "20"
+	moral_save=pontosMoral.text
 	pontosRecursos.text ="20"
+	recursos_save=pontosRecursos.text
 	pontosTempo.text = "20"
+	tempo_save=pontosTempo.text
 	pontosProgresso.text = "20"
+	progresso_save= pontosProgresso.text
 	pontosConfianca.text="20"
+	confianca_save= pontosConfianca.text
 	chapter_correct_answers = 0
 	chapter_total_questions = 0
 	first_card = true
@@ -229,7 +246,7 @@ func spawn_new_card():
 func set_points(node, direction, indicator):
 	var points = cards_data[card_id][direction+"_effects"][indicator]
 	node.text = str(node.text.to_int() + points)
-	
+	save_points(node);
 	if direction == cards_data[card_id]["correct_answer"] && points != 0:
 		node.add_theme_color_override("font_color", Color.GREEN)
 		glow_indicators(indicator  , true)
@@ -286,17 +303,15 @@ func show_summary():
 		
 	var title_text = "Fim do Capítulo %d" % current_chapter
 	
-	# --- CÓDIGO ALTERADO AQUI ---
-	# Pega o texto do corpo do array usando o capítulo atual como índice
-	var body_text = "" # Inicia a variável vazia
+
+	var body_text = "" 
 	if current_chapter < chapter_summary_bodies.size():
 		body_text = chapter_summary_bodies[current_chapter]
 	else:
-		body_text = "Você avançou na jornada da Agilidade." # Texto de segurança
-	# --- FIM DA ALTERAÇÃO ---
+		body_text = "Você avançou na jornada da Agilidade."
 
 	var result_text = "Sua performance: %d%% de acerto!" % percentage
-	
+	save_game_fim_capitulo(str(percentage))
 	var summary_instance = SummaryScene.instantiate()
 	add_child(summary_instance)
 	
@@ -682,3 +697,77 @@ func tutorial_caos_escopial():
 	await tween.finished
 	if is_instance_valid(tutorial_label):
 		tutorial_label.queue_free()
+const SAVE_PATH := "user://savegame.json"
+
+func save_game_fim_capitulo(porcentagem_acertos: String):
+	var save_data = {}
+	
+	# Check if file exists — to preserve previous chapters
+	if FileAccess.file_exists(SAVE_PATH):
+		var file_read = FileAccess.open(SAVE_PATH, FileAccess.READ)
+		save_data = JSON.parse_string(file_read.get_as_text())
+		file_read.close()
+	
+	if typeof(save_data) != TYPE_DICTIONARY:
+		save_data = {}
+	
+	# Make sure the chapter history exists
+	if not save_data.has("capitulos"):
+		save_data["capitulos"] = {}
+
+	# Save current chapter stats
+	save_data["capitulos"][str(current_chapter)] = {
+		"moral_final": moral_save,
+		"recursos_final": recursos_save,
+		"tempo_final": tempo_save,
+		"progresso_final": progresso_save,
+		"confianca_final": confianca_save,
+		"percentual_acertos": porcentagem_acertos
+	}
+
+	# Also keep global progress info
+	save_data["capitulo_atual"] = current_chapter+1
+	save_data["tutorial_concluido"] = skipped_tutorial
+	save_data["carta_atual"] = card_id
+
+	# Write back to file
+	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
+	file.store_string(JSON.stringify(save_data, "\t"))
+	file.close()
+
+	print("✅ Progresso do capítulo", current_chapter, "salvo com sucesso!")
+
+
+
+func save_points(node : Node):
+	if "Moral" in node.name:
+		moral_save=node.text
+	elif "Confianca" in node.name:
+		confianca_save=node.text
+	elif "Progresso" in node.name:
+		progresso_save=node.text
+	elif "Tempo" in node.name:
+		tempo_save=node.text
+	elif "Recursos" in node.name:
+		recursos_save=node.text
+
+
+func load_game():
+	if not FileAccess.file_exists(SAVE_PATH):
+		print("Nenhum save encontrado em", SAVE_PATH)
+		return null
+	
+	var file = FileAccess.open(SAVE_PATH, FileAccess.READ)
+	var content = file.get_as_text()
+	file.close()
+
+	var save_data = JSON.parse_string(content)
+	if typeof(save_data) != TYPE_DICTIONARY:
+		print("❌ Erro: arquivo de save corrompido.")
+		return null
+
+	# --- Recuperar dados principais ---
+	current_chapter = int(save_data.get("capitulo_atual", 1))
+	skipped_tutorial = save_data.get("tutorial_concluido", false)
+	tutorial_index=20
+	card_id = save_data.get("carta_atual", "")

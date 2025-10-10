@@ -1,3 +1,4 @@
+ConfirmationDialog
 AudioStreamPlayer
 CenterContainer
 BoxContainer
@@ -12,4 +13,3 @@ HSlider
 AnimationPlayer
 AudioStreamPlayer2D
 AudioListener2D
-RichTextLabel
