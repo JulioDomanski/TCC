@@ -5,6 +5,5 @@ res://scenes/transicao2.tscn
 res://scenes/summaryCap.tscn
 res://scenes/in_game_menu.tscn
 res://scenes/MenuInicial.tscn
-res://scripts/menu_inicial.gd
 res://scripts/Main.gd
-res://scripts/Intro.gd
+res://scripts/menu_inicial.gd

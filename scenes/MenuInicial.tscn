@@ -91,3 +91,13 @@ parameters/looping = true
 [node name="SfxIntro" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_8bibx")
 volume_db = -24.762
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
+transparent_bg = true
+mode = 2
+title = "Confirme Por Favor"
+initial_position = 1
+size = Vector2i(322, 100)
+dialog_text = "Deseja sobrescrever a gravação?"
+
+[connection signal="confirmed" from="ConfirmationDialog" to="." method="delete_progression"]

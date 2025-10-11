@@ -8,20 +8,22 @@ extends Control
 @onready var title = $TextureRect/CenterContainer2/TitleGame
 @onready var menu = $TextureRect/CenterContainer/VBoxContainer
 @onready var sfx_intro = $SfxIntro 
-
+@onready var confirmar = $ConfirmationDialog
 func _ready():
 	# Inicialmente esconde tudo
 	texture_rect.modulate.a = 0
 	title.modulate.a = 0
 	title.scale = Vector2(0.8, 0.8)
 	menu.modulate.a = 0
+	
 
 	# Conecta sinais
 	btn_new_game.connect("pressed", Callable(self, "_on_new_game_pressed"))
 	btn_continue.connect("pressed", Callable(self, "_on_continue_pressed"))
 	btn_progress.connect("pressed", Callable(self, "_on_progress_pressed"))
 	btn_sair.connect("pressed", Callable(self, "_on_exit_pressed"))
-
+	if not FileAccess.file_exists("user://savegame.json"):
+		btn_continue.disabled = true
 	
 	var tween = get_tree().create_tween()
 	
@@ -46,16 +48,17 @@ func _play_intro_sfx():
 func _on_new_game_pressed():
 	# Reinicia o jogo do zero
 	print("Novo Jogo iniciado!")
-	get_tree().change_scene_to_file("res://scenes/Intro.tscn")
+	if FileAccess.file_exists("user://savegame.json"):
+		confirmar.popup_centered()
+	
+	else:
+		get_tree().change_scene_to_file("res://scenes/Intro.tscn")
 
 func _on_continue_pressed():
-	# Aqui você carrega o save do jogador
-	if FileAccess.file_exists("user://savegame.save"):
-		print("Carregar jogo salvo...")
-		get_tree().change_scene_to_file("res://scenes/Game.tscn")
-		# no _ready() da Game, você lê o save
-	else:
-		print("Nenhum jogo salvo encontrado")
+		get_tree().change_scene_to_file("res://scenes/Main.tscn")
+		
+	
+		
 
 func _on_progress_pressed():
 	# Pode abrir uma tela de progresso, conquistas, capítulos desbloqueados etc
@@ -64,3 +67,10 @@ func _on_progress_pressed():
 	
 func _on_exit_pressed():
 	get_tree().quit()
+
+func delete_progression():
+		var dir := DirAccess.open("user://")
+		if dir:
+			dir.remove("savegame.json")
+		get_tree().change_scene_to_file("res://scenes/Intro.tscn")
+	
