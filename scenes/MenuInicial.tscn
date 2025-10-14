@@ -1,9 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://cyt1pg5vsj3i2"]
+[gd_scene load_steps=11 format=3 uid="uid://cyt1pg5vsj3i2"]
 
 [ext_resource type="Script" uid="uid://bwtq12edk74ml" path="res://scripts/menu_inicial.gd" id="1_dshj6"]
 [ext_resource type="Texture2D" uid="uid://bjkyuhye43hr6" path="res://assets/backgrounds/BackMenuInicial.png" id="2_ndsd1"]
 [ext_resource type="AudioStream" uid="uid://cg2pwxpbq8wwr" path="res://assets/sounds/MainMenuSong.mp3" id="3_47ufh"]
+[ext_resource type="Texture2D" uid="uid://dsxqtpy3avvlo" path="res://assets/Indicadores/Brain.PNG" id="3_p4la7"]
+[ext_resource type="Texture2D" uid="uid://bmadm13cf1a0m" path="res://assets/Indicadores/MoneyBag.PNG" id="4_0rbed"]
 [ext_resource type="AudioStream" uid="uid://cnidb05e63crd" path="res://assets/sounds/Sword.mp3" id="4_8bibx"]
+[ext_resource type="Texture2D" uid="uid://dmyyju6xne58v" path="res://assets/Indicadores/Time.PNG" id="5_n8b5a"]
+[ext_resource type="Texture2D" uid="uid://gob2nda56tv5" path="res://assets/Indicadores/Castle.PNG" id="6_76mtr"]
+[ext_resource type="Texture2D" uid="uid://qy5vq0v3hqqm" path="res://assets/Indicadores/Crown.PNG" id="7_mt61h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ndsd1"]
 bg_color = Color(0.733333, 0.447059, 0.247059, 0.462745)
@@ -38,6 +43,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/CenterContainer"]
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 25
 alignment = 1
@@ -65,6 +71,339 @@ layout_mode = 2
 mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 30
 text = "Sair Do Jogo"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="TextureRect/CenterContainer"]
+layout_mode = 2
+
+[node name="Cap1" type="VBoxContainer" parent="TextureRect/CenterContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/CenterContainer/VBoxContainer2/Cap1"]
+layout_mode = 2
+
+[node name="Titulo" type="Label" parent="TextureRect/CenterContainer/VBoxContainer2/Cap1/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Capítulo 1: Fundamentos da Agilidade"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="TextureRect/CenterContainer/VBoxContainer2/Cap1"]
+layout_mode = 2
+
+[node name="VBoxContainerMoral" type="VBoxContainer" parent="TextureRect/CenterContainer/VBoxContainer2/Cap1/HBoxContainer2"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TextureRect/CenterContainer/VBoxContainer2/Cap1/HBoxContainer2/VBoxContainerMoral"]
+layout_mode = 2
+text = "Moral"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="TextureRect/CenterContainer/VBoxContainer2/Cap1/HBoxContainer2/VBoxContainerMoral"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/CenterContainer/VBoxContainer2/Cap1/HBoxContainer2/VBoxContainerMoral/Control"]
+layout_mode = 2
+anchor_top = -0.08
+anchor_right = 1.0
+anchor_bottom = 0.92
+offset_top = -0.999999
+offset_bottom = -1.0
+texture = ExtResource("3_p4la7")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Pontos" type="Label" parent="TextureRect/CenterContainer/VBoxContainer2/Cap1/HBoxContainer2/VBoxContainerMoral"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainerRecursos" type="VBoxContainer" parent="TextureRect/CenterContainer/VBoxContainer2/Cap1/HBoxContainer2"]
+custom_minimum_size = Vector2(90, 100)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TextureRect/CenterContainer/VBoxContainer2/Cap1/HBoxContainer2/VBoxContainerRecursos"]
+layout_mode = 2
+text = "Recursos"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="TextureRect/CenterContainer/VBoxContainer2/Cap1/HBoxContainer2/VBoxContainerRecursos"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/CenterContainer/VBoxContainer2/Cap1/HBoxContainer2/VBoxContainerRecursos/Control"]
+layout_mode = 2
+anchor_left = 0.06
+anchor_right = 0.89
+anchor_bottom = 0.91
+offset_top = -2.0
+offset_right = 4.99999
+offset_bottom = 3.0
+texture = ExtResource("4_0rbed")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Pontos" type="Label" parent="TextureRect/CenterContainer/VBoxContainer2/Cap1/HBoxContainer2/VBoxContainerRecursos"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainerTempo" type="VBoxContainer" parent="TextureRect/CenterContainer/VBoxContainer2/Cap1/HBoxContainer2"]
+custom_minimum_size = Vector2(90, 100)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TextureRect/CenterContainer/VBoxContainer2/Cap1/HBoxContainer2/VBoxContainerTempo"]
+layout_mode = 2
+text = "Tempo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="TextureRect/CenterContainer/VBoxContainer2/Cap1/HBoxContainer2/VBoxContainerTempo"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/CenterContainer/VBoxContainer2/Cap1/HBoxContainer2/VBoxContainerTempo/Control"]
+layout_mode = 2
+anchor_right = 0.89
+anchor_bottom = 0.91
+offset_top = 2.0
+offset_right = 3.99999
+offset_bottom = 2.0
+texture = ExtResource("5_n8b5a")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Pontos" type="Label" parent="TextureRect/CenterContainer/VBoxContainer2/Cap1/HBoxContainer2/VBoxContainerTempo"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainerProgresso" type="VBoxContainer" parent="TextureRect/CenterContainer/VBoxContainer2/Cap1/HBoxContainer2"]
+custom_minimum_size = Vector2(90, 100)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TextureRect/CenterContainer/VBoxContainer2/Cap1/HBoxContainer2/VBoxContainerProgresso"]
+layout_mode = 2
+text = "Progresso"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="TextureRect/CenterContainer/VBoxContainer2/Cap1/HBoxContainer2/VBoxContainerProgresso"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/CenterContainer/VBoxContainer2/Cap1/HBoxContainer2/VBoxContainerProgresso/Control"]
+layout_mode = 2
+anchor_right = 0.89
+anchor_bottom = 0.91
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 5.99999
+offset_bottom = 4.0
+texture = ExtResource("6_76mtr")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Pontos" type="Label" parent="TextureRect/CenterContainer/VBoxContainer2/Cap1/HBoxContainer2/VBoxContainerProgresso"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainerConfianca" type="VBoxContainer" parent="TextureRect/CenterContainer/VBoxContainer2/Cap1/HBoxContainer2"]
+custom_minimum_size = Vector2(90, 100)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TextureRect/CenterContainer/VBoxContainer2/Cap1/HBoxContainer2/VBoxContainerConfianca"]
+layout_mode = 2
+text = "Confiança"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="TextureRect/CenterContainer/VBoxContainer2/Cap1/HBoxContainer2/VBoxContainerConfianca"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/CenterContainer/VBoxContainer2/Cap1/HBoxContainer2/VBoxContainerConfianca/Control"]
+layout_mode = 2
+anchor_right = 0.89
+anchor_bottom = 0.91
+offset_top = 2.0
+texture = ExtResource("7_mt61h")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Pontos" type="Label" parent="TextureRect/CenterContainer/VBoxContainer2/Cap1/HBoxContainer2/VBoxContainerConfianca"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cap2" type="VBoxContainer" parent="TextureRect/CenterContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/CenterContainer/VBoxContainer2/Cap2"]
+layout_mode = 2
+
+[node name="Titulo" type="Label" parent="TextureRect/CenterContainer/VBoxContainer2/Cap2/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Capítulo 2: Ciclos de Reconstrução"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="TextureRect/CenterContainer/VBoxContainer2/Cap2"]
+layout_mode = 2
+
+[node name="VBoxContainerMoral" type="VBoxContainer" parent="TextureRect/CenterContainer/VBoxContainer2/Cap2/HBoxContainer2"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TextureRect/CenterContainer/VBoxContainer2/Cap2/HBoxContainer2/VBoxContainerMoral"]
+layout_mode = 2
+text = "Moral"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="TextureRect/CenterContainer/VBoxContainer2/Cap2/HBoxContainer2/VBoxContainerMoral"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/CenterContainer/VBoxContainer2/Cap2/HBoxContainer2/VBoxContainerMoral/Control"]
+layout_mode = 2
+anchor_top = -0.08
+anchor_right = 1.0
+anchor_bottom = 0.92
+offset_top = -0.999999
+offset_bottom = -1.0
+texture = ExtResource("3_p4la7")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Pontos" type="Label" parent="TextureRect/CenterContainer/VBoxContainer2/Cap2/HBoxContainer2/VBoxContainerMoral"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainerRecursos" type="VBoxContainer" parent="TextureRect/CenterContainer/VBoxContainer2/Cap2/HBoxContainer2"]
+custom_minimum_size = Vector2(90, 100)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TextureRect/CenterContainer/VBoxContainer2/Cap2/HBoxContainer2/VBoxContainerRecursos"]
+layout_mode = 2
+text = "Recursos"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="TextureRect/CenterContainer/VBoxContainer2/Cap2/HBoxContainer2/VBoxContainerRecursos"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/CenterContainer/VBoxContainer2/Cap2/HBoxContainer2/VBoxContainerRecursos/Control"]
+layout_mode = 2
+anchor_left = 0.06
+anchor_right = 0.89
+anchor_bottom = 0.91
+offset_top = -2.0
+offset_right = 4.99999
+offset_bottom = 3.0
+texture = ExtResource("4_0rbed")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Pontos" type="Label" parent="TextureRect/CenterContainer/VBoxContainer2/Cap2/HBoxContainer2/VBoxContainerRecursos"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainerTempo" type="VBoxContainer" parent="TextureRect/CenterContainer/VBoxContainer2/Cap2/HBoxContainer2"]
+custom_minimum_size = Vector2(90, 100)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TextureRect/CenterContainer/VBoxContainer2/Cap2/HBoxContainer2/VBoxContainerTempo"]
+layout_mode = 2
+text = "Tempo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="TextureRect/CenterContainer/VBoxContainer2/Cap2/HBoxContainer2/VBoxContainerTempo"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/CenterContainer/VBoxContainer2/Cap2/HBoxContainer2/VBoxContainerTempo/Control"]
+layout_mode = 2
+anchor_right = 0.89
+anchor_bottom = 0.91
+offset_top = 2.0
+offset_right = 3.99999
+offset_bottom = 2.0
+texture = ExtResource("5_n8b5a")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Pontos" type="Label" parent="TextureRect/CenterContainer/VBoxContainer2/Cap2/HBoxContainer2/VBoxContainerTempo"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainerProgresso" type="VBoxContainer" parent="TextureRect/CenterContainer/VBoxContainer2/Cap2/HBoxContainer2"]
+custom_minimum_size = Vector2(90, 100)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TextureRect/CenterContainer/VBoxContainer2/Cap2/HBoxContainer2/VBoxContainerProgresso"]
+layout_mode = 2
+text = "Progresso"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="TextureRect/CenterContainer/VBoxContainer2/Cap2/HBoxContainer2/VBoxContainerProgresso"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/CenterContainer/VBoxContainer2/Cap2/HBoxContainer2/VBoxContainerProgresso/Control"]
+layout_mode = 2
+anchor_right = 0.89
+anchor_bottom = 0.91
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 5.99999
+offset_bottom = 4.0
+texture = ExtResource("6_76mtr")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Pontos" type="Label" parent="TextureRect/CenterContainer/VBoxContainer2/Cap2/HBoxContainer2/VBoxContainerProgresso"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainerConfianca" type="VBoxContainer" parent="TextureRect/CenterContainer/VBoxContainer2/Cap2/HBoxContainer2"]
+custom_minimum_size = Vector2(90, 100)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TextureRect/CenterContainer/VBoxContainer2/Cap2/HBoxContainer2/VBoxContainerConfianca"]
+layout_mode = 2
+text = "Confiança"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="TextureRect/CenterContainer/VBoxContainer2/Cap2/HBoxContainer2/VBoxContainerConfianca"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/CenterContainer/VBoxContainer2/Cap2/HBoxContainer2/VBoxContainerConfianca/Control"]
+layout_mode = 2
+anchor_right = 0.89
+anchor_bottom = 0.91
+offset_top = 2.0
+texture = ExtResource("7_mt61h")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Pontos" type="Label" parent="TextureRect/CenterContainer/VBoxContainer2/Cap2/HBoxContainer2/VBoxContainerConfianca"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CenterContainer2" type="CenterContainer" parent="TextureRect"]
 layout_mode = 1
