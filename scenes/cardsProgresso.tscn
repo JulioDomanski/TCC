@@ -1,0 +1,208 @@
+[gd_scene load_steps=7 format=3 uid="uid://bqaf3aflyx7hy"]
+
+[ext_resource type="Texture2D" uid="uid://dsxqtpy3avvlo" path="res://assets/Indicadores/Brain.PNG" id="1_losmw"]
+[ext_resource type="Texture2D" uid="uid://bmadm13cf1a0m" path="res://assets/Indicadores/MoneyBag.PNG" id="2_pttix"]
+[ext_resource type="Texture2D" uid="uid://dmyyju6xne58v" path="res://assets/Indicadores/Time.PNG" id="3_a217d"]
+[ext_resource type="Texture2D" uid="uid://gob2nda56tv5" path="res://assets/Indicadores/Castle.PNG" id="4_wj2hs"]
+[ext_resource type="Texture2D" uid="uid://qy5vq0v3hqqm" path="res://assets/Indicadores/Crown.PNG" id="5_manco"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dft4y"]
+bg_color = Color(0.7, 0.7, 0.7, 0.352941)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+expand_margin_left = 80.0
+expand_margin_right = 80.0
+expand_margin_bottom = 10.0
+
+[node name="CardsProgresso" type="Control"]
+custom_minimum_size = Vector2(400, 180)
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Panel1" type="Panel" parent="."]
+custom_minimum_size = Vector2(400, 180)
+theme_override_styles/panel = SubResource("StyleBoxFlat_dft4y")
+
+[node name="Cap1" type="VBoxContainer" parent="Panel1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -258.0
+offset_top = -89.0
+offset_right = 258.0
+offset_bottom = 89.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel1/Cap1"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Titulo" type="Label" parent="Panel1/Cap1/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Capítulo 1: Fundamentos da Agilidade"
+
+[node name="Acerto" type="Label" parent="Panel1/Cap1/HBoxContainer"]
+layout_mode = 2
+text = "87% Acertos"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel1/Cap1"]
+layout_mode = 2
+
+[node name="VBoxContainerMoral" type="VBoxContainer" parent="Panel1/Cap1/HBoxContainer2"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel1/Cap1/HBoxContainer2/VBoxContainerMoral"]
+layout_mode = 2
+text = "Moral"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="Panel1/Cap1/HBoxContainer2/VBoxContainerMoral"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel1/Cap1/HBoxContainer2/VBoxContainerMoral/Control"]
+layout_mode = 2
+anchor_top = -0.08
+anchor_right = 1.0
+anchor_bottom = 0.92
+offset_top = -0.999999
+offset_bottom = -1.0
+texture = ExtResource("1_losmw")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Pontos" type="Label" parent="Panel1/Cap1/HBoxContainer2/VBoxContainerMoral"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainerRecursos" type="VBoxContainer" parent="Panel1/Cap1/HBoxContainer2"]
+custom_minimum_size = Vector2(90, 100)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel1/Cap1/HBoxContainer2/VBoxContainerRecursos"]
+layout_mode = 2
+text = "Recursos"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="Panel1/Cap1/HBoxContainer2/VBoxContainerRecursos"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel1/Cap1/HBoxContainer2/VBoxContainerRecursos/Control"]
+layout_mode = 2
+anchor_left = 0.06
+anchor_right = 0.89
+anchor_bottom = 0.91
+offset_top = -2.0
+offset_right = 4.99999
+offset_bottom = 3.0
+texture = ExtResource("2_pttix")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Pontos" type="Label" parent="Panel1/Cap1/HBoxContainer2/VBoxContainerRecursos"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainerTempo" type="VBoxContainer" parent="Panel1/Cap1/HBoxContainer2"]
+custom_minimum_size = Vector2(90, 100)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel1/Cap1/HBoxContainer2/VBoxContainerTempo"]
+layout_mode = 2
+text = "Tempo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="Panel1/Cap1/HBoxContainer2/VBoxContainerTempo"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel1/Cap1/HBoxContainer2/VBoxContainerTempo/Control"]
+layout_mode = 2
+anchor_right = 0.89
+anchor_bottom = 0.91
+offset_top = 2.0
+offset_right = 3.99999
+offset_bottom = 2.0
+texture = ExtResource("3_a217d")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Pontos" type="Label" parent="Panel1/Cap1/HBoxContainer2/VBoxContainerTempo"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainerProgresso" type="VBoxContainer" parent="Panel1/Cap1/HBoxContainer2"]
+custom_minimum_size = Vector2(90, 100)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel1/Cap1/HBoxContainer2/VBoxContainerProgresso"]
+layout_mode = 2
+text = "Progresso"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="Panel1/Cap1/HBoxContainer2/VBoxContainerProgresso"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel1/Cap1/HBoxContainer2/VBoxContainerProgresso/Control"]
+layout_mode = 2
+anchor_right = 0.89
+anchor_bottom = 0.91
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 5.99999
+offset_bottom = 4.0
+texture = ExtResource("4_wj2hs")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Pontos" type="Label" parent="Panel1/Cap1/HBoxContainer2/VBoxContainerProgresso"]
+layout_mode = 2
+text = "20"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainerConfianca" type="VBoxContainer" parent="Panel1/Cap1/HBoxContainer2"]
+custom_minimum_size = Vector2(90, 100)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel1/Cap1/HBoxContainer2/VBoxContainerConfianca"]
+layout_mode = 2
+text = "Confiança"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="Panel1/Cap1/HBoxContainer2/VBoxContainerConfianca"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel1/Cap1/HBoxContainer2/VBoxContainerConfianca/Control"]
+layout_mode = 2
+anchor_right = 0.89
+anchor_bottom = 0.91
+offset_top = 2.0
+texture = ExtResource("5_manco")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Pontos" type="Label" parent="Panel1/Cap1/HBoxContainer2/VBoxContainerConfianca"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
