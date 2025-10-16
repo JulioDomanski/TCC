@@ -86,15 +86,15 @@ custom_minimum_size = Vector2(800, 800)
 layout_mode = 2
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="TextureRect/CenterContainer/ScrollContainer/HBoxContainer/CenterContainer"]
+custom_minimum_size = Vector2(0, 2000)
 layout_mode = 2
-theme_override_constants/separation = 22
+theme_override_constants/separation = 100
 
 [node name="Label" type="Label" parent="TextureRect/CenterContainer/ScrollContainer/HBoxContainer/CenterContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 theme_override_font_sizes/font_size = 37
-text = "
-Progresso
-"
+text = "Progresso"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -143,6 +143,7 @@ offset_left = -1.80005
 offset_top = -3.6
 offset_right = -1.40002
 offset_bottom = -4.30001
+mouse_default_cursor_shape = 2
 text = "Voltar"
 metadata/_edit_use_anchors_ = true
 

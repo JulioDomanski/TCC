@@ -169,6 +169,9 @@ func setarCards(progress_card : Node , save_data , i):
 				png_tempo.modulate = Color(0.26,0.26,0,1.0)
 				png_progresso.modulate = Color(0.26,0.26,0,1.0)
 				png_confianca.modulate = Color(0.26,0.26,0,1.0)
+				progress_card.get_node("Button").disabled = true
+				progress_card.get_node("Button").mouse_default_cursor_shape = CURSOR_ARROW
+				
 			
 
 func voltar_menu():
@@ -178,4 +181,5 @@ func voltar_menu():
 		if child is not Label:
 			child.queue_free()
 	show_menu(1)
+
 	
