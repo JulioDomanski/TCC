@@ -11,6 +11,24 @@ extends Control
 @onready var confirmar = $ConfirmationDialog
 @onready var progresso_menu = $TextureRect/CenterContainer/ScrollContainer
 @onready var button_voltar_progresso = $ButtonVoltarProgresso
+var sumario_texto = [
+	"O jovem príncipe iniciou a reconstrução do Reino de Entregária aprendendo que planos rígidos enfraquecem o progresso.
+Ao adotar ciclos curtos, colaboração e transparência, descobriu que o verdadeiro poder está na adaptação e na união do povo.
+Agora, o reino começa a florescer sob os princípios da agilidade.\n
+Conceitos-chave: Adaptabilidade • Colaboração • Transparência • Valor Contínuo • Melhoria Constante",
+
+"O príncipe aprendeu que reconstruir o reino exige ritmo e propósito.
+Ao dividir o trabalho em ciclos curtos, pôde ouvir o povo, adaptar prioridades e entregar valor a cada etapa.
+A transparência e a revisão constante fortaleceram a confiança, mostrando que a melhoria contínua é o verdadeiro caminho para restaurar Entregária.\n
+Conceitos-chave: Iteração • Entregas Incrementais • Prioridade por Valor • Transparência • Melhoria Contínua",
+
+"O príncipe convocou o Conselho da Coroa para restaurar a harmonia do trabalho em Entregária.
+Entre prioridades, impedimentos e execução, aprendeu que cada membro tem um papel essencial: Lady Elara guia o valor, Sir Cedric protege o foco, e a Guilda dos Anões transforma planos em realidade.
+Somente quando o equilíbrio entre eles é mantido, o temido Caos Escopial pode ser vencido.\n
+Conceitos-chave: Papéis do Scrum Team • Responsabilidades Claras • Colaboração • Foco • Equilíbrio entre Valor e Execução"
+
+	
+]
 const SAVE_PATH := "user://savegame.json"
 func _ready():
 	# Inicialmente esconde tudo
@@ -27,8 +45,10 @@ func _ready():
 	btn_continue.connect("pressed", Callable(self, "_on_continue_pressed"))
 	btn_progress.connect("pressed", Callable(self, "_on_progress_pressed"))
 	btn_sair.connect("pressed", Callable(self, "_on_exit_pressed"))
-	if not FileAccess.file_exists("user://savegame.json"):
-		btn_continue.disabled = true
+	btn_new_game.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	btn_continue.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	btn_progress.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	btn_sair.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	
 	var tween = get_tree().create_tween()
 	
@@ -44,6 +64,16 @@ func _ready():
 	
 	tween.tween_interval(0.5)
 	tween.tween_property(menu, "modulate:a", 1, 1.5)
+	if not FileAccess.file_exists("user://savegame.json"):
+		btn_continue.disabled = true
+		
+	await tween.finished
+	btn_new_game.mouse_filter = Control.MOUSE_FILTER_STOP
+	btn_continue.mouse_filter = Control.MOUSE_FILTER_STOP
+	btn_progress.mouse_filter = Control.MOUSE_FILTER_STOP
+	btn_sair.mouse_filter = Control.MOUSE_FILTER_STOP
+	
+	
 	
 func _play_intro_sfx():
 	if sfx_intro:
@@ -119,7 +149,7 @@ func load_json():
 		
 
 func setarCards(progress_card : Node , save_data , i):
-	var array_titulos = ["Fundamentos da Agilidade","Ciclos de Reconstrução","O Conselho da Coroa","N/A","N/A","N/A"]
+	var array_titulos = ["Fundamentos da Agilidade","Ciclos de Reconstrução","O Conselho da Coroa","O Ritmo da Corte","As Sombras do Caos Escopial","Vozes da Nobreza"]
 	var title_cap = progress_card.get_node("Panel1/Cap1/HBoxContainer/Titulo")
 	var porc_acerto = progress_card.get_node("Panel1/Cap1/HBoxContainer/Acerto")
 	var pontos_moral = progress_card.get_node("Panel1/Cap1/HBoxContainer2/VBoxContainerMoral/Pontos")
@@ -132,6 +162,7 @@ func setarCards(progress_card : Node , save_data , i):
 	var png_tempo = progress_card.get_node("Panel1/Cap1/HBoxContainer2/VBoxContainerTempo/Control/TextureRect")
 	var png_progresso = progress_card.get_node("Panel1/Cap1/HBoxContainer2/VBoxContainerProgresso/Control/TextureRect")
 	var png_confianca = progress_card.get_node("Panel1/Cap1/HBoxContainer2/VBoxContainerConfianca/Control/TextureRect")
+	var button_ver_sumario = progress_card.get_node("Button")
 	if(!save_data):
 		title_cap.text = "Capítulo "+ str(i) + ": ???????????" 
 		porc_acerto.text = "Acerto : ??%"
@@ -156,6 +187,8 @@ func setarCards(progress_card : Node , save_data , i):
 				pontos_tempo.text = capitulos.get(str(i)).get("tempo_final")
 				pontos_progresso.text = capitulos.get(str(i)).get("progresso_final")
 				pontos_confianca.text = capitulos.get(str(i)).get("confianca_final")
+				button_ver_sumario.set_meta("chapter_id", i)
+				button_ver_sumario.pressed.connect(mostrar_sumario.bind(button_ver_sumario))
 			else:
 				title_cap.text = "Capítulo "+ str(i) + ": ???????????" 
 				porc_acerto.text = "Acerto : ??%"
@@ -181,5 +214,28 @@ func voltar_menu():
 		if child is not Label:
 			child.queue_free()
 	show_menu(1)
+	
+func mostrar_sumario(button):
+	progresso_menu.visible = false;
+	button_voltar_progresso.visible = false
+	var sumario_card = preload("res://scenes/SumarioProgresso.tscn").instantiate()
+	sumario_card.get_node("Panel/VBoxContainer/Panel/Label").text = "Capítulo "+str(button.get_meta("chapter_id"))
+	sumario_card.get_node("Panel/VBoxContainer/Panel/Label2").text = sumario_texto[button.get_meta("chapter_id")-1]
+	$TextureRect/CenterContainer.add_child(sumario_card)
+	sumario_card.get_node("Panel/Button").pressed.connect(voltar_sumario_progresso.bind(sumario_card))
+
+
+func voltar_sumario_progresso(node:Node):
+	node.queue_free()
+	progresso_menu.visible = true
+	button_voltar_progresso.visible = true
+
+
+	
+
+	
+	
+	
+	
 
 	

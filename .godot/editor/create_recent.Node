@@ -1,14 +1,14 @@
 Button
-HBoxContainer
-Control
 Label
 Panel
+VBoxContainer
+Control
+HBoxContainer
 CenterContainer
 ColorRect
 ScrollContainer
 VScrollBar
 TextureRect
-VBoxContainer
 ConfirmationDialog
 AudioStreamPlayer
 BoxContainer

@@ -73,6 +73,7 @@ theme_override_font_sizes/font_size = 30
 text = "Sair Do Jogo"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="TextureRect/CenterContainer"]
+visible = false
 custom_minimum_size = Vector2(800, 800)
 layout_mode = 2
 size_flags_stretch_ratio = 0.0
@@ -133,6 +134,7 @@ size = Vector2i(322, 100)
 dialog_text = "Deseja sobrescrever a gravação?"
 
 [node name="ButtonVoltarProgresso" type="Button" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.253
