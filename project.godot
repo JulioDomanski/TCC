@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="TCC2"
-run/main_scene="uid://cyt1pg5vsj3i2"
-config/features=PackedStringArray("4.4")
+run/main_scene="uid://cbkdykatrx1sr"
+config/features=PackedStringArray("4.5")
 config/icon="res://icon.png"
 
 [autoload]
@@ -21,13 +21,11 @@ FadeLayer="*res://scripts/FadeLayer.gd"
 
 [display]
 
-window/size/viewport_width=1600
-window/size/viewport_height=900
 window/size/mode=3
 window/size/initial_position_type=0
 window/size/resizable=false
 window/size/borderless=true
-window/stretch/mode="viewport"
+window/stretch/mode="2d"
 
 [editor]
 

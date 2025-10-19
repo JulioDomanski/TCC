@@ -18,24 +18,24 @@ expand_margin_bottom = 120.0
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r4chg"]
 bg_color = Color(0, 0, 0, 0.501961)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_diwu4"]
-bg_color = Color(0, 0, 0, 0.647059)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0rq4b"]
 bg_color = Color(0, 0, 0, 0.282353)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vaaqd"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_diwu4"]
 bg_color = Color(0, 0, 0, 0.647059)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_efgmv"]
 bg_color = Color(0, 0, 0, 0.282353)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_igyd0"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vaaqd"]
 bg_color = Color(0, 0, 0, 0.647059)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q5csu"]
 bg_color = Color(0, 0, 0, 0.282353)
 border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_igyd0"]
+bg_color = Color(0, 0, 0, 0.647059)
 
 [node name="in_game_menu" type="Control"]
 process_mode = 3
@@ -78,7 +78,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_efgmv")
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 0)
-theme_override_colors/font_shadow_color = Color(0.695503, 0.695503, 0.695503, 1)
+theme_override_colors/font_shadow_color = Color(0.69411767, 0.69411767, 0.69411767, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_r4chg")
 text = "Menu"
@@ -91,23 +91,23 @@ size_flags_vertical = 8
 [node name="Button - Resumir" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_styles/hover = SubResource("StyleBoxFlat_diwu4")
 theme_override_styles/normal = SubResource("StyleBoxFlat_0rq4b")
+theme_override_styles/hover = SubResource("StyleBoxFlat_diwu4")
 text = "Resumir
 "
 
 [node name="Button - Opções" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_styles/hover = SubResource("StyleBoxFlat_vaaqd")
 theme_override_styles/normal = SubResource("StyleBoxFlat_efgmv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vaaqd")
 text = "Opções"
 
 [node name="Button - Sair" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.559523, 1.27546e-06, 3.36915e-07, 1)
-theme_override_styles/hover = SubResource("StyleBoxFlat_igyd0")
 theme_override_styles/normal = SubResource("StyleBoxFlat_q5csu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_igyd0")
 text = "Sair do Jogo"
 
 [node name="OptionsPage" type="VBoxContainer" parent="PanelContainer"]

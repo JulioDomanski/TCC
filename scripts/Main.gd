@@ -70,24 +70,24 @@ var chapter_summary_bodies = [
 	
 	# Capítulo 1: Fundamentos da Agilidade
 	"Neste capítulo, você aprendeu sobre:\n\n" +
-	"- Adaptação sobre Planos Rígidos\n" +
-	"- Colaboração e Transparência\n" +
-	"- Foco em Entregas de Valor\n" +
-	"- Melhoria Contínua",
+	"• Adaptação sobre Planos Rígidos\n" +
+	"• Colaboração e Transparência\n" +
+	"• Foco em Entregas de Valor\n" +
+	"• Melhoria Contínua",
 	
 	# Capítulo 2: O Ritmo dos Sprints
 	"Neste capítulo, você aprendeu sobre:\n\n" +
-	"- O Poder dos Sprints (Ciclos Curtos)\n" +
-	"- Foco no Objetivo de Cada Ciclo\n" +
-	"- Entregas Incrementais e Revisão\n" +
-	"- A Importância de Proteger o Foco",
+	"• O Poder dos Sprints (Ciclos Curtos)\n" +
+	"• Foco no Objetivo de Cada Ciclo\n" +
+	"• Entregas Incrementais e Revisão\n" +
+	"• A Importância de Proteger o Foco",
 	
 	# Capítulo 3: Os Papéis do Time Scrum
 	"Neste capítulo, você aprendeu sobre:\n\n" +
-	"- Priorização de Valor (Product Owner)\n" +
-	"- Facilitação e Proteção (Scrum Master)\n" +
-	"- Auto-organização e Execução (Time)\n" +
-	"- A Força dos Papéis Bem Definidos"
+	"• Priorização de Valor (Product Owner)\n" +
+	"• Facilitação e Proteção (Scrum Master)\n" +
+	"• Auto-organização e Execução (Time)\n" +
+	"• A Força dos Papéis Bem Definidos"
 ]
 
 var tutorial_index = 0
@@ -301,7 +301,7 @@ func show_summary():
 	if chapter_total_questions > 0:
 		percentage = int(round(float(chapter_correct_answers) / chapter_total_questions * 100))
 		
-	var title_text = "Fim do Capítulo %d" % current_chapter
+	var title_text = "Fim do Capítulo %d" % current_chapter % "!"
 	
 
 	var body_text = "" 
@@ -316,8 +316,10 @@ func show_summary():
 	add_child(summary_instance)
 	
 	summary_instance.set_summary_texts(title_text, body_text, result_text)
-	
+		
 	summary_instance.popup_centered() 
+	
+	summary_instance.animacao()
 	
 	summary_instance.connect("popup_hide", Callable(self, "_on_summary_closed"))
 

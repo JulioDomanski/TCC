@@ -4,10 +4,52 @@ extends PopupPanel
 @export var background_texture: Texture2D # Arraste a imagem do pergaminho aqui no Inspetor
 
 # Referências para os nós na estrutura correta
-@onready var title_label = $MarginContainer/CenterContainer/VBoxContainer/TitleLabel
+@onready var title_label = $MarginContainer/CenterContainer/VBoxContainer/PanelContainer/TitleLabel
 @onready var body_label = $MarginContainer/CenterContainer/VBoxContainer/BodyLabel
 @onready var result_label = $MarginContainer/CenterContainer/VBoxContainer/ResultLabel
 @onready var button_continue = $MarginContainer/CenterContainer/VBoxContainer/Button
+@onready var margin_container = $MarginContainer
+@onready var background_panel = $BackgroundPanel
+var tween: Tween
+
+func animacao():
+	await get_tree().process_frame
+	
+	if tween and tween.is_running():
+		tween.kill()
+	
+	# Oculta o conteúdo para evitar que apareça antes da animação
+	# (Opcional, mas pode deixar a animação mais limpa)
+	title_label.modulate.a = 0.0
+	body_label.modulate.a = 0.0
+	result_label.modulate.a = 0.0
+	button_continue.modulate.a = 0.0
+	
+	# Define a escala inicial para "fechado" na horizontal
+	margin_container.scale = Vector2(0.0, 1.0) # Começa com largura zero, altura normal
+	
+	tween = create_tween()
+	
+	# Anima a escala horizontal de 0 para 1 (abertura)
+	var track_scale_x = tween.tween_property(margin_container, "scale:x", 1.0, 0.3) # Duração da abertura
+	track_scale_x.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	
+	# Um pequeno "bounce" vertical no final para dar um toque mais dinâmico
+	# Isso acontecerá depois da abertura principal
+	var track_scale_y_bounce_in = tween.tween_property(margin_container, "scale:y", 1.05, 0.1)
+	track_scale_y_bounce_in.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	
+	var track_scale_y_bounce_out = tween.tween_property(margin_container, "scale:y", 1.0, 0.1)
+	track_scale_y_bounce_out.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+	
+	# Anima a transparência do conteúdo para que apareça depois que o pergaminho estiver "aberto"
+	# Isso deve ocorrer um pouco depois do início da animação de escala
+	tween.parallel().tween_property(title_label, "modulate:a", 1.0, 0.2).set_delay(0.1)
+	tween.parallel().tween_property(body_label, "modulate:a", 1.0, 0.2).set_delay(0.15)
+	tween.parallel().tween_property(result_label, "modulate:a", 1.0, 0.2).set_delay(0.2)
+	tween.parallel().tween_property(button_continue, "modulate:a", 1.0, 0.2).set_delay(0.3)
+	
+	await tween.finished # Aguarda a animação terminar antes de continuar (se houver algo depois)
 
 func set_summary_texts(title: String, body: String, result: String):
 	title_label.text = title
@@ -91,6 +133,11 @@ func _ready():
 		estilo_painel_fallback.bg_color = Color("#3B3029")
 		add_theme_stylebox_override("panel", estilo_painel_fallback)
 	button_continue.pressed.connect(_on_button_pressed)
+	# --- CÓDIGO NOVO ---
+	# Aguarda um frame para garantir que o tamanho do nó foi calculado
+	await get_tree().process_frame 
+	# Define o pivô para o centro do container para a animação de escala
+	margin_container.pivot_offset = margin_container.size / 2.0
 
 
 func _on_button_pressed():
