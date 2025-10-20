@@ -34,14 +34,14 @@ func _ready():
 	frame.set_anchors_preset(Control.PRESET_FULL_RECT)
 	frame.anchor_left = 0
 	frame.anchor_top = 0
-	frame.anchor_right = 1.49
-	frame.anchor_bottom = 1.94
+	frame.anchor_right = 1.41
+	frame.anchor_bottom = 2.3
 	frame.offset_left = 0
 	frame.offset_top = 0
 	frame.offset_right = 0
 	frame.offset_bottom = 0
 	frame.z_index = 10
-	frame.scale = Vector2(0.84, 0.65) 
+	frame.scale = Vector2(0.86, 0.59) 
 
 func check_card(card_data) -> String:
 	if card_data["image"] == "Sir Cedric":
