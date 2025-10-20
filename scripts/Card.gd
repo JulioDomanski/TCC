@@ -15,7 +15,7 @@ var is_feedback_card = false
 @onready var feedback_background = $TextureRect/FeedbackBackground
 @onready var swipe_sound = $SwipeSound
 @onready var viewport = get_viewport_rect()
-
+@onready var frame = $TextureRect/Frame
 var card_data = {}
 
 func _notification(what: int) -> void:
@@ -30,6 +30,18 @@ func _ready():
 	mouse_filter = Control.MOUSE_FILTER_STOP
 	label_left.modulate.a = 0
 	label_right.modulate.a = 0
+	frame.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	frame.set_anchors_preset(Control.PRESET_FULL_RECT)
+	frame.anchor_left = 0
+	frame.anchor_top = 0
+	frame.anchor_right = 1.41
+	frame.anchor_bottom = 2.3
+	frame.offset_left = 0
+	frame.offset_top = 0
+	frame.offset_right = 0
+	frame.offset_bottom = 0
+	frame.z_index = 10
+	frame.scale = Vector2(0.86, 0.59) 
 
 func check_card(card_data) -> String:
 	if card_data["image"] == "Sir Cedric":

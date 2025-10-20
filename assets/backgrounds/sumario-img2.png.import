@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2j5fkt2fux4g"
-path="res://.godot/imported/pergaminho.png-d7aaf0c5d3d3e7c9573d12f21934f429.ctex"
+uid="uid://co26y62yp5cxd"
+path="res://.godot/imported/sumario-img2.png-cb0c0b27a0e9ebadabc7ef0384862230.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/backgrounds/pergaminho.png"
-dest_files=["res://.godot/imported/pergaminho.png-d7aaf0c5d3d3e7c9573d12f21934f429.ctex"]
+source_file="res://assets/backgrounds/sumario-img2.png"
+dest_files=["res://.godot/imported/sumario-img2.png-cb0c0b27a0e9ebadabc7ef0384862230.ctex"]
 
 [params]
 

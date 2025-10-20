@@ -1,21 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://d1ls5f4d62alx"]
+[gd_scene load_steps=7 format=3 uid="uid://d1ls5f4d62alx"]
 
 [ext_resource type="Script" uid="uid://b6w7mufimhxen" path="res://scripts/Summary.gd" id="1_btyls"]
-[ext_resource type="Texture2D" uid="uid://ck62if840dck2" path="res://assets/backgrounds/background-menu.png" id="1_xb7gy"]
+[ext_resource type="Texture2D" uid="uid://co26y62yp5cxd" path="res://assets/backgrounds/sumario-img2.png" id="1_xb7gy"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6kvhk"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g5t6u"]
 texture = ExtResource("1_xb7gy")
 
+[sub_resource type="Theme" id="Theme_xb7gy"]
+default_font_size = 400
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xb7gy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xb7gy"]
+bg_color = Color(0, 0, 0, 0.5019608)
+
 [node name="SummaryCap" type="PopupPanel"]
-size = Vector2i(800, 1200)
+oversampling_override = 1.0
+size = Vector2i(1400, 1200)
 visible = true
-theme_override_styles/panel = SubResource("StyleBoxTexture_6kvhk")
+theme_override_styles/panel = SubResource("StyleBoxTexture_g5t6u")
 script = ExtResource("1_btyls")
 background_texture = ExtResource("1_xb7gy")
 metadata/_edit_use_anchors_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-offset_right = 800.0
+offset_right = 1400.0
 offset_bottom = 1200.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -31,8 +40,18 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 20.0
 
-[node name="TitleLabel" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
+theme = SubResource("Theme_xb7gy")
+theme_override_styles/panel = SubResource("StyleBoxTexture_xb7gy")
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 0)
+theme_override_colors/font_shadow_color = Color(0.69411767, 0.69411767, 0.69411767, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 400
+theme_override_styles/normal = SubResource("StyleBoxFlat_xb7gy")
 
 [node name="BodyLabel" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
