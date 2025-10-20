@@ -1,9 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://cyt1pg5vsj3i2"]
+[gd_scene load_steps=8 format=3 uid="uid://cyt1pg5vsj3i2"]
 
 [ext_resource type="Script" uid="uid://bwtq12edk74ml" path="res://scripts/menu_inicial.gd" id="1_dshj6"]
 [ext_resource type="Texture2D" uid="uid://bjkyuhye43hr6" path="res://assets/backgrounds/BackMenuInicial.png" id="2_ndsd1"]
 [ext_resource type="AudioStream" uid="uid://cg2pwxpbq8wwr" path="res://assets/sounds/MainMenuSong.mp3" id="3_47ufh"]
 [ext_resource type="AudioStream" uid="uid://cnidb05e63crd" path="res://assets/sounds/Sword.mp3" id="4_8bibx"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_0rbed"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n8b5a"]
+texture = SubResource("CanvasTexture_0rbed")
+modulate_color = Color(0, 0, 0, 0.6)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ndsd1"]
 bg_color = Color(0.733333, 0.447059, 0.247059, 0.462745)
@@ -66,6 +72,33 @@ mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 30
 text = "Sair Do Jogo"
 
+[node name="ScrollContainer" type="ScrollContainer" parent="TextureRect/CenterContainer"]
+visible = false
+custom_minimum_size = Vector2(800, 800)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_n8b5a")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/CenterContainer/ScrollContainer"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="TextureRect/CenterContainer/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(800, 800)
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="TextureRect/CenterContainer/ScrollContainer/HBoxContainer/CenterContainer"]
+custom_minimum_size = Vector2(0, 2000)
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="Label" type="Label" parent="TextureRect/CenterContainer/ScrollContainer/HBoxContainer/CenterContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 37
+text = "Progresso"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="CenterContainer2" type="CenterContainer" parent="TextureRect"]
 layout_mode = 1
 anchors_preset = -1
@@ -100,4 +133,21 @@ initial_position = 1
 size = Vector2i(322, 100)
 dialog_text = "Deseja sobrescrever a gravação?"
 
+[node name="ButtonVoltarProgresso" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.253
+anchor_top = 0.064
+anchor_right = 0.325875
+anchor_bottom = 0.134778
+offset_left = -1.80005
+offset_top = -3.6
+offset_right = -1.40002
+offset_bottom = -4.30001
+mouse_default_cursor_shape = 2
+text = "Voltar"
+metadata/_edit_use_anchors_ = true
+
 [connection signal="confirmed" from="ConfirmationDialog" to="." method="delete_progression"]
+[connection signal="pressed" from="ButtonVoltarProgresso" to="." method="voltar_menu"]

@@ -1,0 +1,121 @@
+[gd_scene load_steps=10 format=3 uid="uid://810ypfm31ea6"]
+
+[ext_resource type="Texture2D" uid="uid://ck62if840dck2" path="res://assets/backgrounds/background-menu.png" id="1_jmxhm"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iqmfh"]
+texture = ExtResource("1_jmxhm")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_jmxhm"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o68ui"]
+texture = SubResource("CanvasTexture_jmxhm")
+modulate_color = Color(0.9, 0.7164, 0.441, 0.462745)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o5rqd"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_r55uo"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3wufc"]
+texture = SubResource("CanvasTexture_r55uo")
+modulate_color = Color(0.84, 0.60858, 0.3612, 0.462745)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_pow0i"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jitoc"]
+content_margin_bottom = 29.0
+texture = SubResource("CanvasTexture_pow0i")
+modulate_color = Color(0.71, 0.44446, 0.2414, 0.6)
+
+[node name="SumarioProgresso" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -470.5
+offset_top = -494.5
+offset_right = 470.5
+offset_bottom = 494.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_iqmfh")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 199.0
+offset_top = 124.0
+offset_right = 743.0
+offset_bottom = 692.0
+theme_override_constants/separation = 26
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxTexture_o68ui")
+text = "Sumario"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 490)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_o5rqd")
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.011
+anchor_bottom = 0.167
+offset_right = 0.0159912
+offset_bottom = -18.5
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_3wufc")
+text = "Capitulo 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Panel/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.146
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = -16.54
+offset_right = -12.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxTexture_jitoc")
+text = "O jovem príncipe iniciou a reconstrução do Reino de Entregária aprendendo que planos rígidos enfraquecem o progresso.
+Ao adotar ciclos curtos, colaboração e transparência, descobriu que o verdadeiro poder está na adaptação e na união do povo.
+Agora, o reino começa a florescer sob os princípios da agilidade.
+
+Conceitos-chave: Adaptabilidade • Colaboração • Transparência • Valor Contínuo • Melhoria Constante"
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.039
+anchor_bottom = 0.039
+offset_left = 380.0
+offset_top = 760.429
+offset_right = 546.0
+offset_bottom = 843.429
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 27
+text = "Voltar"
