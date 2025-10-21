@@ -90,7 +90,6 @@ func _on_new_game_pressed():
 	if FileAccess.file_exists("user://savegame.json"):
 		if(confirmar.is_connected("confirmed",Callable(self , "sair_jogo"))):
 			confirmar.disconnect("confirmed",Callable(self , "sair_jogo"))
-		confirmar.disconnect("confirmed",Callable(self , "delete_progression"))
 		confirmar.dialog_text = "Deseja sobrescrever a gravação do progresso?"
 		confirmar.connect("confirmed",Callable(self , "delete_progression"))
 		confirmar.popup_centered()
