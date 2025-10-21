@@ -25,7 +25,11 @@ Conceitos-chave: Iteração • Entregas Incrementais • Prioridade por Valor �
 "O príncipe convocou o Conselho da Coroa para restaurar a harmonia do trabalho em Entregária.
 Entre prioridades, impedimentos e execução, aprendeu que cada membro tem um papel essencial: Lady Elara guia o valor, Sir Cedric protege o foco, e a Guilda dos Anões transforma planos em realidade.
 Somente quando o equilíbrio entre eles é mantido, o temido Caos Escopial pode ser vencido.\n
-Conceitos-chave: Papéis do Scrum Team • Responsabilidades Claras • Colaboração • Foco • Equilíbrio entre Valor e Execução"
+Conceitos-chave: Papéis do Scrum Team • Responsabilidades Claras • Colaboração • Foco • Equilíbrio entre Valor e Execução",
+
+"O príncipe aprendeu que o sucesso da reconstrução depende de um ritmo constante.
+Ao organizar os rituais da corte—as reuniões diárias, as revisões de progresso e as retrospectivas—, ele garantiu o alinhamento, a inspeção e a melhoria contínua, fortalecendo a equipe contra o caos.\n
+Conceitos-chave: Cerimônias do Scrum • Daily Meeting • Sprint Review • Retrospectiva • Alinhamento Contínuo"
 
 	
 ]

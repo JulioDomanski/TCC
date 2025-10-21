@@ -453,5 +453,91 @@
 	  "right": "Cada papel tem sua responsabilidade: o PO (Lady Elara) define prioridades, o SM (Sir Cedric) protege o time e o Dev Team (Anões) executa. Assim o Caos Escopial perde sua força."
 	}
 	}
+],
+"capitulo_4": [
+  {
+	"id": 32,
+	"text": "Majestade, os nobres exigem participar de nossas reuniões diárias para dar suas opiniões. Sir Cedric alerta que isso pode tornar as reuniões longas e improdutivas.",
+	"left_choice": "Apoie Sir Cedric. A reunião diária é um alinhamento rápido apenas para a equipe.",
+	"right_choice": "Permita a participação dos nobres. A opinião deles é importante a todo momento.",
+	"image": "Sir Cedric",
+	"left_effects": { "moral": 10, "resources": 0, "time": 10, "trust": 5, "progress": 10 },
+	"right_effects": { "moral": -15, "resources": 0, "time": -20, "trust": -10, "progress": -15 },
+	"correct_answer": "left",
+	"feedback": {
+	  "left": "Proteger o foco da equipe é essencial. A Daily Scrum perde seu propósito se virar uma longa reunião de status.",
+	  "right": "As reuniões diárias se tornaram um caos. A equipe perdeu tempo precioso e o foco do ciclo foi comprometido."
+	}
+  },
+  {
+	"id": 33,
+	"text": "A Guilda dos Anões terminou uma parte da muralha, mas não está perfeita. Eles sugerem pular a apresentação à Rainha para 'não mostrar trabalho incompleto'.",
+	"left_choice": "Concorde. Só devemos mostrar o trabalho quando estiver 100% finalizado e polido.",
+	"right_choice": "Negue. O objetivo da Revisão é inspecionar o trabalho e adaptar, não exibir a perfeição.",
+	"image": "Anoes",
+	"left_effects": { "moral": -10, "resources": -5, "time": -10, "trust": -20, "progress": -10 },
+	"right_effects": { "moral": 10, "resources": 0, "time": 5, "trust": 15, "progress": 10 },
+	"correct_answer": "right",
+	"feedback": {
+	  "left": "Ao esconder o progresso, a Rainha ficou insatisfeita e a equipe perdeu a chance de corrigir o curso a tempo.",
+	  "right": "Excelente! A transparência na Sprint Review gera feedback valioso e alinha as expectativas com a Rainha."
+	}
+  },
+  {
+	"id": 34,
+	"text": "Após um ciclo difícil, Sir Cedric propõe uma Retrospectiva para a equipe discutir o que pode ser melhorado. Alguns nobres querem participar para 'apontar os culpados'.",
+	"left_choice": "A Retrospectiva é um espaço seguro apenas para a equipe. Os nobres devem esperar.",
+	"right_choice": "Deixe os nobres participarem. A pressão pode motivar a equipe a não errar mais.",
+	"image": "Sir Cedric",
+	"left_effects": { "moral": 20, "resources": 0, "time": 5, "trust": 10, "progress": 5 },
+	"right_effects": { "moral": -25, "resources": 0, "time": -10, "trust": -20, "progress": -15 },
+	"correct_answer": "left",
+	"feedback": {
+	  "left": "A equipe se sentiu segura para discutir os problemas e encontrou ótimas soluções. A confiança e a moral aumentaram.",
+	  "right": "Com medo de serem culpados, ninguém falou a verdade. Os mesmos problemas certamente se repetirão."
+	}
+  },
+  {
+	"id": 35,
+	"text": "Estamos no meio do planejamento do próximo ciclo. Um mercador chega com uma 'oportunidade única' que não estava na lista de prioridades de Lady Elara.",
+	"left_choice": "Interrompa o planejamento e ordene que a nova oportunidade seja incluída agora.",
+	"right_choice": "Agradeça a ideia e peça a Lady Elara para analisá-la para um ciclo futuro.",
+	"image": "Lady Elara",
+	"left_effects": { "moral": -15, "resources": -5, "time": -15, "trust": -10, "progress": -20 },
+	"right_effects": { "moral": 5, "resources": 0, "time": 5, "trust": 10, "progress": 5 },
+	"correct_answer": "right",
+	"feedback": {
+	  "left": "A mudança repentina gerou caos no planejamento. A equipe ficou confusa sobre o objetivo do ciclo e o progresso foi afetado.",
+	  "right": "Respeitar o processo de priorização mantém o foco e a organização. A Sprint Planning pôde ser concluída com sucesso."
+	}
+  },
+  {
+	"id": 36,
+	"text": "A equipe reclama que as reuniões de planejamento estão demorando muito. Sir Cedric sugere pequenas sessões de 'refinamento' durante o ciclo para preparar o trabalho futuro.",
+	"left_choice": "Negue. O tempo da equipe deve ser 100% focado nas tarefas atuais.",
+	"right_choice": "Apoie a ideia. Preparar o trabalho futuro economiza tempo no planejamento.",
+	"image": "Sir Cedric",
+	"left_effects": { "moral": -5, "resources": 0, "time": -15, "trust": -5, "progress": -10 },
+	"right_effects": { "moral": 10, "resources": 0, "time": 10, "trust": 10, "progress": 5 },
+	"correct_answer": "right",
+	"feedback": {
+	  "left": "O planejamento seguinte foi novamente longo e cansativo. A falta de preparação está atrasando o reino.",
+	  "right": "Uma ótima decisão! O Refinamento tornou o próximo planejamento muito mais rápido e eficaz."
+	}
+  },
+  {
+	"id": 37,
+	"text": "O progresso parece lento. A Rainha sugere pular todas as cerimônias (Daily, Review, Retrospectiva) para 'ganhar tempo e focar só na construção'.",
+	"left_choice": "Negue. O 'Ritmo da Corte' é o que nos mantém alinhados e eficientes.",
+	"right_choice": "Concorde. Talvez sem reuniões a equipe realmente produza mais.",
+	"image": "Rainha Stakeholdina",
+	"left_effects": { "moral": 15, "resources": 0, "time": 5, "trust": 15, "progress": 10 },
+	"right_effects": { "moral": -25, "resources": -10, "time": -20, "trust": -25, "progress": -25 },
+	"correct_answer": "left",
+	"feedback": {
+	  "left": "Você defendeu o processo e o resultado foi positivo. As cerimônias não são perda de tempo, são o que garante o bom andamento do trabalho.",
+	  "right": "Sem as cerimônias, a equipe ficou perdida, o trabalho entregue não era o esperado e os mesmos erros se repetiram. Um desastre!"
+	}
+  }
 ]
 }
