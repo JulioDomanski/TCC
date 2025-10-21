@@ -149,5 +149,4 @@ mouse_default_cursor_shape = 2
 text = "Voltar"
 metadata/_edit_use_anchors_ = true
 
-[connection signal="confirmed" from="ConfirmationDialog" to="." method="delete_progression"]
 [connection signal="pressed" from="ButtonVoltarProgresso" to="." method="voltar_menu"]

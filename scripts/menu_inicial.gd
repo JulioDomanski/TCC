@@ -88,6 +88,11 @@ func _on_new_game_pressed():
 	# Reinicia o jogo do zero
 	print("Novo Jogo iniciado!")
 	if FileAccess.file_exists("user://savegame.json"):
+		if(confirmar.is_connected("confirmed",Callable(self , "sair_jogo"))):
+			confirmar.disconnect("confirmed",Callable(self , "sair_jogo"))
+		confirmar.disconnect("confirmed",Callable(self , "delete_progression"))
+		confirmar.dialog_text = "Deseja sobrescrever a gravação do progresso?"
+		confirmar.connect("confirmed",Callable(self , "delete_progression"))
 		confirmar.popup_centered()
 	
 	else:
@@ -108,7 +113,11 @@ func _on_progress_pressed():
 	load_progress()
 	
 func _on_exit_pressed():
-	get_tree().quit()
+	if(confirmar.is_connected("confirmed",Callable(self , "delete_progression"))):
+		confirmar.disconnect("confirmed",Callable(self , "delete_progression"))
+	confirmar.dialog_text=  "Você tem certeza que deseja sair do jogo?"
+	confirmar.connect("confirmed",Callable(self , "sair_jogo"))
+	confirmar.popup_centered()
 
 func delete_progression():
 		var dir := DirAccess.open("user://")
@@ -233,8 +242,11 @@ func voltar_sumario_progresso(node:Node):
 	node.queue_free()
 	progresso_menu.visible = true
 	button_voltar_progresso.visible = true
+	
 
 
+func sair_jogo():
+	get_tree().quit()
 	
 
 	

@@ -5,7 +5,7 @@ extends Control
 @onready var options_page = $PanelContainer/OptionsPage
 @onready var music_slider = $PanelContainer/OptionsPage/ContainerMusica/music_slider
 @onready var sfx_slider = $PanelContainer/OptionsPage/ContainerSfx/sfx_slider
-
+@onready var confirmar = $ConfirmationDialog
 func _ready():
 	scale.y = 0.0
 	hide()
@@ -52,8 +52,12 @@ func _on_button_opcoes_pressed():
 	options_page.show()
 
 func _on_button_sair_pressed():
-	get_tree().paused = false
-	get_tree().quit()
+	if(confirmar.is_connected("confirmed" , Callable(self,"retornar_menu_inicial"))):
+		confirmar.disconnect("confirmed", Callable(self, "retornar_menu_inicial"))
+	confirmar.dialog_text = "Você tem certeza que deseja sair do jogo? O progresso do capítulo não será salvo..."
+	confirmar.popup_centered()
+	confirmar.connect("confirmed" , Callable(self , "sair_jogo"))
+	
 
 func _on_button_voltar_pressed():
 	options_page.hide()
@@ -69,3 +73,23 @@ func _on_sfx_slider_changed(value):
 	var bus_idx = AudioServer.get_bus_index("SFX")
 	var db_value = linear_to_db(value / 100.0)
 	AudioServer.set_bus_volume_db(bus_idx, db_value)
+	
+func voltar_menu_inicial():
+	if(confirmar.is_connected("confirmed" , Callable(self,"sair_jogo"))):
+		confirmar.disconnect("confirmed", Callable(self, "sair_jogo"))
+	confirmar.dialog_text = "Você tem certeza que deseja voltar pro Menu Inicial? O progresso do capítulo não será salvo..."
+	confirmar.connect("confirmed",Callable(self,"retornar_menu_inicial"))
+	confirmar.popup_centered()
+	
+
+	
+	
+
+func retornar_menu_inicial():
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://scenes/MenuInicial.tscn")
+	
+func sair_jogo():
+	get_tree().quit()
+	
+#func disconne

@@ -1,3 +1,4 @@
+ConfirmationDialog
 Button
 Label
 Panel
@@ -9,6 +10,5 @@ ColorRect
 ScrollContainer
 VScrollBar
 TextureRect
-ConfirmationDialog
 AudioStreamPlayer
 BoxContainer

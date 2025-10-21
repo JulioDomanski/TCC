@@ -96,6 +96,14 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_0rq4b")
 text = "Resumir
 "
 
+[node name="Button - VoltarMenuInicial" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_styles/hover = SubResource("StyleBoxFlat_diwu4")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0rq4b")
+text = "Voltar Menu Inicial
+"
+
 [node name="Button - Opções" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
@@ -111,6 +119,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_q5csu")
 text = "Sair do Jogo"
 
 [node name="OptionsPage" type="VBoxContainer" parent="PanelContainer"]
+visible = false
 layout_mode = 2
 alignment = 1
 
@@ -143,7 +152,13 @@ layout_mode = 2
 layout_mode = 2
 text = "Voltar"
 
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
+title = "Por Favor Confirma..."
+size = Vector2i(400, 100)
+dialog_autowrap = true
+
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Button - Resumir" to="." method="_on_button_resumir_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Button - VoltarMenuInicial" to="." method="voltar_menu_inicial"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Button - Opções" to="." method="_on_button_opcoes_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Button - Sair" to="." method="_on_button_sair_pressed"]
 [connection signal="value_changed" from="PanelContainer/OptionsPage/ContainerMusica/music_slider" to="." method="_on_music_slider_changed"]

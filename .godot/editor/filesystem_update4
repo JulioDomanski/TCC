@@ -1,5 +1,6 @@
 res://default_env.tres
 res://scenes/Main.tscn
+res://scripts/in_game_menu.gd
 res://scenes/Intro.tscn
 res://scenes/transicao2.tscn
 res://scenes/in_game_menu.tscn
@@ -7,9 +8,5 @@ res://scenes/MenuInicial.tscn
 res://scenes/cardsProgresso.tscn
 res://scenes/SumarioProgresso.tscn
 res://scenes/transicao4.tscn
-res://scripts/Main.gd
-res://scenes/Card.tscn
-res://scripts/Card.gd
-res://scripts/Summary.gd
 res://scripts/menu_inicial.gd
-res://data/cards.json
+res://scripts/Main.gd
