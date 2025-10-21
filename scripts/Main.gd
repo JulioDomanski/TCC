@@ -16,7 +16,7 @@ var caos_tutorial_shown := false
 
 # ✅ controle de capítulos
 var current_chapter = 1
-var total_chapters = 3  # mude se tiver mais capítulos
+var total_chapters = 4  # mude se tiver mais capítulos
 
 # estatísticas do capítulo
 var chapter_correct_answers = 0
@@ -87,7 +87,14 @@ var chapter_summary_bodies = [
 	"• Priorização de Valor (Product Owner)\n" +
 	"• Facilitação e Proteção (Scrum Master)\n" +
 	"• Auto-organização e Execução (Time)\n" +
-	"• A Força dos Papéis Bem Definidos"
+	"• A Força dos Papéis Bem Definidos",
+	
+	# Capítulo 4: O Ritmo da Corte (ADICIONADO)
+	"Neste capítulo, você aprendeu sobre as cerimônias:\n\n" +
+	"- O alinhamento rápido da Daily Meeting\n" +
+	"- A inspeção do trabalho na Sprint Review\n" +
+	"- A melhoria contínua da Retrospectiva\n" +
+	"- O poder dos rituais para o sucesso"
 ]
 
 var tutorial_index = 0
