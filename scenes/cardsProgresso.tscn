@@ -24,9 +24,10 @@ anchors_preset = 0
 [node name="Panel1" type="Panel" parent="."]
 custom_minimum_size = Vector2(400, 180)
 layout_mode = 0
+offset_left = -36.0
 offset_top = 1.0
-offset_right = 400.0
-offset_bottom = 197.0
+offset_right = 431.0
+offset_bottom = 200.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_dft4y")
 
 [node name="Cap1" type="VBoxContainer" parent="Panel1"]

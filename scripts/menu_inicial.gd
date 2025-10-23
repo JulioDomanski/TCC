@@ -243,7 +243,7 @@ func mostrar_sumario(button):
 	button_voltar_progresso.visible = false
 	var sumario_card = preload("res://scenes/SumarioProgresso.tscn").instantiate()
 	sumario_card.get_node("Panel/VBoxContainer/Panel/Label").text = "Capítulo "+str(button.get_meta("chapter_id"))
-	sumario_card.get_node("Panel/VBoxContainer/Panel/Label2").text = sumario_texto[button.get_meta("chapter_id")-1]
+	sumario_card.get_node("Panel/VBoxContainer/Panel/ScrollContainer/Label2").text = sumario_texto[button.get_meta("chapter_id")-1]
 	$TextureRect/CenterContainer.add_child(sumario_card)
 	sumario_card.get_node("Panel/Button").pressed.connect(voltar_sumario_progresso.bind(sumario_card))
 

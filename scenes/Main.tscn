@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d16duve6lpp3y"]
+[gd_scene load_steps=13 format=3 uid="uid://d16duve6lpp3y"]
 
 [ext_resource type="Script" uid="uid://lc7tcfk1dkew" path="res://scripts/Main.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://sb465440yow4" path="res://assets/backgrounds/Bg Cap 1.png" id="2_nxtc6"]
@@ -10,6 +10,12 @@
 [ext_resource type="AudioStream" uid="uid://bpihfc3ptrf8c" path="res://assets/sounds/medieval-backgroun-jogo.mp3" id="8_jlsqs"]
 [ext_resource type="Texture2D" uid="uid://qy5vq0v3hqqm" path="res://assets/Indicadores/Crown.PNG" id="8_qmy6f"]
 [ext_resource type="PackedScene" uid="uid://ceir2h0grxacs" path="res://scenes/in_game_menu.tscn" id="9_q8u5g"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_lhr70"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wp0k4"]
+texture = SubResource("CanvasTexture_lhr70")
+modulate_color = Color(0, 0, 0, 0.32549)
 
 [node name="main" type="Control"]
 z_index = -3
@@ -261,6 +267,7 @@ offset_left = 77.6851
 offset_right = -69.9821
 offset_bottom = 0.0483494
 grow_horizontal = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_wp0k4")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
