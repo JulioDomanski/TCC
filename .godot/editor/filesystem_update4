@@ -1,5 +1,6 @@
 res://default_env.tres
 res://scenes/Main.tscn
+res://scripts/Main.gd
 res://scenes/transicao2.tscn
 res://scenes/in_game_menu.tscn
 res://scenes/MenuInicial.tscn

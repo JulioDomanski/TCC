@@ -1,4 +1,3 @@
-ScrollContainer
 Control
 ConfirmationDialog
 Button
@@ -8,6 +7,7 @@ VBoxContainer
 HBoxContainer
 CenterContainer
 ColorRect
+ScrollContainer
 VScrollBar
 TextureRect
 AudioStreamPlayer
