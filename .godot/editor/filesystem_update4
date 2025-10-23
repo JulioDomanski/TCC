@@ -10,4 +10,4 @@ res://scenes/transicao4.tscn
 res://scenes/transicao3.tscn
 res://scenes/transicao5.tscn
 res://scenes/transicao6.tscn
-res://data/cards.json
+res://scenes/Card.tscn
