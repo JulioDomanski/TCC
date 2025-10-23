@@ -725,7 +725,7 @@ const SAVE_PATH := "user://savegame.json"
 func save_game_fim_capitulo(porcentagem_acertos: String):
 	var save_data = {}
 	
-	# Check if file exists — to preserve previous chapters
+	
 	if FileAccess.file_exists(SAVE_PATH):
 		var file_read = FileAccess.open(SAVE_PATH, FileAccess.READ)
 		save_data = JSON.parse_string(file_read.get_as_text())
@@ -734,12 +734,12 @@ func save_game_fim_capitulo(porcentagem_acertos: String):
 	if typeof(save_data) != TYPE_DICTIONARY:
 		save_data = {}
 	
-	# Make sure the chapter history exists
+	
 	if not save_data.has("capitulos"):
 		save_data["capitulos"] = {}
 
 	
-	# Save current chapter stats
+	
 	save_data["capitulos"][str(current_chapter)] = {
 		"moral_final": moral_save,
 		"recursos_final": recursos_save,
@@ -749,13 +749,13 @@ func save_game_fim_capitulo(porcentagem_acertos: String):
 		"percentual_acertos": porcentagem_acertos
 	}
 
-	# Also keep global progress info
+	
 	if(current_chapter<6):
 		save_data["capitulo_atual"] = current_chapter+1
 		save_data["tutorial_concluido"] = skipped_tutorial
 		save_data["carta_atual"] = card_id
 
-	# Write back to file
+	
 	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	file.store_string(JSON.stringify(save_data, "\t"))
 	file.close()
@@ -791,7 +791,6 @@ func load_game():
 		print("❌ Erro: arquivo de save corrompido.")
 		return null
 
-	# --- Recuperar dados principais ---
 	
 	current_chapter = int(save_data.get("capitulo_atual", 1))
 	skipped_tutorial = save_data.get("tutorial_concluido", false)
