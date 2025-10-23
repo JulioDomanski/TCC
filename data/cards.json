@@ -497,6 +497,20 @@
 	  "right": "Com medo de serem culpados, ninguém falou a verdade. Os mesmos problemas certamente se repetirão."
 	}
   },
+{
+	"id": 36.5,
+	"text": "⚠️ Surtos de Caos Escopial! Durante a Daily Meeting, ele semeia discórdia, fazendo os anões discutirem problemas passados em vez de planejar o dia. Sir Cedric tenta manter o foco.",
+	"left_choice": "Deixe a discussão fluir. Talvez resolvam problemas antigos.",
+	"right_choice": "Apoie Sir Cedric! Reafirme que a Daily é para o plano das próximas 24h, não para resolver tudo.",
+	"image": "Caos Escopial", 
+	"left_effects": { "moral": -10, "resources": 0, "time": -15, "trust": -10, "progress": -10 }, 
+	"right_effects": { "moral": 5, "resources": 0, "time": 5, "trust": 5, "progress": 5 }, 
+	"correct_answer": "right",
+	"feedback": {
+	  "left": "A Daily se perdeu em discussões longas e o plano do dia ficou comprometido. O Caos vence quando perdemos o foco no objetivo.",
+	  "right": "Manter o propósito da Daily Scrum (planejar as próximas 24h) é crucial para a agilidade. Outros problemas são tratados depois."
+	}
+  },
   {
 	"id": 35,
 	"text": "Estamos no meio do planejamento do próximo ciclo. Um mercador chega com uma 'oportunidade única' que não estava na lista de prioridades de Lady Elara.",
@@ -537,6 +551,178 @@
 	"feedback": {
 	  "left": "Você defendeu o processo e o resultado foi positivo. As cerimônias não são perda de tempo, são o que garante o bom andamento do trabalho.",
 	  "right": "Sem as cerimônias, a equipe ficou perdida, o trabalho entregue não era o esperado e os mesmos erros se repetiram. Um desastre!"
+	}
+  }
+],
+"capitulo_5": [
+	{
+	"id": 38,
+	"text": "Majestade, estranhos tremores abalam o castelo e nuvens sombrias se formam no horizonte... prenúncios do Caos Escopial? Sir Cedric sugere pausar brevemente para inspecionar os muros.",
+	"left_choice": "Ignore os sinais. Devemos manter o foco total na meta do Sprint!",
+	"right_choice": "Inspecione. Uma pausa rápida para avaliar o risco vale a pena antes de continuar.",
+	"image": "Sir Cedric",
+	"left_effects": { "moral": -5, "resources": 0, "time": 5, "trust": -10, "progress": 5 }, 
+	"right_effects": { "moral": 10, "resources": 10, "time": 10, "trust": 10, "progress": 0 },
+	"correct_answer": "right",
+	"feedback": {
+	  "left": "Ignorar sinais de instabilidade pode levar a problemas maiores. O Caos se aproveita da complacência.",
+	  "right": "Inspecionar rapidamente diante da incerteza permite adaptar-se antes que seja tarde demais. Prudência fortalece o reino."
+	}
+  },
+  {
+	"id": 39,
+	"text": "ATAQUE! O Caos Escopial abriu uma fenda no Muro Oeste, exatamente onde os anões estavam reforçando! Precisamos desviar a equipe para conter a invasão AGORA!",
+	"left_choice": "Ignore a fenda! O objetivo do ciclo é reforçar o muro, não lutar. Mantenham o foco!",
+	"right_choice": "Adapte! A defesa é prioridade. Reúna a equipe e reorganize o trabalho do ciclo para conter a ameaça imediata.",
+	"image": "Caos Escopial",
+	"left_effects": { "moral": -30, "resources": -15, "time": -10, "trust": -25, "progress": -30 },
+	"right_effects": { "moral": 10, "resources": 10, "time": 10, "trust": 15, "progress": 0 },
+	"correct_answer": "right", 
+	"feedback": {
+	  "left": "Manter um plano irrelevante diante de uma crise é desastroso. O reino sofreu danos graves!",
+	  "right": "A equipe ágil responde à mudança mais crítica. Proteger o reino tem mais valor do que seguir um plano obsoleto."
+	}
+  },
+  {
+	"id": 40,
+	"text": "Após o ataque, a Rainha Stakeholdina, apavorada pelo Caos, exige a construção imediata de 'Torres Anti-Caos' mágicas, algo que NUNCA esteve nos planos!",
+	"left_choice": "Adapte com cautela! Peça a Lady Elara para analisar a viabilidade e prioridade das torres para um *futuro* ciclo.",
+	"right_choice": "Ceda ao pânico! Mande os anões largarem tudo e começarem as torres mágicas agora mesmo.",
+	"image": "Rainha Stakeholdina",
+	"left_effects": { "moral": 5, "resources": 0, "time": 0, "trust": 10, "progress": 0 },
+	"right_effects": { "moral": -20, "resources": -20, "time": -15, "trust": -15, "progress": -25 },
+	"correct_answer": "left",
+	"feedback": {
+	  "left": "Gerenciar as expectativas dos stakeholders e integrar novas ideias ao backlog (via PO) protege o foco do ciclo atual.",
+	  "right": "Introduzir grandes mudanças não planejadas no meio do Sprint gera caos e desperdício. O medo causado pelo Caos não pode ditar o plano."
+	}
+  },
+  {
+	"id": 41,
+	"text": "Confusão! O Caos Escopial usou ilusões! Metade dos anões acha que o objetivo deste ciclo é construir barricadas, a outra metade acha que é cavar trincheiras. Ninguém sabe o que fazer!",
+	"left_choice": "Deixe assim! Que cada grupo faça o que acha certo, talvez ambos sejam úteis.",
+	"right_choice": "Alinhe! Pare tudo! Reúna Sir Cedric, Lady Elara e os anões para reafirmar o objetivo *único* do ciclo e replanejar se necessário.",
+	"image": "Caos Escopial",
+	"left_effects": { "moral": -15, "resources": -10, "time": -10, "trust": -15, "progress": -20 },
+	"right_effects": { "moral": 10, "resources": 0, "time": -2, "trust": 10, "progress": 5 },
+	"correct_answer": "right",
+	"feedback": {
+	  "left": "Trabalhar sem um objetivo claro e compartilhado leva a esforço disperso e a entregas que não agregam valor. A confusão é aliada do Caos.",
+	  "right": "Garantir que toda a equipe entenda e trabalhe em prol do mesmo objetivo do Sprint é fundamental, mesmo que exija uma pausa para realinhar."
+	}
+  },
+  {
+	"id": 42,
+	"text": "Sabotagem! O Caos Escopial destruiu a única ponte que leva ao depósito de reagentes alquímicos, necessários para finalizar as poções de cura neste ciclo!",
+	"left_choice": "Adapte! Mobilize parte da equipe para construir uma ponte improvisada ou buscar um caminho alternativo imediatamente.",
+	"right_choice": "Espere! Mande a equipe focar em outras tarefas menos importantes até a ponte principal ser reconstruída.",
+	"image": "Caos Escopial",
+	"left_effects": { "moral": 10, "resources": -5, "time": -5, "trust": 10, "progress": 5 },
+	"right_effects": { "moral": -10, "resources": 0, "time": -10, "trust": -10, "progress": -15 },
+	"correct_answer": "left", 
+	"feedback": {
+	  "left": "Remover impedimentos que bloqueiam o objetivo principal do Sprint é uma prioridade. A equipe deve se auto-organizar para superar obstáculos.",
+	  "right": "Esperar passivamente enquanto o objetivo principal está bloqueado compromete a entrega de valor do ciclo. O Caos vence pela inércia."
+	}
+  },
+  {
+	"id": 43,
+	"text": "O ataque final do Caos mudou tudo! O ritual de contenção que planejávamos para este ciclo tornou-se inútil. Precisamos de uma estratégia totalmente nova para ontem!",
+	"left_choice": "Continue o ritual! Devemos terminar o que começamos, mesmo que não sirva mais.",
+	"right_choice": "Cancele o Sprint! Reúna o Conselho imediatamente. Precisamos definir um novo objetivo e um novo plano urgente.",
+	"image": "Caos Escopial",
+	"left_effects": { "moral": -30, "resources": -15, "time": -10, "trust": -25, "progress": -30 },
+	"right_effects": { "moral": 15, "resources": 2, "time": 5, "trust": 10, "progress": 5 },
+	"correct_answer": "right",
+	"feedback": {
+	  "left": "Trabalhar em um objetivo que perdeu o sentido é o maior desperdício. O Caos se deleita com o esforço inútil.",
+	  "right": "Quando o objetivo do Sprint se torna obsoleto, a decisão mais ágil e corajosa é cancelar o ciclo e replanejar para focar no que realmente importa agora."
+	}
+  }
+],
+"capitulo_6": [
+  {
+	"id": 44,
+	"text": "Majestade, a Rainha Stakeholdina exige um relatório *diário* detalhado sobre cada pedra assentada na muralha. Sir Cedric alerta que isso consumirá muito tempo da equipe.",
+	"left_choice": "Negocie. Proponha um relatório semanal ou uma demonstração ao final do ciclo (Review).",
+	"right_choice": "Atenda. Ordene que os anões parem o trabalho para documentar tudo diariamente.",
+	"image": "Rainha Stakeholdina",
+	"left_effects": { "moral": 5, "resources": 0, "time": 5, "trust": 10, "progress": 5 },
+	"right_effects": { "moral": -15, "resources": 0, "time": -20, "trust": -5, "progress": -20 },
+	"correct_answer": "left", 
+	"feedback": {
+	  "left": "Comunicar-se de forma eficaz e sustentável com stakeholders é chave. Interrupções constantes prejudicam o fluxo.",
+	  "right": "O excesso de relatórios burocráticos desviou o foco da equipe e atrasou o progresso real da construção."
+	}
+  },
+  {
+	"id": 45,
+	"text": "Um grupo de nobres influentes visitou a obra e não gostou da cor das novas tapeçarias. Exigem que tudo seja refeito com fios de ouro, o que não estava no plano!",
+	"left_choice": "Ignore. O trabalho foi feito conforme o planejado com Lady Elara.",
+	"right_choice": "Avalie o Impacto. Converse com Lady Elara sobre o valor e o custo dessa mudança antes de decidir.",
+	"image": "Lady Elara",
+	"left_effects": { "moral": -10, "resources": 0, "time": 0, "trust": -15, "progress": 0 }, 
+	"right_effects": { "moral": 5, "resources": -2, "time": -2, "trust": 10, "progress": 0 }, 
+	"correct_answer": "right",
+	"feedback": {
+	  "left": "Ignorar stakeholders importantes pode gerar conflitos e minar o apoio ao projeto, mesmo que o plano original esteja sendo seguido.",
+	  "right": "Analisar o feedback dos stakeholders com o Product Owner permite tomar decisões informadas sobre mudanças, balanceando valor e custo."
+	}
+  },
+  {
+	"id": 46,
+	"text": "O Barão Von Prazos está furioso! Prometemos a ele que a nova ponte estaria pronta neste ciclo, mas um imprevisto nos atrasou. Ele ameaça cortar o financiamento.",
+	"left_choice": "Comunique com Transparência. Explique o imprevisto, mostre o progresso feito e renegocie o prazo.",
+	"right_choice": "Esconda o Atraso. Diga que está tudo bem e pressione os anões a trabalharem noite e dia.",
+	"image": "Sir Cedric", 
+	"left_effects": { "moral": 5, "resources": 0, "time": 0, "trust": 15, "progress": -5 }, 
+	"right_effects": { "moral": -25, "resources": 0, "time": -10, "trust": -30, "progress": -10 }, 
+	"correct_answer": "left",
+	"feedback": {
+	  "left": "A transparência sobre impedimentos e progresso, mesmo que envolva más notícias, constrói confiança com stakeholders a longo prazo.",
+	  "right": "Esconder problemas e pressionar a equipe destrói a moral e a confiança. Promessas quebradas são piores que atrasos comunicados."
+	}
+  },
+  {
+	"id": 47,
+	"text": "Caos Escopial ataca novamente! Ele sussurra dúvidas nos ouvidos dos nobres, fazendo-os questionar cada decisão e exigir mudanças constantes no que já foi entregue!",
+	"left_choice": "Ignore os nobres. Diga a eles para confiarem no processo e parem de interferir.",
+	"right_choice": "Engaje-os! Organize uma Sprint Review extra para mostrar o valor já entregue e alinhar as próximas prioridades com Lady Elara.",
+	"image": "Caos Escopial",
+	"left_effects": { "moral": -10, "resources": 0, "time": 0, "trust": -20, "progress": -5 },
+	"right_effects": { "moral": 10, "resources": -2, "time": -5, "trust": 15, "progress": 5 },
+	"correct_answer": "right",
+	"feedback": {
+	  "left": "Afastar stakeholders gera desconfiança e fofocas, alimentando o Caos. A falta de comunicação é perigosa.",
+	  "right": "Aumentar a transparência e o envolvimento dos stakeholders em momentos de incerteza (como na Review) ajuda a combater dúvidas e a realinhar expectativas."
+	}
+  },
+  {
+	"id": 48,
+	"text": "Lady Elara priorizou a construção de novas casas para o povo. Mas um Duque poderoso exige que a equipe construa um estábulo luxuoso para seus grifos primeiro.",
+	"left_choice": "Defenda a Prioridade. Explique ao Duque, com base nos objetivos do reino definidos por Lady Elara, por que as casas vêm primeiro.",
+	"right_choice": "Ceda à Pressão. Mude a ordem e construa o estábulo para evitar conflito com o Duque.",
+	"image": "Lady Elara",
+	"left_effects": { "moral": 5, "resources": 0, "time": 0, "trust": 10, "progress": 10 },
+	"right_effects": { "moral": -15, "resources": -10, "time": -10, "trust": -15, "progress": -15 },
+	"correct_answer": "left",
+	"feedback": {
+	  "left": "O Product Owner tem a autoridade final sobre a ordem do backlog. Comunicar e defender as prioridades com base no valor é essencial.",
+	  "right": "Permitir que stakeholders individuais ditem a ordem do trabalho fora do processo de priorização gera ineficiência e desvia o foco do valor real."
+	}
+  },
+  {
+	"id": 49,
+	"text": "A reconstrução está avançando! Como devemos apresentar o progresso à Rainha Stakeholdina e aos nobres na próxima Grande Assembleia (Review)?",
+	"left_choice": "Somente pergaminhos detalhados e profecias bem delineadas devem ser revelados.",
+	"right_choice": "Demonstre o incremento ! Mostre o que foi *realmente construído* e colete feedback.",
+	"image": "Rainha Stakeholdina",
+	"left_effects": { "moral": -5, "resources": 0, "time": 0, "trust": -10, "progress": -5 },
+	"right_effects": { "moral": 15, "resources": 0, "time": 0, "trust": 20, "progress": 10 },
+	"correct_answer": "right", 
+	"feedback": {
+	  "left": "Stakeholders querem ver valor concreto, não apenas planos. Falar sobre o futuro sem mostrar o presente gera desconfiança.",
+	  "right": "A Sprint Review é sobre inspecionar o incremento real do produto. Demonstrar o trabalho funcional é a melhor forma de comunicar progresso e obter feedback valioso."
 	}
   }
 ]

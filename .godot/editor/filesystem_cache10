@@ -1,16 +1,18 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1761074346
-default_env.tres::Environment::8952826018721607875::1761016701::0::1::::<><><>0<>0<><>::
+::res://::1761185353
+default_env.tres::Environment::8952826018721607875::1761079039::0::1::::<><><>0<>0<><>::
 export_presets.cfg::TextFile::-1::1749913542::0::1::::<><><>0<>0<><>::
 icon.png::CompressedTexture2D/CompressedTexture2D::4241338009583973430::1747830470::1747832687::1::::<><><>0<>0<>7db4ec2050e894fe0a410af00efa0a8c<>res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex::
 ::res://assets/::1749421184
-::res://assets/backgroundIntro/::1761074291
+::res://assets/backgroundIntro/::1761185320
 PrimeiraFoto.png::CompressedTexture2D/CompressedTexture2D::4829744729234597637::1749421184::1749421503::1::::<><><>0<>0<>7d62013dd05531ca43765e6af543291b<>res://.godot/imported/PrimeiraFoto.png-b48d5cdaa5a5e849a14fe9e66bb4a109.ctex::
 QuartaFoto.png::CompressedTexture2D/CompressedTexture2D::6404782886126926604::1756672624::1756672661::1::::<><><>0<>0<>b1e97863c5b10588443c6a0d43af6c07<>res://.godot/imported/QuartaFoto.png-33094d22711e216a508b2fe4961adf63.ctex::
 QuintaFoto.png::CompressedTexture2D/CompressedTexture2D::7181273846347479053::1761074291::1761074291::1::::<><><>0<>0<>61d44189978127cdbbc2152491480a56<>res://.godot/imported/QuintaFoto.png-a2570734e30d921e4940a1bca8667540.ctex::
 SegundaFoto.png::CompressedTexture2D/CompressedTexture2D::7189520057269894146::1749421184::1749421503::1::::<><><>0<>0<>4cdabab0cc9088be23f795ce6db9f4d9<>res://.godot/imported/SegundaFoto.png-fa5c07bf248bc501a3c62d753dcfbc43.ctex::
+SetimaFoto.png::CompressedTexture2D/CompressedTexture2D::2892564697455300660::1761185320::1761185320::1::::<><><>0<>0<>5a863b7587b2e6d53d5828c27f39a49d<>res://.godot/imported/SetimaFoto.png-952987c21dc7444c56ec5a6d4c1129d6.ctex::
+SextaFoto.png::CompressedTexture2D/CompressedTexture2D::5360994907958371137::1761185320::1761185320::1::::<><><>0<>0<>ed71f5adb969ca7edaaea1334d4a1510<>res://.godot/imported/SextaFoto.png-96ff1f77dc105ba69f3275e038dd2797.ctex::
 TerceiraFoto.png::CompressedTexture2D/CompressedTexture2D::3492894097706186025::1756594564::1756594564::1::::<><><>0<>0<>40473975cbc4b5e702fd2fa3ca191471<>res://.godot/imported/TerceiraFoto.png-07a1d78d1f0ea69bdb2beec9a0842013.ctex::
-::res://assets/backgrounds/::1761074291
+::res://assets/backgrounds/::1761185320
 BackGround 2.png::CompressedTexture2D/CompressedTexture2D::6588719780639053865::1749149593::1749149593::1::::<><><>0<>0<>3f7a3eb44bf591e9ac56bf363b02fd6d<>res://.godot/imported/BackGround 2.png-b10b8fe8ade86216030a5f7ab88fabd5.ctex::
 background-menu.png::CompressedTexture2D/CompressedTexture2D::5540379474244765439::1756856120::1756856120::1::::<><><>0<>0<>49e5bb6b4cc464411784ab401c108172<>res://.godot/imported/background-menu.png-943fce184f6eacb65e973714347a72fe.ctex::
 background.png::CompressedTexture2D/CompressedTexture2D::1431684111977144007::1747830470::1747832691::1::::<><><>0<>0<>bc6b83637f38e3bbcceacc004ae746e0<>res://.godot/imported/background.png-5df4ef741238e6b81563560dbc198308.ctex::
@@ -19,6 +21,8 @@ Bg Cap 1.png::CompressedTexture2D/CompressedTexture2D::1267281337491750257::1757
 Bg Cap 2.png::CompressedTexture2D/CompressedTexture2D::1371623634868623240::1757285005::1757285005::1::::<><><>0<>0<>b98fa5986cd44a308ea8700a5d41c97a<>res://.godot/imported/Bg Cap 2.png-9cd50bbb3feae55a985e8f1ac6965d5a.ctex::
 Bg Cap 3.png::CompressedTexture2D/CompressedTexture2D::7742630859581104350::1757285005::1757285005::1::::<><><>0<>0<>44f0483c4cc7fb46f7986af510782006<>res://.godot/imported/Bg Cap 3.png-28c8d19054d0f467615b4973122a7bf0.ctex::
 Bg Cap 4.png::CompressedTexture2D/CompressedTexture2D::5986977570994431777::1761074291::1761074291::1::::<><><>0<>0<>375489068352f3bc28a5d75bd82c5ec6<>res://.godot/imported/Bg Cap 4.png-8bb4f2ce7518dc78191bafd6ccb12acb.ctex::
+Bg Cap 5.png::CompressedTexture2D/CompressedTexture2D::2571578145470977609::1761185320::1761185320::1::::<><><>0<>0<>0d9b1e668f1740804cdfcc24fcf88dca<>res://.godot/imported/Bg Cap 5.png-a2c46e60d3124c34255bdacfb3557a12.ctex::
+Bg Cap 6.png::CompressedTexture2D/CompressedTexture2D::974486278028739910::1761185320::1761185320::1::::<><><>0<>0<>bb2a3454d4e889b2f705ff6d4c4e5ed0<>res://.godot/imported/Bg Cap 6.png-8dcfdfc4abdf7e399a3b8a62f57d9306.ctex::
 card-frame.png::CompressedTexture2D/CompressedTexture2D::6215680884760835221::1760930795::1760930795::1::::<><><>0<>0<>04e6cda63cce1e76f50d9e5bd60253ea<>res://.godot/imported/card-frame.png-95d0071ea66e82790e4a7cd99eb0453b.ctex::
 sumario-img2.png::CompressedTexture2D/CompressedTexture2D::5813150134552998457::1760930795::1760930795::1::::<><><>0<>0<>1f583b19a2768851d7374cc06c507948<>res://.godot/imported/sumario-img2.png-cb0c0b27a0e9ebadabc7ef0384862230.ctex::
 ::res://assets/Cards/::1757285005
@@ -57,28 +61,32 @@ medieval-backgroun-jogo.mp3::AudioStreamMP3/AudioStreamMP3::3456202457223775504:
 medieval-opener-270568.mp3::AudioStreamMP3/AudioStreamMP3::5528609763816174781::1750013053::1750013340::1::::<><><>0<>0<>f1b6ff606f71771c2ecb385f320664c7<>res://.godot/imported/medieval-opener-270568.mp3-80f5b6923786ae705193d1f29afc8c11.mp3str::
 negative_beeps-6008.mp3::AudioStreamMP3/AudioStreamMP3::2623834734878959797::1750016037::1750016107::1::::<><><>0<>0<>dd097a447f871580a4e3e600fa03399a<>res://.godot/imported/negative_beeps-6008.mp3-52d40a48b97b8ef61508f5069a809559.mp3str::
 Sword.mp3::AudioStreamMP3/AudioStreamMP3::5701996653137463197::1760124564::1760124564::1::::<><><>0<>0<>b2b00a77ea91ed51bef3afb3b97e2d75<>res://.godot/imported/Sword.mp3-2fefafb6ea157d348973324765cbaaa4.mp3str::
-::res://data/::1761074291
-cards.json::JSON::-1::1761074291::0::1::::<><><>0<>0<><>::
-::res://scenes/::1761074291
+::res://data/::1761185320
+cards.json::JSON::-1::1761185320::0::1::::<><><>0<>0<><>::
+::res://scenes/::1761185320
 Card.tscn::PackedScene::2938919211256656803::1761016069::0::1::::<><><>0<>0<><>::uid://bdmk216entx4f::::res://scripts/Card.gd<>uid://cus6mduf8wjib::::res://assets/backgrounds/card-frame.png<>uid://dchiqdjn63jma::::res://assets/sounds/flipcard-91468.wav
-cardsProgresso.tscn::PackedScene::3509795777351613662::1761016701::0::1::::<><><>0<>0<><>::uid://dsxqtpy3avvlo::::res://assets/Indicadores/Brain.PNG<>uid://bmadm13cf1a0m::::res://assets/Indicadores/MoneyBag.PNG<>uid://dmyyju6xne58v::::res://assets/Indicadores/Time.PNG<>uid://gob2nda56tv5::::res://assets/Indicadores/Castle.PNG<>uid://qy5vq0v3hqqm::::res://assets/Indicadores/Crown.PNG
-Intro.tscn::PackedScene::4863899524717276037::1761016701::0::1::::<><><>0<>0<><>::uid://cbq0h88wowd06::::res://scripts/Intro.gd<>uid://ck1dnox3ls0cv::::res://assets/sounds/medieval-opener-270568.mp3
-in_game_menu.tscn::PackedScene::5071192575863067678::1761016701::0::1::::<><><>0<>0<><>::uid://1use0x1idqkh::::res://scripts/in_game_menu.gd<>uid://ck62if840dck2::::res://assets/backgrounds/background-menu.png
-Main.tscn::PackedScene::9048386673493771924::1761016700::0::1::::<><><>0<>0<><>::uid://lc7tcfk1dkew::::res://scripts/Main.gd<>uid://sb465440yow4::::res://assets/backgrounds/Bg Cap 1.png<>uid://b6y7ufcmi62p0::::res://assets/Indicadores/Bg Indicadores.png<>uid://dsxqtpy3avvlo::::res://assets/Indicadores/Brain.PNG<>uid://bmadm13cf1a0m::::res://assets/Indicadores/MoneyBag.PNG<>uid://dmyyju6xne58v::::res://assets/Indicadores/Time.PNG<>uid://gob2nda56tv5::::res://assets/Indicadores/Castle.PNG<>uid://bpihfc3ptrf8c::::res://assets/sounds/medieval-backgroun-jogo.mp3<>uid://qy5vq0v3hqqm::::res://assets/Indicadores/Crown.PNG<>uid://ceir2h0grxacs::::res://scenes/in_game_menu.tscn
-MenuInicial.tscn::PackedScene::6498202583209434275::1761016701::0::1::::<><><>0<>0<><>::uid://bwtq12edk74ml::::res://scripts/menu_inicial.gd<>uid://bjkyuhye43hr6::::res://assets/backgrounds/BackMenuInicial.png<>uid://cg2pwxpbq8wwr::::res://assets/sounds/MainMenuSong.mp3<>uid://cnidb05e63crd::::res://assets/sounds/Sword.mp3
-SumarioProgresso.tscn::PackedScene::2371467241691445247::1761016701::0::1::::<><><>0<>0<><>::uid://ck62if840dck2::::res://assets/backgrounds/background-menu.png
+cardsProgresso.tscn::PackedScene::3509795777351613662::1761078709::0::1::::<><><>0<>0<><>::uid://dsxqtpy3avvlo::::res://assets/Indicadores/Brain.PNG<>uid://bmadm13cf1a0m::::res://assets/Indicadores/MoneyBag.PNG<>uid://dmyyju6xne58v::::res://assets/Indicadores/Time.PNG<>uid://gob2nda56tv5::::res://assets/Indicadores/Castle.PNG<>uid://qy5vq0v3hqqm::::res://assets/Indicadores/Crown.PNG
+Intro.tscn::PackedScene::4863899524717276037::1761078709::0::1::::<><><>0<>0<><>::uid://cbq0h88wowd06::::res://scripts/Intro.gd<>uid://ck1dnox3ls0cv::::res://assets/sounds/medieval-opener-270568.mp3
+in_game_menu.tscn::PackedScene::5071192575863067678::1761185320::0::1::::<><><>0<>0<><>::uid://1use0x1idqkh::::res://scripts/in_game_menu.gd<>uid://ck62if840dck2::::res://assets/backgrounds/background-menu.png
+Main.tscn::PackedScene::9048386673493771924::1761079039::0::1::::<><><>0<>0<><>::uid://lc7tcfk1dkew::::res://scripts/Main.gd<>uid://sb465440yow4::::res://assets/backgrounds/Bg Cap 1.png<>uid://b6y7ufcmi62p0::::res://assets/Indicadores/Bg Indicadores.png<>uid://dsxqtpy3avvlo::::res://assets/Indicadores/Brain.PNG<>uid://bmadm13cf1a0m::::res://assets/Indicadores/MoneyBag.PNG<>uid://dmyyju6xne58v::::res://assets/Indicadores/Time.PNG<>uid://gob2nda56tv5::::res://assets/Indicadores/Castle.PNG<>uid://bpihfc3ptrf8c::::res://assets/sounds/medieval-backgroun-jogo.mp3<>uid://qy5vq0v3hqqm::::res://assets/Indicadores/Crown.PNG<>uid://ceir2h0grxacs::::res://scenes/in_game_menu.tscn
+MenuInicial.tscn::PackedScene::6498202583209434275::1761185320::0::1::::<><><>0<>0<><>::uid://bwtq12edk74ml::::res://scripts/menu_inicial.gd<>uid://bjkyuhye43hr6::::res://assets/backgrounds/BackMenuInicial.png<>uid://cg2pwxpbq8wwr::::res://assets/sounds/MainMenuSong.mp3<>uid://cnidb05e63crd::::res://assets/sounds/Sword.mp3
+SumarioProgresso.tscn::PackedScene::2371467241691445247::1761078709::0::1::::<><><>0<>0<><>::uid://ck62if840dck2::::res://assets/backgrounds/background-menu.png
 summaryCap.tscn::PackedScene::9008026928244618997::1760930795::0::1::::<><><>0<>0<><>::uid://b6w7mufimhxen::::res://scripts/Summary.gd<>uid://co26y62yp5cxd::::res://assets/backgrounds/sumario-img2.png
-transicao2.tscn::PackedScene::5502769000951417351::1761016701::0::1::::<><><>0<>0<><>::uid://cwgec8y0wvtvw::::res://scripts/transicao_2.gd
+transicao2.tscn::PackedScene::5502769000951417351::1761078709::0::1::::<><><>0<>0<><>::uid://cwgec8y0wvtvw::::res://scripts/transicao_2.gd
 transicao3.tscn::PackedScene::2050710437182434765::1756672660::0::1::::<><><>0<>0<><>::uid://c5lw4glrsurvt::::res://scripts/transicao_3.gd
-transicao4.tscn::PackedScene::4179907493211626503::1761074291::0::1::::<><><>0<>0<><>::uid://bdwsq1crhbxqb::::res://scripts/transicao_4.gd
-::res://scripts/::1761074291
+transicao4.tscn::PackedScene::4179907493211626503::1761078709::0::1::::<><><>0<>0<><>::uid://bdwsq1crhbxqb::::res://scripts/transicao_4.gd
+transicao5.tscn::PackedScene::1198840824978046381::1761185320::0::1::::<><><>0<>0<><>::uid://bm81e3bq08uh8::::res://scripts/transicao_5.gd
+transicao6.tscn::PackedScene::6932524509696594253::1761185320::0::1::::<><><>0<>0<><>::uid://f13chrxuy86b::::res://scripts/transicao_6.gd
+::res://scripts/::1761185320
 Card.gd::GDScript::2622416547714941411::1760930795::0::1::::<>Control<><>0<>0<><>::
 Intro.gd::GDScript::4877592465733944333::1760124564::0::1::::<>Control<><>0<>0<><>::
-in_game_menu.gd::GDScript::1867298888521857075::1758671092::0::1::::<>Control<><>0<>0<><>::
-Main.gd::GDScript::778183022639146622::1761074291::0::1::::<>Control<><>0<>0<><>::
-menu_inicial.gd::GDScript::3970817748043372823::1761074291::0::1::::<>Control<><>0<>0<><>::
+in_game_menu.gd::GDScript::1867298888521857075::1761185320::0::1::::<>Control<><>0<>0<><>::
+Main.gd::GDScript::778183022639146622::1761185320::0::1::::<>Control<><>0<>0<><>::
+menu_inicial.gd::GDScript::3970817748043372823::1761185320::0::1::::<>Control<><>0<>0<><>::
 Summary.gd::GDScript::4609656578927651881::1760930795::0::1::::<>PopupPanel<><>0<>0<><>::
 transicao_2.gd::GDScript::6329630405018142676::1758672252::0::1::::<>Control<><>0<>0<><>::
 transicao_3.gd::GDScript::6902602726616147521::1757285005::0::1::::<>Control<><>0<>0<><>::
 transicao_4.gd::GDScript::2643526373247323541::1761074291::0::1::::<>Control<><>0<>0<><>::
+transicao_5.gd::GDScript::3298398531181313975::1761185320::0::1::::<>Control<><>0<>0<><>::
+transicao_6.gd::GDScript::406322082178836931::1761185320::0::1::::<>Control<><>0<>0<><>::
 ::res://Theme/::1760405921
