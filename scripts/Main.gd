@@ -16,7 +16,7 @@ var caos_tutorial_shown := false
 
 # ✅ controle de capítulos
 var current_chapter = 1
-var total_chapters = 4  # mude se tiver mais capítulos
+var total_chapters = 6  # mude se tiver mais capítulos
 
 # estatísticas do capítulo
 var chapter_correct_answers = 0
@@ -94,8 +94,22 @@ var chapter_summary_bodies = [
 	"- O alinhamento rápido da Daily Meeting\n" +
 	"- A inspeção do trabalho na Sprint Review\n" +
 	"- A melhoria contínua da Retrospectiva\n" +
-	"- O poder dos rituais para o sucesso"
-]
+	"- O poder dos rituais para o sucesso",
+	
+	# Capítulo 5: Adaptando-se ao Imprevisto
+	"Neste capítulo, você enfrentou as Sombras do Caos Escopial e aprendeu sobre:\n\n" +
+	"• A Inevitabilidade das Mudanças Inesperadas\n" +
+	"• Responder a Mudanças vs. Seguir o Plano Rigidmente\n" +
+	"• A Importância de Inspecionar e Adaptar durante o Ciclo\n" +
+	"• Flexibilidade como Força contra o Caos",
+	
+	# Capítulo 6: Vozes da Nobreza
+	"Neste capítulo, você navegou pelas 'Vozes da Nobreza', aprendendo a:\n\n" +
+	"• Gerenciar Expectativas de Stakeholders (como a Rainha)\n" +
+	"• Comunicar o Progresso com Transparência (Sprint Review)\n" +
+	"• Negociar Demandas e Defender Prioridades de Valor\n" +
+	"• Manter o Foco do Time em Meio às Influências Externas"
+	]
 
 var tutorial_index = 0
 var highlight_rect : ColorRect

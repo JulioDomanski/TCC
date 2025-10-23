@@ -29,7 +29,18 @@ Conceitos-chave: Papéis do Scrum Team • Responsabilidades Claras • Colabora
 
 "O príncipe aprendeu que o sucesso da reconstrução depende de um ritmo constante.
 Ao organizar os rituais da corte—as reuniões diárias, as revisões de progresso e as retrospectivas—, ele garantiu o alinhamento, a inspeção e a melhoria contínua, fortalecendo a equipe contra o caos.\n
-Conceitos-chave: Cerimônias do Scrum • Daily Meeting • Sprint Review • Retrospectiva • Alinhamento Contínuo"
+Conceitos-chave: Cerimônias do Scrum • Daily Meeting • Sprint Review • Retrospectiva • Alinhamento Contínuo",
+
+"O príncipe enfrentou as Sombras do Caos Escopial, manifestadas em chuvas inesperadas, recursos bloqueados e exigências repentinas que ameaçaram os ciclos de reconstrução.
+Ele compreendeu que a rigidez leva ao desperdício, enquanto a verdadeira força reside na capacidade de inspecionar a realidade e adaptar o plano junto à equipe.
+A flexibilidade, a comunicação clara e a coragem de replanejar provaram ser as defesas mais eficazes contra a imprevisibilidade, permitindo que Entregária continue a se reerguer.\n
+Conceitos-chave: Adaptação à Mudança • Flexibilidade • Inspeção e Adaptação • Resiliência • Comunicação Clara",
+
+
+"Diante das 'Vozes da Nobreza', o príncipe aprendeu a arte da diplomacia ágil.
+Ele negociou demandas conflitantes, comunicou o progresso com transparência nas Grandes Assembleias e defendeu as prioridades de Lady Elara que traziam mais valor ao reino.
+Compreendeu que ouvir os stakeholders é importante, mas manter o foco da equipe e o alinhamento com os objetivos estratégicos é essencial para não sucumbir às pressões externas e garantir o sucesso da reconstrução.\n
+Conceitos-chave: Gestão de Stakeholders • Comunicação Transparente • Negociação • Priorização de Backlog • Defesa do Valor"
 
 	
 ]
