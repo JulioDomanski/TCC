@@ -39,6 +39,7 @@ border_blend = true
 
 [node name="in_game_menu" type="Control"]
 process_mode = 3
+z_index = 150
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -55,7 +56,7 @@ script = ExtResource("1_qkhwq")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 light_mask = 5
-z_index = 1
+z_index = 150
 z_as_relative = false
 material = SubResource("ShaderMaterial_0rq4b")
 custom_minimum_size = Vector2(250, 0)

@@ -1,13 +1,12 @@
 res://default_env.tres
-res://scenes/cardsProgresso.tscn
 res://scenes/Main.tscn
 res://scenes/transicao2.tscn
 res://scenes/in_game_menu.tscn
 res://scenes/MenuInicial.tscn
+res://scenes/cardsProgresso.tscn
 res://scenes/SumarioProgresso.tscn
 res://scenes/transicao4.tscn
 res://scenes/transicao3.tscn
 res://scenes/transicao5.tscn
 res://scenes/transicao6.tscn
-res://scripts/menu_inicial.gd
-res://scripts/Main.gd
+res://scenes/Card.tscn
