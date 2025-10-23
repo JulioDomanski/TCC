@@ -644,7 +644,7 @@
   {
 	"id": 44,
 	"text": "Majestade, a Rainha Stakeholdina exige um relatório *diário* detalhado sobre cada pedra assentada na muralha. Sir Cedric alerta que isso consumirá muito tempo da equipe.",
-	"left_choice": "Negocie. Proponha um relatório semanal ou uma demonstração ao final do ciclo (Sprint Review).",
+	"left_choice": "Negocie. Proponha um relatório semanal ou uma demonstração ao final do ciclo (Review).",
 	"right_choice": "Atenda. Ordene que os anões parem o trabalho para documentar tudo diariamente.",
 	"image": "Rainha Stakeholdina",
 	"left_effects": { "moral": 5, "resources": 0, "time": 5, "trust": 10, "progress": 5 },
@@ -713,9 +713,9 @@
   },
   {
 	"id": 49,
-	"text": "A reconstrução está avançando! Como devemos apresentar o progresso à Rainha Stakeholdina e aos nobres na próxima Grande Assembleia (Sprint Review)?",
-	"left_choice": "Mostre apenas slides e documentos detalhados com planos futuros.",
-	"right_choice": "Demonstre o incremento funcional! Mostre o que foi *realmente construído* e colete feedback.",
+	"text": "A reconstrução está avançando! Como devemos apresentar o progresso à Rainha Stakeholdina e aos nobres na próxima Grande Assembleia (Review)?",
+	"left_choice": "Somente pergaminhos detalhados e profecias bem delineadas devem ser revelados.",
+	"right_choice": "Demonstre o incremento ! Mostre o que foi *realmente construído* e colete feedback.",
 	"image": "Rainha Stakeholdina",
 	"left_effects": { "moral": -5, "resources": 0, "time": 0, "trust": -10, "progress": -5 },
 	"right_effects": { "moral": 15, "resources": 0, "time": 0, "trust": 20, "progress": 10 },
