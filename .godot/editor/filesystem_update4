@@ -10,3 +10,4 @@ res://scenes/transicao3.tscn
 res://scenes/transicao5.tscn
 res://scenes/transicao6.tscn
 res://scripts/menu_inicial.gd
+res://scripts/Main.gd

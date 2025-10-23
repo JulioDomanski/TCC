@@ -738,6 +738,7 @@ func save_game_fim_capitulo(porcentagem_acertos: String):
 	if not save_data.has("capitulos"):
 		save_data["capitulos"] = {}
 
+	
 	# Save current chapter stats
 	save_data["capitulos"][str(current_chapter)] = {
 		"moral_final": moral_save,
@@ -749,9 +750,10 @@ func save_game_fim_capitulo(porcentagem_acertos: String):
 	}
 
 	# Also keep global progress info
-	save_data["capitulo_atual"] = current_chapter+1
-	save_data["tutorial_concluido"] = skipped_tutorial
-	save_data["carta_atual"] = card_id
+	if(current_chapter<6):
+		save_data["capitulo_atual"] = current_chapter+1
+		save_data["tutorial_concluido"] = skipped_tutorial
+		save_data["carta_atual"] = card_id
 
 	# Write back to file
 	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
@@ -790,6 +792,7 @@ func load_game():
 		return null
 
 	# --- Recuperar dados principais ---
+	
 	current_chapter = int(save_data.get("capitulo_atual", 1))
 	skipped_tutorial = save_data.get("tutorial_concluido", false)
 	tutorial_index=20
