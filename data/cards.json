@@ -12,7 +12,8 @@
 	"feedback": {
 	  "left": "Flexibilidade é essencial, majestade. Em tempos de incerteza, adaptabilidade é mais valiosa que previsões.",
 	  "right": "Planos imutáveis são frágeis diante do caos. O reino precisa de ritmo, não rigidez."
-	}
+	},
+	"intensidade" : "forte"
   },
   {
 	"id": 2,
@@ -26,7 +27,8 @@
 	"feedback": {
 	  "left": "Ordens cegas não constroem equipes fortes. Liderança exige escuta e alinhamento.",
 	  "right": "Excelente, Sire! Planejamentos colaborativos aumentam engajamento e reduzem erros."
-	}
+	},
+	"intensidade" : "media"
   },
   {
 	"id": 3,
@@ -40,7 +42,8 @@
 	"feedback": {
 	  "left": "Transparência constrói confiança. Adaptar-se não é fraqueza, é inteligência.",
 	  "right": "Trabalhar no escuro mina a motivação. O povo precisa de propósito, não apenas tarefas."
-	}
+	},
+	"intensidade" : "forte"
   },
   {
 	"id": 4,
@@ -54,7 +57,8 @@
 	"feedback": {
 	  "left": "Esperar demais pode paralisar o progresso e desmotivar os construtores.",
 	  "right": "Trabalhar com entregas incrementais nos permite avançar com segurança."
-	}
+	},
+	"intensidade" : "media"
   },
   {
 	"id": 5,
@@ -68,7 +72,8 @@
 	"feedback": {
 	  "left": "Prometer o impossível só trará decepções e desconfiança.",
 	  "right": "Promessas realistas baseadas em ciclos geram mais confiança a longo prazo."
-	}
+	},
+	"intensidade" : "media"
   },
   {
 	"id": 6,
@@ -82,7 +87,8 @@
 	"feedback": {
 	  "left": "Aprender com a experiência fortalece as próximas decisões.",
 	  "right": "Ignorar lições nos condena a repetir erros."
-	}
+	},
+	"intensidade" : "media"
   },
   {
 	"id": 7,
@@ -96,7 +102,8 @@
 	"feedback": {
 	  "left": "Insistir em planos engessados afasta o time das necessidades reais.",
 	  "right": "Priorizar com base no valor entregue é essencial para reconstruir com impacto."
-	}
+	},
+	"intensidade" : "media"
   },
   {
 	"id": 8,
@@ -110,7 +117,8 @@
 	"feedback": {
 	  "left": "Equipes auto-organizadas são mais ágeis e comprometidas com o sucesso.",
 	  "right": "Centralizar tudo sobrecarrega a liderança e desmotiva a equipe."
-	}
+	},
+	"intensidade" : "forte"
   },
   {
 	"id": 9,
@@ -124,7 +132,8 @@
 	"feedback": {
 	  "left": "Alinhamento com stakeholders é essencial para evitar desperdícios.",
 	  "right": "Aceitar tudo sem planejamento gera caos e sobrecarga."
-	}
+	},
+	"intensidade" : "media"
   },
   {
 	"id": 10,
@@ -138,7 +147,8 @@
 	"feedback": {
 	  "left": "Excesso de burocracia retarda o progresso e desvia o foco.",
 	  "right": "Documentação leve e útil favorece a comunicação sem atrasar entregas."
-	}
+	},
+	"intensidade" : "media"
   }
 ],
 "capitulo_2" : 
@@ -155,7 +165,8 @@
 	"feedback": {
 	  "left": "Tentar entregar tudo no fim gera demora e insatisfação.",
 	  "right": "Entregas parciais dão valor imediato e permitem ajustes."
-	}
+	},
+	"intensidade" : "forte"
   },
   {
 	"id": 12,
@@ -169,7 +180,8 @@
 	"feedback": {
 	  "left": "Sem metas, o esforço se dispersa e a motivação cai.",
 	  "right": "Ciclos com objetivos claros orientam o time e aumentam valor."
-	}
+	},
+	"intensidade" : "media"
   },
   {
 	"id": 13,
@@ -183,7 +195,8 @@
 	"feedback": {
 	  "left": "Encerrar ciclos no tempo certo mantém ritmo e aprendizado constante.",
 	  "right": "Ciclos intermináveis atrasam entregas e desgastam a equipe."
-	}
+	},
+	"intensidade" : "media"
   },
   {
 	"id": 14,
@@ -197,7 +210,8 @@
 	"feedback": {
 	  "left": "Priorizar valor imediato aumenta confiança e satisfação.",
 	  "right": "Planos rígidos podem ignorar necessidades reais."
-	}
+	},
+	"intensidade" : "media"
   },
   {
 	"id": 15,
@@ -211,7 +225,8 @@
 	"feedback": {
 	  "left": "Revisar aumenta aprendizado e qualidade para os próximos ciclos.",
 	  "right": "Ignorar aprendizados nos faz repetir erros."
-	}
+	},
+	"intensidade" : "media"
   },
   {
 	"id": 16,
@@ -225,7 +240,8 @@
 	"feedback": {
 	  "left": "Esconder progresso aumenta riscos e frustrações.",
 	  "right": "Transparência em cada ciclo gera confiança e valor."
-	}
+	},
+	"intensidade" : "forte"
   },
 {
    "id": 16.5,
@@ -239,7 +255,8 @@
   "feedback": {
 	"left": "O ataque direto falha! O Caos Escopial se adapta, e o reino sofre grandes perdas.",
 	"right": "Com ciclos curtos e ajustes constantes, vocês controlam o monstro e protegem o castelo."
-  }
+  },
+"intensidade" : "extrema"
 },
   {
 	"id": 17,
@@ -253,7 +270,8 @@
 	"feedback": {
 	  "left": "Insistir no plano pode ignorar necessidades reais.",
 	  "right": "Adaptação garante que entregas tragam valor ao povo."
-	}
+	},
+	"intensidade" : "media"
   },
   {
 	"id": 18,
@@ -267,7 +285,8 @@
 	"feedback": {
 	  "left": "Incluir demandas no meio do ciclo gera caos e atrasos.",
 	  "right": "Guardar demandas para o próximo ciclo mantém ritmo e organização."
-	}
+	},
+	"intensidade" : "media"
   },
   {
 	"id": 19,
@@ -281,7 +300,8 @@
 	"feedback": {
 	  "left": "Ciclos de mesmo tamanho aumentam previsibilidade e disciplina.",
 	  "right": "Variações excessivas tornam difícil medir progresso."
-	}
+	},
+	"intensidade" : "media"
   },
   {
 	"id": 20,
@@ -295,7 +315,8 @@
 	"feedback": {
 	  "left": "Auto-organização dentro do ciclo aumenta eficiência e engajamento.",
 	  "right": "Controle excessivo sufoca a criatividade e o ritmo."
-	}
+	},
+	"intensidade" : "forte"
   }	
 ],
 "capitulo_3": [
@@ -311,7 +332,8 @@
 	"feedback": {
 	  "left": "A autoridade de quem prioriza o trabalho deve ser respeitada para manter o foco no que gera mais valor.",
 	  "right": "Ignorar a priorização de valor gera desperdício e desconfiança na equipe."
-	}
+	},
+	"intensidade" : "media"
   },
   {
 	"id": 22,
@@ -325,7 +347,8 @@
 	"feedback": {
 	  "left": "Um impedimento ignorado paralisa o progresso. A agilidade depende de resolver bloqueios rapidamente.",
 	  "right": "Excelente, Sire! Facilitar a remoção de barreiras é a chave para manter o fluxo de trabalho."
-	}
+	},
+	"intensidade" : "forte"
   },
   {
 	"id": 23,
@@ -339,7 +362,8 @@
 	"feedback": {
 	  "left": "Confiar na expertise técnica da equipe gera inovação e eficiência.",
 	  "right": "Microgerenciar o 'como' desmotiva a equipe e impede melhorias."
-	}
+	},
+	"intensidade" : "forte"
   },
   {
 	"id": 24,
@@ -353,7 +377,8 @@
 	"feedback": {
 	  "left": "Pedidos diretos à equipe criam caos e desviam o foco do que é realmente importante.",
 	  "right": "Manter uma única fonte de prioridades protege a equipe e garante que o trabalho de maior valor seja feito."
-	}
+	},
+	"intensidade" : "forte"
   },
   {
 	"id": 25,
@@ -367,7 +392,8 @@
 	"feedback": {
 	  "left": "Um ritmo sustentável é mais valioso que promessas irrealistas. Proteger a equipe gera confiança.",
 	  "right": "Pressionar a equipe leva à exaustão, baixa qualidade e quebra de confiança."
-	}
+	},
+	"intensidade" : "forte"
   },
   {
 	"id": 26,
@@ -381,7 +407,8 @@
 	"feedback": {
 	  "left": "Até as melhores ideias, quando impostas, podem atrapalhar o fluxo de valor.",
 	  "right": "Respeitar o processo de priorização garante que até as ideias do rei sirvam ao bem maior do reino."
-	}
+	},
+	"intensidade" : "media"
   },
   {
 	"id": 27,
@@ -395,7 +422,8 @@
 	"feedback": {
 	  "left": "Garantir que as cerimônias sejam produtivas é essencial. O tempo da equipe é valioso.",
 	  "right": "Reuniões sem foco desperdiçam tempo e energia, atrasando o progresso do reino."
-	}
+	},
+	"intensidade" : "media"
   },
   {
 	"id": 28,
@@ -409,7 +437,8 @@
 	"feedback": {
 	  "left": "Mudar o escopo após a entrega gera retrabalho e desconfiança. O objetivo acordado deve ser o foco.",
 	  "right": "A revisão serve para inspecionar o que foi feito contra o objetivo, e novas ideias viram novos itens de trabalho."
-	}
+	},
+	"intensidade" : "media"
   },
   {
 	"id": 29,
@@ -423,7 +452,8 @@
 	"feedback": {
 	  "left": "Uma cultura de culpa esconde problemas. Ninguém arriscará ou será honesto se tiver medo de punição.",
 	  "right": "Um ambiente seguro, onde falhas são vistas como oportunidades de melhoria, fortalece toda a equipe."
-	}
+	},
+	"intensidade" : "forte"
   },
   {
 	"id": 30,
@@ -437,7 +467,8 @@
 	"feedback": {
 	  "left": "Uma 'Definição de Pronto' clara e compartilhada por todos evita mal-entendidos e garante que o trabalho entregue seja realmente utilizável.",
 	  "right": "Ignorar a causa do problema apenas garante que ele se repetirá, gerando mais atrasos e frustração."
-	}
+	},
+	"intensidade" : "forte"
   },
 	{
 	"id": 31,
@@ -451,7 +482,8 @@
 	"feedback": {
 	  "left": "O Caos Escopial se alimenta quando os papéis do time são confundidos. O resultado é desordem, perda de confiança e atraso no trabalho.",
 	  "right": "Cada papel tem sua responsabilidade: o PO (Lady Elara) define prioridades, o SM (Sir Cedric) protege o time e o Dev Team (Anões) executa. Assim o Caos Escopial perde sua força."
-	}
+	},
+	"intensidade" : "extrema"
 	}
 ],
 "capitulo_4": [
@@ -467,7 +499,9 @@
 	"feedback": {
 	  "left": "Proteger o foco da equipe é essencial. A Daily Scrum perde seu propósito se virar uma longa reunião de status.",
 	  "right": "As reuniões diárias se tornaram um caos. A equipe perdeu tempo precioso e o foco do ciclo foi comprometido."
-	}
+	},
+	"intensidade" : "media"
+	
   },
   {
 	"id": 33,
@@ -481,7 +515,8 @@
 	"feedback": {
 	  "left": "Ao esconder o progresso, a Rainha ficou insatisfeita e a equipe perdeu a chance de corrigir o curso a tempo.",
 	  "right": "Excelente! A transparência na Sprint Review gera feedback valioso e alinha as expectativas com a Rainha."
-	}
+	},
+	"intensidade" : "forte"
   },
   {
 	"id": 34,
@@ -495,7 +530,8 @@
 	"feedback": {
 	  "left": "A equipe se sentiu segura para discutir os problemas e encontrou ótimas soluções. A confiança e a moral aumentaram.",
 	  "right": "Com medo de serem culpados, ninguém falou a verdade. Os mesmos problemas certamente se repetirão."
-	}
+	},
+	"intensidade" : "forte"
   },
 {
 	"id": 36.5,
@@ -509,7 +545,8 @@
 	"feedback": {
 	  "left": "A Daily se perdeu em discussões longas e o plano do dia ficou comprometido. O Caos vence quando perdemos o foco no objetivo.",
 	  "right": "Manter o propósito da Daily Scrum (planejar as próximas 24h) é crucial para a agilidade. Outros problemas são tratados depois."
-	}
+	},
+	"intensidade" : "extrema"
   },
   {
 	"id": 35,
@@ -523,7 +560,8 @@
 	"feedback": {
 	  "left": "A mudança repentina gerou caos no planejamento. A equipe ficou confusa sobre o objetivo do ciclo e o progresso foi afetado.",
 	  "right": "Respeitar o processo de priorização mantém o foco e a organização. A Sprint Planning pôde ser concluída com sucesso."
-	}
+	},
+	"intensidade" : "media"
   },
   {
 	"id": 36,
@@ -537,7 +575,8 @@
 	"feedback": {
 	  "left": "O planejamento seguinte foi novamente longo e cansativo. A falta de preparação está atrasando o reino.",
 	  "right": "Uma ótima decisão! O Refinamento tornou o próximo planejamento muito mais rápido e eficaz."
-	}
+	},
+	"intensidade" : "media"
   },
   {
 	"id": 37,
@@ -551,7 +590,8 @@
 	"feedback": {
 	  "left": "Você defendeu o processo e o resultado foi positivo. As cerimônias não são perda de tempo, são o que garante o bom andamento do trabalho.",
 	  "right": "Sem as cerimônias, a equipe ficou perdida, o trabalho entregue não era o esperado e os mesmos erros se repetiram. Um desastre!"
-	}
+	},
+	"intensidade" : "forte"
   }
 ],
 "capitulo_5": [
@@ -567,7 +607,8 @@
 	"feedback": {
 	  "left": "Ignorar sinais de instabilidade pode levar a problemas maiores. O Caos se aproveita da complacência.",
 	  "right": "Inspecionar rapidamente diante da incerteza permite adaptar-se antes que seja tarde demais. Prudência fortalece o reino."
-	}
+	},
+	"intensidade" : "media"
   },
   {
 	"id": 39,
@@ -581,7 +622,9 @@
 	"feedback": {
 	  "left": "Manter um plano irrelevante diante de uma crise é desastroso. O reino sofreu danos graves!",
 	  "right": "A equipe ágil responde à mudança mais crítica. Proteger o reino tem mais valor do que seguir um plano obsoleto."
-	}
+	},
+	"intensidade" : "extrema"
+	
   },
   {
 	"id": 40,
@@ -595,7 +638,8 @@
 	"feedback": {
 	  "left": "Gerenciar as expectativas dos stakeholders e integrar novas ideias ao backlog (via PO) protege o foco do ciclo atual.",
 	  "right": "Introduzir grandes mudanças não planejadas no meio do Sprint gera caos e desperdício. O medo causado pelo Caos não pode ditar o plano."
-	}
+	},
+	"intensidade" : "forte"
   },
   {
 	"id": 41,
@@ -609,7 +653,8 @@
 	"feedback": {
 	  "left": "Trabalhar sem um objetivo claro e compartilhado leva a esforço disperso e a entregas que não agregam valor. A confusão é aliada do Caos.",
 	  "right": "Garantir que toda a equipe entenda e trabalhe em prol do mesmo objetivo do Sprint é fundamental, mesmo que exija uma pausa para realinhar."
-	}
+	},
+	"intensidade" : "extrema"
   },
   {
 	"id": 42,
@@ -623,7 +668,8 @@
 	"feedback": {
 	  "left": "Remover impedimentos que bloqueiam o objetivo principal do Sprint é uma prioridade. A equipe deve se auto-organizar para superar obstáculos.",
 	  "right": "Esperar passivamente enquanto o objetivo principal está bloqueado compromete a entrega de valor do ciclo. O Caos vence pela inércia."
-	}
+	},
+	"intensidade" : "extrema"
   },
   {
 	"id": 43,
@@ -637,7 +683,8 @@
 	"feedback": {
 	  "left": "Trabalhar em um objetivo que perdeu o sentido é o maior desperdício. O Caos se deleita com o esforço inútil.",
 	  "right": "Quando o objetivo do Sprint se torna obsoleto, a decisão mais ágil e corajosa é cancelar o ciclo e replanejar para focar no que realmente importa agora."
-	}
+	},
+	"intensidade" : "extrema"
   }
 ],
 "capitulo_6": [
@@ -653,7 +700,8 @@
 	"feedback": {
 	  "left": "Comunicar-se de forma eficaz e sustentável com stakeholders é chave. Interrupções constantes prejudicam o fluxo.",
 	  "right": "O excesso de relatórios burocráticos desviou o foco da equipe e atrasou o progresso real da construção."
-	}
+	},
+	"intensidade" : "media"
   },
   {
 	"id": 45,
@@ -667,7 +715,8 @@
 	"feedback": {
 	  "left": "Ignorar stakeholders importantes pode gerar conflitos e minar o apoio ao projeto, mesmo que o plano original esteja sendo seguido.",
 	  "right": "Analisar o feedback dos stakeholders com o Product Owner permite tomar decisões informadas sobre mudanças, balanceando valor e custo."
-	}
+	},
+	"intensidade" : "leve"
   },
   {
 	"id": 46,
@@ -681,7 +730,8 @@
 	"feedback": {
 	  "left": "A transparência sobre impedimentos e progresso, mesmo que envolva más notícias, constrói confiança com stakeholders a longo prazo.",
 	  "right": "Esconder problemas e pressionar a equipe destrói a moral e a confiança. Promessas quebradas são piores que atrasos comunicados."
-	}
+	},
+	"intensidade" : "forte"
   },
   {
 	"id": 47,
@@ -695,7 +745,8 @@
 	"feedback": {
 	  "left": "Afastar stakeholders gera desconfiança e fofocas, alimentando o Caos. A falta de comunicação é perigosa.",
 	  "right": "Aumentar a transparência e o envolvimento dos stakeholders em momentos de incerteza (como na Review) ajuda a combater dúvidas e a realinhar expectativas."
-	}
+	},
+	"intensidade" : "extrema"
   },
   {
 	"id": 48,
@@ -709,7 +760,8 @@
 	"feedback": {
 	  "left": "O Product Owner tem a autoridade final sobre a ordem do backlog. Comunicar e defender as prioridades com base no valor é essencial.",
 	  "right": "Permitir que stakeholders individuais ditem a ordem do trabalho fora do processo de priorização gera ineficiência e desvia o foco do valor real."
-	}
+	},
+	"intensidade" : "media"
   },
   {
 	"id": 49,
@@ -723,7 +775,8 @@
 	"feedback": {
 	  "left": "Stakeholders querem ver valor concreto, não apenas planos. Falar sobre o futuro sem mostrar o presente gera desconfiança.",
 	  "right": "A Sprint Review é sobre inspecionar o incremento real do produto. Demonstrar o trabalho funcional é a melhor forma de comunicar progresso e obter feedback valioso."
-	}
+	},
+	"intensidade" : "forte"
   }
 ]
 }

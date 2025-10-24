@@ -14,7 +14,7 @@ var rect_fade: ColorRect
 
 var caos_tutorial_shown := false
 
-# ✅ controle de capítulos
+# controle de capítulos
 var current_chapter = 1
 var total_chapters = 6  # mude se tiver mais capítulos
 
@@ -49,7 +49,7 @@ var confianca_save =0;
 @onready var viewport = get_viewport_rect()
 
 
-# tutorial
+
 var tutorial_passos = [
 	{"mensagem": "Bem-vindo, jovem herdeiro! Chegou a hora de conhecer os pilares do seu reinado. Clique para continuar."},
 	{"mensagem": "Vamos te mostrar agora os indicadores e mecânicas essenciais. Preste atenção!"},
@@ -63,6 +63,21 @@ var tutorial_passos = [
 	{"mensagem": "Se qualquer indicador chegar a zero, o reinado entra em colapso... Game Over!"},
 	{"mensagem": "Você está pronto! Boa sorte, e que sua liderança traga prosperidade ao reino!"}
 ]
+var pontos_intensidade ={
+		"correto":{
+		"leve":{"moral": 5, "resources": 2, "time": 2, "trust": 5, "progress": 5 },
+		"media":{"moral": 10, "resources": 5, "time": 5, "trust": 10, "progress": 10 },
+		"forte":{"moral": 15, "resources": 7, "time": 10, "trust": 15, "progress": 15 },
+		"extrema":{"moral": 20, "resources": 10, "time": 15, "trust": 20, "progress": 20 }
+		},
+		"incorreto": {
+		"leve":   {"moral": -5,  "resources": -2,  "time": -2,  "trust": -5,  "progress": -5},
+		"media":  {"moral": -10, "resources": -5,  "time": -5,  "trust": -10, "progress": -10},
+		"forte":  {"moral": -15, "resources": -7,  "time": -10, "trust": -15, "progress": -15},
+		"extrema":{"moral": -200, "resources": -200, "time": -200, "trust": -200, "progress": -200}
+	}
+	}
+
 
 # Array com os textos finais e temáticos para o sumário de cada capítulo.
 var chapter_summary_bodies = [
@@ -117,14 +132,14 @@ var tutorial_label = null
 var tutorial_ongoing = true
 var blocker: ColorRect = null
 
-# Timer
-var decision_time := 20   # segundos por carta
+
+var decision_time := 20  
 var time_left := 0
 @onready var timer_label := Label.new()
 var timer_node : Timer
 
 func _ready():
-	# fade in
+	
 	var fade_rect := ColorRect.new()
 	fade_rect.color = Color(0, 0, 0, 1)
 	fade_rect.set_anchors_preset(Control.PRESET_FULL_RECT)
@@ -144,7 +159,7 @@ func _ready():
 	await fade_tween.finished
 	fade_rect.queue_free()
 
-	# --- ADICIONE ESTE CÓDIGO PARA INICIALIZAR O rect_fade ---
+	
 	if(current_chapter ==1):
 		rect_fade = ColorRect.new()
 		rect_fade.color = Color.BLACK
@@ -153,7 +168,7 @@ func _ready():
 		rect_fade.modulate.a = 0.0  # Começa transparente
 		rect_fade.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		add_child(rect_fade)
-	# --------------------------------------------------------
+
 
 	if current_chapter == 1:
 		mostrar_tutorial_passo()
@@ -161,7 +176,7 @@ func _ready():
 	
 	
 
-# 🚀 Inicia capítulo
+# Inicia capítulo
 func start_chapter(chapter: int):
 	print("Iniciando capítulo ", chapter)
 	if(current_chapter!=1):
@@ -195,7 +210,7 @@ func load_cards_data(chapter: int):
 
 func initialize_deck():
 	var keys = cards_data.keys()
-	# para fins de testes : deck = keys.slice(0, 3)
+	#deck = keys.slice(0, 3)
 	deck = keys 
 	
 
@@ -221,7 +236,7 @@ func spawn_new_card():
 		show_summary()
 		return 
 	
-	# Remove previous card
+	
 	if current_card:
 		if cards_data[card_id]["image"] == "Caos Escopial":
 			dilema.add_theme_color_override("font_color", Color(1,1,1))
@@ -232,14 +247,14 @@ func spawn_new_card():
 	cardContainer.add_child(current_card)
 	current_card.setup_card(cards_data[card_id])
 
-	# Special case: Caos Escopial
+	
 	if cards_data[card_id]["image"] == "Caos Escopial" and not showing_feedback:
 		dilema.add_theme_color_override("font_color", Color(1, 1, 1))
 		if not caos_tutorial_shown:
 			caos_tutorial_shown = true
 			await tutorial_caos_escopial()
 
-		# Create chaos timer label
+		
 		chaos_timer_label = Label.new()
 		chaos_timer_label.text = str(decision_time)
 		chaos_timer_label.add_theme_font_size_override("font_size", 28)
@@ -248,7 +263,7 @@ func spawn_new_card():
 		chaos_timer_label.z_index = 20
 		cardContainer.add_child(chaos_timer_label)
 
-		# Create timer
+		
 		var chaos_timer = Timer.new()
 		chaos_timer.wait_time = 1.0
 		chaos_timer.one_shot = false
@@ -256,7 +271,7 @@ func spawn_new_card():
 		current_card.add_child(chaos_timer)
 		chaos_timer.start()
 	
-	# Normal card setup
+	
 	dilema.text = cards_data[card_id]["text"]
 	dilema.add_theme_font_size_override("font_size", 21)
 	dilema.show()
@@ -265,25 +280,54 @@ func spawn_new_card():
 	
 	
 func set_points(node, direction, indicator):
-	var points = cards_data[card_id][direction+"_effects"][indicator]
-	node.text = str(node.text.to_int() + points)
-	save_points(node);
-	if direction == cards_data[card_id]["correct_answer"] && points != 0:
+	var points = checar_intensidade_pontos(direction, indicator)
+	if points == 0:
+		return
+	
+	
+	var current_value = node.text.to_int()
+	var new_value = current_value + points
+
+	
+	var delta_text = ""
+	if points > 0:
+		delta_text = "+%d" % points
 		node.add_theme_color_override("font_color", Color.GREEN)
-		glow_indicators(indicator  , true)
-		
-	if direction != cards_data[card_id]["correct_answer"] && points != 0:
+	else:
+		delta_text = "%d" % points
 		node.add_theme_color_override("font_color", Color.RED)
-		glow_indicators(indicator , false)
+	
+	
+	node.text = "%s (%s)" % [str(current_value), delta_text]
+
+	
+	glow_indicators(indicator, points > 0)
+
+	
+	await get_tree().create_timer(2).timeout
+
+	
+	node.text = str(new_value)
+
+	
+	save_points(node)
 	
 	
 	
 	await get_tree().create_timer(2).timeout
 	
-	# ✅ VERIFICAR se o nó ainda existe antes de modificar
+	
 	if is_instance_valid(node):
 		node.add_theme_color_override("font_color", Color(1, 1, 1))
 
+func checar_intensidade_pontos(direction ,indicator):
+	var correct_answer =  cards_data[card_id]["correct_answer"]
+	var intensidade_carta = cards_data[card_id]["intensidade"]
+	if(direction == correct_answer):
+		return pontos_intensidade["correto"][intensidade_carta][indicator]
+	else:
+		return pontos_intensidade["incorreto"][intensidade_carta][indicator]
+	
 func show_feedback_card(card_data,direction) -> Signal:
 	showing_feedback = true
 	if current_card:
@@ -501,7 +545,7 @@ func _input(event):
 		return
 		
 	if event is InputEventMouseButton and event.pressed:
-		# Se clicou no botão de pular, não faz mais nada aqui
+		
 		if button_skip and button_skip.get_global_rect().has_point(event.position):
 			return
 
@@ -592,13 +636,13 @@ func cena_transicao(chapter: int):
 	transicao_scene.z_index = 45
 	add_child(transicao_scene)
 	
-	# Remover o instant_fade com fade
+	
 	var fade_out_tween = create_tween()
 	fade_out_tween.tween_property(instant_fade, "modulate:a", 0.0, 0.3)
 	await fade_out_tween.finished
 	instant_fade.queue_free()
 	
-	# Conectar o sinal
+	
 	transicao_scene.connect(
 		"transition_finished",
 		Callable(self, "_on_transition_finished").bind(chapter, transicao_scene)
@@ -612,7 +656,7 @@ func _on_transition_finished(chapter: int, transicao_scene):
 	instant_fade.z_index = 60 
 	add_child(instant_fade)
 	
-	# Múltiplas pausas para garantir renderização
+	
 	await get_tree().process_frame
 	await get_tree().process_frame
 	await get_tree().process_frame
@@ -642,14 +686,13 @@ func _on_chaos_timer_tick(timer_label: Label, timer_node: Timer):
 	timer_label.text = str(time_left)
 	if time_left <= 0:
 		timer_node.stop()
-		_on_time_expired()  # Game Over
+		_on_time_expired()  
 
 func _on_time_expired():
-	# Decide penalidade automática
 	print("⏰ Tempo esgotado!")
 	game_over()
 
-#funcao para mudar o fundo por capitulo
+
 func change_bg_chapter():
 	var path = "res://assets/backgrounds/Bg Cap %d.png" % current_chapter
 	$UI/Background.texture = load(path)
@@ -658,14 +701,14 @@ func change_bg_chapter():
 func pulse_glow(icon: Node , correct : bool):
 	var tween = get_tree().create_tween()
 	for i in range(2):
-		# Fade
+		
 		if(correct):
 			tween.tween_property(icon, "modulate", Color(0, 1, 0, 0.6), 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 		else:
 			tween.tween_property(icon, "modulate", Color(1,0 , 0, 0.6), 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 		tween.tween_property(icon, "modulate", Color(1, 1, 1, 1), 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 		
-		# Scale
+		
 		tween.tween_property(icon, "scale", Vector2(1 , 0.5), 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 		tween.tween_property(icon, "scale", Vector2(1, 1), 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 
@@ -685,11 +728,11 @@ func glow_indicators(indicator : String , correct : bool):
 func highlight_icon(icon: TextureRect, correct: bool):
 	var tween = get_tree().create_tween()
 	if correct:
-		tween.tween_property(icon, "modulate", Color(0, 1, 0), 0.3)  # green
+		tween.tween_property(icon, "modulate", Color(0, 1, 0), 0.3)  
 	else:
-		tween.tween_property(icon, "modulate", Color(1, 0, 0), 0.3)  # red
+		tween.tween_property(icon, "modulate", Color(1, 0, 0), 0.3)  
 	
-	# fade back to normal after 1s
+	
 	tween.tween_property(icon, "modulate", Color(1, 1, 1), 0.8)
 
 func tutorial_caos_escopial():
@@ -711,10 +754,10 @@ func tutorial_caos_escopial():
 	tutorial_label.modulate.a = 0.0
 	add_child(tutorial_label)
 	
-	# Fade in/out effect
+	
 	var tween = create_tween()
 	tween.tween_property(tutorial_label, "modulate:a", 1.0, 1.0)
-	tween.tween_interval(6) # stays visible
+	tween.tween_interval(6) 
 	tween.tween_property(tutorial_label, "modulate:a", 0.0, 0.5)
 
 	await tween.finished
@@ -725,7 +768,7 @@ const SAVE_PATH := "user://savegame.json"
 func save_game_fim_capitulo(porcentagem_acertos: String):
 	var save_data = {}
 	
-	# Check if file exists — to preserve previous chapters
+	
 	if FileAccess.file_exists(SAVE_PATH):
 		var file_read = FileAccess.open(SAVE_PATH, FileAccess.READ)
 		save_data = JSON.parse_string(file_read.get_as_text())
@@ -734,11 +777,11 @@ func save_game_fim_capitulo(porcentagem_acertos: String):
 	if typeof(save_data) != TYPE_DICTIONARY:
 		save_data = {}
 	
-	# Make sure the chapter history exists
+	
 	if not save_data.has("capitulos"):
 		save_data["capitulos"] = {}
 
-	# Save current chapter stats
+	
 	save_data["capitulos"][str(current_chapter)] = {
 		"moral_final": moral_save,
 		"recursos_final": recursos_save,
@@ -748,12 +791,12 @@ func save_game_fim_capitulo(porcentagem_acertos: String):
 		"percentual_acertos": porcentagem_acertos
 	}
 
-	# Also keep global progress info
+	
 	save_data["capitulo_atual"] = current_chapter+1
 	save_data["tutorial_concluido"] = skipped_tutorial
 	save_data["carta_atual"] = card_id
 
-	# Write back to file
+	
 	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	file.store_string(JSON.stringify(save_data, "\t"))
 	file.close()
@@ -789,8 +832,11 @@ func load_game():
 		print("❌ Erro: arquivo de save corrompido.")
 		return null
 
-	# --- Recuperar dados principais ---
+	
 	current_chapter = int(save_data.get("capitulo_atual", 1))
 	skipped_tutorial = save_data.get("tutorial_concluido", false)
 	tutorial_index=20
 	card_id = save_data.get("carta_atual", "")
+
+
+	
