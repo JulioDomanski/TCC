@@ -800,9 +800,10 @@ func save_game_fim_capitulo(porcentagem_acertos: String):
 	}
 
 	
-	save_data["capitulo_atual"] = current_chapter+1
-	save_data["tutorial_concluido"] = skipped_tutorial
-	save_data["carta_atual"] = card_id
+	if(current_chapter<6):
+		save_data["capitulo_atual"] = current_chapter+1
+		save_data["tutorial_concluido"] = skipped_tutorial
+		save_data["carta_atual"] = card_id
 
 	
 	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)

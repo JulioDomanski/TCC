@@ -24,8 +24,9 @@ anchors_preset = 0
 [node name="Panel1" type="Panel" parent="."]
 custom_minimum_size = Vector2(400, 180)
 layout_mode = 0
+offset_left = -23.0
 offset_top = 1.0
-offset_right = 400.0
+offset_right = 429.0
 offset_bottom = 197.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_dft4y")
 
@@ -47,6 +48,7 @@ theme_override_constants/separation = 5
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel1/Cap1"]
 layout_mode = 2
 theme_override_constants/separation = 16
+alignment = 1
 
 [node name="Titulo" type="Label" parent="Panel1/Cap1/HBoxContainer"]
 layout_mode = 2
