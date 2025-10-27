@@ -2,7 +2,7 @@ extends Control
 
 const CardScene = preload("res://scenes/Card.tscn")
 var SummaryScene = preload("res://scenes/SummaryCap.tscn")
-
+const EndingScene = preload("res://scenes/Ending.tscn")
 var deck = [] 
 var current_card = null
 var cards_data = {}
@@ -393,7 +393,15 @@ func _on_summary_closed():
 	if current_chapter <= total_chapters:
 		cena_transicao(current_chapter)
 	else:
-		dilema.text = "🏆 Parabéns! Você concluiu a jornada da reconstrução do reino."
+		print("🏆 Todos os capítulos concluídos! Carregando a cena final...")
+		ui.hide() 
+		cardContainer.hide()
+		dilema.hide()
+		backIndicadores.hide()
+		var ending_instance = EndingScene.instantiate()
+		add_child(ending_instance)	
+		if $GameMusic.playing:
+			$GameMusic.stop()
 
 func is_game_over():
 	if(first_card == false and (pontosConfianca.text.to_int()<=0 or pontosProgresso.text.to_int()<=0 or pontosTempo.text.to_int()<=0 or pontosRecursos.text.to_int()<=0 or pontosMoral.text.to_int()<=0)):
