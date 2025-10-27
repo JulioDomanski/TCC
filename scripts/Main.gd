@@ -629,6 +629,9 @@ func pular_tutorial():
 	print(tutorial_passos.size() + 1)
 
 func cena_transicao(chapter: int):
+	var pause_menu = get_node_or_null("MiddleControl/in_game_menu")
+	if pause_menu:
+		pause_menu.set_process(false) # 
 	var instant_fade = ColorRect.new()
 	instant_fade.color = Color.BLACK
 	instant_fade.modulate.a = 1.0 
@@ -671,6 +674,9 @@ func _on_transition_finished(chapter: int, transicao_scene):
 	
 	if is_instance_valid(transicao_scene):
 		transicao_scene.queue_free()
+	var pause_menu = get_node_or_null("MiddleControl/in_game_menu")
+	if pause_menu:
+		pause_menu.set_process(true)
 	
 	start_chapter(chapter)
 	
