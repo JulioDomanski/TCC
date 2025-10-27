@@ -393,6 +393,9 @@ func _on_summary_closed():
 	if current_chapter <= total_chapters:
 		cena_transicao(current_chapter)
 	else:
+		var pause_menu = get_node_or_null("MiddleControl/in_game_menu")
+		if pause_menu:
+			pause_menu.set_process(false)
 		print("🏆 Todos os capítulos concluídos! Carregando a cena final...")
 		ui.hide() 
 		cardContainer.hide()
