@@ -393,6 +393,9 @@ func _on_summary_closed():
 	if current_chapter <= total_chapters:
 		cena_transicao(current_chapter)
 	else:
+		var pause_menu = get_node_or_null("MiddleControl/in_game_menu")
+		if pause_menu:
+			pause_menu.set_process(false)
 		print("🏆 Todos os capítulos concluídos! Carregando a cena final...")
 		ui.hide() 
 		cardContainer.hide()
@@ -518,35 +521,35 @@ func mostrar_tutorial_passo() -> void:
 		if(is_instance_valid(tutorial_label)):
 			tutorial_label.queue_free()
 
-	
-	tutorial_label = Label.new()
-	tutorial_label.text = passo["mensagem"]
+	if not skipped_tutorial:
+		tutorial_label = Label.new()
+		tutorial_label.text = passo["mensagem"]
 
-	
-	tutorial_label.anchor_left = 0.1
-	tutorial_label.anchor_right = 0.9
-	tutorial_label.anchor_top = 0.9
-	tutorial_label.anchor_bottom = 1.0
-	tutorial_label.offset_left = 0
-	tutorial_label.offset_right = 0
-	tutorial_label.offset_top = -40
-	tutorial_label.offset_bottom = -10
+		
+		tutorial_label.anchor_left = 0.1
+		tutorial_label.anchor_right = 0.9
+		tutorial_label.anchor_top = 0.9
+		tutorial_label.anchor_bottom = 1.0
+		tutorial_label.offset_left = 0
+		tutorial_label.offset_right = 0
+		tutorial_label.offset_top = -40
+		tutorial_label.offset_bottom = -10
 
-	
-	tutorial_label.add_theme_font_size_override("font_size", 22)
-	tutorial_label.set("custom_colors/font_color", Color(1, 1, 1))
-	tutorial_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	tutorial_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		
+		tutorial_label.add_theme_font_size_override("font_size", 22)
+		tutorial_label.set("custom_colors/font_color", Color(1, 1, 1))
+		tutorial_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		tutorial_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 
-	
-	tutorial_label.modulate = Color(1, 1, 1, 0)
-	add_child(tutorial_label)
+		
+		tutorial_label.modulate = Color(1, 1, 1, 0)
+		add_child(tutorial_label)
 
-	var fade_in_tween = create_tween()
-	fade_in_tween.tween_property(tutorial_label, "modulate:a", 1.0, 0.5)
-	await fade_in_tween.finished
-	is_tutorial_busy = false
-	
+		var fade_in_tween = create_tween()
+		fade_in_tween.tween_property(tutorial_label, "modulate:a", 1.0, 0.5)
+		await fade_in_tween.finished
+		is_tutorial_busy = false
+		
 func _input(event):
 	
 	if get_tree().paused:
@@ -629,6 +632,9 @@ func pular_tutorial():
 	print(tutorial_passos.size() + 1)
 
 func cena_transicao(chapter: int):
+	var pause_menu = get_node_or_null("MiddleControl/in_game_menu")
+	if pause_menu:
+		pause_menu.set_process(false) # 
 	var instant_fade = ColorRect.new()
 	instant_fade.color = Color.BLACK
 	instant_fade.modulate.a = 1.0 
@@ -671,6 +677,9 @@ func _on_transition_finished(chapter: int, transicao_scene):
 	
 	if is_instance_valid(transicao_scene):
 		transicao_scene.queue_free()
+	var pause_menu = get_node_or_null("MiddleControl/in_game_menu")
+	if pause_menu:
+		pause_menu.set_process(true)
 	
 	start_chapter(chapter)
 	
