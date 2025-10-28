@@ -210,7 +210,8 @@ func load_cards_data(chapter: int):
 
 func initialize_deck():
 	var keys = cards_data.keys()
-	#deck = keys.slice(0, 3)
+	
+	#deck = keys.slice(4, 7)
 	deck = keys 
 	
 
@@ -753,6 +754,7 @@ func highlight_icon(icon: TextureRect, correct: bool):
 	tween.tween_property(icon, "modulate", Color(1, 1, 1), 0.8)
 
 func tutorial_caos_escopial():
+	current_card.mouse_filter = MOUSE_FILTER_IGNORE
 	var tutorial_label = Label.new()
 	tutorial_label.text = "⚡Um Caos Escopial surgiu! ⚡\n\nVocê tem pouco tempo para decidir!\nArraste rapidamente para escolher sua resposta.\nSe não agir antes do fim do tempo, será Game Over!"
 	tutorial_label.anchor_left = 0.1
@@ -780,6 +782,9 @@ func tutorial_caos_escopial():
 	await tween.finished
 	if is_instance_valid(tutorial_label):
 		tutorial_label.queue_free()
+	
+	current_card.mouse_filter = MOUSE_FILTER_STOP
+	
 const SAVE_PATH := "user://savegame.json"
 
 func save_game_fim_capitulo(porcentagem_acertos: String):
